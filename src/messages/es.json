@@ -38,7 +38,60 @@
     "language": "Idioma",
     "spanish": "Español",
     "english": "Inglés",
-    "french": "Francés"
+    "french": "Francés",
+    "instructions": "Instrucciones"
+  },
+  "instructions": {
+    "title": "Instrucciones",
+    "subtitle": "Conozca cómo funciona el proceso de evaluación para ambos roles",
+    "evaluatorTitle": "Para el Evaluador",
+    "evaluatorSubtitle": "Gerente de RRHH o Administrador",
+    "evaluatorDescription": "Como evaluador, usted gestiona el proceso de evaluación, configura perfiles y analiza resultados.",
+    "evaluatedTitle": "Para el Candidato",
+    "evaluatedSubtitle": "Empleado o Candidato evaluado",
+    "evaluatedDescription": "Como candidato, usted completa evaluaciones para demostrar sus competencias y recibir retroalimentación personalizada.",
+    "whatIsEvaluated": "¿Qué se Evalúa?",
+    "whatIsEvaluatedItems": {
+      "professional": "Competencias profesionales — Conocimiento técnico, expertise en la industria y habilidades específicas del rol",
+      "softSkills": "Habilidades blandas — Comunicación, trabajo en equipo, liderazgo y habilidades interpersonales",
+      "readiness": "Disposición al cambio — Adaptabilidad, mentalidad innovadora y apertura a nuevos desafíos",
+      "cognitive": "Habilidades cognitivas — Razonamiento lógico, resolución de problemas y pensamiento analítico (test cronometrado tipo IQ)",
+      "personality": "Perfil de personalidad — Big Five (OCEAN): apertura, responsabilidad, extraversión, amabilidad, neuroticismo",
+      "disc": "Estilo conductual — Evaluación DISC: Dominancia, Influencia, Estabilidad, Conciencia",
+      "aptitude": "Aptitud — Razonamiento numérico, verbal y analítico",
+      "technical": "Conocimiento técnico — Evaluación basada en casos de estudio específicos del rol"
+    },
+    "evaluatorSteps": {
+      "title": "Pasos para el Evaluador",
+      "step1": "Inicie sesión en el panel de administración en Administración > Login con sus credenciales",
+      "step2": "Seleccione o cree el perfil de evaluación que corresponda al rol que está evaluando",
+      "step3": "Genere un enlace de evaluación compartible y envíelo al candidato",
+      "step4": "Espere a que el candidato complete la evaluación — verá los resultados en el panel de administración",
+      "step5": "Revise los resultados: índices de competencias, perfiles asignados, fortalezas y áreas de mejora",
+      "step6": "Opcionalmente, use el análisis de Ajuste al Puesto para comparar al candidato con los requisitos del cargo",
+      "step7": "Exporte resultados como PDF o use la herramienta de comparación para evaluar varios candidatos lado a lado"
+    },
+    "evaluatedSteps": {
+      "title": "Pasos para el Candidato",
+      "step1": "Abra el enlace de evaluación proporcionado por su evaluador, o seleccione un perfil desde la página principal",
+      "step2": "Complete su información básica (nombre y correo electrónico)",
+      "step3": "Responda todas las preguntas con honestidad — no hay respuestas correctas o incorrectas en las preguntas de competencias",
+      "step4": "Para pruebas cronometradas (cognitiva, aptitud), administre su tiempo cuidadosamente — el temporizador es visible en pantalla",
+      "step5": "Para pruebas de personalidad y DISC, elija la respuesta que mejor describa su comportamiento natural",
+      "step6": "Envíe su evaluación — los resultados se generan automáticamente",
+      "step7": "Revise sus resultados: verá sus puntuaciones de competencias, fortalezas y recomendaciones personalizadas"
+    },
+    "tips": "Consejos",
+    "evaluatorTips": {
+      "tip1": "Puede configurar qué pruebas incluir al crear un enlace de evaluación",
+      "tip2": "Use la sección de historial para rastrear todas las evaluaciones pasadas y filtrar por fecha o candidato",
+      "tip3": "El análisis de IA (cuando está habilitado) proporciona insights más profundos y recomendaciones de capacitación"
+    },
+    "evaluatedTips": {
+      "tip1": "Busque un ambiente tranquilo con conexión a internet estable antes de comenzar",
+      "tip2": "Responda basándose en su comportamiento real, no en lo que cree que se espera",
+      "tip3": "Puede descargar sus resultados como PDF para sus registros"
+    }
   },
   "landing": {
     "title": "skaills — Competencias Inteligentes",

@@ -38,7 +38,60 @@
     "language": "Language",
     "spanish": "Spanish",
     "english": "English",
-    "french": "French"
+    "french": "French",
+    "instructions": "Instructions"
+  },
+  "instructions": {
+    "title": "Instructions",
+    "subtitle": "Learn how the evaluation process works for both roles",
+    "evaluatorTitle": "For the Evaluator",
+    "evaluatorSubtitle": "HR Manager or Administrator",
+    "evaluatorDescription": "As an evaluator, you manage the evaluation process, configure profiles, and analyze results.",
+    "evaluatedTitle": "For the Candidate",
+    "evaluatedSubtitle": "Employee or Candidate being evaluated",
+    "evaluatedDescription": "As a candidate, you complete evaluations to showcase your competencies and receive personalized feedback.",
+    "whatIsEvaluated": "What is Evaluated?",
+    "whatIsEvaluatedItems": {
+      "professional": "Professional competencies — Technical knowledge, industry expertise, and role-specific skills",
+      "softSkills": "Soft skills — Communication, teamwork, leadership, and interpersonal abilities",
+      "readiness": "Readiness for change — Adaptability, innovation mindset, and openness to new challenges",
+      "cognitive": "Cognitive abilities — Logical reasoning, problem-solving, and analytical thinking (timed IQ-style test)",
+      "personality": "Personality profile — Big Five (OCEAN) traits: openness, conscientiousness, extraversion, agreeableness, neuroticism",
+      "disc": "Behavioral style — DISC assessment: Dominance, Influence, Steadiness, Conscientiousness",
+      "aptitude": "Aptitude — Numerical, verbal, and analytical reasoning abilities",
+      "technical": "Technical knowledge — Case study-based evaluation specific to the role"
+    },
+    "evaluatorSteps": {
+      "title": "Steps for the Evaluator",
+      "step1": "Log in to the admin panel at Administration > Login with your credentials",
+      "step2": "Select or create the evaluation profile that matches the role you are assessing",
+      "step3": "Generate a shareable evaluation link and send it to the candidate",
+      "step4": "Wait for the candidate to complete the evaluation — you will see results in the admin panel",
+      "step5": "Review the results: competency indices, assigned profiles, strengths, and growth areas",
+      "step6": "Optionally, use Job-Fit analysis to compare the candidate against job requirements",
+      "step7": "Export results as PDF or use the comparison tool to evaluate multiple candidates side by side"
+    },
+    "evaluatedSteps": {
+      "title": "Steps for the Candidate",
+      "step1": "Open the evaluation link provided by your evaluator, or select a profile from the home page",
+      "step2": "Fill in your basic information (name and email)",
+      "step3": "Answer all questions honestly — there are no right or wrong answers for competency questions",
+      "step4": "For timed tests (cognitive, aptitude), manage your time carefully — the timer is visible on screen",
+      "step5": "For personality and DISC tests, choose the answer that best describes your natural behavior",
+      "step6": "Submit your evaluation — results are generated automatically",
+      "step7": "Review your results: you will see your competency scores, strengths, and personalized recommendations"
+    },
+    "tips": "Tips",
+    "evaluatorTips": {
+      "tip1": "You can configure which tests to include when creating an evaluation link",
+      "tip2": "Use the history section to track all past evaluations and filter by date or candidate",
+      "tip3": "The AI analysis (when enabled) provides deeper insights and training recommendations"
+    },
+    "evaluatedTips": {
+      "tip1": "Find a quiet environment with a stable internet connection before starting",
+      "tip2": "Answer based on your actual behavior, not what you think is expected",
+      "tip3": "You can download your results as a PDF for your records"
+    }
   },
   "landing": {
     "title": "skaills — Intelligent Skills",

@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.4.0] - 2026-03-10
+
+### Instructions Page
+- Added `/instructions` page with two sections: evaluator guide and candidate guide
+- Explains what is evaluated (8 evaluation types) and step-by-step process for each role
+- Includes tips for both evaluators and candidates
+- Full trilingual support (ES/EN/FR)
+- Added "Instructions" link to the navigation menu
+
+### Branded Assets
+- Set up logomark (`skaills-logomark.png`) as favicon (16x16, 32x32, 180x180, 192x192, 512x512)
+- Set up logo (`skaills-logo.png`) as OpenGraph share image (1800x900)
+- Added `og:image`, `twitter:card`, and Apple touch icon metadata
+
 ## [0.3.0] - 2026-03-10
 
 ### Branding

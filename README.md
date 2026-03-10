@@ -20,8 +20,10 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 - **AI Analysis** - Optional AI-powered evaluation via Claude, OpenAI, or Gemini
 - **PDF Export** - Downloadable evaluation reports
 - **Shareable Links** - Generate evaluation links for candidates
+- **Instructions Page** - Trilingual guide for evaluators and candidates with step-by-step instructions
 - **Trilingual** - Full Spanish, English, and French support via next-intl
 - **Admin Panel** - Protected dashboard with Firebase Auth
+- **Branded Assets** - Custom favicon (logomark) and OpenGraph share image
 
 ## Tech Stack
 
@@ -49,6 +51,7 @@ src/
       reviews/               # 360/180 reviews
       settings/              # App settings
     evaluation/[profileId]/  # Competency evaluation flow
+    instructions/            # Instructions for evaluators and candidates
     results/[evaluationId]/  # Results display
     tests/                   # Test hub (cognitive, personality, DISC, aptitude)
   components/                # Reusable UI components
