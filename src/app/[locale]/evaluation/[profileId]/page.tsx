@@ -8,6 +8,7 @@ import { Button, Card, CardContent, Input, Progress } from '@/components/ui';
 import {
   QuestionCard,
   MultipleChoice,
+  ScaleQuestion,
   LikertScale,
   OpenTextQuestion,
   ScenarioQuestion,
@@ -449,7 +450,19 @@ export default function EvaluationPage() {
                   />
                 )}
 
-                {currentQuestion.type === 'scale' && (
+                {currentQuestion.type === 'scale' && currentQuestion.scaleLabels && (
+                  <ScaleQuestion
+                    question={locale === 'en' ? currentQuestion.content.en : currentQuestion.content.es}
+                    min={currentQuestion.scaleMin || 1}
+                    max={currentQuestion.scaleMax || 5}
+                    minLabel={locale === 'en' ? currentQuestion.scaleLabels.min.en : locale === 'fr' ? (currentQuestion.scaleLabels.min.fr || currentQuestion.scaleLabels.min.es) : currentQuestion.scaleLabels.min.es}
+                    maxLabel={locale === 'en' ? currentQuestion.scaleLabels.max.en : locale === 'fr' ? (currentQuestion.scaleLabels.max.fr || currentQuestion.scaleLabels.max.es) : currentQuestion.scaleLabels.max.es}
+                    value={responses[currentQuestion.id] as number}
+                    onChange={handleResponseChange}
+                  />
+                )}
+
+                {currentQuestion.type === 'scale' && !currentQuestion.scaleLabels && (
                   <LikertScale
                     question={locale === 'en' ? currentQuestion.content.en : currentQuestion.content.es}
                     value={responses[currentQuestion.id] as number}
