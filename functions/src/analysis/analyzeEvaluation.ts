@@ -79,7 +79,10 @@ export async function analyzeEvaluation(evaluationId: string): Promise<void> {
   if (useAI) {
     const providerType =
       settings.aiMode === 'hybrid' ? settings.aiProvider : (settings.aiMode as AIProviderType);
-    aiProvider = createAIProvider(providerType);
+    // Read API key from settings (stored via admin UI) or fall back to env vars
+    const aiApiKeys = (settings as unknown as Record<string, unknown>).aiApiKeys as Record<string, string> | undefined;
+    const apiKey = aiApiKeys?.[providerType] || undefined;
+    aiProvider = createAIProvider(providerType, apiKey);
   }
 
   for (const response of evaluation.responses) {

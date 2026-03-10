@@ -238,9 +238,16 @@ export type AIProvider = 'claude' | 'openai' | 'gemini';
 export type AIMode = 'claude' | 'openai' | 'gemini' | 'hybrid' | 'rule-based';
 
 // Application settings
+export interface AIApiKeys {
+  gemini?: string;
+  claude?: string;
+  openai?: string;
+}
+
 export interface AppSettings {
   aiMode: AIMode;
   aiProvider: AIProvider; // For hybrid mode, which provider to use for AI tasks
+  aiApiKeys?: AIApiKeys;
   defaultLocale: 'es' | 'en';
   evaluationTimeoutMinutes: number;
   enableAnonymousEvaluations: boolean;
