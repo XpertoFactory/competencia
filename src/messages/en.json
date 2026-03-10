@@ -1,0 +1,781 @@
+{
+  "common": {
+    "appName": "Competency Evaluation",
+    "loading": "Loading...",
+    "error": "Error",
+    "save": "Save",
+    "cancel": "Cancel",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "close": "Close",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "download": "Download",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "create": "Create",
+    "back": "Back",
+    "continue": "Continue",
+    "finish": "Finish",
+    "yes": "Yes",
+    "no": "No",
+    "required": "Required",
+    "optional": "Optional"
+  },
+  "navigation": {
+    "home": "Home",
+    "evaluation": "Evaluation",
+    "results": "Results",
+    "tests": "Tests",
+    "admin": "Administration",
+    "settings": "Settings",
+    "language": "Language",
+    "spanish": "Spanish",
+    "english": "English"
+  },
+  "landing": {
+    "title": "Professional Competency Evaluation",
+    "subtitle": "Discover your professional profile and receive personalized development recommendations",
+    "description": "Our comprehensive evaluation analyzes your professional skills, soft skills, and readiness for change to help you grow in the insurance industry.",
+    "startEvaluation": "Start Evaluation",
+    "selectProfile": "Select Your Professional Profile",
+    "profilesTitle": "Available Profiles",
+    "features": {
+      "title": "What do we evaluate?",
+      "professional": {
+        "title": "Professional Skills",
+        "description": "Technical knowledge and industry-specific competencies"
+      },
+      "softSkills": {
+        "title": "Soft Skills",
+        "description": "Communication, teamwork, leadership, and more"
+      },
+      "readiness": {
+        "title": "Readiness for Change",
+        "description": "Adaptability, continuous learning, and technology adoption"
+      }
+    },
+    "howItWorks": {
+      "title": "How does it work?",
+      "step1": {
+        "title": "Select your profile",
+        "description": "Choose the professional profile that best matches your role"
+      },
+      "step2": {
+        "title": "Complete the evaluation",
+        "description": "Answer questions, case studies, and interactive exercises"
+      },
+      "step3": {
+        "title": "Receive your analysis",
+        "description": "Get a detailed assessment of your strengths and opportunities"
+      },
+      "step4": {
+        "title": "Development plan",
+        "description": "Receive personalized recommendations for your professional growth"
+      }
+    }
+  },
+  "registration": {
+    "title": "Participant Information",
+    "subtitle": "Please complete your details to start the evaluation",
+    "name": "Full name",
+    "namePlaceholder": "Enter your full name",
+    "email": "Email",
+    "emailPlaceholder": "you@email.com",
+    "department": "Department",
+    "departmentPlaceholder": "Select your department",
+    "position": "Position",
+    "positionPlaceholder": "Your current position",
+    "experience": "Years of experience",
+    "experiencePlaceholder": "Years in the industry",
+    "startEvaluation": "Start Evaluation",
+    "privacyNote": "Your information will be treated confidentially and only used to generate your personalized evaluation."
+  },
+  "evaluation": {
+    "title": "Evaluation in Progress",
+    "progress": "Progress",
+    "question": "Question",
+    "of": "of",
+    "category": "Category",
+    "categories": {
+      "professional": "Professional Skills",
+      "softSkills": "Soft Skills",
+      "readiness": "Readiness for Change"
+    },
+    "questionTypes": {
+      "multipleChoice": "Select the best option",
+      "scale": "Indicate your level of agreement",
+      "openText": "Write your answer",
+      "scenario": "Analyze the following case",
+      "ranking": "Order the options by preference"
+    },
+    "scale": {
+      "stronglyDisagree": "Strongly disagree",
+      "disagree": "Disagree",
+      "neutral": "Neutral",
+      "agree": "Agree",
+      "stronglyAgree": "Strongly agree"
+    },
+    "openText": {
+      "placeholder": "Write your answer here...",
+      "minChars": "Minimum {min} characters"
+    },
+    "scenario": {
+      "instructions": "Read the following scenario and answer the questions",
+      "yourResponse": "Your response"
+    },
+    "ranking": {
+      "instructions": "Drag to order the options",
+      "mostImportant": "Most important",
+      "leastImportant": "Least important"
+    },
+    "saveProgress": "Save progress",
+    "progressSaved": "Progress saved",
+    "resumeEvaluation": "Resume evaluation",
+    "confirmSubmit": "Are you sure you want to submit your evaluation?",
+    "submitWarning": "Once submitted, you cannot modify your answers.",
+    "submitting": "Submitting evaluation...",
+    "submitted": "Evaluation submitted successfully",
+    "analyzing": "Analyzing your answers..."
+  },
+  "results": {
+    "title": "Your Evaluation Results",
+    "subtitle": "Complete analysis of your competencies",
+    "analyzing": "Analyzing your results...",
+    "analyzingDescription": "We are processing your evaluation. This may take a few moments. Results will appear automatically.",
+    "generatedFor": "Generated for",
+    "generatedOn": "Analysis date",
+    "downloadPdf": "Download PDF",
+    "shareResults": "Share results",
+    "linkCopied": "Link copied!",
+    "indices": {
+      "title": "Competency Indices",
+      "professional": "Professional Index",
+      "softSkills": "Soft Skills Index",
+      "readiness": "Readiness Index",
+      "overall": "Overall Index"
+    },
+    "strengths": {
+      "title": "Your Strengths",
+      "subtitle": "Areas where you demonstrate high performance"
+    },
+    "opportunities": {
+      "title": "Growth Opportunities",
+      "subtitle": "Areas with development potential"
+    },
+    "profiles": {
+      "title": "Assigned Profiles",
+      "subtitle": "Based on your evaluation, we identify you with the following profiles",
+      "professional": "Professional Profile",
+      "softSkills": "Soft Skills Profile",
+      "readiness": "Adaptability Profile",
+      "matchPercentage": "Match",
+      "traits": "Characteristics"
+    },
+    "recommendations": {
+      "title": "Personalized Recommendations",
+      "personalizedMessage": "Personalized Message",
+      "trainingPath": {
+        "title": "Training Path",
+        "subtitle": "Recommended courses and training for your development"
+      },
+      "activities": {
+        "title": "Suggested Activities",
+        "subtitle": "Practical exercises to strengthen your competencies"
+      },
+      "resources": {
+        "title": "Additional Resources",
+        "subtitle": "Support materials for your learning"
+      },
+      "changeStrategies": {
+        "title": "Change Management Strategies",
+        "subtitle": "Techniques to facilitate your adaptation"
+      },
+      "strengthSupport": {
+        "title": "Support for Your Strengths",
+        "subtitle": "How to enhance what you already do well"
+      },
+      "growthSupport": {
+        "title": "Support for Your Growth",
+        "subtitle": "Resources to develop your opportunities"
+      }
+    }
+  },
+  "admin": {
+    "title": "Administration Panel",
+    "dashboard": "Dashboard",
+    "stats": {
+      "totalEvaluations": "Total Evaluations",
+      "completedToday": "Completed Today",
+      "inProgress": "In Progress",
+      "averageScore": "Average Score"
+    },
+    "recentEvaluations": "Recent Evaluations",
+    "viewAll": "View all",
+    "table": {
+      "candidate": "Candidate",
+      "profile": "Profile",
+      "status": "Status",
+      "score": "Score",
+      "date": "Date",
+      "actions": "Actions",
+      "view": "View"
+    },
+    "quickActions": {
+      "createProfile": "Create Profile",
+      "createProfileDesc": "Add new professional profile",
+      "addQuestions": "Add Questions",
+      "addQuestionsDesc": "Create new questions",
+      "manageResources": "Manage Resources",
+      "manageResourcesDesc": "Courses and materials"
+    },
+    "profiles": {
+      "title": "Professional Profiles",
+      "create": "Create Profile",
+      "edit": "Edit Profile",
+      "name": "Profile name",
+      "description": "Description",
+      "stubDescription": "Manage professional profiles available for evaluation.",
+      "categories": "Competency categories",
+      "active": "Active",
+      "inactive": "Inactive",
+      "nameEs": "Name (Spanish)",
+      "nameEn": "Name (English)",
+      "descriptionEs": "Description (Spanish)",
+      "descriptionEn": "Description (English)",
+      "noProfiles": "No profiles created yet.",
+      "confirmDelete": "Are you sure you want to delete this profile?",
+      "deleteWarning": "This action cannot be undone."
+    },
+    "categories": {
+      "title": "Competency Categories",
+      "create": "Create Category",
+      "edit": "Edit Category"
+    },
+    "questions": {
+      "title": "Questions",
+      "create": "Create Question",
+      "edit": "Edit Question",
+      "stubDescription": "Manage evaluation questions for each profile and category.",
+      "type": "Question type",
+      "content": "Content",
+      "options": "Options",
+      "scoring": "Scoring",
+      "aiEvaluated": "AI Evaluated",
+      "noQuestions": "No questions created yet.",
+      "confirmDelete": "Are you sure you want to delete this question?",
+      "deleteWarning": "This action cannot be undone.",
+      "profileId": "Profile",
+      "categoryId": "Category",
+      "competencyId": "Competency",
+      "contentEs": "Content (Spanish)",
+      "contentEn": "Content (English)",
+      "order": "Order",
+      "maxScore": "Max score",
+      "scaleMin": "Scale min",
+      "scaleMax": "Scale max",
+      "scaleLabelMinEs": "Min label (ES)",
+      "scaleLabelMinEn": "Min label (EN)",
+      "scaleLabelMaxEs": "Max label (ES)",
+      "scaleLabelMaxEn": "Max label (EN)",
+      "rubricEs": "Rubric (Spanish)",
+      "rubricEn": "Rubric (English)",
+      "addOption": "Add option",
+      "removeOption": "Remove option",
+      "optionTextEs": "Option text (ES)",
+      "optionTextEn": "Option text (EN)",
+      "optionValue": "Value",
+      "types": {
+        "multiple-choice": "Multiple choice",
+        "scale": "Scale",
+        "open-text": "Open text",
+        "scenario": "Scenario",
+        "ranking": "Ranking"
+      }
+    },
+    "archetypes": {
+      "title": "Archetype Profiles",
+      "create": "Create Archetype",
+      "edit": "Edit Archetype",
+      "stubDescription": "Define archetype profiles for candidate assessment.",
+      "noArchetypes": "No archetypes created yet.",
+      "confirmDelete": "Are you sure you want to delete this archetype?",
+      "deleteWarning": "This action cannot be undone.",
+      "category": "Category",
+      "nameEs": "Name (Spanish)",
+      "nameEn": "Name (English)",
+      "descriptionEs": "Description (Spanish)",
+      "descriptionEn": "Description (English)",
+      "indexRangeMin": "Index minimum",
+      "indexRangeMax": "Index maximum",
+      "traits": "Traits",
+      "addTrait": "Add trait",
+      "removeTrait": "Remove",
+      "traitEs": "Trait (ES)",
+      "traitEn": "Trait (EN)",
+      "order": "Order",
+      "categories": {
+        "professional": "Professional",
+        "soft-skills": "Soft Skills",
+        "readiness": "Readiness for Change"
+      }
+    },
+    "resources": {
+      "title": "Resources",
+      "create": "Create Resource",
+      "edit": "Edit Resource",
+      "stubDescription": "Manage courses, activities, and training resources.",
+      "type": "Type",
+      "types": {
+        "course": "Course",
+        "activity": "Activity",
+        "resource": "Resource",
+        "strategy": "Strategy"
+      },
+      "noResources": "No resources created yet.",
+      "confirmDelete": "Are you sure you want to delete this resource?",
+      "deleteWarning": "This action cannot be undone.",
+      "nameEs": "Name (Spanish)",
+      "nameEn": "Name (English)",
+      "descriptionEs": "Description (Spanish)",
+      "descriptionEn": "Description (English)",
+      "url": "URL",
+      "duration": "Duration",
+      "priority": "Priority",
+      "targetCategories": "Target categories",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "evaluations": {
+      "title": "Evaluations",
+      "list": "Evaluation list",
+      "status": "Status",
+      "noEvaluations": "No evaluations recorded yet.",
+      "statuses": {
+        "inProgress": "In progress",
+        "completed": "Completed",
+        "analyzed": "Analyzed"
+      }
+    },
+    "employees": "Employees",
+    "probation": "Probation",
+    "reviews": "360° Reviews",
+    "climate": "Climate Survey",
+    "comparison": "Comparison",
+    "history": "History",
+    "jobProfiles": "Job Profiles",
+    "jobFit": "Job Fit",
+    "settings": {
+      "title": "Settings",
+      "backToPanel": "Back to panel",
+      "saveButton": "Save Settings",
+      "loading": "Loading settings...",
+      "saveSuccess": "Settings saved successfully.",
+      "saveError": "Error saving settings.",
+      "ai": {
+        "title": "AI Configuration",
+        "mode": "Analysis mode",
+        "modes": {
+          "claude": "Claude (Anthropic)",
+          "openai": "OpenAI GPT",
+          "gemini": "Google Gemini",
+          "hybrid": "Hybrid (Rules + AI)",
+          "ruleBased": "Rules Only"
+        },
+        "provider": "AI Provider",
+        "providerHelperText": "The selected provider will be used for open-ended question analysis and recommendation generation.",
+        "apiKey": "API Key",
+        "apiKeyHelperText": "The API key is stored securely in Firebase.",
+        "testConnection": "Test connection",
+        "connectionSuccess": "Connection successful with the AI provider.",
+        "connectionError": "Connection error. Verify the API key.",
+        "analysisModes": "Analysis Modes",
+        "analysisModesAI": "Uses AI exclusively for analysis and recommendations.",
+        "analysisModesHybrid": "Rules for objective scoring, AI for open-ended questions and recommendations.",
+        "analysisModesRules": "No API costs, analysis based on predefined rules."
+      },
+      "general": {
+        "title": "General Settings",
+        "defaultLanguage": "Default language",
+        "timeout": "Evaluation timeout (minutes)",
+        "timeoutHelperText": "Maximum time to complete an evaluation before it expires.",
+        "anonymousEvaluations": "Allow anonymous evaluations",
+        "anonymousEvaluationsDesc": "Allow candidates to complete evaluations without providing personal information."
+      }
+    }
+  },
+  "evaluationLink": {
+    "validating": "Validating evaluation link...",
+    "notFound": "Link Not Found",
+    "notFoundDescription": "This evaluation link does not exist or is invalid.",
+    "expired": "Link Expired",
+    "expiredDescription": "This evaluation link has expired and is no longer available.",
+    "maxUsesReached": "Link Limit Reached",
+    "maxUsesReachedDescription": "This evaluation link has reached its maximum number of uses.",
+    "inactive": "Link Inactive",
+    "inactiveDescription": "This evaluation link has been deactivated."
+  },
+  "tests": {
+    "title": "Specialized Assessments",
+    "subtitle": "Select the type of assessment you want to take",
+    "startTest": "Start Test",
+    "timeLimit": "Time limit: {minutes} minutes",
+    "questionsCount": "{count} questions",
+    "statementsCount": "{count} statements",
+    "pairsCount": "{count} pairs",
+    "cognitive": {
+      "title": "Cognitive Test",
+      "description": "Measures logical reasoning, verbal comprehension, numerical reasoning, and pattern recognition skills.",
+      "subtypes": {
+        "logical": "Logical Reasoning",
+        "verbal": "Verbal Comprehension",
+        "numerical": "Numerical Reasoning",
+        "pattern": "Pattern Recognition"
+      },
+      "timeWarning": "Each question has a time limit. Answer as quickly as possible.",
+      "resultsTitle": "Cognitive Results",
+      "correct": "Correct",
+      "percentile": "Percentile",
+      "iqEstimate": "IQ Estimate",
+      "classification": "Classification"
+    },
+    "personality": {
+      "title": "Personality Test (Big Five)",
+      "description": "Identifies your personality traits: Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism.",
+      "instructions": "Indicate your level of agreement with each statement.",
+      "traits": {
+        "openness": "Openness to Experience",
+        "conscientiousness": "Conscientiousness",
+        "extraversion": "Extraversion",
+        "agreeableness": "Agreeableness",
+        "neuroticism": "Neuroticism"
+      },
+      "resultsTitle": "Personality Profile",
+      "dominantTraits": "Dominant Traits",
+      "workStyle": "Work Style"
+    },
+    "aptitude": {
+      "title": "Aptitude Test",
+      "description": "Evaluates your numerical, verbal, and analytical skills in a professional context.",
+      "subtypes": {
+        "numerical": "Numerical Aptitude",
+        "verbal": "Verbal Aptitude",
+        "analytical": "Analytical Aptitude",
+        "technical": "Technical Aptitude"
+      },
+      "resultsTitle": "Aptitude Results",
+      "overallScore": "Overall Score",
+      "strengths": "Strengths",
+      "weaknesses": "Areas for Improvement",
+      "suitableRoles": "Recommended Roles"
+    },
+    "disc": {
+      "title": "DISC Assessment",
+      "description": "Identifies your workplace behavioral style: Dominance, Influence, Steadiness, and Conscientiousness.",
+      "instructions": "For each pair, select the statement that best describes you at work.",
+      "chooseOne": "Choose one option",
+      "optionA": "Option A",
+      "optionB": "Option B",
+      "dimensions": {
+        "dominance": "Dominance",
+        "influence": "Influence",
+        "steadiness": "Steadiness",
+        "conscientiousness": "Conscientiousness"
+      },
+      "resultsTitle": "DISC Profile",
+      "primaryStyle": "Primary Style",
+      "secondaryStyle": "Secondary Style",
+      "leadershipStyle": "Leadership Style",
+      "communicationStyle": "Communication Style",
+      "strengths": "Strengths",
+      "challenges": "Challenges"
+    },
+    "results": {
+      "title": "Test Results",
+      "backToTests": "Back to Tests",
+      "downloadPdf": "Download PDF",
+      "testCompleted": "Test completed",
+      "processing": "Processing results..."
+    }
+  },
+  "jobFit": {
+    "title": "Job Fit",
+    "subtitle": "Compatibility analysis between candidate and job profile",
+    "selectJob": "Select Job Profile",
+    "selectCandidate": "Select Candidate",
+    "calculateFit": "Calculate Fit",
+    "overallFit": "Overall Fit",
+    "fitLevels": {
+      "excellent": "Excellent",
+      "good": "Good",
+      "partial": "Partial",
+      "poor": "Poor"
+    },
+    "dimensions": "Evaluated Dimensions",
+    "dimension": "Dimension",
+    "candidate": "Candidate",
+    "required": "Required",
+    "fit": "Fit",
+    "gapAnalysis": "Gap Analysis",
+    "gap": "Gap",
+    "priority": "Priority",
+    "priorities": {
+      "critical": "Critical",
+      "important": "Important",
+      "minor": "Minor"
+    },
+    "suggestion": "Development Suggestion",
+    "recommendations": "Recommendations",
+    "noGaps": "No significant gaps identified.",
+    "noResults": "Select a candidate and job profile to calculate fit."
+  },
+  "jobProfiles": {
+    "title": "Job Profiles",
+    "create": "Create Job Profile",
+    "edit": "Edit Job Profile",
+    "noProfiles": "No job profiles created.",
+    "confirmDelete": "Are you sure you want to delete this job profile?",
+    "deleteWarning": "This action cannot be undone.",
+    "titleField": "Job Title",
+    "department": "Department",
+    "description": "Description",
+    "linkedProfile": "Linked Insurance Profile",
+    "requirements": "Requirements",
+    "weights": "Evaluation Weights",
+    "minProfessional": "Minimum Professional",
+    "minSoftSkills": "Minimum Soft Skills",
+    "minReadiness": "Minimum Readiness for Change",
+    "minCognitive": "Minimum Cognitive (Percentile)",
+    "minTechnical": "Minimum Technical",
+    "preferredDISC": "Preferred DISC Styles"
+  },
+  "auth": {
+    "loginTitle": "Admin Access",
+    "loginSubtitle": "Enter your credentials to access the panel",
+    "email": "Email",
+    "password": "Password",
+    "loginButton": "Sign In",
+    "invalidCredentials": "Invalid email or password",
+    "logout": "Sign Out"
+  },
+  "comparison": {
+    "title": "Candidate Comparison",
+    "subtitle": "Compare candidate performance side by side",
+    "selectCandidates": "Select Candidates",
+    "addCandidate": "Add Candidate",
+    "removeCandidate": "Remove",
+    "compare": "Compare",
+    "candidate": "Candidate",
+    "noData": "Select at least 2 candidates to compare.",
+    "maxCandidates": "Maximum {max} candidates",
+    "radarChart": "Radar Chart",
+    "tableView": "Table View",
+    "dimension": "Dimension",
+    "professional": "Professional",
+    "softSkills": "Soft Skills",
+    "readiness": "Readiness for Change",
+    "overall": "Overall",
+    "cognitive": "Cognitive",
+    "personality": "Personality",
+    "disc": "DISC",
+    "aptitude": "Aptitude",
+    "bestCandidate": "Best Candidate",
+    "score": "Score",
+    "profile": "Profile",
+    "date": "Date",
+    "status": "Status"
+  },
+  "history": {
+    "title": "Evaluation History",
+    "subtitle": "Historical database of all evaluations",
+    "search": "Search by name or email...",
+    "filterByProfile": "Filter by profile",
+    "filterByStatus": "Filter by status",
+    "filterByDate": "Filter by date",
+    "allProfiles": "All profiles",
+    "allStatuses": "All statuses",
+    "allDates": "All dates",
+    "last7Days": "Last 7 days",
+    "last30Days": "Last 30 days",
+    "last90Days": "Last 90 days",
+    "exportCsv": "Export CSV",
+    "exportExcel": "Export Excel",
+    "noResults": "No evaluations found with the selected filters.",
+    "totalRecords": "{count} records",
+    "candidate": "Candidate",
+    "email": "Email",
+    "profile": "Profile",
+    "status": "Status",
+    "score": "Score",
+    "date": "Date",
+    "actions": "Actions",
+    "viewResults": "View Results",
+    "statuses": {
+      "in-progress": "In Progress",
+      "completed": "Completed",
+      "analyzed": "Analyzed"
+    }
+  },
+  "employees": {
+    "title": "Employees",
+    "create": "Register Employee",
+    "edit": "Edit Employee",
+    "noEmployees": "No employees registered.",
+    "name": "Name",
+    "email": "Email",
+    "department": "Department",
+    "position": "Position",
+    "supervisor": "Supervisor",
+    "supervisorEmail": "Supervisor Email",
+    "hireDate": "Hire Date",
+    "status": "Status",
+    "statuses": {
+      "probation": "On Probation",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "linkedProfile": "Linked Profile",
+    "confirmDelete": "Are you sure you want to delete this employee?",
+    "deleteWarning": "This action cannot be undone."
+  },
+  "probation": {
+    "title": "Probation Evaluations",
+    "subtitle": "3 and 6 month evaluations",
+    "create": "Create Evaluation",
+    "period": "Period",
+    "periods": {
+      "3-month": "3 Months",
+      "6-month": "6 Months"
+    },
+    "dueDate": "Due Date",
+    "completedAt": "Completed",
+    "alertSent": "Alert Sent",
+    "pending": "Pending",
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "scores": {
+      "jobKnowledge": "Job Knowledge",
+      "workQuality": "Work Quality",
+      "productivity": "Productivity",
+      "initiative": "Initiative",
+      "teamwork": "Teamwork",
+      "attendance": "Attendance",
+      "communication": "Communication",
+      "overall": "Overall"
+    },
+    "recommendation": "Recommendation",
+    "recommendations": {
+      "continue": "Continue",
+      "extend-probation": "Extend Probation",
+      "terminate": "Terminate"
+    },
+    "comments": "Comments",
+    "sendAlert": "Send Alert",
+    "alertSentSuccess": "Alert sent to supervisor.",
+    "noEvaluations": "No probation evaluations."
+  },
+  "reviews": {
+    "title": "Performance Reviews",
+    "subtitle": "Annual 360° and 180° reviews",
+    "campaigns": "Campaigns",
+    "createCampaign": "Create Campaign",
+    "editCampaign": "Edit Campaign",
+    "type": "Type",
+    "types": {
+      "360": "360° (Full)",
+      "180": "180° (Supervisor + Self)"
+    },
+    "year": "Year",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "status": "Status",
+    "statuses": {
+      "draft": "Draft",
+      "active": "Active",
+      "closed": "Closed"
+    },
+    "employees": "Included Employees",
+    "assignments": "Assignments",
+    "raterRole": "Rater Role",
+    "roles": {
+      "self": "Self-evaluation",
+      "supervisor": "Supervisor",
+      "peer": "Peer",
+      "subordinate": "Subordinate"
+    },
+    "scores": {
+      "leadership": "Leadership",
+      "communication": "Communication",
+      "teamwork": "Teamwork",
+      "problemSolving": "Problem Solving",
+      "adaptability": "Adaptability",
+      "accountability": "Accountability",
+      "customerFocus": "Customer Focus",
+      "innovation": "Innovation",
+      "overall": "Overall"
+    },
+    "noCampaigns": "No evaluation campaigns.",
+    "viewResults": "View Results"
+  },
+  "climate": {
+    "title": "Climate Surveys",
+    "subtitle": "Anonymous surveys by department",
+    "create": "Create Survey",
+    "edit": "Edit Survey",
+    "anonymous": "Anonymous",
+    "departments": "Target Departments",
+    "allDepartments": "All Departments",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "status": "Status",
+    "statuses": {
+      "draft": "Draft",
+      "active": "Active",
+      "closed": "Closed"
+    },
+    "categories": {
+      "work-environment": "Work Environment",
+      "leadership": "Leadership",
+      "communication": "Communication",
+      "growth": "Professional Growth",
+      "compensation": "Compensation",
+      "work-life-balance": "Work-Life Balance"
+    },
+    "results": "Results",
+    "totalResponses": "Total Responses",
+    "responseRate": "Response Rate",
+    "overallScore": "Overall Score",
+    "byDepartment": "By Department",
+    "highlights": "Highlights",
+    "concerns": "Areas of Concern",
+    "noSurveys": "No surveys created.",
+    "respondSurvey": "Take Survey",
+    "surveyCompleted": "Survey completed. Thank you for your participation!"
+  },
+  "errors": {
+    "generic": "An error occurred. Please try again.",
+    "notFound": "Page not found",
+    "unauthorized": "You do not have permission to access this page",
+    "evaluationNotFound": "Evaluation not found",
+    "resultsNotFound": "Results not found",
+    "loadingFailed": "Error loading data",
+    "saveFailed": "Error saving",
+    "submitFailed": "Error submitting evaluation",
+    "analysisFailed": "Error analyzing evaluation",
+    "validationError": "Please correct the errors in the form",
+    "requiredField": "This field is required",
+    "invalidEmail": "Invalid email",
+    "minLength": "Minimum {min} characters",
+    "maxLength": "Maximum {max} characters"
+  },
+  "success": {
+    "saved": "Saved successfully",
+    "created": "Created successfully",
+    "updated": "Updated successfully",
+    "deleted": "Deleted successfully",
+    "evaluationSubmitted": "Evaluation submitted successfully"
+  }
+}
