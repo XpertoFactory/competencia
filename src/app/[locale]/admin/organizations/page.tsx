@@ -49,7 +49,7 @@ function OrganizationsContent() {
     try {
       const orgId = await createOrganization({
         name: orgName.trim(),
-        description: orgDescription.trim() || undefined,
+        description: orgDescription.trim() || '',
         plan: 'free' as OrgPlan,
         createdBy: user.uid,
         isActive: true,
