@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui';
@@ -50,9 +51,16 @@ export function Header() {
           {/* Logo */}
           <Link
             href={`/${locale}`}
-            className="flex items-center gap-2 font-bold text-xl text-primary-600"
+            className="flex items-center"
           >
-            <span>skaills</span>
+            <Image
+              src="/logo.png"
+              alt="skaills"
+              width={120}
+              height={60}
+              className="h-10 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
