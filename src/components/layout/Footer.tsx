@@ -35,7 +35,7 @@ export function Footer() {
               alt="skaills"
               width={120}
               height={60}
-              className="h-8 w-auto mb-3 brightness-0 invert"
+              className="h-8 w-auto mb-3"
             />
             <p className="text-sm text-gray-500 mb-2">
               {locale === 'fr'
