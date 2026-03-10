@@ -8,7 +8,8 @@ import { Button } from '@/components/ui';
 import { Menu, X, Globe, LogIn, LogOut, User } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { onAuthChange, signOut } from '@/lib/firebase/auth';
+import { onAuthChange, signOut, checkAdminStatus } from '@/lib/firebase/auth';
+import { Shield, ChevronDown } from 'lucide-react';
 import type { User as FirebaseUser } from 'firebase/auth';
 
 export function Header() {
@@ -20,10 +21,28 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [user, setUser] = useState<FirebaseUser | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = () => {
+      setIsUserMenuOpen(false);
+      setIsLangOpen(false);
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
 
   useEffect(() => {
-    const unsubscribe = onAuthChange((firebaseUser) => {
+    const unsubscribe = onAuthChange(async (firebaseUser) => {
       setUser(firebaseUser);
+      if (firebaseUser) {
+        const adminUser = await checkAdminStatus(firebaseUser.uid);
+        setIsAdmin(!!adminUser);
+      } else {
+        setIsAdmin(false);
+      }
     });
     return unsubscribe;
   }, []);
@@ -56,7 +75,6 @@ export function Header() {
     { href: `/${locale}`, label: t('home') },
     { href: `/${locale}/instructions`, label: t('instructions') },
     { href: `/${locale}/tests`, label: t('tests') },
-    { href: `/${locale}/admin`, label: t('admin') },
   ];
 
   return (
@@ -97,22 +115,44 @@ export function Header() {
 
             {/* User Auth Section */}
             {user ? (
-              <div className="flex items-center gap-3">
-                <div className="flex items-center gap-1.5 text-sm text-gray-700">
+              <div className="relative">
+                <button
+                  onClick={(e) => { e.stopPropagation(); setIsUserMenuOpen(!isUserMenuOpen); }}
+                  className="flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
+                >
                   <User className="w-4 h-4 text-gray-500" />
                   <span className="max-w-[150px] truncate">
                     {user.displayName || user.email}
                   </span>
-                </div>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={handleLogout}
-                  className="flex items-center gap-1.5 text-gray-600 hover:text-gray-900"
-                >
-                  <LogOut className="w-4 h-4" />
-                  <span className="hidden lg:inline">{t('logout')}</span>
-                </Button>
+                  <ChevronDown className="w-3.5 h-3.5 text-gray-400" />
+                </button>
+                {isUserMenuOpen && (
+                  <div className="absolute right-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                    {isAdmin && (
+                      <Link
+                        href={`/${locale}/admin`}
+                        onClick={() => setIsUserMenuOpen(false)}
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded-t-lg"
+                      >
+                        <Shield className="w-4 h-4 text-primary-600" />
+                        {t('admin')}
+                      </Link>
+                    )}
+                    <button
+                      onClick={() => {
+                        handleLogout();
+                        setIsUserMenuOpen(false);
+                      }}
+                      className={cn(
+                        'flex items-center gap-2 w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50',
+                        isAdmin ? 'rounded-b-lg' : 'rounded-lg'
+                      )}
+                    >
+                      <LogOut className="w-4 h-4" />
+                      {t('logout')}
+                    </button>
+                  </div>
+                )}
               </div>
             ) : (
               <Link
@@ -134,7 +174,7 @@ export function Header() {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => setIsLangOpen(!isLangOpen)}
+                onClick={(e) => { e.stopPropagation(); setIsLangOpen(!isLangOpen); }}
                 className="flex items-center gap-2"
               >
                 <Globe className="w-4 h-4" />
@@ -203,6 +243,16 @@ export function Header() {
                   <User className="w-4 h-4 text-gray-500" />
                   <span className="truncate">{user.displayName || user.email}</span>
                 </div>
+                {isAdmin && (
+                  <Link
+                    href={`/${locale}/admin`}
+                    className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <Shield className="w-4 h-4 text-primary-600" />
+                    {t('admin')}
+                  </Link>
+                )}
                 <button
                   onClick={() => {
                     handleLogout();
