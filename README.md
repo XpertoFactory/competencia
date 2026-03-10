@@ -22,7 +22,10 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 - **Shareable Links** - Generate evaluation links for candidates
 - **Instructions Page** - Trilingual guide for evaluators and candidates with step-by-step instructions
 - **Trilingual** - Full Spanish, English, and French support via next-intl
-- **Admin Panel** - Protected dashboard with Firebase Auth
+- **Organizations** - Multi-tenant org management with roles (owner/admin/member/viewer) and email invitations
+- **User Authentication** - Email/password and Google sign-in for regular users and admins
+- **Admin Panel** - Protected dashboard with role-based access (admin link in user dropdown)
+- **API Key Management** - Configure AI provider keys from the admin settings UI
 - **Branded Assets** - Custom favicon (logomark) and OpenGraph share image
 
 ## Tech Stack
@@ -47,9 +50,11 @@ src/
       job-fit/               # Job-fit analysis
       job-profiles/          # Job profile management
       login/                 # Admin login
+      organizations/         # Organization management
       probation/             # Probation evaluations
       reviews/               # 360/180 reviews
-      settings/              # App settings
+      settings/              # App settings (AI key management)
+    auth/                    # User login and registration
     evaluation/[profileId]/  # Competency evaluation flow
     instructions/            # Instructions for evaluators and candidates
     results/[evaluationId]/  # Results display
@@ -58,6 +63,7 @@ src/
     auth/                    # AuthProvider, AuthGuard
     evaluation/              # Evaluation step components
     layout/                  # Header, Footer
+    org/                     # OrgProvider, OrgSwitcher
     results/                 # Results display components
     ui/                      # Shared UI primitives
   lib/

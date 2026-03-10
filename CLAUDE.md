@@ -9,7 +9,7 @@
 - **Framework**: Next.js 14 (App Router) with TypeScript
 - **Styling**: Tailwind CSS
 - **Database**: Firebase Firestore
-- **Auth**: Firebase Authentication (email/password)
+- **Auth**: Firebase Authentication (email/password + Google OAuth)
 - **Functions**: Firebase Cloud Functions v7 (Node.js 22)
 - **i18n**: next-intl (Spanish + English + French)
 - **Charts**: Recharts
@@ -38,13 +38,23 @@ FUNCTIONS_DISCOVERY_TIMEOUT=120 firebase deploy  # deploy all
 All pages are under `src/app/[locale]/` with next-intl locale routing (es/en/fr).
 
 ### Auth Pattern
-- `src/app/[locale]/admin/layout.tsx` wraps all admin routes with `<AuthProvider>`
+- `src/app/[locale]/admin/layout.tsx` wraps all admin routes with `<AuthProvider>` + `<OrgProvider>`
 - Individual admin pages wrap their content with `<AuthGuard>` (NOT the layout, to avoid blocking the login page)
-- Admin role is checked via the `admins` Firestore collection
+- Admin role is checked via the `admins` Firestore collection (doc ID = user UID)
+- Auto-fix: if admin doc exists with matching email but wrong ID, login creates the correct doc
+- Two auth flows: `/auth/login` (regular users) and `/admin/login` (admins)
+- Google OAuth uses `prompt: 'select_account'` to show account chooser
+- Header shows admin link in user dropdown only for admin users
 
 ### Firestore CRUD
 - All database operations go through `src/lib/firebase/firestore.ts`
-- Collections: profiles, competencyCategories, questions, evaluations, results, archetypeProfiles, resources, settings, evaluationLinks, cognitiveTests, personalityTests, aptitudeTests, discTests, testSessions, combinedResults, technicalTests, jobProfiles, employees, probationEvaluations, reviewCampaigns, reviewAssignments, reviewSummaries, climateSurveys, climateResponses, climateSurveyResults, admins
+- Collections: profiles, competencyCategories, questions, evaluations, results, archetypeProfiles, resources, settings, evaluationLinks, cognitiveTests, personalityTests, aptitudeTests, discTests, testSessions, combinedResults, technicalTests, jobProfiles, employees, probationEvaluations, reviewCampaigns, reviewAssignments, reviewSummaries, climateSurveys, climateResponses, climateSurveyResults, admins, organizations, orgMembers, orgInvites, userProfiles
+
+### Organizations
+- Org model: organizations, orgMembers (composite ID `{orgId}_{userId}`), orgInvites
+- Roles: owner, admin, member, viewer
+- OrgProvider context in `src/components/org/OrgProvider.tsx`
+- AI API keys stored in `settings.aiApiKeys` (Firestore) — Cloud Functions read from there first, fallback to env vars
 
 ### Localization
 - Translation files: `src/messages/es.json`, `src/messages/en.json`, `src/messages/fr.json`

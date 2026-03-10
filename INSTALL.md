@@ -32,6 +32,8 @@ npm install
 
 2. **Authentication**: Go to Build > Authentication > Get Started
    - Enable **Email/Password** sign-in method
+   - Enable **Google** sign-in provider (for Google OAuth)
+   - Add your domain (e.g., `skaills.io`) to **Authorized domains**
    - Create your first admin user via the Authentication console
 
 3. **Web App**: Go to Project Settings > General > Your Apps
@@ -135,11 +137,17 @@ FUNCTIONS_DISCOVERY_TIMEOUT=120 firebase deploy --only functions
 
 ### AI Configuration (Optional)
 
-To enable AI-powered analysis, set environment variables for your Cloud Functions:
+To enable AI-powered analysis, configure your API key via the admin UI:
+
+1. Log in as admin at `/admin/login`
+2. Go to **Settings** > **AI Configuration**
+3. Select your AI provider (Gemini recommended — free tier available)
+4. Paste your API key and click **Save**
+5. Get a free Gemini API key at https://aistudio.google.com/apikey
+
+Alternatively, set keys via Firebase CLI (these are used as fallback):
 
 ```bash
-firebase functions:secrets:set CLAUDE_API_KEY
-firebase functions:secrets:set OPENAI_API_KEY
 firebase functions:secrets:set GEMINI_API_KEY
 ```
 
@@ -199,5 +207,7 @@ GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/sa-key.json npx tsx scripts/seed.ts
 ### Admin can't log in
 
 1. Verify the user exists in Firebase Authentication
-2. Verify the `admins` collection has a document with the user's UID
-3. Verify Firestore rules are deployed: `firebase deploy --only firestore:rules`
+2. Verify the `admins` collection has a document whose **document ID** matches the user's UID
+3. The app auto-fixes mismatched admin docs: if an admin doc exists with matching email but wrong doc ID, it creates the correct one on login
+4. If no admins exist at all, the first user to sign in at `/admin/login` is automatically made admin
+5. Verify Firestore rules are deployed: `firebase deploy --only firestore:rules`

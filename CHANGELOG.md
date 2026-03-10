@@ -1,5 +1,40 @@
 # Changelog
 
+## [0.5.0] - 2026-03-10
+
+### Organizations
+- Organization management: create, invite members by email, manage roles (owner/admin/member/viewer)
+- OrgProvider context with org switching and membership management
+- OrgSwitcher component for switching between organizations
+- Firestore security rules and composite indexes for org collections
+- Admin pages: org list (`/admin/organizations`) and org detail with member/invite management
+
+### User Authentication
+- Email/password registration and login for regular users (`/auth/register`, `/auth/login`)
+- Google sign-in with account chooser (prompt: select_account) for both users and admins
+- Separate auth flows: `/auth/login` for users, `/admin/login` for admins
+- Auto-fix for admin doc ID mismatches (matches by email, creates correct doc)
+- First user to sign in as admin is auto-promoted if no admins exist
+
+### Admin UX
+- Administration link moved from main nav to user dropdown menu
+- Admin link only visible to users with admin role
+- Click-outside closes dropdown menus (user menu, language switcher)
+
+### AI Configuration
+- API key management via admin settings UI (save, update, delete keys)
+- Masked key display (shows last 4 characters only)
+- Cloud Functions read API key from Firestore settings, fallback to env vars
+- Default AI provider changed to Gemini 2.5 Flash
+
+### Fixes
+- Fixed middleware routing: added catch-all matcher for `/auth/*` routes (was causing 404/hydration errors)
+- Fixed scale questions showing wrong labels (agree/disagree instead of frequency)
+- Fixed organization creation failing with undefined description field
+- Fixed footer logo appearing as white rectangle (removed CSS invert filter)
+- Added missing `admin.organizations` translation key in French
+- Set metadataBase to https://skaills.io (fixes OG image URL warnings)
+
 ## [0.4.0] - 2026-03-10
 
 ### Instructions Page
