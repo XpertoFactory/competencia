@@ -5,6 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://skaills.io'),
   title: 'skaills',
   description: 'skaills — Intelligent skills evaluation platform',
   icons: {
