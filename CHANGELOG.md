@@ -1,5 +1,36 @@
 # Changelog
 
+## [0.3.0] - 2026-03-10
+
+### Branding
+- Renamed app from "Evaluación de Competencias" to **skaills**
+- Taglines: "Intelligent Skills" (EN) / "Competencias Inteligentes" (ES) / "Compétences Intelligentes" (FR)
+- Updated all UI surfaces: Header, Footer, landing page, PDF reports, HTML metadata
+- Created logo prompt alternatives in `resources/logo-prompts.md`
+
+## [0.2.0] - 2026-03-10
+
+### French Language Support
+- Added French (fr) as third language throughout the platform
+- Translation file: `src/messages/fr.json`
+- Updated Header with 3-language dropdown (ES/EN/FR)
+- Added French translations to scoring engines, seed data, admin pages
+- Made `LocalizedString.fr` optional for backward compatibility
+
+### 30 Evaluation Profiles
+- Added 30 trilingual evaluation profiles across 12 sectors and 5 levels
+- 480+ competency questions with trilingual content (ES/EN/FR)
+- Profiles: insurance technicians, educators (pre-school/primary/secondary), school principals, school psychologist, sales associate, pharmacist, pharmacy clerk, gas station attendant, ride-hailing driver, AML compliance officer, HR/business/collections/accounting/customer-service managers and officers, general manager, CFO, executive assistant, receptionist, technical support
+- Question files: main questions.ts + 8 separate files for specific profiles
+
+### Profile Categorization
+- Added `ProfileSector` type (12 sectors: insurance, education, retail-services, healthcare, transportation, finance-accounting, compliance-legal, human-resources, commercial-business, collections-credit, customer-service, general-management)
+- Added `ProfileLevel` type (5 levels: executive, managerial, professional-specialist, administrative, operative)
+- Landing page filter dropdowns by sector and level
+
+### Google Analytics
+- Integrated Google Analytics tracking (G-F1607PB84W)
+
 ## [0.1.0] - 2026-03-09
 
 ### Phase 1: Core Foundation

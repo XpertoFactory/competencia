@@ -1,6 +1,7 @@
 {
   "common": {
-    "appName": "Évaluation des Compétences",
+    "appName": "skaills",
+    "tagline": "Compétences Intelligentes",
     "loading": "Chargement...",
     "error": "Erreur",
     "save": "Enregistrer",
@@ -40,9 +41,9 @@
     "french": "Français"
   },
   "landing": {
-    "title": "Évaluation des Compétences Professionnelles",
+    "title": "skaills — Compétences Intelligentes",
     "subtitle": "Découvrez votre profil professionnel et recevez des recommandations personnalisées pour votre développement",
-    "description": "Notre évaluation complète analyse vos compétences professionnelles, vos compétences comportementales et votre disposition au changement pour vous aider à progresser dans le secteur de l'assurance.",
+    "description": "Notre plateforme d'évaluation intelligente analyse vos compétences professionnelles, vos compétences comportementales et votre disposition au changement pour accélérer votre croissance professionnelle.",
     "startEvaluation": "Commencer l'évaluation",
     "selectProfile": "Sélectionnez votre profil professionnel",
     "profilesTitle": "Profils disponibles",

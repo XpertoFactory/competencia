@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils';
 
 export function Header() {
   const t = useTranslations('navigation');
+  const tc = useTranslations('common');
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
@@ -50,8 +51,7 @@ export function Header() {
             href={`/${locale}`}
             className="flex items-center gap-2 font-bold text-xl text-primary-600"
           >
-            <span className="hidden sm:inline">Evaluación de Competencias</span>
-            <span className="sm:hidden">Competencias</span>
+            <span>skaills</span>
           </Link>
 
           {/* Desktop Navigation */}

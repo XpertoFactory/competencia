@@ -11,7 +11,7 @@ function t(str: LocalizedString, locale: Locale): string {
 // Labels for both languages
 const labels = {
   es: {
-    title: 'Resultados de Evaluación de Competencias',
+    title: 'skaills — Resultados de Evaluación',
     generatedFor: 'Generado para',
     date: 'Fecha de análisis',
     indicesTitle: 'Índices de Competencias',
@@ -31,7 +31,7 @@ const labels = {
     of: 'de',
   },
   en: {
-    title: 'Competency Evaluation Results',
+    title: 'skaills — Evaluation Results',
     generatedFor: 'Generated for',
     date: 'Analysis date',
     indicesTitle: 'Competency Indices',

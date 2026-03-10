@@ -1,4 +1,4 @@
-# Installation Guide
+# skaills — Installation Guide
 
 ## Prerequisites
 
@@ -77,7 +77,7 @@ NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
 GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/sa-key.json npx tsx scripts/seed.ts
 ```
 
-This seeds: profiles, competency categories, archetype profiles, resources, questions, test configs, and app settings.
+This seeds: profiles (30 roles with sector/level categorization), competency categories, archetype profiles, resources, questions (480+), test configs, and app settings.
 
 ### Create the Admin Document
 
@@ -143,17 +143,15 @@ firebase functions:secrets:set OPENAI_API_KEY
 firebase functions:secrets:set GEMINI_API_KEY
 ```
 
-### Deploy Hosting (Static Export)
+### Deploy Hosting
 
 ```bash
-npm run build
-firebase deploy --only hosting
+FUNCTIONS_DISCOVERY_TIMEOUT=120 firebase deploy --only hosting
 ```
 
 ### Deploy Everything
 
 ```bash
-npm run build
 FUNCTIONS_DISCOVERY_TIMEOUT=120 firebase deploy
 ```
 

@@ -5,8 +5,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Evaluación de Competencias',
-  description: 'Plataforma de evaluación de competencias profesionales para el sector de seguros',
+  title: 'skaills',
+  description: 'skaills — Intelligent skills evaluation platform',
 };
 
 export default function RootLayout({

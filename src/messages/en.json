@@ -1,6 +1,7 @@
 {
   "common": {
-    "appName": "Competency Evaluation",
+    "appName": "skaills",
+    "tagline": "Intelligent Skills",
     "loading": "Loading...",
     "error": "Error",
     "save": "Save",
@@ -40,9 +41,9 @@
     "french": "French"
   },
   "landing": {
-    "title": "Professional Competency Evaluation",
+    "title": "skaills — Intelligent Skills",
     "subtitle": "Discover your professional profile and receive personalized development recommendations",
-    "description": "Our comprehensive evaluation analyzes your professional skills, soft skills, and readiness for change to help you grow in the insurance industry.",
+    "description": "Our intelligent evaluation platform analyzes your professional skills, soft skills, and readiness for change to accelerate your professional growth.",
     "startEvaluation": "Start Evaluation",
     "selectProfile": "Select Your Professional Profile",
     "profilesTitle": "Available Profiles",

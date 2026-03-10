@@ -1,6 +1,7 @@
 {
   "common": {
-    "appName": "Evaluación de Competencias",
+    "appName": "skaills",
+    "tagline": "Competencias Inteligentes",
     "loading": "Cargando...",
     "error": "Error",
     "save": "Guardar",
@@ -40,9 +41,9 @@
     "french": "Francés"
   },
   "landing": {
-    "title": "Evaluación de Competencias Profesionales",
+    "title": "skaills — Competencias Inteligentes",
     "subtitle": "Descubre tu perfil profesional y recibe recomendaciones personalizadas para tu desarrollo",
-    "description": "Nuestra evaluación integral analiza tus habilidades profesionales, competencias blandas y disposición al cambio para ayudarte a crecer en la industria de seguros.",
+    "description": "Nuestra plataforma de evaluación inteligente analiza tus habilidades profesionales, competencias blandas y disposición al cambio para impulsar tu crecimiento profesional.",
     "startEvaluation": "Comenzar Evaluación",
     "selectProfile": "Selecciona tu Perfil Profesional",
     "profilesTitle": "Perfiles Disponibles",
