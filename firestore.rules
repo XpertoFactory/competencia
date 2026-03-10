@@ -83,8 +83,9 @@ service cloud.firestore {
 
     // Admin users
     match /admins/{adminId} {
-      allow read: if isAuthenticated() && request.auth.uid == adminId;
-      allow write: if isAdmin();
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && adminId == request.auth.uid;
+      allow update, delete: if isAdmin();
     }
 
     // Evaluation links - publicly readable, admin writable
