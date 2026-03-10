@@ -11,6 +11,23 @@ service cloud.firestore {
         exists(/databases/$(database)/documents/admins/$(request.auth.uid));
     }
 
+    function isOrgMember(orgId) {
+      return isAuthenticated() &&
+        exists(/databases/$(database)/documents/orgMembers/$(orgId + '_' + request.auth.uid));
+    }
+
+    function getOrgRole(orgId) {
+      return get(/databases/$(database)/documents/orgMembers/$(orgId + '_' + request.auth.uid)).data.role;
+    }
+
+    function isOrgAdmin(orgId) {
+      return isOrgMember(orgId) && getOrgRole(orgId) in ['owner', 'admin'];
+    }
+
+    function isOrgOwner(orgId) {
+      return isOrgMember(orgId) && getOrgRole(orgId) == 'owner';
+    }
+
     // Profiles - publicly readable, admin writable
     match /profiles/{profileId} {
       allow read: if true;
@@ -147,6 +164,44 @@ service cloud.firestore {
     match /climateSurveyResults/{resultId} {
       allow read: if isAdmin();
       allow write: if isAdmin();
+    }
+
+    // Organizations
+    match /organizations/{orgId} {
+      allow read: if isOrgMember(orgId) || isAdmin();
+      allow create: if isAuthenticated();
+      allow update: if isOrgAdmin(orgId) || isAdmin();
+      allow delete: if isOrgOwner(orgId) || isAdmin();
+    }
+
+    // Organization Members
+    match /orgMembers/{memberId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && (
+        isAdmin() ||
+        (resource == null && isOrgAdmin(request.resource.data.orgId))
+      );
+      allow update: if isOrgAdmin(resource.data.orgId) || isAdmin();
+      allow delete: if isOrgAdmin(resource.data.orgId) || resource.data.userId == request.auth.uid || isAdmin();
+    }
+
+    // Organization Invites
+    match /orgInvites/{inviteId} {
+      allow read: if isAuthenticated();
+      allow create: if isOrgAdmin(request.resource.data.orgId) || isAdmin();
+      allow update: if isAuthenticated() && (
+        resource.data.email == request.auth.token.email ||
+        isOrgAdmin(resource.data.orgId) ||
+        isAdmin()
+      );
+      allow delete: if isOrgAdmin(resource.data.orgId) || isAdmin();
+    }
+
+    // User Profiles
+    match /userProfiles/{userId} {
+      allow read: if isAuthenticated();
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+      allow update: if isAuthenticated() && request.auth.uid == userId;
     }
   }
 }

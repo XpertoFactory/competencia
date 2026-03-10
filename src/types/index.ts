@@ -836,3 +836,63 @@ export interface ClimateSurveyResults {
   concernAreas: LocalizedString[];
   createdAt: Timestamp;
 }
+
+// ==========================================
+// Organizations
+// ==========================================
+
+export type OrgPlan = 'free' | 'starter' | 'professional' | 'enterprise';
+
+export interface Organization {
+  id: string;
+  name: string;
+  description?: string;
+  logoUrl?: string;
+  plan: OrgPlan;
+  createdBy: string;
+  isActive: boolean;
+  maxMembers: number;
+  createdAt: Timestamp;
+  updatedAt?: Timestamp;
+  xaidOrgId?: string;
+}
+
+export type OrgRole = 'owner' | 'admin' | 'member' | 'viewer';
+
+export interface OrgMember {
+  id: string;
+  orgId: string;
+  userId: string;
+  userEmail: string;
+  userName: string;
+  role: OrgRole;
+  invitedBy?: string;
+  joinedAt: Timestamp;
+  updatedAt?: Timestamp;
+}
+
+export type InviteStatus = 'pending' | 'accepted' | 'expired' | 'cancelled';
+
+export interface OrgInvite {
+  id: string;
+  orgId: string;
+  orgName: string;
+  email: string;
+  role: OrgRole;
+  invitedBy: string;
+  invitedByName: string;
+  status: InviteStatus;
+  expiresAt: Timestamp;
+  createdAt: Timestamp;
+  acceptedAt?: Timestamp;
+}
+
+export interface UserProfile {
+  id: string;
+  email: string;
+  displayName: string;
+  photoUrl?: string;
+  currentOrgId?: string;
+  createdAt: Timestamp;
+  updatedAt?: Timestamp;
+}

@@ -30,8 +30,10 @@ import {
   ClipboardCheck,
   Star,
   ThermometerSun,
+  Building2,
 } from 'lucide-react';
 import { AuthGuard, useAuth } from '@/components/auth';
+import { OrgSwitcher } from '@/components/org';
 import {
   getEvaluations,
   getProfiles,
@@ -103,6 +105,9 @@ export default function AdminPage() {
         {/* Sidebar */}
         <aside className="w-64 bg-white border-r border-gray-200 hidden md:block">
           <div className="p-4">
+            <div className="mb-4">
+              <OrgSwitcher />
+            </div>
             <h2 className="text-lg font-bold text-gray-900 mb-4">{t('title')}</h2>
             <nav className="space-y-1">
               {navItems.map((item) => {
@@ -172,6 +177,12 @@ export default function AdminPage() {
                 <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">
                   <Target className="w-5 h-5" />
                   {t('jobFit') || 'Ajuste al Puesto'}
+                </button>
+              </Link>
+              <Link href={`/${locale}/admin/organizations`}>
+                <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">
+                  <Building2 className="w-5 h-5" />
+                  {t('organizations') || 'Organizaciones'}
                 </button>
               </Link>
               <Link href={`/${locale}/admin/settings`}>

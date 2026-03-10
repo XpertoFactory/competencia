@@ -1,6 +1,7 @@
 'use client';
 
 import { AuthProvider } from '@/components/auth';
+import { OrgProvider } from '@/components/org';
 
 export default function AdminLayout({
   children,
@@ -9,7 +10,9 @@ export default function AdminLayout({
 }) {
   return (
     <AuthProvider>
-      {children}
+      <OrgProvider>
+        {children}
+      </OrgProvider>
     </AuthProvider>
   );
 }

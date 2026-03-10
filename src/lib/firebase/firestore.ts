@@ -17,6 +17,7 @@ import {
   writeBatch,
   onSnapshot,
   Unsubscribe,
+  serverTimestamp,
 } from 'firebase/firestore';
 import { firestore } from './config';
 import type {
@@ -43,6 +44,11 @@ import type {
   ReviewAssignment,
   ClimateSurvey,
   ClimateSurveyResponse,
+  Organization,
+  OrgMember,
+  OrgInvite,
+  OrgRole,
+  UserProfile,
 } from '@/types';
 
 // Collection names
@@ -75,6 +81,11 @@ export const COLLECTIONS = {
   CLIMATE_SURVEYS: 'climateSurveys',
   CLIMATE_RESPONSES: 'climateResponses',
   CLIMATE_RESULTS: 'climateSurveyResults',
+  // Organizations
+  ORGANIZATIONS: 'organizations',
+  ORG_MEMBERS: 'orgMembers',
+  ORG_INVITES: 'orgInvites',
+  USER_PROFILES: 'userProfiles',
 } as const;
 
 // Generic helpers
@@ -559,4 +570,123 @@ export async function saveClimateResponse(response: ClimateSurveyResponse): Prom
 
 export async function getClimateResponses(surveyId: string): Promise<ClimateSurveyResponse[]> {
   return getDocuments<ClimateSurveyResponse>(COLLECTIONS.CLIMATE_RESPONSES, where('surveyId', '==', surveyId));
+}
+
+// ==========================================
+// Organizations
+// ==========================================
+
+export async function createOrganization(org: Omit<Organization, 'id'>): Promise<string> {
+  const orgRef = doc(collection(firestore, COLLECTIONS.ORGANIZATIONS));
+  const orgData = { ...org, id: orgRef.id };
+
+  // Create org + owner membership in batch
+  const batch = writeBatch(firestore);
+  batch.set(orgRef, orgData);
+
+  const memberId = `${orgRef.id}_${org.createdBy}`;
+  const memberRef = doc(firestore, COLLECTIONS.ORG_MEMBERS, memberId);
+  batch.set(memberRef, {
+    id: memberId,
+    orgId: orgRef.id,
+    userId: org.createdBy,
+    userEmail: '', // will be filled by caller
+    userName: '',
+    role: 'owner' as OrgRole,
+    joinedAt: serverTimestamp(),
+  });
+
+  await batch.commit();
+  return orgRef.id;
+}
+
+export async function getOrganization(orgId: string): Promise<Organization | null> {
+  return getDocument<Organization>(COLLECTIONS.ORGANIZATIONS, orgId);
+}
+
+export async function updateOrganization(orgId: string, data: Partial<Organization>): Promise<void> {
+  return updateDocument(COLLECTIONS.ORGANIZATIONS, orgId, { ...data, updatedAt: serverTimestamp() });
+}
+
+export async function getOrgMembers(orgId: string): Promise<OrgMember[]> {
+  return getDocuments<OrgMember>(COLLECTIONS.ORG_MEMBERS, where('orgId', '==', orgId));
+}
+
+export async function getUserMemberships(userId: string): Promise<OrgMember[]> {
+  return getDocuments<OrgMember>(COLLECTIONS.ORG_MEMBERS, where('userId', '==', userId));
+}
+
+export async function addOrgMember(member: Omit<OrgMember, 'id'>): Promise<void> {
+  const memberId = `${member.orgId}_${member.userId}`;
+  const memberRef = doc(firestore, COLLECTIONS.ORG_MEMBERS, memberId);
+  await setDoc(memberRef, { ...member, id: memberId });
+}
+
+export async function updateOrgMemberRole(orgId: string, userId: string, newRole: OrgRole): Promise<void> {
+  const memberId = `${orgId}_${userId}`;
+  return updateDocument(COLLECTIONS.ORG_MEMBERS, memberId, { role: newRole, updatedAt: serverTimestamp() });
+}
+
+export async function removeOrgMember(orgId: string, userId: string): Promise<void> {
+  const memberId = `${orgId}_${userId}`;
+  await deleteDoc(doc(firestore, COLLECTIONS.ORG_MEMBERS, memberId));
+}
+
+export async function createOrgInvite(invite: Omit<OrgInvite, 'id'>): Promise<string> {
+  const inviteRef = doc(collection(firestore, COLLECTIONS.ORG_INVITES));
+  await setDoc(inviteRef, { ...invite, id: inviteRef.id });
+  return inviteRef.id;
+}
+
+export async function getOrgInvites(orgId: string): Promise<OrgInvite[]> {
+  return getDocuments<OrgInvite>(COLLECTIONS.ORG_INVITES, where('orgId', '==', orgId), where('status', '==', 'pending'));
+}
+
+export async function getPendingInvitesForEmail(email: string): Promise<OrgInvite[]> {
+  return getDocuments<OrgInvite>(COLLECTIONS.ORG_INVITES, where('email', '==', email.toLowerCase()), where('status', '==', 'pending'));
+}
+
+export async function acceptOrgInvite(inviteId: string, userId: string, userName: string): Promise<void> {
+  const inviteDoc = await getDocument<OrgInvite>(COLLECTIONS.ORG_INVITES, inviteId);
+  if (!inviteDoc || inviteDoc.status !== 'pending') throw new Error('Invite not found or already used');
+
+  const batch = writeBatch(firestore);
+
+  // Update invite status
+  batch.update(doc(firestore, COLLECTIONS.ORG_INVITES, inviteId), {
+    status: 'accepted',
+    acceptedAt: serverTimestamp(),
+  });
+
+  // Create membership
+  const memberId = `${inviteDoc.orgId}_${userId}`;
+  batch.set(doc(firestore, COLLECTIONS.ORG_MEMBERS, memberId), {
+    id: memberId,
+    orgId: inviteDoc.orgId,
+    userId,
+    userEmail: inviteDoc.email,
+    userName,
+    role: inviteDoc.role,
+    invitedBy: inviteDoc.invitedBy,
+    joinedAt: serverTimestamp(),
+  });
+
+  await batch.commit();
+}
+
+export async function getUserProfile(userId: string): Promise<UserProfile | null> {
+  return getDocument<UserProfile>(COLLECTIONS.USER_PROFILES, userId);
+}
+
+export async function createOrUpdateUserProfile(userId: string, data: Partial<UserProfile>): Promise<void> {
+  const existing = await getUserProfile(userId);
+  if (existing) {
+    await updateDocument(COLLECTIONS.USER_PROFILES, userId, { ...data, updatedAt: serverTimestamp() });
+  } else {
+    await setDoc(doc(firestore, COLLECTIONS.USER_PROFILES, userId), {
+      id: userId,
+      ...data,
+      createdAt: serverTimestamp(),
+    });
+  }
 }
