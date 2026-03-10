@@ -23,7 +23,9 @@
     "yes": "Yes",
     "no": "No",
     "required": "Required",
-    "optional": "Optional"
+    "optional": "Optional",
+    "all": "All",
+    "backToAdmin": "Back to panel"
   },
   "navigation": {
     "home": "Home",
@@ -426,6 +428,7 @@
     "questionsCount": "{count} questions",
     "statementsCount": "{count} statements",
     "pairsCount": "{count} pairs",
+    "backToTests": "Back to tests",
     "cognitive": {
       "title": "Cognitive Test",
       "description": "Measures logical reasoning, verbal comprehension, numerical reasoning, and pattern recognition skills.",
@@ -440,7 +443,15 @@
       "correct": "Correct",
       "percentile": "Percentile",
       "iqEstimate": "IQ Estimate",
-      "classification": "Classification"
+      "classification": "Classification",
+      "email": "Email",
+      "emailPlaceholder": "your@email.com",
+      "minutes": "minutes",
+      "name": "Full name",
+      "namePlaceholder": "Your full name",
+      "questions": "questions",
+      "start": "Start test",
+      "timerWarning": "This test is timed. The timer will start when you begin."
     },
     "personality": {
       "title": "Personality Test (Big Five)",
@@ -455,7 +466,12 @@
       },
       "resultsTitle": "Personality Profile",
       "dominantTraits": "Dominant Traits",
-      "workStyle": "Work Style"
+      "workStyle": "Work Style",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your@email.com",
+      "nameLabel": "Full name",
+      "namePlaceholder": "Your full name",
+      "startButton": "Start test"
     },
     "aptitude": {
       "title": "Aptitude Test",
@@ -470,7 +486,14 @@
       "overallScore": "Overall Score",
       "strengths": "Strengths",
       "weaknesses": "Areas for Improvement",
-      "suitableRoles": "Recommended Roles"
+      "suitableRoles": "Recommended Roles",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your@email.com",
+      "nameLabel": "Full name",
+      "namePlaceholder": "Your full name",
+      "questionCount": "questions",
+      "start": "Start test",
+      "timeLimit": "minutes"
     },
     "disc": {
       "title": "DISC Assessment",
@@ -491,7 +514,12 @@
       "leadershipStyle": "Leadership Style",
       "communicationStyle": "Communication Style",
       "strengths": "Strengths",
-      "challenges": "Challenges"
+      "challenges": "Challenges",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your@email.com",
+      "nameLabel": "Full name",
+      "namePlaceholder": "Your full name",
+      "startButton": "Start test"
     },
     "results": {
       "title": "Test Results",
@@ -530,7 +558,9 @@
     "suggestion": "Development Suggestion",
     "recommendations": "Recommendations",
     "noGaps": "No significant gaps identified.",
-    "noResults": "Select a candidate and job profile to calculate fit."
+    "noResults": "Select a candidate and job profile to calculate fit.",
+    "backToAdmin": "Back to panel",
+    "loading": "Loading..."
   },
   "jobProfiles": {
     "title": "Job Profiles",
@@ -638,14 +668,30 @@
       "inactive": "Inactive"
     },
     "linkedProfile": "Linked Profile",
+    "addEmployee": "Add employee",
+    "backToPanel": "Back to panel",
+    "selectProfile": "Select profile",
     "confirmDelete": "Are you sure you want to delete this employee?",
-    "deleteWarning": "This action cannot be undone."
+    "deleteWarning": "This action cannot be undone.",
+    "deleteConfirm": {
+      "title": "Confirm deletion",
+      "message": "Are you sure you want to delete this employee? This action cannot be undone."
+    },
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "probation": "On probation"
+    }
   },
   "probation": {
     "title": "Probation Evaluations",
     "subtitle": "3 and 6 month evaluations",
     "create": "Create Evaluation",
-    "period": "Period",
+    "period": {
+      "label": "Period",
+      "3month": "3 months",
+      "6month": "6 months"
+    },
     "periods": {
       "3-month": "3 Months",
       "6-month": "6 Months"
@@ -656,7 +702,19 @@
     "pending": "Pending",
     "completed": "Completed",
     "inProgress": "In Progress",
+    "status": {
+      "label": "Status",
+      "completed": "Completed",
+      "inProgress": "In progress",
+      "pending": "Pending"
+    },
+    "editEvaluation": "Edit evaluation",
+    "evaluationDetails": "Evaluation details",
+    "selectEmployee": "Employee",
+    "selectEmployeePlaceholder": "Select employee",
+    "commentsAndRecommendation": "Comments and recommendation",
     "scores": {
+      "title": "Scores",
       "jobKnowledge": "Job Knowledge",
       "workQuality": "Work Quality",
       "productivity": "Productivity",
@@ -666,7 +724,12 @@
       "communication": "Communication",
       "overall": "Overall"
     },
-    "recommendation": "Recommendation",
+    "recommendation": {
+      "label": "Recommendation",
+      "continue": "Continue",
+      "extendProbation": "Extend probation period",
+      "terminate": "Terminate contract"
+    },
     "recommendations": {
       "continue": "Continue",
       "extend-probation": "Extend Probation",
@@ -675,7 +738,10 @@
     "comments": "Comments",
     "sendAlert": "Send Alert",
     "alertSentSuccess": "Alert sent to supervisor.",
-    "noEvaluations": "No probation evaluations."
+    "noEvaluations": "No probation evaluations.",
+    "createEvaluation": "Create evaluation",
+    "filterByPeriod": "Filter by period",
+    "filterByStatus": "Filter by status"
   },
   "reviews": {
     "title": "Performance Reviews",

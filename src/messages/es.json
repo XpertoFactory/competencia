@@ -23,7 +23,9 @@
     "yes": "Sí",
     "no": "No",
     "required": "Requerido",
-    "optional": "Opcional"
+    "optional": "Opcional",
+    "all": "Todos",
+    "backToAdmin": "Volver al panel"
   },
   "navigation": {
     "home": "Inicio",
@@ -426,6 +428,7 @@
     "questionsCount": "{count} preguntas",
     "statementsCount": "{count} afirmaciones",
     "pairsCount": "{count} pares",
+    "backToTests": "Volver a pruebas",
     "cognitive": {
       "title": "Prueba Cognitiva",
       "description": "Mide habilidades de razonamiento lógico, verbal, numérico y reconocimiento de patrones.",
@@ -435,6 +438,14 @@
         "numerical": "Razonamiento Numérico",
         "pattern": "Reconocimiento de Patrones"
       },
+      "email": "Correo electrónico",
+      "emailPlaceholder": "tu@correo.com",
+      "minutes": "minutos",
+      "name": "Nombre completo",
+      "namePlaceholder": "Tu nombre completo",
+      "questions": "preguntas",
+      "start": "Iniciar prueba",
+      "timerWarning": "La prueba tiene tiempo limitado. El temporizador comenzará cuando inicies.",
       "timeWarning": "Cada pregunta tiene un límite de tiempo. Responde lo más rápido posible.",
       "resultsTitle": "Resultados Cognitivos",
       "correct": "Correctas",
@@ -445,6 +456,11 @@
     "personality": {
       "title": "Prueba de Personalidad (Big Five)",
       "description": "Identifica tus rasgos de personalidad: Apertura, Responsabilidad, Extraversión, Amabilidad y Neuroticismo.",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu@correo.com",
+      "nameLabel": "Nombre completo",
+      "namePlaceholder": "Tu nombre completo",
+      "startButton": "Iniciar prueba",
       "instructions": "Indica tu nivel de acuerdo con cada afirmación.",
       "traits": {
         "openness": "Apertura a la Experiencia",
@@ -466,6 +482,13 @@
         "analytical": "Aptitud Analítica",
         "technical": "Aptitud Técnica"
       },
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu@correo.com",
+      "nameLabel": "Nombre completo",
+      "namePlaceholder": "Tu nombre completo",
+      "questionCount": "preguntas",
+      "start": "Iniciar prueba",
+      "timeLimit": "minutos",
       "resultsTitle": "Resultados de Aptitudes",
       "overallScore": "Puntuación General",
       "strengths": "Fortalezas",
@@ -475,6 +498,11 @@
     "disc": {
       "title": "Evaluación DISC",
       "description": "Identifica tu estilo de comportamiento laboral: Dominancia, Influencia, Estabilidad y Cumplimiento.",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu@correo.com",
+      "nameLabel": "Nombre completo",
+      "namePlaceholder": "Tu nombre completo",
+      "startButton": "Iniciar prueba",
       "instructions": "En cada par, selecciona la afirmación que mejor te describe en el trabajo.",
       "chooseOne": "Elige una opción",
       "optionA": "Opción A",
@@ -530,7 +558,9 @@
     "suggestion": "Sugerencia de Desarrollo",
     "recommendations": "Recomendaciones",
     "noGaps": "No se identificaron brechas significativas.",
-    "noResults": "Seleccione un candidato y un perfil de puesto para calcular el ajuste."
+    "noResults": "Seleccione un candidato y un perfil de puesto para calcular el ajuste.",
+    "backToAdmin": "Volver al panel",
+    "loading": "Cargando..."
   },
   "jobProfiles": {
     "title": "Perfiles de Puesto",
@@ -637,7 +667,19 @@
       "active": "Activo",
       "inactive": "Inactivo"
     },
+    "status": {
+      "active": "Activo",
+      "inactive": "Inactivo",
+      "probation": "En prueba"
+    },
     "linkedProfile": "Perfil Vinculado",
+    "addEmployee": "Agregar empleado",
+    "backToPanel": "Volver al panel",
+    "selectProfile": "Seleccionar perfil",
+    "deleteConfirm": {
+      "title": "Confirmar eliminación",
+      "message": "¿Estás seguro de que deseas eliminar este empleado? Esta acción no se puede deshacer."
+    },
     "confirmDelete": "¿Está seguro de que desea eliminar este empleado?",
     "deleteWarning": "Esta acción no se puede deshacer."
   },
@@ -645,7 +687,11 @@
     "title": "Evaluaciones de Período de Prueba",
     "subtitle": "Evaluaciones a los 3 y 6 meses",
     "create": "Crear Evaluación",
-    "period": "Período",
+    "period": {
+      "label": "Período",
+      "3month": "3 meses",
+      "6month": "6 meses"
+    },
     "periods": {
       "3-month": "3 Meses",
       "6-month": "6 Meses"
@@ -656,7 +702,19 @@
     "pending": "Pendiente",
     "completed": "Completada",
     "inProgress": "En Progreso",
+    "status": {
+      "label": "Estado",
+      "completed": "Completada",
+      "inProgress": "En progreso",
+      "pending": "Pendiente"
+    },
+    "editEvaluation": "Editar evaluación",
+    "evaluationDetails": "Detalles de la evaluación",
+    "selectEmployee": "Empleado",
+    "selectEmployeePlaceholder": "Seleccionar empleado",
+    "commentsAndRecommendation": "Comentarios y recomendación",
     "scores": {
+      "title": "Puntuaciones",
       "jobKnowledge": "Conocimiento del Puesto",
       "workQuality": "Calidad del Trabajo",
       "productivity": "Productividad",
@@ -666,7 +724,12 @@
       "communication": "Comunicación",
       "overall": "General"
     },
-    "recommendation": "Recomendación",
+    "recommendation": {
+      "label": "Recomendación",
+      "continue": "Continuar",
+      "extendProbation": "Extender período de prueba",
+      "terminate": "Terminar contrato"
+    },
     "recommendations": {
       "continue": "Continuar",
       "extend-probation": "Extender Período de Prueba",
@@ -675,7 +738,10 @@
     "comments": "Comentarios",
     "sendAlert": "Enviar Alerta",
     "alertSentSuccess": "Alerta enviada al supervisor.",
-    "noEvaluations": "No hay evaluaciones de período de prueba."
+    "noEvaluations": "No hay evaluaciones de período de prueba.",
+    "createEvaluation": "Crear evaluación",
+    "filterByPeriod": "Filtrar por período",
+    "filterByStatus": "Filtrar por estado"
   },
   "reviews": {
     "title": "Evaluaciones de Desempeño",

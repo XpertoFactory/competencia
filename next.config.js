@@ -4,8 +4,8 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Enable static exports for Firebase Hosting if needed
-  // output: 'export',
+  // Static export not possible due to dynamic routes ([profileId], [evaluationId], [linkId])
+  // Use Firebase Hosting with web framework support or deploy to Vercel instead
 };
 
 module.exports = withNextIntl(nextConfig);
