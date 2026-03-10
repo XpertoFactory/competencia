@@ -3,18 +3,21 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
+import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
 import { Button, Card, CardContent, Input } from '@/components/ui';
-import { signInAdmin, signInAdminWithGoogle } from '@/lib/firebase/auth';
-import { LogIn, AlertCircle } from 'lucide-react';
+import { registerWithEmail, signInWithGoogle } from '@/lib/firebase/auth';
+import { UserPlus, AlertCircle } from 'lucide-react';
 
-export default function AdminLoginPage() {
+export default function UserRegisterPage() {
   const t = useTranslations();
   const locale = useLocale();
   const router = useRouter();
 
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
@@ -22,37 +25,47 @@ export default function AdminLoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
+
+    // Validation
+    if (password.length < 6) {
+      setError(t('auth.passwordTooShort'));
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError(t('auth.passwordMismatch'));
+      return;
+    }
+
     setLoading(true);
 
     try {
-      await signInAdmin(email, password);
-      router.push(`/${locale}/admin`);
+      await registerWithEmail(email, password, name);
+      router.push(`/${locale}`);
     } catch (err: any) {
-      if (err.message === 'unauthorized') {
-        setError(t('errors.unauthorized'));
-      } else if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
-        setError(t('auth.invalidCredentials'));
+      if (err.code === 'auth/email-already-in-use') {
+        setError(t('errors.emailInUse'));
+      } else if (err.code === 'auth/weak-password') {
+        setError(t('errors.weakPassword'));
+      } else if (err.code === 'auth/invalid-email') {
+        setError(t('errors.invalidEmail'));
       } else {
-        setError(t('errors.generic'));
+        setError(t('errors.registrationFailed'));
       }
     } finally {
       setLoading(false);
     }
   };
 
-  const handleGoogleSignIn = async () => {
+  const handleGoogleSignUp = async () => {
     setError('');
     setGoogleLoading(true);
 
     try {
-      await signInAdminWithGoogle();
-      router.push(`/${locale}/admin`);
+      await signInWithGoogle();
+      router.push(`/${locale}`);
     } catch (err: any) {
-      if (err.message === 'unauthorized') {
-        setError(t('errors.unauthorized'));
-      } else {
-        setError(t('errors.googleLoginFailed'));
-      }
+      setError(t('errors.googleLoginFailed'));
     } finally {
       setGoogleLoading(false);
     }
@@ -62,18 +75,18 @@ export default function AdminLoginPage() {
     <div className="min-h-screen flex flex-col bg-gray-100">
       <Header />
 
-      <main className="flex-1 flex items-center justify-center px-4">
+      <main className="flex-1 flex items-center justify-center px-4 py-12">
         <Card variant="bordered" className="w-full max-w-md">
           <CardContent className="p-8">
             <div className="text-center mb-8">
               <div className="inline-flex p-3 rounded-full bg-primary-100 mb-4">
-                <LogIn className="w-8 h-8 text-primary-600" />
+                <UserPlus className="w-8 h-8 text-primary-600" />
               </div>
               <h1 className="text-2xl font-bold text-gray-900">
-                {t('auth.loginTitle')}
+                {t('auth.registerTitle')}
               </h1>
               <p className="text-gray-600 mt-1">
-                {t('auth.loginSubtitle')}
+                {t('auth.registerSubtitle')}
               </p>
             </div>
 
@@ -85,6 +98,15 @@ export default function AdminLoginPage() {
             )}
 
             <form onSubmit={handleSubmit} className="space-y-4">
+              <Input
+                label={t('auth.name')}
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder={t('auth.namePlaceholder')}
+                required
+                autoComplete="name"
+              />
               <Input
                 label={t('auth.email')}
                 type="email"
@@ -99,16 +121,24 @@ export default function AdminLoginPage() {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                autoComplete="current-password"
+                autoComplete="new-password"
+              />
+              <Input
+                label={t('auth.confirmPassword')}
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                autoComplete="new-password"
               />
               <Button
                 type="submit"
                 variant="primary"
                 className="w-full"
                 isLoading={loading}
-                disabled={!email || !password}
+                disabled={!name || !email || !password || !confirmPassword}
               >
-                {t('auth.loginButton')}
+                {t('auth.registerButton')}
               </Button>
             </form>
 
@@ -125,7 +155,7 @@ export default function AdminLoginPage() {
               type="button"
               variant="outline"
               className="w-full flex items-center justify-center gap-2"
-              onClick={handleGoogleSignIn}
+              onClick={handleGoogleSignUp}
               isLoading={googleLoading}
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24">
@@ -146,8 +176,20 @@ export default function AdminLoginPage() {
                   fill="#EA4335"
                 />
               </svg>
-              {t('auth.signInWithGoogle')}
+              {t('auth.signUpWithGoogle')}
             </Button>
+
+            <div className="mt-6 text-center">
+              <p className="text-sm text-gray-600">
+                {t('auth.haveAccount')}{' '}
+                <Link
+                  href={`/${locale}/auth/login`}
+                  className="text-primary-600 hover:text-primary-700 font-medium"
+                >
+                  {t('auth.goToLogin')}
+                </Link>
+              </p>
+            </div>
           </CardContent>
         </Card>
       </main>

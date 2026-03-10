@@ -5,9 +5,11 @@ import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui';
-import { Menu, X, Globe } from 'lucide-react';
-import { useState } from 'react';
+import { Menu, X, Globe, LogIn, LogOut, User } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { onAuthChange, signOut } from '@/lib/firebase/auth';
+import type { User as FirebaseUser } from 'firebase/auth';
 
 export function Header() {
   const t = useTranslations('navigation');
@@ -16,8 +18,21 @@ export function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [user, setUser] = useState<FirebaseUser | null>(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthChange((firebaseUser) => {
+      setUser(firebaseUser);
+    });
+    return unsubscribe;
+  }, []);
+
+  const handleLogout = async () => {
+    await signOut();
+    setUser(null);
+    router.push(`/${locale}`);
+  };
 
   const switchToLocale = (newLocale: string) => {
     const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
@@ -79,6 +94,40 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+
+            {/* User Auth Section */}
+            {user ? (
+              <div className="flex items-center gap-3">
+                <div className="flex items-center gap-1.5 text-sm text-gray-700">
+                  <User className="w-4 h-4 text-gray-500" />
+                  <span className="max-w-[150px] truncate">
+                    {user.displayName || user.email}
+                  </span>
+                </div>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={handleLogout}
+                  className="flex items-center gap-1.5 text-gray-600 hover:text-gray-900"
+                >
+                  <LogOut className="w-4 h-4" />
+                  <span className="hidden lg:inline">{t('logout')}</span>
+                </Button>
+              </div>
+            ) : (
+              <Link
+                href={`/${locale}/auth/login`}
+                className={cn(
+                  'flex items-center gap-1.5 text-sm font-medium transition-colors',
+                  pathname === `/${locale}/auth/login`
+                    ? 'text-primary-600'
+                    : 'text-gray-600 hover:text-gray-900'
+                )}
+              >
+                <LogIn className="w-4 h-4" />
+                {t('login')}
+              </Link>
+            )}
 
             {/* Language Switcher */}
             <div className="relative">
@@ -146,6 +195,36 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Mobile User Auth */}
+            {user ? (
+              <>
+                <div className="flex items-center gap-2 px-3 py-2 text-sm text-gray-700">
+                  <User className="w-4 h-4 text-gray-500" />
+                  <span className="truncate">{user.displayName || user.email}</span>
+                </div>
+                <button
+                  onClick={() => {
+                    handleLogout();
+                    setIsMenuOpen(false);
+                  }}
+                  className="flex items-center gap-2 w-full px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50"
+                >
+                  <LogOut className="w-4 h-4" />
+                  {t('logout')}
+                </button>
+              </>
+            ) : (
+              <Link
+                href={`/${locale}/auth/login`}
+                className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                <LogIn className="w-4 h-4" />
+                {t('login')}
+              </Link>
+            )}
+
             {Object.entries(localeNames)
               .filter(([code]) => code !== locale)
               .map(([code, name]) => (

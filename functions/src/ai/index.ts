@@ -8,15 +8,16 @@ export { ClaudeProvider } from './claude';
 export { OpenAIProvider } from './openai';
 export { GeminiProvider } from './gemini';
 
-export function createAIProvider(type: AIProviderType, apiKey?: string): AIProvider {
-  switch (type) {
+export function createAIProvider(type?: AIProviderType, apiKey?: string): AIProvider {
+  const providerType = type || 'gemini';
+  switch (providerType) {
+    case 'gemini':
+      return new GeminiProvider(apiKey);
     case 'claude':
       return new ClaudeProvider(apiKey);
     case 'openai':
       return new OpenAIProvider(apiKey);
-    case 'gemini':
-      return new GeminiProvider(apiKey);
     default:
-      throw new Error(`Unknown AI provider type: ${type}`);
+      throw new Error(`Unknown AI provider type: ${providerType}`);
   }
 }

@@ -3,12 +3,13 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
+import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
 import { Button, Card, CardContent, Input } from '@/components/ui';
-import { signInAdmin, signInAdminWithGoogle } from '@/lib/firebase/auth';
+import { signInUser, signInWithGoogle } from '@/lib/firebase/auth';
 import { LogIn, AlertCircle } from 'lucide-react';
 
-export default function AdminLoginPage() {
+export default function UserLoginPage() {
   const t = useTranslations();
   const locale = useLocale();
   const router = useRouter();
@@ -25,15 +26,13 @@ export default function AdminLoginPage() {
     setLoading(true);
 
     try {
-      await signInAdmin(email, password);
-      router.push(`/${locale}/admin`);
+      await signInUser(email, password);
+      router.push(`/${locale}`);
     } catch (err: any) {
-      if (err.message === 'unauthorized') {
-        setError(t('errors.unauthorized'));
-      } else if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
+      if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
         setError(t('auth.invalidCredentials'));
       } else {
-        setError(t('errors.generic'));
+        setError(t('errors.loginFailed'));
       }
     } finally {
       setLoading(false);
@@ -45,14 +44,10 @@ export default function AdminLoginPage() {
     setGoogleLoading(true);
 
     try {
-      await signInAdminWithGoogle();
-      router.push(`/${locale}/admin`);
+      await signInWithGoogle();
+      router.push(`/${locale}`);
     } catch (err: any) {
-      if (err.message === 'unauthorized') {
-        setError(t('errors.unauthorized'));
-      } else {
-        setError(t('errors.googleLoginFailed'));
-      }
+      setError(t('errors.googleLoginFailed'));
     } finally {
       setGoogleLoading(false);
     }
@@ -62,7 +57,7 @@ export default function AdminLoginPage() {
     <div className="min-h-screen flex flex-col bg-gray-100">
       <Header />
 
-      <main className="flex-1 flex items-center justify-center px-4">
+      <main className="flex-1 flex items-center justify-center px-4 py-12">
         <Card variant="bordered" className="w-full max-w-md">
           <CardContent className="p-8">
             <div className="text-center mb-8">
@@ -70,10 +65,10 @@ export default function AdminLoginPage() {
                 <LogIn className="w-8 h-8 text-primary-600" />
               </div>
               <h1 className="text-2xl font-bold text-gray-900">
-                {t('auth.loginTitle')}
+                {t('auth.userLoginTitle')}
               </h1>
               <p className="text-gray-600 mt-1">
-                {t('auth.loginSubtitle')}
+                {t('auth.userLoginSubtitle')}
               </p>
             </div>
 
@@ -148,6 +143,26 @@ export default function AdminLoginPage() {
               </svg>
               {t('auth.signInWithGoogle')}
             </Button>
+
+            <div className="mt-6 text-center space-y-2">
+              <p className="text-sm text-gray-600">
+                {t('auth.noAccount')}{' '}
+                <Link
+                  href={`/${locale}/auth/register`}
+                  className="text-primary-600 hover:text-primary-700 font-medium"
+                >
+                  {t('auth.goToRegister')}
+                </Link>
+              </p>
+              <p className="text-sm text-gray-500">
+                <Link
+                  href={`/${locale}/admin/login`}
+                  className="text-gray-500 hover:text-gray-700 underline"
+                >
+                  {t('auth.adminLogin')}
+                </Link>
+              </p>
+            </div>
           </CardContent>
         </Card>
       </main>

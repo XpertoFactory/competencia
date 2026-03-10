@@ -28,13 +28,6 @@
       ]
     },
     {
-      "collectionGroup": "results",
-      "queryScope": "COLLECTION",
-      "fields": [
-        { "fieldPath": "evaluationId", "order": "ASCENDING" }
-      ]
-    },
-    {
       "collectionGroup": "archetypeProfiles",
       "queryScope": "COLLECTION",
       "fields": [
@@ -58,6 +51,22 @@
         { "fieldPath": "targetProfiles", "arrayConfig": "CONTAINS" },
         { "fieldPath": "isActive", "order": "ASCENDING" },
         { "fieldPath": "priority", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "profiles",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "isActive", "order": "ASCENDING" },
+        { "fieldPath": "name.es", "order": "ASCENDING" }
+      ]
+    },
+    {
+      "collectionGroup": "reviewAssignments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        { "fieldPath": "raterEmail", "order": "ASCENDING" },
+        { "fieldPath": "status", "order": "ASCENDING" }
       ]
     }
   ],

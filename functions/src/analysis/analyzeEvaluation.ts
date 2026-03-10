@@ -53,8 +53,8 @@ export async function analyzeEvaluation(evaluationId: string): Promise<void> {
   // Get settings
   const settingsDoc = await getDb().collection('settings').doc('app').get();
   const settings = (settingsDoc.data() || {
-    aiMode: 'rule-based',
-    aiProvider: 'claude',
+    aiMode: 'gemini',
+    aiProvider: 'gemini',
   }) as Settings;
 
   // Get profile info
