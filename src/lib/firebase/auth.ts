@@ -40,6 +40,7 @@ export async function signInAdmin(email: string, password: string): Promise<Admi
 // Admin sign-in with Google: checks admin status after authentication
 export async function signInAdminWithGoogle(): Promise<AdminUser> {
   const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' });
   const credential = await signInWithPopup(firebaseAuth, provider);
   const user = credential.user;
 
@@ -76,6 +77,7 @@ export async function registerWithEmail(email: string, password: string, display
 // Sign in with Google (regular user)
 export async function signInWithGoogle(): Promise<User> {
   const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({ prompt: 'select_account' });
   const credential = await signInWithPopup(firebaseAuth, provider);
   return credential.user;
 }
