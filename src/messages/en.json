@@ -36,7 +36,8 @@
     "settings": "Settings",
     "language": "Language",
     "spanish": "Spanish",
-    "english": "English"
+    "english": "English",
+    "french": "French"
   },
   "landing": {
     "title": "Professional Competency Evaluation",
@@ -843,5 +844,32 @@
     "updated": "Updated successfully",
     "deleted": "Deleted successfully",
     "evaluationSubmitted": "Evaluation submitted successfully"
+  },
+  "profiles": {
+    "filterBySector": "Filter by sector",
+    "filterByLevel": "Filter by level",
+    "allSectors": "All sectors",
+    "allLevels": "All levels",
+    "sectors": {
+      "insurance": "Insurance",
+      "education": "Education",
+      "retail-services": "Retail & Services",
+      "healthcare": "Healthcare",
+      "transportation": "Transportation",
+      "finance-accounting": "Finance & Accounting",
+      "compliance-legal": "Compliance & Legal",
+      "human-resources": "Human Resources",
+      "commercial-business": "Commercial / Business",
+      "collections-credit": "Collections / Credit",
+      "customer-service": "Customer Service",
+      "general-management": "General Management"
+    },
+    "levels": {
+      "executive": "Executive (C-Suite)",
+      "managerial": "Managerial",
+      "professional-specialist": "Professional / Specialist",
+      "administrative": "Administrative",
+      "operative": "Operative"
+    }
   }
 }

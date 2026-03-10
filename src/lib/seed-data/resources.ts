@@ -8,10 +8,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Fundamentos del Seguro',
       en: 'Insurance Fundamentals',
+      fr: "Fondamentaux de l'assurance",
     },
     description: {
       es: 'Curso introductorio que cubre los conceptos básicos del seguro, tipos de pólizas y terminología esencial.',
       en: 'Introductory course covering basic insurance concepts, policy types, and essential terminology.',
+      fr: "Cours d'introduction couvrant les concepts de base de l'assurance, les types de polices et la terminologie essentielle.",
     },
     targetCategories: ['professional'],
     targetProfiles: ['prof-beginner', 'prof-developing'],
@@ -27,10 +29,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Suscripción de Riesgos',
       en: 'Risk Underwriting',
+      fr: 'Souscription des risques',
     },
     description: {
       es: 'Curso intermedio sobre evaluación de riesgos, análisis de solicitudes y toma de decisiones de suscripción.',
       en: 'Intermediate course on risk evaluation, application analysis, and underwriting decision making.',
+      fr: "Cours intermédiaire sur l'évaluation des risques, l'analyse des demandes et la prise de décision en souscription.",
     },
     targetCategories: ['professional'],
     targetProfiles: ['prof-developing', 'prof-competent'],
@@ -46,10 +50,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Gestión de Reclamaciones',
       en: 'Claims Management',
+      fr: 'Gestion des sinistres',
     },
     description: {
       es: 'Curso sobre procesamiento de reclamaciones, investigación de siniestros y servicio al cliente.',
       en: 'Course on claims processing, loss investigation, and customer service.',
+      fr: "Cours sur le traitement des sinistres, l'investigation des pertes et le service client.",
     },
     targetCategories: ['professional'],
     targetProfiles: ['prof-competent'],
@@ -65,10 +71,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Habilidades de Comunicación Efectiva',
       en: 'Effective Communication Skills',
+      fr: 'Compétences en communication efficace',
     },
     description: {
       es: 'Desarrollo de habilidades de comunicación verbal, escrita y presentaciones.',
       en: 'Development of verbal, written, and presentation communication skills.',
+      fr: 'Développement des compétences en communication verbale, écrite et de présentation.',
     },
     targetCategories: ['soft-skills'],
     targetProfiles: ['soft-developing', 'soft-reserved'],
@@ -84,10 +92,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Liderazgo en el Sector Seguros',
       en: 'Leadership in Insurance',
+      fr: "Leadership dans l'assurance",
     },
     description: {
       es: 'Programa de desarrollo de liderazgo para profesionales del sector seguros.',
       en: 'Leadership development program for insurance professionals.',
+      fr: "Programme de développement du leadership pour les professionnels de l'assurance.",
     },
     targetCategories: ['soft-skills'],
     targetProfiles: ['soft-leader'],
@@ -103,10 +113,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Transformación Digital en Seguros',
       en: 'Digital Transformation in Insurance',
+      fr: "Transformation numérique dans l'assurance",
     },
     description: {
       es: 'Introducción a las tecnologías digitales y su impacto en la industria de seguros.',
       en: 'Introduction to digital technologies and their impact on the insurance industry.',
+      fr: "Introduction aux technologies numériques et leur impact sur l'industrie de l'assurance.",
     },
     targetCategories: ['readiness'],
     targetProfiles: ['ready-cautious', 'ready-adapter'],
@@ -124,10 +136,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Shadowing con Experto',
       en: 'Expert Shadowing',
+      fr: "Observation d'expert",
     },
     description: {
       es: 'Acompañamiento a un profesional experimentado durante sus actividades diarias.',
       en: 'Accompanying an experienced professional during their daily activities.',
+      fr: "Accompagnement d'un professionnel expérimenté durant ses activités quotidiennes.",
     },
     targetCategories: ['professional'],
     targetProfiles: ['prof-beginner', 'prof-developing'],
@@ -141,10 +155,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Análisis de Casos Reales',
       en: 'Real Case Analysis',
+      fr: 'Analyse de cas réels',
     },
     description: {
       es: 'Ejercicio práctico analizando casos reales de suscripción y reclamaciones.',
       en: 'Practical exercise analyzing real underwriting and claims cases.',
+      fr: "Exercice pratique d'analyse de cas réels de souscription et de sinistres.",
     },
     targetCategories: ['professional'],
     targetProfiles: ['prof-developing', 'prof-competent'],
@@ -158,10 +174,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Role Play de Servicio al Cliente',
       en: 'Customer Service Role Play',
+      fr: 'Jeu de rôle service client',
     },
     description: {
       es: 'Simulaciones de interacciones con clientes para practicar comunicación.',
       en: 'Client interaction simulations to practice communication.',
+      fr: "Simulations d'interactions avec les clients pour pratiquer la communication.",
     },
     targetCategories: ['soft-skills'],
     targetProfiles: ['soft-developing', 'soft-collaborator'],
@@ -175,10 +193,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Piloto de Nueva Tecnología',
       en: 'New Technology Pilot',
+      fr: 'Pilote de nouvelle technologie',
     },
     description: {
       es: 'Participación en proyectos piloto para probar nuevas herramientas tecnológicas.',
       en: 'Participation in pilot projects to test new technological tools.',
+      fr: 'Participation à des projets pilotes pour tester de nouveaux outils technologiques.',
     },
     targetCategories: ['readiness'],
     targetProfiles: ['ready-adapter', 'ready-innovator'],
@@ -194,10 +214,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Glosario de Términos de Seguros',
       en: 'Insurance Terms Glossary',
+      fr: "Glossaire des termes d'assurance",
     },
     description: {
       es: 'Diccionario completo de términos técnicos del sector seguros.',
       en: 'Complete dictionary of technical terms in the insurance sector.',
+      fr: "Dictionnaire complet des termes techniques du secteur de l'assurance.",
     },
     targetCategories: ['professional'],
     targetProfiles: [],
@@ -212,10 +234,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Plantillas de Comunicación',
       en: 'Communication Templates',
+      fr: 'Modèles de communication',
     },
     description: {
       es: 'Plantillas para comunicación con clientes en diferentes situaciones.',
       en: 'Templates for client communication in different situations.',
+      fr: 'Modèles pour la communication avec les clients dans différentes situations.',
     },
     targetCategories: ['soft-skills'],
     targetProfiles: [],
@@ -230,10 +254,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Podcast: Innovación en Seguros',
       en: 'Podcast: Insurance Innovation',
+      fr: 'Podcast : Innovation en assurance',
     },
     description: {
       es: 'Episodios semanales sobre tendencias y tecnología en seguros.',
       en: 'Weekly episodes on trends and technology in insurance.',
+      fr: 'Épisodes hebdomadaires sur les tendances et la technologie en assurance.',
     },
     targetCategories: ['readiness'],
     targetProfiles: [],
@@ -250,10 +276,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Programa de Mentoría',
       en: 'Mentoring Program',
+      fr: 'Programme de mentorat',
     },
     description: {
       es: 'Asignación de un mentor experimentado para guiar el desarrollo profesional.',
       en: 'Assignment of an experienced mentor to guide professional development.',
+      fr: "Attribution d'un mentor expérimenté pour guider le développement professionnel.",
     },
     targetCategories: ['professional', 'soft-skills'],
     targetProfiles: ['prof-beginner', 'prof-developing'],
@@ -267,10 +295,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Grupos de Apoyo entre Pares',
       en: 'Peer Support Groups',
+      fr: 'Groupes de soutien entre pairs',
     },
     description: {
       es: 'Grupos pequeños para compartir experiencias y aprender juntos.',
       en: 'Small groups to share experiences and learn together.',
+      fr: 'Petits groupes pour partager des expériences et apprendre ensemble.',
     },
     targetCategories: ['soft-skills', 'readiness'],
     targetProfiles: ['soft-developing', 'ready-cautious'],
@@ -284,10 +314,12 @@ export const resources: Resource[] = [
     name: {
       es: 'Adopción Tecnológica Gradual',
       en: 'Gradual Technology Adoption',
+      fr: 'Adoption technologique progressive',
     },
     description: {
       es: 'Plan paso a paso para adoptar nuevas tecnologías con apoyo continuo.',
       en: 'Step-by-step plan to adopt new technologies with ongoing support.',
+      fr: 'Plan étape par étape pour adopter les nouvelles technologies avec un soutien continu.',
     },
     targetCategories: ['readiness'],
     targetProfiles: ['ready-traditional', 'ready-cautious'],

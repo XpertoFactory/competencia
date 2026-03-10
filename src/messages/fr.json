@@ -1,0 +1,875 @@
+{
+  "common": {
+    "appName": "Évaluation des Compétences",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "submit": "Soumettre",
+    "close": "Fermer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "export": "Exporter",
+    "download": "Télécharger",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "create": "Créer",
+    "back": "Retour",
+    "continue": "Continuer",
+    "finish": "Terminer",
+    "yes": "Oui",
+    "no": "Non",
+    "required": "Obligatoire",
+    "optional": "Facultatif",
+    "all": "Tous",
+    "backToAdmin": "Retour au panneau"
+  },
+  "navigation": {
+    "home": "Accueil",
+    "evaluation": "Évaluation",
+    "results": "Résultats",
+    "tests": "Tests",
+    "admin": "Administration",
+    "settings": "Paramètres",
+    "language": "Langue",
+    "spanish": "Espagnol",
+    "english": "Anglais",
+    "french": "Français"
+  },
+  "landing": {
+    "title": "Évaluation des Compétences Professionnelles",
+    "subtitle": "Découvrez votre profil professionnel et recevez des recommandations personnalisées pour votre développement",
+    "description": "Notre évaluation complète analyse vos compétences professionnelles, vos compétences comportementales et votre disposition au changement pour vous aider à progresser dans le secteur de l'assurance.",
+    "startEvaluation": "Commencer l'évaluation",
+    "selectProfile": "Sélectionnez votre profil professionnel",
+    "profilesTitle": "Profils disponibles",
+    "features": {
+      "title": "Que évaluons-nous ?",
+      "professional": {
+        "title": "Compétences Professionnelles",
+        "description": "Connaissances techniques et compétences spécifiques au secteur"
+      },
+      "softSkills": {
+        "title": "Compétences Comportementales",
+        "description": "Communication, travail en équipe, leadership et plus encore"
+      },
+      "readiness": {
+        "title": "Disposition au Changement",
+        "description": "Adaptabilité, apprentissage continu et adoption des nouvelles technologies"
+      }
+    },
+    "howItWorks": {
+      "title": "Comment ça fonctionne ?",
+      "step1": {
+        "title": "Sélectionnez votre profil",
+        "description": "Choisissez le profil professionnel qui correspond le mieux à votre rôle"
+      },
+      "step2": {
+        "title": "Complétez l'évaluation",
+        "description": "Répondez aux questions, études de cas et exercices interactifs"
+      },
+      "step3": {
+        "title": "Recevez votre analyse",
+        "description": "Obtenez un diagnostic détaillé de vos forces et opportunités"
+      },
+      "step4": {
+        "title": "Plan de développement",
+        "description": "Recevez des recommandations personnalisées pour votre croissance professionnelle"
+      }
+    }
+  },
+  "registration": {
+    "title": "Informations du Participant",
+    "subtitle": "Veuillez compléter vos informations pour commencer l'évaluation",
+    "name": "Nom complet",
+    "namePlaceholder": "Saisissez votre nom complet",
+    "email": "Adresse e-mail",
+    "emailPlaceholder": "vous@email.com",
+    "department": "Département",
+    "departmentPlaceholder": "Sélectionnez votre département",
+    "position": "Poste",
+    "positionPlaceholder": "Votre poste actuel",
+    "experience": "Années d'expérience",
+    "experiencePlaceholder": "Années dans le secteur",
+    "startEvaluation": "Commencer l'évaluation",
+    "privacyNote": "Vos informations seront traitées de manière confidentielle et utilisées uniquement pour générer votre évaluation personnalisée."
+  },
+  "evaluation": {
+    "title": "Évaluation en cours",
+    "progress": "Progression",
+    "question": "Question",
+    "of": "sur",
+    "category": "Catégorie",
+    "categories": {
+      "professional": "Compétences Professionnelles",
+      "softSkills": "Compétences Comportementales",
+      "readiness": "Disposition au Changement"
+    },
+    "questionTypes": {
+      "multipleChoice": "Sélectionnez la meilleure option",
+      "scale": "Indiquez votre niveau d'accord",
+      "openText": "Rédigez votre réponse",
+      "scenario": "Analysez le cas suivant",
+      "ranking": "Ordonnez les options selon votre préférence"
+    },
+    "scale": {
+      "stronglyDisagree": "Tout à fait en désaccord",
+      "disagree": "En désaccord",
+      "neutral": "Neutre",
+      "agree": "D'accord",
+      "stronglyAgree": "Tout à fait d'accord"
+    },
+    "openText": {
+      "placeholder": "Rédigez votre réponse ici...",
+      "minChars": "Minimum {min} caractères"
+    },
+    "scenario": {
+      "instructions": "Lisez le scénario suivant et répondez aux questions",
+      "yourResponse": "Votre réponse"
+    },
+    "ranking": {
+      "instructions": "Glissez pour ordonner les options",
+      "mostImportant": "Le plus important",
+      "leastImportant": "Le moins important"
+    },
+    "saveProgress": "Enregistrer la progression",
+    "progressSaved": "Progression enregistrée",
+    "resumeEvaluation": "Reprendre l'évaluation",
+    "confirmSubmit": "Êtes-vous sûr de vouloir soumettre votre évaluation ?",
+    "submitWarning": "Une fois soumise, vous ne pourrez plus modifier vos réponses.",
+    "submitting": "Soumission de l'évaluation...",
+    "submitted": "Évaluation soumise avec succès",
+    "analyzing": "Analyse de vos réponses..."
+  },
+  "results": {
+    "title": "Résultats de votre évaluation",
+    "subtitle": "Analyse complète de vos compétences",
+    "analyzing": "Analyse de vos résultats...",
+    "analyzingDescription": "Nous traitons votre évaluation. Cela peut prendre quelques instants. Les résultats apparaîtront automatiquement.",
+    "generatedFor": "Généré pour",
+    "generatedOn": "Date de l'analyse",
+    "downloadPdf": "Télécharger le PDF",
+    "shareResults": "Partager les résultats",
+    "linkCopied": "Lien copié !",
+    "indices": {
+      "title": "Indices de Compétences",
+      "professional": "Indice Professionnel",
+      "softSkills": "Indice des Compétences Comportementales",
+      "readiness": "Indice de Disposition au Changement",
+      "overall": "Indice Global"
+    },
+    "strengths": {
+      "title": "Vos Points Forts",
+      "subtitle": "Domaines où vous démontrez une haute performance"
+    },
+    "opportunities": {
+      "title": "Opportunités de Développement",
+      "subtitle": "Domaines à fort potentiel de développement"
+    },
+    "profiles": {
+      "title": "Profils Attribués",
+      "subtitle": "Sur la base de votre évaluation, nous vous identifions aux profils suivants",
+      "professional": "Profil Professionnel",
+      "softSkills": "Profil Compétences Comportementales",
+      "readiness": "Profil d'Adaptabilité",
+      "matchPercentage": "Correspondance",
+      "traits": "Caractéristiques"
+    },
+    "recommendations": {
+      "title": "Recommandations Personnalisées",
+      "personalizedMessage": "Message Personnalisé",
+      "trainingPath": {
+        "title": "Parcours de Formation",
+        "subtitle": "Cours et formations recommandés pour votre développement"
+      },
+      "activities": {
+        "title": "Activités Suggérées",
+        "subtitle": "Exercices pratiques pour renforcer vos compétences"
+      },
+      "resources": {
+        "title": "Ressources Complémentaires",
+        "subtitle": "Supports d'accompagnement pour votre apprentissage"
+      },
+      "changeStrategies": {
+        "title": "Stratégies de Gestion du Changement",
+        "subtitle": "Techniques pour faciliter votre adaptation"
+      },
+      "strengthSupport": {
+        "title": "Soutien à vos Points Forts",
+        "subtitle": "Comment renforcer ce que vous faites déjà bien"
+      },
+      "growthSupport": {
+        "title": "Soutien à votre Développement",
+        "subtitle": "Ressources pour développer vos opportunités"
+      }
+    }
+  },
+  "admin": {
+    "title": "Panneau d'Administration",
+    "dashboard": "Tableau de bord",
+    "stats": {
+      "totalEvaluations": "Évaluations Totales",
+      "completedToday": "Complétées Aujourd'hui",
+      "inProgress": "En Cours",
+      "averageScore": "Score Moyen"
+    },
+    "recentEvaluations": "Évaluations Récentes",
+    "viewAll": "Voir tout",
+    "table": {
+      "candidate": "Candidat",
+      "profile": "Profil",
+      "status": "Statut",
+      "score": "Score",
+      "date": "Date",
+      "actions": "Actions",
+      "view": "Voir"
+    },
+    "quickActions": {
+      "createProfile": "Créer un Profil",
+      "createProfileDesc": "Ajouter un nouveau profil professionnel",
+      "addQuestions": "Ajouter des Questions",
+      "addQuestionsDesc": "Créer de nouvelles questions",
+      "manageResources": "Gérer les Ressources",
+      "manageResourcesDesc": "Cours et supports"
+    },
+    "profiles": {
+      "title": "Profils Professionnels",
+      "create": "Créer un Profil",
+      "edit": "Modifier le Profil",
+      "name": "Nom du profil",
+      "description": "Description",
+      "stubDescription": "Gérez les profils professionnels disponibles pour l'évaluation.",
+      "categories": "Catégories de compétences",
+      "active": "Actif",
+      "inactive": "Inactif",
+      "nameEs": "Nom (Espagnol)",
+      "nameEn": "Nom (Anglais)",
+      "descriptionEs": "Description (Espagnol)",
+      "descriptionEn": "Description (Anglais)",
+      "noProfiles": "Aucun profil créé pour le moment.",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce profil ?",
+      "deleteWarning": "Cette action est irréversible."
+    },
+    "categories": {
+      "title": "Catégories de Compétences",
+      "create": "Créer une Catégorie",
+      "edit": "Modifier la Catégorie"
+    },
+    "questions": {
+      "title": "Questions",
+      "create": "Créer une Question",
+      "edit": "Modifier la Question",
+      "stubDescription": "Gérez les questions d'évaluation pour chaque profil et catégorie.",
+      "type": "Type de question",
+      "content": "Contenu",
+      "options": "Options",
+      "scoring": "Notation",
+      "aiEvaluated": "Évaluée par IA",
+      "noQuestions": "Aucune question créée pour le moment.",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cette question ?",
+      "deleteWarning": "Cette action est irréversible.",
+      "profileId": "Profil",
+      "categoryId": "Catégorie",
+      "competencyId": "Compétence",
+      "contentEs": "Contenu (Espagnol)",
+      "contentEn": "Contenu (Anglais)",
+      "order": "Ordre",
+      "maxScore": "Score maximum",
+      "scaleMin": "Échelle minimum",
+      "scaleMax": "Échelle maximum",
+      "scaleLabelMinEs": "Libellé min (ES)",
+      "scaleLabelMinEn": "Libellé min (EN)",
+      "scaleLabelMaxEs": "Libellé max (ES)",
+      "scaleLabelMaxEn": "Libellé max (EN)",
+      "rubricEs": "Grille d'évaluation (Espagnol)",
+      "rubricEn": "Grille d'évaluation (Anglais)",
+      "addOption": "Ajouter une option",
+      "removeOption": "Supprimer l'option",
+      "optionTextEs": "Texte de l'option (ES)",
+      "optionTextEn": "Texte de l'option (EN)",
+      "optionValue": "Valeur",
+      "types": {
+        "multiple-choice": "Choix multiple",
+        "scale": "Échelle",
+        "open-text": "Texte libre",
+        "scenario": "Scénario",
+        "ranking": "Classement"
+      }
+    },
+    "archetypes": {
+      "title": "Profils Archétypes",
+      "create": "Créer un Archétype",
+      "edit": "Modifier l'Archétype",
+      "stubDescription": "Définissez les profils archétypes pour le diagnostic des candidats.",
+      "noArchetypes": "Aucun archétype créé pour le moment.",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet archétype ?",
+      "deleteWarning": "Cette action est irréversible.",
+      "category": "Catégorie",
+      "nameEs": "Nom (Espagnol)",
+      "nameEn": "Nom (Anglais)",
+      "descriptionEs": "Description (Espagnol)",
+      "descriptionEn": "Description (Anglais)",
+      "indexRangeMin": "Indice minimum",
+      "indexRangeMax": "Indice maximum",
+      "traits": "Caractéristiques",
+      "addTrait": "Ajouter une caractéristique",
+      "removeTrait": "Supprimer",
+      "traitEs": "Caractéristique (ES)",
+      "traitEn": "Caractéristique (EN)",
+      "order": "Ordre",
+      "categories": {
+        "professional": "Professionnel",
+        "soft-skills": "Compétences Comportementales",
+        "readiness": "Disposition au Changement"
+      }
+    },
+    "resources": {
+      "title": "Ressources",
+      "create": "Créer une Ressource",
+      "edit": "Modifier la Ressource",
+      "stubDescription": "Gérez les cours, activités et ressources de formation.",
+      "type": "Type",
+      "types": {
+        "course": "Cours",
+        "activity": "Activité",
+        "resource": "Ressource",
+        "strategy": "Stratégie"
+      },
+      "noResources": "Aucune ressource créée pour le moment.",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cette ressource ?",
+      "deleteWarning": "Cette action est irréversible.",
+      "nameEs": "Nom (Espagnol)",
+      "nameEn": "Nom (Anglais)",
+      "descriptionEs": "Description (Espagnol)",
+      "descriptionEn": "Description (Anglais)",
+      "url": "URL",
+      "duration": "Durée",
+      "priority": "Priorité",
+      "targetCategories": "Catégories cibles",
+      "active": "Actif",
+      "inactive": "Inactif"
+    },
+    "evaluations": {
+      "title": "Évaluations",
+      "list": "Liste des évaluations",
+      "status": "Statut",
+      "noEvaluations": "Aucune évaluation enregistrée pour le moment.",
+      "statuses": {
+        "inProgress": "En cours",
+        "completed": "Complétée",
+        "analyzed": "Analysée"
+      }
+    },
+    "employees": "Employés",
+    "probation": "Période d'essai",
+    "reviews": "Évaluations 360°",
+    "climate": "Enquête de Climat",
+    "comparison": "Comparaison",
+    "history": "Historique",
+    "jobProfiles": "Fiches de Poste",
+    "jobFit": "Adéquation au Poste",
+    "settings": {
+      "title": "Paramètres",
+      "backToPanel": "Retour au panneau",
+      "saveButton": "Enregistrer les paramètres",
+      "loading": "Chargement des paramètres...",
+      "saveSuccess": "Paramètres enregistrés avec succès.",
+      "saveError": "Erreur lors de l'enregistrement des paramètres.",
+      "ai": {
+        "title": "Configuration de l'IA",
+        "mode": "Mode d'analyse",
+        "modes": {
+          "claude": "Claude (Anthropic)",
+          "openai": "OpenAI GPT",
+          "gemini": "Google Gemini",
+          "hybrid": "Hybride (Règles + IA)",
+          "ruleBased": "Règles Uniquement"
+        },
+        "provider": "Fournisseur d'IA",
+        "providerHelperText": "Le fournisseur sélectionné sera utilisé pour l'analyse des questions ouvertes et la génération de recommandations.",
+        "apiKey": "Clé API",
+        "apiKeyHelperText": "La clé API est stockée de manière sécurisée dans Firebase.",
+        "testConnection": "Tester la connexion",
+        "connectionSuccess": "Connexion réussie avec le fournisseur d'IA.",
+        "connectionError": "Erreur de connexion. Vérifiez la clé API.",
+        "analysisModes": "Modes d'Analyse",
+        "analysisModesAI": "Utilise exclusivement l'IA pour l'analyse et les recommandations.",
+        "analysisModesHybrid": "Règles pour la notation objective, IA pour les questions ouvertes et les recommandations.",
+        "analysisModesRules": "Sans coût d'API, analyse basée sur des règles prédéfinies."
+      },
+      "general": {
+        "title": "Paramètres Généraux",
+        "defaultLanguage": "Langue par défaut",
+        "timeout": "Délai d'évaluation (minutes)",
+        "timeoutHelperText": "Temps maximum pour compléter une évaluation avant son expiration.",
+        "anonymousEvaluations": "Autoriser les évaluations anonymes",
+        "anonymousEvaluationsDesc": "Permet aux candidats de compléter les évaluations sans fournir d'informations personnelles."
+      }
+    }
+  },
+  "evaluationLink": {
+    "validating": "Validation du lien d'évaluation...",
+    "notFound": "Lien Non Trouvé",
+    "notFoundDescription": "Ce lien d'évaluation n'existe pas ou est invalide.",
+    "expired": "Lien Expiré",
+    "expiredDescription": "Ce lien d'évaluation a expiré et n'est plus disponible.",
+    "maxUsesReached": "Limite d'Utilisations Atteinte",
+    "maxUsesReachedDescription": "Ce lien d'évaluation a atteint son nombre maximum d'utilisations.",
+    "inactive": "Lien Inactif",
+    "inactiveDescription": "Ce lien d'évaluation a été désactivé."
+  },
+  "tests": {
+    "title": "Évaluations Spécialisées",
+    "subtitle": "Sélectionnez le type d'évaluation que vous souhaitez passer",
+    "startTest": "Commencer le Test",
+    "timeLimit": "Temps limite : {minutes} minutes",
+    "questionsCount": "{count} questions",
+    "statementsCount": "{count} affirmations",
+    "pairsCount": "{count} paires",
+    "backToTests": "Retour aux tests",
+    "cognitive": {
+      "title": "Test Cognitif",
+      "description": "Mesure les capacités de raisonnement logique, compréhension verbale, raisonnement numérique et reconnaissance de formes.",
+      "subtypes": {
+        "logical": "Raisonnement Logique",
+        "verbal": "Compréhension Verbale",
+        "numerical": "Raisonnement Numérique",
+        "pattern": "Reconnaissance de Formes"
+      },
+      "timeWarning": "Chaque question a un temps limité. Répondez le plus rapidement possible.",
+      "resultsTitle": "Résultats Cognitifs",
+      "correct": "Correctes",
+      "percentile": "Percentile",
+      "iqEstimate": "Estimation du QI",
+      "classification": "Classification",
+      "email": "Adresse e-mail",
+      "emailPlaceholder": "vous@email.com",
+      "minutes": "minutes",
+      "name": "Nom complet",
+      "namePlaceholder": "Votre nom complet",
+      "questions": "questions",
+      "start": "Commencer le test",
+      "timerWarning": "Ce test est chronométré. Le chronomètre démarrera lorsque vous commencerez."
+    },
+    "personality": {
+      "title": "Test de Personnalité (Big Five)",
+      "description": "Identifie vos traits de personnalité : Ouverture, Conscienciosité, Extraversion, Agréabilité et Névrosisme.",
+      "instructions": "Indiquez votre niveau d'accord avec chaque affirmation.",
+      "traits": {
+        "openness": "Ouverture à l'Expérience",
+        "conscientiousness": "Conscienciosité",
+        "extraversion": "Extraversion",
+        "agreeableness": "Agréabilité",
+        "neuroticism": "Névrosisme"
+      },
+      "resultsTitle": "Profil de Personnalité",
+      "dominantTraits": "Traits Dominants",
+      "workStyle": "Style de Travail",
+      "emailLabel": "Adresse e-mail",
+      "emailPlaceholder": "vous@email.com",
+      "nameLabel": "Nom complet",
+      "namePlaceholder": "Votre nom complet",
+      "startButton": "Commencer le test"
+    },
+    "aptitude": {
+      "title": "Test d'Aptitudes",
+      "description": "Évalue vos compétences numériques, verbales et analytiques dans un contexte professionnel.",
+      "subtypes": {
+        "numerical": "Aptitude Numérique",
+        "verbal": "Aptitude Verbale",
+        "analytical": "Aptitude Analytique",
+        "technical": "Aptitude Technique"
+      },
+      "resultsTitle": "Résultats d'Aptitudes",
+      "overallScore": "Score Global",
+      "strengths": "Points Forts",
+      "weaknesses": "Axes d'Amélioration",
+      "suitableRoles": "Rôles Recommandés",
+      "emailLabel": "Adresse e-mail",
+      "emailPlaceholder": "vous@email.com",
+      "nameLabel": "Nom complet",
+      "namePlaceholder": "Votre nom complet",
+      "questionCount": "questions",
+      "start": "Commencer le test",
+      "timeLimit": "minutes"
+    },
+    "disc": {
+      "title": "Évaluation DISC",
+      "description": "Identifie votre style comportemental au travail : Dominance, Influence, Stabilité et Conformité.",
+      "instructions": "Pour chaque paire, sélectionnez l'affirmation qui vous décrit le mieux au travail.",
+      "chooseOne": "Choisissez une option",
+      "optionA": "Option A",
+      "optionB": "Option B",
+      "dimensions": {
+        "dominance": "Dominance",
+        "influence": "Influence",
+        "steadiness": "Stabilité",
+        "conscientiousness": "Conformité"
+      },
+      "resultsTitle": "Profil DISC",
+      "primaryStyle": "Style Principal",
+      "secondaryStyle": "Style Secondaire",
+      "leadershipStyle": "Style de Leadership",
+      "communicationStyle": "Style de Communication",
+      "strengths": "Points Forts",
+      "challenges": "Défis",
+      "emailLabel": "Adresse e-mail",
+      "emailPlaceholder": "vous@email.com",
+      "nameLabel": "Nom complet",
+      "namePlaceholder": "Votre nom complet",
+      "startButton": "Commencer le test"
+    },
+    "results": {
+      "title": "Résultats du Test",
+      "backToTests": "Retour aux Tests",
+      "downloadPdf": "Télécharger le PDF",
+      "testCompleted": "Test terminé",
+      "processing": "Traitement des résultats..."
+    }
+  },
+  "jobFit": {
+    "title": "Adéquation au Poste",
+    "subtitle": "Analyse de compatibilité entre le candidat et le profil du poste",
+    "selectJob": "Sélectionner le Profil de Poste",
+    "selectCandidate": "Sélectionner le Candidat",
+    "calculateFit": "Calculer l'Adéquation",
+    "overallFit": "Adéquation Globale",
+    "fitLevels": {
+      "excellent": "Excellent",
+      "good": "Bon",
+      "partial": "Partiel",
+      "poor": "Insuffisant"
+    },
+    "dimensions": "Dimensions Évaluées",
+    "dimension": "Dimension",
+    "candidate": "Candidat",
+    "required": "Requis",
+    "fit": "Adéquation",
+    "gapAnalysis": "Analyse des Écarts",
+    "gap": "Écart",
+    "priority": "Priorité",
+    "priorities": {
+      "critical": "Critique",
+      "important": "Important",
+      "minor": "Mineur"
+    },
+    "suggestion": "Suggestion de Développement",
+    "recommendations": "Recommandations",
+    "noGaps": "Aucun écart significatif identifié.",
+    "noResults": "Sélectionnez un candidat et un profil de poste pour calculer l'adéquation.",
+    "backToAdmin": "Retour au panneau",
+    "loading": "Chargement..."
+  },
+  "jobProfiles": {
+    "title": "Fiches de Poste",
+    "create": "Créer une Fiche de Poste",
+    "edit": "Modifier la Fiche de Poste",
+    "noProfiles": "Aucune fiche de poste créée.",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer cette fiche de poste ?",
+    "deleteWarning": "Cette action est irréversible.",
+    "titleField": "Intitulé du Poste",
+    "department": "Département",
+    "description": "Description",
+    "linkedProfile": "Profil d'Assurance Associé",
+    "requirements": "Exigences",
+    "weights": "Pondérations d'Évaluation",
+    "minProfessional": "Minimum Professionnel",
+    "minSoftSkills": "Minimum Compétences Comportementales",
+    "minReadiness": "Minimum Disposition au Changement",
+    "minCognitive": "Minimum Cognitif (Percentile)",
+    "minTechnical": "Minimum Technique",
+    "preferredDISC": "Styles DISC Préférés"
+  },
+  "auth": {
+    "loginTitle": "Accès Administration",
+    "loginSubtitle": "Saisissez vos identifiants pour accéder au panneau",
+    "email": "Adresse e-mail",
+    "password": "Mot de passe",
+    "loginButton": "Se connecter",
+    "invalidCredentials": "Adresse e-mail ou mot de passe incorrect",
+    "logout": "Se déconnecter"
+  },
+  "comparison": {
+    "title": "Comparaison des Candidats",
+    "subtitle": "Comparez les performances des candidats côte à côte",
+    "selectCandidates": "Sélectionner les Candidats",
+    "addCandidate": "Ajouter un Candidat",
+    "removeCandidate": "Retirer",
+    "compare": "Comparer",
+    "candidate": "Candidat",
+    "noData": "Sélectionnez au moins 2 candidats pour comparer.",
+    "maxCandidates": "Maximum {max} candidats",
+    "radarChart": "Graphique Radar",
+    "tableView": "Vue Tableau",
+    "dimension": "Dimension",
+    "professional": "Professionnel",
+    "softSkills": "Compétences Comportementales",
+    "readiness": "Disposition au Changement",
+    "overall": "Global",
+    "cognitive": "Cognitif",
+    "personality": "Personnalité",
+    "disc": "DISC",
+    "aptitude": "Aptitude",
+    "bestCandidate": "Meilleur Candidat",
+    "score": "Score",
+    "profile": "Profil",
+    "date": "Date",
+    "status": "Statut"
+  },
+  "history": {
+    "title": "Historique des Évaluations",
+    "subtitle": "Base de données historique de toutes les évaluations",
+    "search": "Rechercher par nom ou e-mail...",
+    "filterByProfile": "Filtrer par profil",
+    "filterByStatus": "Filtrer par statut",
+    "filterByDate": "Filtrer par date",
+    "allProfiles": "Tous les profils",
+    "allStatuses": "Tous les statuts",
+    "allDates": "Toutes les dates",
+    "last7Days": "7 derniers jours",
+    "last30Days": "30 derniers jours",
+    "last90Days": "90 derniers jours",
+    "exportCsv": "Exporter en CSV",
+    "exportExcel": "Exporter en Excel",
+    "noResults": "Aucune évaluation trouvée avec les filtres sélectionnés.",
+    "totalRecords": "{count} enregistrements",
+    "candidate": "Candidat",
+    "email": "E-mail",
+    "profile": "Profil",
+    "status": "Statut",
+    "score": "Score",
+    "date": "Date",
+    "actions": "Actions",
+    "viewResults": "Voir les Résultats",
+    "statuses": {
+      "in-progress": "En cours",
+      "completed": "Complétée",
+      "analyzed": "Analysée"
+    }
+  },
+  "employees": {
+    "title": "Employés",
+    "create": "Enregistrer un Employé",
+    "edit": "Modifier l'Employé",
+    "noEmployees": "Aucun employé enregistré.",
+    "name": "Nom",
+    "email": "Adresse e-mail",
+    "department": "Département",
+    "position": "Poste",
+    "supervisor": "Superviseur",
+    "supervisorEmail": "E-mail du Superviseur",
+    "hireDate": "Date d'Embauche",
+    "status": "Statut",
+    "statuses": {
+      "probation": "En Période d'Essai",
+      "active": "Actif",
+      "inactive": "Inactif"
+    },
+    "linkedProfile": "Profil Associé",
+    "addEmployee": "Ajouter un employé",
+    "backToPanel": "Retour au panneau",
+    "selectProfile": "Sélectionner un profil",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer cet employé ?",
+    "deleteWarning": "Cette action est irréversible.",
+    "deleteConfirm": {
+      "title": "Confirmer la suppression",
+      "message": "Êtes-vous sûr de vouloir supprimer cet employé ? Cette action est irréversible."
+    },
+    "status": {
+      "active": "Actif",
+      "inactive": "Inactif",
+      "probation": "En période d'essai"
+    }
+  },
+  "probation": {
+    "title": "Évaluations de Période d'Essai",
+    "subtitle": "Évaluations à 3 et 6 mois",
+    "create": "Créer une Évaluation",
+    "period": {
+      "label": "Période",
+      "3month": "3 mois",
+      "6month": "6 mois"
+    },
+    "periods": {
+      "3-month": "3 Mois",
+      "6-month": "6 Mois"
+    },
+    "dueDate": "Date Limite",
+    "completedAt": "Complétée",
+    "alertSent": "Alerte Envoyée",
+    "pending": "En attente",
+    "completed": "Complétée",
+    "inProgress": "En Cours",
+    "status": {
+      "label": "Statut",
+      "completed": "Complétée",
+      "inProgress": "En cours",
+      "pending": "En attente"
+    },
+    "editEvaluation": "Modifier l'évaluation",
+    "evaluationDetails": "Détails de l'évaluation",
+    "selectEmployee": "Employé",
+    "selectEmployeePlaceholder": "Sélectionner un employé",
+    "commentsAndRecommendation": "Commentaires et recommandation",
+    "scores": {
+      "title": "Scores",
+      "jobKnowledge": "Connaissance du Poste",
+      "workQuality": "Qualité du Travail",
+      "productivity": "Productivité",
+      "initiative": "Initiative",
+      "teamwork": "Travail en Équipe",
+      "attendance": "Assiduité",
+      "communication": "Communication",
+      "overall": "Global"
+    },
+    "recommendation": {
+      "label": "Recommandation",
+      "continue": "Continuer",
+      "extendProbation": "Prolonger la période d'essai",
+      "terminate": "Mettre fin au contrat"
+    },
+    "recommendations": {
+      "continue": "Continuer",
+      "extend-probation": "Prolonger la Période d'Essai",
+      "terminate": "Mettre fin au contrat"
+    },
+    "comments": "Commentaires",
+    "sendAlert": "Envoyer une Alerte",
+    "alertSentSuccess": "Alerte envoyée au superviseur.",
+    "noEvaluations": "Aucune évaluation de période d'essai.",
+    "createEvaluation": "Créer une évaluation",
+    "filterByPeriod": "Filtrer par période",
+    "filterByStatus": "Filtrer par statut"
+  },
+  "reviews": {
+    "title": "Évaluations de Performance",
+    "subtitle": "Évaluations 360° et 180° annuelles",
+    "campaigns": "Campagnes",
+    "createCampaign": "Créer une Campagne",
+    "editCampaign": "Modifier la Campagne",
+    "type": "Type",
+    "types": {
+      "360": "360° (Complète)",
+      "180": "180° (Superviseur + Auto)"
+    },
+    "year": "Année",
+    "startDate": "Date de Début",
+    "endDate": "Date de Fin",
+    "status": "Statut",
+    "statuses": {
+      "draft": "Brouillon",
+      "active": "Active",
+      "closed": "Clôturée"
+    },
+    "employees": "Employés Inclus",
+    "assignments": "Affectations",
+    "raterRole": "Rôle de l'Évaluateur",
+    "roles": {
+      "self": "Auto-évaluation",
+      "supervisor": "Superviseur",
+      "peer": "Pair",
+      "subordinate": "Subordonné"
+    },
+    "scores": {
+      "leadership": "Leadership",
+      "communication": "Communication",
+      "teamwork": "Travail en Équipe",
+      "problemSolving": "Résolution de Problèmes",
+      "adaptability": "Adaptabilité",
+      "accountability": "Responsabilité",
+      "customerFocus": "Orientation Client",
+      "innovation": "Innovation",
+      "overall": "Global"
+    },
+    "noCampaigns": "Aucune campagne d'évaluation.",
+    "viewResults": "Voir les Résultats"
+  },
+  "climate": {
+    "title": "Enquêtes de Climat Social",
+    "subtitle": "Enquêtes anonymes par département",
+    "create": "Créer une Enquête",
+    "edit": "Modifier l'Enquête",
+    "anonymous": "Anonyme",
+    "departments": "Départements Cibles",
+    "allDepartments": "Tous les Départements",
+    "startDate": "Date de Début",
+    "endDate": "Date de Fin",
+    "status": "Statut",
+    "statuses": {
+      "draft": "Brouillon",
+      "active": "Active",
+      "closed": "Clôturée"
+    },
+    "categories": {
+      "work-environment": "Environnement de Travail",
+      "leadership": "Leadership",
+      "communication": "Communication",
+      "growth": "Développement Professionnel",
+      "compensation": "Rémunération",
+      "work-life-balance": "Équilibre Vie Professionnelle-Vie Personnelle"
+    },
+    "results": "Résultats",
+    "totalResponses": "Total des Réponses",
+    "responseRate": "Taux de Réponse",
+    "overallScore": "Score Global",
+    "byDepartment": "Par Département",
+    "highlights": "Points Positifs",
+    "concerns": "Points de Vigilance",
+    "noSurveys": "Aucune enquête créée.",
+    "respondSurvey": "Répondre à l'Enquête",
+    "surveyCompleted": "Enquête complétée. Merci pour votre participation !"
+  },
+  "errors": {
+    "generic": "Une erreur est survenue. Veuillez réessayer.",
+    "notFound": "Page non trouvée",
+    "unauthorized": "Vous n'avez pas la permission d'accéder à cette page",
+    "evaluationNotFound": "Évaluation non trouvée",
+    "resultsNotFound": "Résultats non trouvés",
+    "loadingFailed": "Erreur lors du chargement des données",
+    "saveFailed": "Erreur lors de l'enregistrement",
+    "submitFailed": "Erreur lors de la soumission de l'évaluation",
+    "analysisFailed": "Erreur lors de l'analyse de l'évaluation",
+    "validationError": "Veuillez corriger les erreurs dans le formulaire",
+    "requiredField": "Ce champ est obligatoire",
+    "invalidEmail": "Adresse e-mail invalide",
+    "minLength": "Minimum {min} caractères",
+    "maxLength": "Maximum {max} caractères"
+  },
+  "success": {
+    "saved": "Enregistré avec succès",
+    "created": "Créé avec succès",
+    "updated": "Mis à jour avec succès",
+    "deleted": "Supprimé avec succès",
+    "evaluationSubmitted": "Évaluation soumise avec succès"
+  },
+  "profiles": {
+    "filterBySector": "Filtrer par secteur",
+    "filterByLevel": "Filtrer par niveau",
+    "allSectors": "Tous les secteurs",
+    "allLevels": "Tous les niveaux",
+    "sectors": {
+      "insurance": "Assurances",
+      "education": "Éducation",
+      "retail-services": "Commerce et Services",
+      "healthcare": "Santé",
+      "transportation": "Transport",
+      "finance-accounting": "Finance et Comptabilité",
+      "compliance-legal": "Conformité et Juridique",
+      "human-resources": "Ressources Humaines",
+      "commercial-business": "Commercial et Affaires",
+      "collections-credit": "Recouvrement et Crédit",
+      "customer-service": "Service Client",
+      "general-management": "Direction Générale"
+    },
+    "levels": {
+      "executive": "Cadre Dirigeant (C-Suite)",
+      "managerial": "Encadrement",
+      "professional-specialist": "Professionnel / Spécialiste",
+      "administrative": "Administratif",
+      "operative": "Opérationnel"
+    }
+  }
+}

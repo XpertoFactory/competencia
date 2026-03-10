@@ -8,6 +8,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero tomar el control de las situaciones dificiles',
         en: 'I prefer taking control of difficult situations',
+        fr: 'Je préfère prendre le contrôle des situations difficiles',
       },
       dimension: 'dominance',
     },
@@ -15,6 +16,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero motivar al equipo para superar los desafios juntos',
         en: 'I prefer motivating the team to overcome challenges together',
+        fr: "Je préfère motiver l'équipe à surmonter les défis ensemble",
       },
       dimension: 'influence',
     },
@@ -27,6 +29,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me enfoco en obtener resultados concretos rapidamente',
         en: 'I focus on getting concrete results quickly',
+        fr: "Je me concentre sur l'obtention de résultats concrets rapidement",
       },
       dimension: 'dominance',
     },
@@ -34,6 +37,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me enfoco en construir relaciones positivas con los clientes',
         en: 'I focus on building positive relationships with clients',
+        fr: 'Je me concentre sur la construction de relations positives avec les clients',
       },
       dimension: 'influence',
     },
@@ -46,6 +50,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Disfruto persuadir a otros con entusiasmo y energia',
         en: 'I enjoy persuading others with enthusiasm and energy',
+        fr: "J'aime persuader les autres avec enthousiasme et énergie",
       },
       dimension: 'influence',
     },
@@ -53,6 +58,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Disfruto superar obstaculos y alcanzar metas ambiciosas',
         en: 'I enjoy overcoming obstacles and reaching ambitious goals',
+        fr: "J'aime surmonter les obstacles et atteindre des objectifs ambitieux",
       },
       dimension: 'dominance',
     },
@@ -65,6 +71,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero liderar reuniones y dirigir la conversacion',
         en: 'I prefer leading meetings and directing the conversation',
+        fr: 'Je préfère diriger les réunions et orienter la conversation',
       },
       dimension: 'dominance',
     },
@@ -72,6 +79,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero animar a todos a participar y compartir ideas',
         en: 'I prefer encouraging everyone to participate and share ideas',
+        fr: 'Je préfère encourager tout le monde à participer et partager des idées',
       },
       dimension: 'influence',
     },
@@ -86,6 +94,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero tomar decisiones rapidas aunque impliquen riesgo',
         en: 'I prefer making quick decisions even if they involve risk',
+        fr: 'Je préfère prendre des décisions rapides même si elles impliquent des risques',
       },
       dimension: 'dominance',
     },
@@ -93,6 +102,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero avanzar con cautela para asegurar estabilidad',
         en: 'I prefer moving cautiously to ensure stability',
+        fr: 'Je préfère avancer prudemment pour assurer la stabilité',
       },
       dimension: 'steadiness',
     },
@@ -105,6 +115,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me siento comodo desafiando el statu quo en la organizacion',
         en: 'I feel comfortable challenging the status quo in the organization',
+        fr: "Je me sens à l'aise pour remettre en question le statu quo dans l'organisation",
       },
       dimension: 'dominance',
     },
@@ -112,6 +123,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me siento comodo manteniendo procesos que ya funcionan bien',
         en: 'I feel comfortable maintaining processes that already work well',
+        fr: "Je me sens à l'aise pour maintenir les processus qui fonctionnent déjà bien",
       },
       dimension: 'steadiness',
     },
@@ -124,6 +136,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Valoro la lealtad y el compromiso a largo plazo con el equipo',
         en: 'I value loyalty and long-term commitment to the team',
+        fr: "Je valorise la loyauté et l'engagement à long terme envers l'équipe",
       },
       dimension: 'steadiness',
     },
@@ -131,6 +144,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Valoro la competitividad y la capacidad de ganar nuevas cuentas',
         en: 'I value competitiveness and the ability to win new accounts',
+        fr: 'Je valorise la compétitivité et la capacité à gagner de nouveaux comptes',
       },
       dimension: 'dominance',
     },
@@ -143,6 +157,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Ante un conflicto con un cliente, busco imponer una solucion clara',
         en: 'When facing a client conflict, I seek to impose a clear solution',
+        fr: 'Face à un conflit avec un client, je cherche à imposer une solution claire',
       },
       dimension: 'dominance',
     },
@@ -150,6 +165,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Ante un conflicto con un cliente, busco escuchar y mediar pacientemente',
         en: 'When facing a client conflict, I seek to listen and mediate patiently',
+        fr: 'Face à un conflit avec un client, je cherche à écouter et à médier patiemment',
       },
       dimension: 'steadiness',
     },
@@ -164,6 +180,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero actuar con rapidez y ajustar sobre la marcha',
         en: 'I prefer acting quickly and adjusting on the go',
+        fr: "Je préfère agir rapidement et m'ajuster en cours de route",
       },
       dimension: 'dominance',
     },
@@ -171,6 +188,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero analizar todos los datos antes de decidir',
         en: 'I prefer analyzing all data before deciding',
+        fr: 'Je préfère analyser toutes les données avant de décider',
       },
       dimension: 'conscientiousness',
     },
@@ -183,6 +201,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me motiva alcanzar objetivos de ventas agresivos',
         en: 'I am motivated by reaching aggressive sales targets',
+        fr: "Je suis motivé par l'atteinte d'objectifs de vente ambitieux",
       },
       dimension: 'dominance',
     },
@@ -190,6 +209,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me motiva asegurar la precision en las polizas y documentos',
         en: 'I am motivated by ensuring accuracy in policies and documents',
+        fr: "Je suis motivé par l'assurance de la précision dans les polices et documents",
       },
       dimension: 'conscientiousness',
     },
@@ -202,6 +222,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero seguir procedimientos establecidos y normas claras',
         en: 'I prefer following established procedures and clear rules',
+        fr: 'Je préfère suivre les procédures établies et les règles claires',
       },
       dimension: 'conscientiousness',
     },
@@ -209,6 +230,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero crear mis propias reglas y buscar nuevos caminos',
         en: 'I prefer creating my own rules and seeking new paths',
+        fr: 'Je préfère créer mes propres règles et chercher de nouveaux chemins',
       },
       dimension: 'dominance',
     },
@@ -221,6 +243,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Tomo decisiones basandome en mi instinto y experiencia',
         en: 'I make decisions based on my instinct and experience',
+        fr: 'Je prends des décisions basées sur mon instinct et mon expérience',
       },
       dimension: 'dominance',
     },
@@ -228,6 +251,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Tomo decisiones basandome en analisis detallados y evidencia',
         en: 'I make decisions based on detailed analysis and evidence',
+        fr: 'Je prends des décisions basées sur une analyse détaillée et des preuves',
       },
       dimension: 'conscientiousness',
     },
@@ -242,6 +266,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Disfruto conocer gente nueva y ampliar mi red de contactos',
         en: 'I enjoy meeting new people and expanding my network',
+        fr: "J'aime rencontrer de nouvelles personnes et élargir mon réseau",
       },
       dimension: 'influence',
     },
@@ -249,6 +274,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Disfruto profundizar relaciones con clientes existentes',
         en: 'I enjoy deepening relationships with existing clients',
+        fr: "J'aime approfondir les relations avec les clients existants",
       },
       dimension: 'steadiness',
     },
@@ -261,6 +287,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me adapto facilmente a los cambios en el entorno laboral',
         en: 'I adapt easily to changes in the work environment',
+        fr: "Je m'adapte facilement aux changements dans l'environnement de travail",
       },
       dimension: 'influence',
     },
@@ -268,6 +295,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero un entorno laboral predecible y estable',
         en: 'I prefer a predictable and stable work environment',
+        fr: 'Je préfère un environnement de travail prévisible et stable',
       },
       dimension: 'steadiness',
     },
@@ -280,6 +308,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero trabajar en equipo y apoyar a mis companeros constantemente',
         en: 'I prefer working in a team and consistently supporting my colleagues',
+        fr: 'Je préfère travailler en équipe et soutenir constamment mes collègues',
       },
       dimension: 'steadiness',
     },
@@ -287,6 +316,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero presentar ideas ante grupos grandes con confianza',
         en: 'I prefer presenting ideas to large groups with confidence',
+        fr: 'Je préfère présenter des idées à de grands groupes avec confiance',
       },
       dimension: 'influence',
     },
@@ -299,6 +329,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me gusta generar entusiasmo al presentar nuevos productos de seguros',
         en: 'I like generating enthusiasm when presenting new insurance products',
+        fr: "J'aime générer de l'enthousiasme en présentant de nouveaux produits d'assurance",
       },
       dimension: 'influence',
     },
@@ -306,6 +337,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me gusta dar seguimiento constante a las necesidades del cliente',
         en: 'I like consistently following up on client needs',
+        fr: "J'aime assurer un suivi constant des besoins des clients",
       },
       dimension: 'steadiness',
     },
@@ -318,6 +350,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Manejo el estres manteniendo la calma y la rutina',
         en: 'I handle stress by staying calm and maintaining routine',
+        fr: 'Je gère le stress en restant calme et en maintenant ma routine',
       },
       dimension: 'steadiness',
     },
@@ -325,6 +358,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Manejo el estres hablando con otros y buscando apoyo social',
         en: 'I handle stress by talking to others and seeking social support',
+        fr: 'Je gère le stress en parlant aux autres et en cherchant un soutien social',
       },
       dimension: 'influence',
     },
@@ -339,6 +373,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero convencer a los clientes con entusiasmo y carisma',
         en: 'I prefer convincing clients with enthusiasm and charisma',
+        fr: 'Je préfère convaincre les clients avec enthousiasme et charisme',
       },
       dimension: 'influence',
     },
@@ -346,6 +381,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero convencer a los clientes con datos y hechos solidos',
         en: 'I prefer convincing clients with solid data and facts',
+        fr: 'Je préfère convaincre les clients avec des données et faits solides',
       },
       dimension: 'conscientiousness',
     },
@@ -358,6 +394,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me siento comodo improvisando durante una presentacion',
         en: 'I feel comfortable improvising during a presentation',
+        fr: "Je me sens à l'aise pour improviser pendant une présentation",
       },
       dimension: 'influence',
     },
@@ -365,6 +402,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me siento comodo cuando tengo todo preparado con anticipacion',
         en: 'I feel comfortable when I have everything prepared in advance',
+        fr: "Je me sens à l'aise quand tout est préparé à l'avance",
       },
       dimension: 'conscientiousness',
     },
@@ -377,6 +415,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Verifico cada detalle de un contrato antes de presentarlo',
         en: 'I verify every detail of a contract before presenting it',
+        fr: "Je vérifie chaque détail d'un contrat avant de le présenter",
       },
       dimension: 'conscientiousness',
     },
@@ -384,6 +423,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me concentro en la vision general y dejo los detalles para despues',
         en: 'I focus on the big picture and leave details for later',
+        fr: "Je me concentre sur la vision d'ensemble et laisse les détails pour plus tard",
       },
       dimension: 'influence',
     },
@@ -396,6 +436,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Valoro la creatividad y las nuevas ideas en las estrategias de venta',
         en: 'I value creativity and new ideas in sales strategies',
+        fr: 'Je valorise la créativité et les nouvelles idées dans les stratégies de vente',
       },
       dimension: 'influence',
     },
@@ -403,6 +444,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Valoro la consistencia y el cumplimiento de los estandares de calidad',
         en: 'I value consistency and adherence to quality standards',
+        fr: 'Je valorise la cohérence et le respect des normes de qualité',
       },
       dimension: 'conscientiousness',
     },
@@ -415,6 +457,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Organizo mi trabajo con listas detalladas y plazos claros',
         en: 'I organize my work with detailed lists and clear deadlines',
+        fr: "J'organise mon travail avec des listes détaillées et des échéances claires",
       },
       dimension: 'conscientiousness',
     },
@@ -422,6 +465,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Organizo mi trabajo de manera flexible segun las oportunidades que surjan',
         en: 'I organize my work flexibly based on opportunities that arise',
+        fr: "J'organise mon travail de manière flexible selon les opportunités qui se présentent",
       },
       dimension: 'influence',
     },
@@ -436,6 +480,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Priorizo mantener la armonia en el equipo de trabajo',
         en: 'I prioritize maintaining harmony in the work team',
+        fr: "Je donne la priorité au maintien de l'harmonie dans l'équipe de travail",
       },
       dimension: 'steadiness',
     },
@@ -443,6 +488,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Priorizo cumplir con los estandares y regulaciones establecidas',
         en: 'I prioritize meeting established standards and regulations',
+        fr: 'Je donne la priorité au respect des normes et réglementations établies',
       },
       dimension: 'conscientiousness',
     },
@@ -455,6 +501,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me aseguro de que cada documento cumpla con las normativas vigentes',
         en: 'I make sure every document complies with current regulations',
+        fr: "Je m'assure que chaque document est conforme aux réglementations en vigueur",
       },
       dimension: 'conscientiousness',
     },
@@ -462,6 +509,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me aseguro de que cada miembro del equipo se sienta valorado y escuchado',
         en: 'I make sure every team member feels valued and heard',
+        fr: "Je m'assure que chaque membre de l'équipe se sent valorisé et écouté",
       },
       dimension: 'steadiness',
     },
@@ -474,6 +522,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Ante un problema, busco una solucion que satisfaga a todas las partes',
         en: 'When facing a problem, I seek a solution that satisfies all parties',
+        fr: 'Face à un problème, je cherche une solution qui satisfait toutes les parties',
       },
       dimension: 'steadiness',
     },
@@ -481,6 +530,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Ante un problema, busco la solucion tecnicamente mas correcta',
         en: 'When facing a problem, I seek the most technically correct solution',
+        fr: 'Face à un problème, je cherche la solution la plus techniquement correcte',
       },
       dimension: 'conscientiousness',
     },
@@ -493,6 +543,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero revisar minuciosamente los riesgos antes de emitir una poliza',
         en: 'I prefer thoroughly reviewing risks before issuing a policy',
+        fr: "Je préfère examiner minutieusement les risques avant d'émettre une police",
       },
       dimension: 'conscientiousness',
     },
@@ -500,6 +551,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero construir confianza con el cliente para entender sus necesidades reales',
         en: 'I prefer building trust with the client to understand their real needs',
+        fr: 'Je préfère instaurer la confiance avec le client pour comprendre ses vrais besoins',
       },
       dimension: 'steadiness',
     },
@@ -512,6 +564,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me destaco por mi paciencia y disposicion para ayudar a otros',
         en: 'I stand out for my patience and willingness to help others',
+        fr: 'Je me distingue par ma patience et ma disposition à aider les autres',
       },
       dimension: 'steadiness',
     },
@@ -519,6 +572,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Me destaco por mi atencion al detalle y pensamiento analitico',
         en: 'I stand out for my attention to detail and analytical thinking',
+        fr: 'Je me distingue par mon attention aux détails et ma pensée analytique',
       },
       dimension: 'conscientiousness',
     },
@@ -531,6 +585,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero documentar cada paso del proceso para futuras referencias',
         en: 'I prefer documenting every step of the process for future reference',
+        fr: 'Je préfère documenter chaque étape du processus pour référence future',
       },
       dimension: 'conscientiousness',
     },
@@ -538,6 +593,7 @@ const forcedChoices: DISCForcedChoice[] = [
       text: {
         es: 'Prefiero dedicar tiempo a escuchar las preocupaciones de mi equipo',
         en: 'I prefer spending time listening to my team\'s concerns',
+        fr: "Je préfère consacrer du temps à écouter les préoccupations de mon équipe",
       },
       dimension: 'steadiness',
     },
@@ -551,10 +607,12 @@ export const discTestConfig: DISCTestConfig = {
   name: {
     es: 'Evaluacion de Comportamiento DISC',
     en: 'DISC Behavioral Assessment',
+    fr: 'Évaluation comportementale DISC',
   },
   description: {
     es: 'Esta evaluacion mide tu estilo de comportamiento en el entorno laboral profesional de seguros. Para cada par de afirmaciones, selecciona la que mejor te describe. No hay respuestas correctas o incorrectas.',
     en: 'This assessment measures your behavioral style in the professional insurance work environment. For each pair of statements, select the one that best describes you. There are no right or wrong answers.',
+    fr: "Cette évaluation mesure votre style comportemental dans l'environnement professionnel de l'assurance. Pour chaque paire d'affirmations, sélectionnez celle qui vous décrit le mieux. Il n'y a pas de bonnes ou mauvaises réponses.",
   },
   forcedChoices,
   isActive: true,

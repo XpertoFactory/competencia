@@ -46,7 +46,7 @@ const CLIMATE_CATEGORIES: ClimateCategory[] = [
 
 const EMPTY_QUESTION: () => ClimateSurveyQuestion = () => ({
   id: '',
-  content: { es: '', en: '' },
+  content: { es: '', en: '', fr: '' },
   category: 'work-environment' as ClimateCategory,
   type: 'scale' as const,
   order: 0,
@@ -86,7 +86,7 @@ export default function ClimateSurveyPage() {
   const [status, setStatus] = useState<'draft' | 'active' | 'closed'>('draft');
   const [isAnonymous, setIsAnonymous] = useState(true);
   const [departmentInput, setDepartmentInput] = useState('');
-  const [departments, setDepartments] = useState<{ es: string; en: string }[]>([]);
+  const [departments, setDepartments] = useState<{ es: string; en: string; fr: string }[]>([]);
   const [questions, setQuestions] = useState<ClimateSurveyQuestion[]>([]);
 
   // Results state
@@ -147,7 +147,7 @@ export default function ClimateSurveyPage() {
     setEndDate(formatDate(survey.endDate));
     setStatus(survey.status);
     setIsAnonymous(survey.isAnonymous);
-    setDepartments(survey.targetDepartments.map((d) => ({ es: d.es, en: d.en })));
+    setDepartments(survey.targetDepartments.map((d) => ({ es: d.es, en: d.en, fr: d.fr || '' })));
     setQuestions(survey.questions.map((q) => ({ ...q })));
     setView('form');
   };
@@ -173,7 +173,7 @@ export default function ClimateSurveyPage() {
     if (!trimmed) return;
     // Support comma-separated input
     const parts = trimmed.split(',').map((s) => s.trim()).filter(Boolean);
-    const newDepts = parts.map((p) => ({ es: p, en: p }));
+    const newDepts = parts.map((p) => ({ es: p, en: p, fr: p }));
     setDepartments((prev) => [...prev, ...newDepts]);
     setDepartmentInput('');
   };
@@ -221,8 +221,8 @@ export default function ClimateSurveyPage() {
     try {
       const survey: ClimateSurvey = {
         id: editingSurvey?.id || generateId(),
-        name: { es: nameEs, en: nameEn },
-        description: { es: descEs, en: descEn },
+        name: { es: nameEs, en: nameEn, fr: nameEn },
+        description: { es: descEs, en: descEn, fr: descEn },
         questions,
         startDate: Timestamp.fromDate(new Date(startDate)),
         endDate: Timestamp.fromDate(new Date(endDate)),

@@ -19,13 +19,39 @@ import {
 } from 'lucide-react';
 import { getProfiles } from '@/lib/firebase/firestore';
 import { profiles as seedProfiles } from '@/lib/seed-data';
-import type { Profile } from '@/types';
+import type { Profile, ProfileSector, ProfileLevel } from '@/types';
+
+const ALL_SECTORS: ProfileSector[] = [
+  'insurance',
+  'education',
+  'retail-services',
+  'healthcare',
+  'transportation',
+  'finance-accounting',
+  'compliance-legal',
+  'human-resources',
+  'commercial-business',
+  'collections-credit',
+  'customer-service',
+  'general-management',
+];
+
+const ALL_LEVELS: ProfileLevel[] = [
+  'executive',
+  'managerial',
+  'professional-specialist',
+  'administrative',
+  'operative',
+];
 
 export default function LandingPage() {
   const t = useTranslations('landing');
+  const tp = useTranslations('profiles');
   const locale = useLocale();
   const [profiles, setProfiles] = useState<Profile[]>([]);
   const [loading, setLoading] = useState(true);
+  const [selectedSector, setSelectedSector] = useState<string>('');
+  const [selectedLevel, setSelectedLevel] = useState<string>('');
 
   useEffect(() => {
     async function fetchProfiles() {
@@ -145,16 +171,61 @@ export default function LandingPage() {
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">
               {t('selectProfile')}
             </h2>
-            <p className="text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            <p className="text-gray-600 text-center mb-8 max-w-2xl mx-auto">
               {t('profilesTitle')}
             </p>
+
+            {/* Sector and Level Filters */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10 max-w-2xl mx-auto">
+              <div className="flex-1">
+                <select
+                  value={selectedSector}
+                  onChange={(e) => setSelectedSector(e.target.value)}
+                  className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-700 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
+                  aria-label={tp('filterBySector')}
+                >
+                  <option value="">{tp('allSectors')}</option>
+                  {ALL_SECTORS.map((sector) => (
+                    <option key={sector} value={sector}>
+                      {tp(`sectors.${sector}`)}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              <div className="flex-1">
+                <select
+                  value={selectedLevel}
+                  onChange={(e) => setSelectedLevel(e.target.value)}
+                  className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-700 shadow-sm focus:border-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-500"
+                  aria-label={tp('filterByLevel')}
+                >
+                  <option value="">{tp('allLevels')}</option>
+                  {ALL_LEVELS.map((level) => (
+                    <option key={level} value={level}>
+                      {tp(`levels.${level}`)}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {loading ? (
                 <div className="col-span-full flex justify-center py-12">
                   <Loader2 className="w-8 h-8 text-primary-600 animate-spin" />
                 </div>
               ) : (
-                profiles.map((profile) => (
+                profiles
+                  .filter((profile) => {
+                    const matchesSector =
+                      !selectedSector ||
+                      (profile.sectors && profile.sectors.includes(selectedSector as ProfileSector));
+                    const matchesLevel =
+                      !selectedLevel ||
+                      profile.level === selectedLevel;
+                    return matchesSector && matchesLevel;
+                  })
+                  .map((profile) => (
                   <Card
                     key={profile.id}
                     variant="bordered"

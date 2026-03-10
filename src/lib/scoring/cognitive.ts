@@ -72,9 +72,9 @@ function estimateIQ(rawScore: number): number {
 }
 
 function getClassification(rawScore: number): LocalizedString {
-  if (rawScore >= 90) return { es: 'Superior', en: 'Superior' };
-  if (rawScore >= 75) return { es: 'Por encima del promedio', en: 'Above Average' };
-  if (rawScore >= 50) return { es: 'Promedio', en: 'Average' };
-  if (rawScore >= 25) return { es: 'Por debajo del promedio', en: 'Below Average' };
-  return { es: 'Necesita desarrollo', en: 'Needs Development' };
+  if (rawScore >= 90) return { es: 'Superior', en: 'Superior', fr: 'Supérieur' };
+  if (rawScore >= 75) return { es: 'Por encima del promedio', en: 'Above Average', fr: 'Au-dessus de la moyenne' };
+  if (rawScore >= 50) return { es: 'Promedio', en: 'Average', fr: 'Moyen' };
+  if (rawScore >= 25) return { es: 'Por debajo del promedio', en: 'Below Average', fr: 'En dessous de la moyenne' };
+  return { es: 'Necesita desarrollo', en: 'Needs Development', fr: 'Nécessite un développement' };
 }

@@ -52,8 +52,8 @@ const EMPTY_SCORES: ReviewScores = {
 };
 
 const EMPTY_CAMPAIGN: Omit<ReviewCampaign, 'id' | 'createdAt'> = {
-  name: { es: '', en: '' },
-  description: { es: '', en: '' },
+  name: { es: '', en: '', fr: '' },
+  description: { es: '', en: '', fr: '' },
   type: '360',
   year: new Date().getFullYear(),
   startDate: Timestamp.now(),

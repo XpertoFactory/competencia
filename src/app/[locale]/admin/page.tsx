@@ -460,9 +460,11 @@ function ProfilesContent({ t, tc }: { t: any; tc: any }) {
     try {
       const profile: Profile = {
         id: editingId || generateId(),
-        name: { es: form.nameEs, en: form.nameEn },
-        description: { es: form.descriptionEs, en: form.descriptionEn },
+        name: { es: form.nameEs, en: form.nameEn, fr: form.nameEn },
+        description: { es: form.descriptionEs, en: form.descriptionEn, fr: form.descriptionEn },
         competencyCategories: editingId ? (profiles.find(p => p.id === editingId)?.competencyCategories || []) : [],
+        sectors: editingId ? (profiles.find(p => p.id === editingId)?.sectors || []) : [],
+        level: editingId ? (profiles.find(p => p.id === editingId)?.level || 'professional-specialist') : 'professional-specialist',
         isActive: form.isActive,
       };
       await saveProfile(profile);
@@ -627,22 +629,22 @@ function QuestionsContent({ t, tc }: { t: any; tc: any }) {
         id: editingId || generateId(),
         profileId: form.profileId, categoryId: form.categoryId, competencyId: form.competencyId,
         type: form.type,
-        content: { es: form.contentEs, en: form.contentEn },
+        content: { es: form.contentEs, en: form.contentEn, fr: form.contentEn },
         order: form.order, maxScore: form.maxScore, aiEvaluated: form.aiEvaluated, isActive: form.isActive,
       };
       if (form.type === 'multiple-choice' || form.type === 'ranking') {
-        question.options = form.options.map(o => ({ id: o.id, text: { es: o.textEs, en: o.textEn }, value: o.value }));
+        question.options = form.options.map(o => ({ id: o.id, text: { es: o.textEs, en: o.textEn, fr: o.textEn }, value: o.value }));
       }
       if (form.type === 'scale') {
         question.scaleMin = form.scaleMin;
         question.scaleMax = form.scaleMax;
         question.scaleLabels = {
-          min: { es: form.scaleLabelMinEs, en: form.scaleLabelMinEn },
-          max: { es: form.scaleLabelMaxEs, en: form.scaleLabelMaxEn },
+          min: { es: form.scaleLabelMinEs, en: form.scaleLabelMinEn, fr: form.scaleLabelMinEn },
+          max: { es: form.scaleLabelMaxEs, en: form.scaleLabelMaxEn, fr: form.scaleLabelMaxEn },
         };
       }
       if (form.type === 'open-text' || form.type === 'scenario') {
-        question.rubric = { es: form.rubricEs, en: form.rubricEn };
+        question.rubric = { es: form.rubricEs, en: form.rubricEn, fr: form.rubricEn };
       }
       await saveQuestion(question);
       resetForm();
@@ -912,7 +914,7 @@ function ArchetypesContent({ t, tc }: { t: any; tc: any }) {
       nameEs: a.name.es, nameEn: a.name.en,
       descriptionEs: a.description.es, descriptionEn: a.description.en,
       indexMin: a.indexRange.min, indexMax: a.indexRange.max, order: a.order,
-      traits: a.traits.map(tr => ({ es: tr.es, en: tr.en })),
+      traits: a.traits.map(tr => ({ es: tr.es, en: tr.en, fr: tr.fr || tr.en })),
     });
     setEditingId(a.id);
     setShowForm(true);
@@ -924,9 +926,9 @@ function ArchetypesContent({ t, tc }: { t: any; tc: any }) {
       const archetype: ArchetypeProfile = {
         id: editingId || generateId(),
         category: form.category,
-        name: { es: form.nameEs, en: form.nameEn },
-        description: { es: form.descriptionEs, en: form.descriptionEn },
-        traits: form.traits.map(tr => ({ es: tr.es, en: tr.en })),
+        name: { es: form.nameEs, en: form.nameEn, fr: form.nameEn },
+        description: { es: form.descriptionEs, en: form.descriptionEn, fr: form.descriptionEn },
+        traits: form.traits.map(tr => ({ es: tr.es, en: tr.en, fr: tr.en })),
         indexRange: { min: form.indexMin, max: form.indexMax },
         recommendedResources: editingId ? (archetypes.find(a => a.id === editingId)?.recommendedResources || []) : [],
         order: form.order,
@@ -946,7 +948,7 @@ function ArchetypesContent({ t, tc }: { t: any; tc: any }) {
     } catch { /* empty */ }
   };
 
-  const addTrait = () => setForm(f => ({ ...f, traits: [...f.traits, { es: '', en: '' }] }));
+  const addTrait = () => setForm(f => ({ ...f, traits: [...f.traits, { es: '', en: '', fr: '' }] }));
   const removeTrait = (idx: number) => setForm(f => ({ ...f, traits: f.traits.filter((_, i) => i !== idx) }));
   const updateTrait = (idx: number, lang: 'es' | 'en', val: string) => {
     setForm(f => ({ ...f, traits: f.traits.map((tr, i) => i === idx ? { ...tr, [lang]: val } : tr) }));
@@ -1135,8 +1137,8 @@ function ResourcesContent({ t, tc }: { t: any; tc: any }) {
       const resource: Resource = {
         id: editingId || generateId(),
         type: form.type,
-        name: { es: form.nameEs, en: form.nameEn },
-        description: { es: form.descriptionEs, en: form.descriptionEn },
+        name: { es: form.nameEs, en: form.nameEn, fr: form.nameEn },
+        description: { es: form.descriptionEs, en: form.descriptionEn, fr: form.descriptionEn },
         targetCategories: form.targetCategories,
         targetProfiles: editingId ? (resources.find(r => r.id === editingId)?.targetProfiles || []) : [],
         targetCompetencies: editingId ? (resources.find(r => r.id === editingId)?.targetCompetencies || []) : [],

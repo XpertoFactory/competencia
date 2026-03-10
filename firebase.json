@@ -10,6 +10,7 @@
     ]
   },
   "hosting": {
+    "site": "xperto-competencia",
     "source": ".",
     "frameworksBackend": {
       "region": "us-central1"

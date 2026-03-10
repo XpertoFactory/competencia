@@ -69,9 +69,9 @@ const DEFAULT_REQUIREMENTS: JobRequirements = {
 function createEmptyJobProfile(): JobProfile {
   return {
     id: '',
-    title: { es: '', en: '' },
-    department: { es: '', en: '' },
-    description: { es: '', en: '' },
+    title: { es: '', en: '', fr: '' },
+    department: { es: '', en: '', fr: '' },
+    description: { es: '', en: '', fr: '' },
     profileId: '',
     requirements: { ...DEFAULT_REQUIREMENTS, weights: { ...DEFAULT_WEIGHTS }, preferredDISCStyles: [] },
     isActive: true,

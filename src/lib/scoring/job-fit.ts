@@ -35,7 +35,7 @@ export function calculateJobFit(
     });
     if (indices.professional < req.minProfessionalScore) {
       gaps.push(createGap(
-        { es: 'Competencias Profesionales', en: 'Professional Competencies' },
+        { es: 'Competencias Profesionales', en: 'Professional Competencies', fr: 'Compétences Professionnelles' },
         indices.professional, req.minProfessionalScore
       ));
     }
@@ -50,7 +50,7 @@ export function calculateJobFit(
     });
     if (indices.softSkills < req.minSoftSkillsScore) {
       gaps.push(createGap(
-        { es: 'Habilidades Blandas', en: 'Soft Skills' },
+        { es: 'Habilidades Blandas', en: 'Soft Skills', fr: 'Compétences Relationnelles' },
         indices.softSkills, req.minSoftSkillsScore
       ));
     }
@@ -65,7 +65,7 @@ export function calculateJobFit(
     });
     if (indices.readiness < req.minReadinessScore) {
       gaps.push(createGap(
-        { es: 'Disposición al Cambio', en: 'Readiness for Change' },
+        { es: 'Disposición al Cambio', en: 'Readiness for Change', fr: 'Disposition au Changement' },
         indices.readiness, req.minReadinessScore
       ));
     }
@@ -84,7 +84,7 @@ export function calculateJobFit(
     });
     if (percentile < req.minCognitivePercentile) {
       gaps.push(createGap(
-        { es: 'Capacidad Cognitiva', en: 'Cognitive Ability' },
+        { es: 'Capacidad Cognitiva', en: 'Cognitive Ability', fr: 'Capacité Cognitive' },
         percentile, req.minCognitivePercentile
       ));
     }
@@ -107,7 +107,7 @@ export function calculateJobFit(
       if (score < range.min || score > range.max) {
         const target = score < range.min ? range.min : range.max;
         gaps.push(createGap(
-          { es: `Personalidad: ${traitLabelEs(trait)}`, en: `Personality: ${traitLabelEn(trait)}` },
+          { es: `Personalidad: ${traitLabelEs(trait)}`, en: `Personality: ${traitLabelEn(trait)}`, fr: `Personnalité : ${traitLabelFr(trait)}` },
           score, target
         ));
       }
@@ -138,7 +138,7 @@ export function calculateJobFit(
     });
     if (match < 70) {
       gaps.push({
-        area: { es: 'Estilo de Comportamiento DISC', en: 'DISC Behavioral Style' },
+        area: { es: 'Estilo de Comportamiento DISC', en: 'DISC Behavioral Style', fr: 'Style Comportemental DISC' },
         currentLevel: match,
         requiredLevel: 100,
         gap: match - 100,
@@ -146,6 +146,7 @@ export function calculateJobFit(
         developmentSuggestion: {
           es: 'Desarrollar habilidades asociadas al estilo de comportamiento requerido para el puesto.',
           en: 'Develop skills associated with the behavioral style required for the position.',
+          fr: 'Développer les compétences associées au style comportemental requis pour le poste.',
         },
       });
     }
@@ -169,7 +170,7 @@ export function calculateJobFit(
 
       if (candidateScore < minScore) {
         gaps.push(createGap(
-          { es: `Aptitud: ${subtype}`, en: `Aptitude: ${subtype}` },
+          { es: `Aptitud: ${subtype}`, en: `Aptitude: ${subtype}`, fr: `Aptitude : ${subtype}` },
           candidateScore, minScore
         ));
       }
@@ -263,17 +264,20 @@ function generateSuggestion(area: LocalizedString, gap: number): LocalizedString
     return {
       es: `Se requiere capacitación intensiva en ${area.es.toLowerCase()}.`,
       en: `Intensive training required in ${area.en.toLowerCase()}.`,
+      fr: `Formation intensive requise en ${(area.fr || area.en).toLowerCase()}.`,
     };
   }
   if (gap <= -15) {
     return {
       es: `Capacitación dirigida recomendada en ${area.es.toLowerCase()}.`,
       en: `Targeted training recommended in ${area.en.toLowerCase()}.`,
+      fr: `Formation ciblée recommandée en ${(area.fr || area.en).toLowerCase()}.`,
     };
   }
   return {
     es: `Reforzamiento menor en ${area.es.toLowerCase()}.`,
     en: `Minor reinforcement in ${area.en.toLowerCase()}.`,
+    fr: `Renforcement mineur en ${(area.fr || area.en).toLowerCase()}.`,
   };
 }
 
@@ -284,21 +288,25 @@ function generateRecommendations(gaps: GapItem[], fitLevel: string): LocalizedSt
     recs.push({
       es: 'El candidato muestra un excelente ajuste con el perfil del puesto.',
       en: 'The candidate shows an excellent fit with the job profile.',
+      fr: 'Le candidat montre une excellente adéquation avec le profil du poste.',
     });
   } else if (fitLevel === 'good') {
     recs.push({
       es: 'El candidato tiene un buen ajuste con el perfil. Se recomiendan mejoras puntuales.',
       en: 'The candidate has a good fit with the profile. Specific improvements recommended.',
+      fr: 'Le candidat a une bonne adéquation avec le profil. Des améliorations spécifiques sont recommandées.',
     });
   } else if (fitLevel === 'partial') {
     recs.push({
       es: 'El candidato tiene un ajuste parcial. Se requiere un plan de desarrollo estructurado.',
       en: 'The candidate has a partial fit. A structured development plan is required.',
+      fr: 'Le candidat a une adéquation partielle. Un plan de développement structuré est requis.',
     });
   } else {
     recs.push({
       es: 'El candidato muestra brechas significativas. Evaluar si el puesto es adecuado.',
       en: 'The candidate shows significant gaps. Evaluate if the position is appropriate.',
+      fr: 'Le candidat présente des écarts significatifs. Évaluer si le poste est approprié.',
     });
   }
 
@@ -307,6 +315,7 @@ function generateRecommendations(gaps: GapItem[], fitLevel: string): LocalizedSt
     recs.push({
       es: `Atención: ${criticalGaps.length} área(s) con brechas críticas requieren atención inmediata.`,
       en: `Attention: ${criticalGaps.length} area(s) with critical gaps require immediate attention.`,
+      fr: `Attention : ${criticalGaps.length} domaine(s) avec des écarts critiques nécessitent une attention immédiate.`,
     });
   }
 
@@ -331,6 +340,17 @@ function traitLabelEn(trait: BigFiveTrait): string {
     extraversion: 'Extraversion',
     agreeableness: 'Agreeableness',
     neuroticism: 'Neuroticism',
+  };
+  return labels[trait];
+}
+
+function traitLabelFr(trait: BigFiveTrait): string {
+  const labels: Record<BigFiveTrait, string> = {
+    openness: 'Ouverture',
+    conscientiousness: 'Conscienciosité',
+    extraversion: 'Extraversion',
+    agreeableness: 'Agréabilité',
+    neuroticism: 'Névrosisme',
   };
   return labels[trait];
 }

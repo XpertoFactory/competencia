@@ -14,16 +14,18 @@ function q(
   values: [number, number, number, number],
   correctIndex: 0 | 1 | 2 | 3,
   order: number,
+  fr?: string,
+  optionsFr?: [string, string, string, string],
 ): CognitiveQuestion {
   const opts: QuestionOption[] = [0, 1, 2, 3].map((i) => ({
     id: `${id}-opt-${i + 1}`,
-    text: { es: optionsEs[i], en: optionsEn[i] },
+    text: { es: optionsEs[i], en: optionsEn[i], fr: optionsFr ? optionsFr[i] : optionsEn[i] },
     value: values[i],
   }));
   return {
     id,
     subtype,
-    content: { es, en },
+    content: { es, en, fr: fr ?? en },
     options: opts,
     correctOptionId: opts[correctIndex].id,
     difficulty,
@@ -405,10 +407,12 @@ export const cognitiveTestConfig: CognitiveTestConfig = {
   name: {
     es: 'Prueba Cognitiva General',
     en: 'General Cognitive Test',
+    fr: 'Test cognitif général',
   },
   description: {
     es: 'Evaluación de habilidades cognitivas que incluye razonamiento lógico, verbal, numérico y reconocimiento de patrones. Diseñada para profesionales del sector asegurador.',
     en: 'Cognitive skills assessment covering logical, verbal, numerical reasoning, and pattern recognition. Designed for insurance sector professionals.',
+    fr: "Évaluation des compétences cognitives couvrant le raisonnement logique, verbal, numérique et la reconnaissance de motifs. Conçue pour les professionnels du secteur de l'assurance.",
   },
   totalTimeLimitMinutes: 12,
   questions: [

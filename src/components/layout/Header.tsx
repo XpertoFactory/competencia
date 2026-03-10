@@ -15,10 +15,24 @@ export function Header() {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const switchLocale = () => {
-    const newLocale = locale === 'es' ? 'en' : 'es';
+  const [isLangOpen, setIsLangOpen] = useState(false);
+
+  const switchToLocale = (newLocale: string) => {
     const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
     router.push(newPath);
+    setIsLangOpen(false);
+  };
+
+  const localeLabels: Record<string, string> = {
+    es: 'ES',
+    en: 'EN',
+    fr: 'FR',
+  };
+
+  const localeNames: Record<string, string> = {
+    es: 'Español',
+    en: 'English',
+    fr: 'Français',
   };
 
   const navLinks = [
@@ -58,15 +72,35 @@ export function Header() {
             ))}
 
             {/* Language Switcher */}
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={switchLocale}
-              className="flex items-center gap-2"
-            >
-              <Globe className="w-4 h-4" />
-              <span>{locale === 'es' ? 'EN' : 'ES'}</span>
-            </Button>
+            <div className="relative">
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => setIsLangOpen(!isLangOpen)}
+                className="flex items-center gap-2"
+              >
+                <Globe className="w-4 h-4" />
+                <span>{localeLabels[locale] || locale.toUpperCase()}</span>
+              </Button>
+              {isLangOpen && (
+                <div className="absolute right-0 mt-1 w-32 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                  {Object.entries(localeNames).map(([code, name]) => (
+                    <button
+                      key={code}
+                      onClick={() => switchToLocale(code)}
+                      className={cn(
+                        'block w-full text-left px-4 py-2 text-sm transition-colors first:rounded-t-lg last:rounded-b-lg',
+                        code === locale
+                          ? 'bg-primary-50 text-primary-600 font-medium'
+                          : 'text-gray-700 hover:bg-gray-50'
+                      )}
+                    >
+                      {name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Mobile menu button */}
@@ -103,16 +137,21 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <button
-              onClick={() => {
-                switchLocale();
-                setIsMenuOpen(false);
-              }}
-              className="flex items-center gap-2 w-full px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50"
-            >
-              <Globe className="w-4 h-4" />
-              <span>{locale === 'es' ? 'English' : 'Español'}</span>
-            </button>
+            {Object.entries(localeNames)
+              .filter(([code]) => code !== locale)
+              .map(([code, name]) => (
+                <button
+                  key={code}
+                  onClick={() => {
+                    switchToLocale(code);
+                    setIsMenuOpen(false);
+                  }}
+                  className="flex items-center gap-2 w-full px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50"
+                >
+                  <Globe className="w-4 h-4" />
+                  <span>{name}</span>
+                </button>
+              ))}
           </div>
         </nav>
       )}

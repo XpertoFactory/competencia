@@ -4,7 +4,29 @@ import { Timestamp } from 'firebase/firestore';
 export interface LocalizedString {
   es: string;
   en: string;
+  fr?: string;
 }
+
+export type ProfileSector =
+  | 'insurance'
+  | 'education'
+  | 'retail-services'
+  | 'healthcare'
+  | 'transportation'
+  | 'finance-accounting'
+  | 'compliance-legal'
+  | 'human-resources'
+  | 'commercial-business'
+  | 'collections-credit'
+  | 'customer-service'
+  | 'general-management';
+
+export type ProfileLevel =
+  | 'executive'
+  | 'managerial'
+  | 'professional-specialist'
+  | 'administrative'
+  | 'operative';
 
 // Professional profiles (e.g., "Técnico en Seguros de Salud y Vida")
 export interface Profile {
@@ -12,6 +34,8 @@ export interface Profile {
   name: LocalizedString;
   description: LocalizedString;
   competencyCategories: string[]; // References to category IDs
+  sectors: ProfileSector[];
+  level: ProfileLevel;
   isActive: boolean;
   createdAt?: Timestamp;
   updatedAt?: Timestamp;

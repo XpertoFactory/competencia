@@ -69,10 +69,12 @@ function getSuitableRoles(scores: AptitudeScores): LocalizedString[] {
     roles.push({
       es: 'Análisis actuarial y suscripción de riesgos',
       en: 'Actuarial analysis and risk underwriting',
+      fr: 'Analyse actuarielle et souscription de risques',
     });
     roles.push({
       es: 'Administración financiera y contabilidad',
       en: 'Financial administration and accounting',
+      fr: 'Administration financière et comptabilité',
     });
   }
 
@@ -80,10 +82,12 @@ function getSuitableRoles(scores: AptitudeScores): LocalizedString[] {
     roles.push({
       es: 'Gestión de relaciones con clientes',
       en: 'Client relationship management',
+      fr: 'Gestion des relations clients',
     });
     roles.push({
       es: 'Redacción de pólizas y documentación legal',
       en: 'Policy writing and legal documentation',
+      fr: 'Rédaction de polices et documentation juridique',
     });
   }
 
@@ -91,10 +95,12 @@ function getSuitableRoles(scores: AptitudeScores): LocalizedString[] {
     roles.push({
       es: 'Investigación de siniestros y fraudes',
       en: 'Claims investigation and fraud detection',
+      fr: 'Enquête sur les sinistres et détection de fraudes',
     });
     roles.push({
       es: 'Planificación estratégica y análisis de mercado',
       en: 'Strategic planning and market analysis',
+      fr: 'Planification stratégique et analyse de marché',
     });
   }
 
@@ -102,6 +108,7 @@ function getSuitableRoles(scores: AptitudeScores): LocalizedString[] {
     roles.push({
       es: 'Tecnología de seguros (InsurTech)',
       en: 'Insurance technology (InsurTech)',
+      fr: 'Technologie d\'assurance (InsurTech)',
     });
   }
 
@@ -109,6 +116,7 @@ function getSuitableRoles(scores: AptitudeScores): LocalizedString[] {
     roles.push({
       es: 'Ventas consultivas de seguros',
       en: 'Consultative insurance sales',
+      fr: 'Ventes consultatives d\'assurance',
     });
   }
 
@@ -116,6 +124,7 @@ function getSuitableRoles(scores: AptitudeScores): LocalizedString[] {
     roles.push({
       es: 'Roles operativos con capacitación dirigida',
       en: 'Operational roles with targeted training',
+      fr: 'Rôles opérationnels avec formation ciblée',
     });
   }
 

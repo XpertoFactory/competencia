@@ -4,7 +4,7 @@ import type { AptitudeTestConfig, AptitudeQuestion, QuestionOption } from '@/typ
 // Helper – keeps option creation concise
 // ---------------------------------------------------------------------------
 function opt(id: string, es: string, en: string, value: number): QuestionOption {
-  return { id, text: { es, en }, value };
+  return { id, text: { es, en, fr: en }, value };
 }
 
 // ---------------------------------------------------------------------------
@@ -17,6 +17,7 @@ const numericalQuestions: AptitudeQuestion[] = [
     content: {
       es: 'Una poliza de seguro tiene una prima anual de $1,200. Si el asegurado paga trimestralmente con un recargo del 5%, ¿cual es el monto total pagado al ano?',
       en: 'An insurance policy has an annual premium of $1,200. If the insured pays quarterly with a 5% surcharge, what is the total amount paid per year?',
+      fr: "Une police d'assurance a une prime annuelle de 1 200 $. Si l'assuré paie trimestriellement avec un supplément de 5 %, quel est le montant total payé par an ?",
     },
     options: [
       opt('apt-num-01-a', '$1,200', '$1,200', 0),
@@ -35,6 +36,7 @@ const numericalQuestions: AptitudeQuestion[] = [
     content: {
       es: 'Un agente de seguros vendio 45 polizas en enero y 54 en febrero. ¿Cual fue el porcentaje de incremento en ventas?',
       en: 'An insurance agent sold 45 policies in January and 54 in February. What was the percentage increase in sales?',
+      fr: "Un agent d'assurance a vendu 45 polices en janvier et 54 en février. Quel a été le pourcentage d'augmentation des ventes ?",
     },
     options: [
       opt('apt-num-02-a', '15%', '15%', 0),
@@ -53,10 +55,12 @@ const numericalQuestions: AptitudeQuestion[] = [
     context: {
       es: 'La tabla muestra las primas mensuales por rango de edad:\n18-30: $85\n31-45: $120\n46-60: $175\n61+: $230',
       en: 'The table shows monthly premiums by age range:\n18-30: $85\n31-45: $120\n46-60: $175\n61+: $230',
+      fr: "Le tableau montre les primes mensuelles par tranche d'âge :\n18-30 : 85 $\n31-45 : 120 $\n46-60 : 175 $\n61+ : 230 $",
     },
     content: {
       es: 'Si una empresa asegura a 10 empleados de 18-30, 15 de 31-45 y 5 de 46-60, ¿cual es el costo mensual total de primas?',
       en: 'If a company insures 10 employees aged 18-30, 15 aged 31-45, and 5 aged 46-60, what is the total monthly premium cost?',
+      fr: "Si une entreprise assure 10 employés de 18-30 ans, 15 de 31-45 ans et 5 de 46-60 ans, quel est le coût mensuel total des primes ?",
     },
     options: [
       opt('apt-num-03-a', '$3,425', '$3,425', 0),
@@ -75,6 +79,7 @@ const numericalQuestions: AptitudeQuestion[] = [
     content: {
       es: 'Un siniestro se liquida en $50,000. El deducible es del 10% y el coaseguro es 80/20 sobre el monto restante. ¿Cuanto paga la aseguradora?',
       en: 'A claim is settled at $50,000. The deductible is 10% and the coinsurance is 80/20 on the remaining amount. How much does the insurer pay?',
+      fr: "Un sinistre est réglé à 50 000 $. La franchise est de 10 % et la coassurance est de 80/20 sur le montant restant. Combien l'assureur paie-t-il ?",
     },
     options: [
       opt('apt-num-04-a', '$36,000', '$36,000', 1),
@@ -93,6 +98,7 @@ const numericalQuestions: AptitudeQuestion[] = [
     content: {
       es: 'Una aseguradora tiene una tasa de siniestralidad del 65%. Si recaudo $2,400,000 en primas, ¿cuanto destino al pago de siniestros?',
       en: 'An insurer has a loss ratio of 65%. If it collected $2,400,000 in premiums, how much was allocated to claim payments?',
+      fr: "Un assureur a un ratio de sinistralité de 65 %. S'il a perçu 2 400 000 $ de primes, combien a été alloué au paiement des sinistres ?",
     },
     options: [
       opt('apt-num-05-a', '$1,440,000', '$1,440,000', 0),
@@ -111,10 +117,12 @@ const numericalQuestions: AptitudeQuestion[] = [
     context: {
       es: 'Datos trimestrales de reclamaciones:\nQ1: 120 reclamaciones, $480,000 pagados\nQ2: 98 reclamaciones, $412,000 pagados\nQ3: 145 reclamaciones, $595,000 pagados\nQ4: 137 reclamaciones, $561,000 pagados',
       en: 'Quarterly claims data:\nQ1: 120 claims, $480,000 paid\nQ2: 98 claims, $412,000 paid\nQ3: 145 claims, $595,000 paid\nQ4: 137 claims, $561,000 paid',
+      fr: 'Données trimestrielles des sinistres :\nT1 : 120 sinistres, 480 000 $ payés\nT2 : 98 sinistres, 412 000 $ payés\nT3 : 145 sinistres, 595 000 $ payés\nT4 : 137 sinistres, 561 000 $ payés',
     },
     content: {
       es: '¿Cual fue el costo promedio por reclamacion en el trimestre con mayor numero de reclamaciones?',
       en: 'What was the average cost per claim in the quarter with the highest number of claims?',
+      fr: 'Quel était le coût moyen par sinistre au trimestre ayant le plus grand nombre de sinistres ?',
     },
     options: [
       opt('apt-num-06-a', '$4,000', '$4,000', 0),
@@ -133,6 +141,7 @@ const numericalQuestions: AptitudeQuestion[] = [
     content: {
       es: 'Un corredor de seguros gana una comision del 12% sobre la prima del primer ano y 4% sobre renovaciones. Si coloca una poliza de $3,600 anuales y el cliente renueva por 3 anos mas, ¿cual es la comision total acumulada?',
       en: 'An insurance broker earns a 12% commission on the first-year premium and 4% on renewals. If they place a $3,600 annual policy and the client renews for 3 more years, what is the total accumulated commission?',
+      fr: "Un courtier d'assurance gagne une commission de 12 % sur la prime de la première année et de 4 % sur les renouvellements. S'il place une police annuelle de 3 600 $ et que le client renouvelle pendant 3 ans, quelle est la commission totale cumulée ?",
     },
     options: [
       opt('apt-num-07-a', '$864', '$864', 0),
@@ -157,6 +166,7 @@ const verbalQuestions: AptitudeQuestion[] = [
     content: {
       es: 'Seleccione la palabra que mejor complete la oracion: "La _____ del riesgo es el primer paso en el proceso de suscripcion de seguros."',
       en: 'Select the word that best completes the sentence: "Risk _____ is the first step in the insurance underwriting process."',
+      fr: "Sélectionnez le mot qui complète le mieux la phrase : \"L'_____ du risque est la première étape du processus de souscription d'assurance.\"",
     },
     options: [
       opt('apt-ver-01-a', 'eliminacion / elimination', 'elimination', 0),
@@ -175,6 +185,7 @@ const verbalQuestions: AptitudeQuestion[] = [
     content: {
       es: 'PRIMA es a POLIZA como SALARIO es a:',
       en: 'PREMIUM is to POLICY as SALARY is to:',
+      fr: 'PRIME est à POLICE comme SALAIRE est à :',
     },
     options: [
       opt('apt-ver-02-a', 'Banco / Bank', 'Bank', 0),
@@ -193,10 +204,12 @@ const verbalQuestions: AptitudeQuestion[] = [
     context: {
       es: 'El reaseguro es un mecanismo mediante el cual una compania de seguros transfiere parte de los riesgos que ha asumido a otra entidad aseguradora. Esto permite a la aseguradora original reducir su exposicion a perdidas catastroficas y mantener una cartera mas equilibrada. El reasegurador, a cambio, recibe una porcion de la prima original.',
       en: 'Reinsurance is a mechanism through which an insurance company transfers part of the risks it has assumed to another insuring entity. This allows the original insurer to reduce its exposure to catastrophic losses and maintain a more balanced portfolio. The reinsurer, in return, receives a portion of the original premium.',
+      fr: "La réassurance est un mécanisme par lequel une compagnie d'assurance transfère une partie des risques qu'elle a assumés à une autre entité d'assurance. Cela permet à l'assureur d'origine de réduire son exposition aux pertes catastrophiques et de maintenir un portefeuille plus équilibré. Le réassureur, en retour, reçoit une partie de la prime d'origine.",
     },
     content: {
       es: 'Segun el texto, ¿cual es el principal beneficio del reaseguro para la aseguradora original?',
       en: 'According to the text, what is the main benefit of reinsurance for the original insurer?',
+      fr: "Selon le texte, quel est le principal avantage de la réassurance pour l'assureur d'origine ?",
     },
     options: [
       opt('apt-ver-03-a', 'Aumentar las primas cobradas / Increase premiums charged', 'Increase premiums charged', 0),
@@ -215,6 +228,7 @@ const verbalQuestions: AptitudeQuestion[] = [
     content: {
       es: '¿Cual de las siguientes palabras es un antonimo de "solvencia" en el contexto financiero?',
       en: 'Which of the following words is an antonym of "solvency" in the financial context?',
+      fr: 'Lequel des mots suivants est un antonyme de « solvabilité » dans le contexte financier ?',
     },
     options: [
       opt('apt-ver-04-a', 'Liquidez / Liquidity', 'Liquidity', 0),
@@ -233,10 +247,12 @@ const verbalQuestions: AptitudeQuestion[] = [
     context: {
       es: 'La transformacion digital en el sector asegurador ha generado un cambio paradigmatico en la relacion con el cliente. Las insurtech han introducido modelos de negocio disruptivos que desafian las practicas tradicionales, desde la suscripcion automatizada hasta los microseguros bajo demanda. Sin embargo, esta innovacion tambien plantea desafios regulatorios significativos, ya que los marcos normativos existentes no siempre contemplan estas nuevas modalidades.',
       en: 'Digital transformation in the insurance sector has generated a paradigm shift in the customer relationship. Insurtechs have introduced disruptive business models that challenge traditional practices, from automated underwriting to on-demand microinsurance. However, this innovation also poses significant regulatory challenges, as existing regulatory frameworks do not always account for these new modalities.',
+      fr: "La transformation numérique dans le secteur de l'assurance a engendré un changement de paradigme dans la relation client. Les insurtechs ont introduit des modèles économiques disruptifs qui remettent en question les pratiques traditionnelles, de la souscription automatisée à la micro-assurance à la demande. Cependant, cette innovation pose également des défis réglementaires importants, car les cadres réglementaires existants ne tiennent pas toujours compte de ces nouvelles modalités.",
     },
     content: {
       es: '¿Cual es la idea principal del parrafo?',
       en: 'What is the main idea of the paragraph?',
+      fr: "Quelle est l'idée principale du paragraphe ?",
     },
     options: [
       opt('apt-ver-05-a', 'Las insurtech eliminaran a las aseguradoras tradicionales / Insurtechs will eliminate traditional insurers', 'Insurtechs will eliminate traditional insurers', 0),
@@ -255,6 +271,7 @@ const verbalQuestions: AptitudeQuestion[] = [
     content: {
       es: 'SUSCRIPCION es a RIESGO como AUDITORIA es a:',
       en: 'UNDERWRITING is to RISK as AUDITING is to:',
+      fr: 'SOUSCRIPTION est à RISQUE comme AUDIT est à :',
     },
     options: [
       opt('apt-ver-06-a', 'Ganancia / Profit', 'Profit', 0),
@@ -273,10 +290,12 @@ const verbalQuestions: AptitudeQuestion[] = [
     context: {
       es: 'En el ambito de la gestion de siniestros, el principio de subrogacion permite a la aseguradora, una vez indemnizado el asegurado, ejercer los derechos de este frente al tercero responsable del dano. Este mecanismo busca evitar el enriquecimiento indebido del asegurado y recuperar los fondos desembolsados. No obstante, la subrogacion no aplica en seguros de personas, donde la prestacion tiene caracter indemnizatorio fijo.',
       en: 'In the field of claims management, the principle of subrogation allows the insurer, once the insured has been indemnified, to exercise the insured\'s rights against the third party responsible for the damage. This mechanism seeks to prevent unjust enrichment of the insured and recover the funds disbursed. However, subrogation does not apply in personal insurance, where the benefit has a fixed indemnity character.',
+      fr: "Dans le domaine de la gestion des sinistres, le principe de subrogation permet à l'assureur, une fois l'assuré indemnisé, d'exercer les droits de l'assuré contre le tiers responsable du dommage. Ce mécanisme vise à empêcher l'enrichissement indu de l'assuré et à récupérer les fonds déboursés. Toutefois, la subrogation ne s'applique pas aux assurances de personnes, où la prestation a un caractère indemnitaire forfaitaire.",
     },
     content: {
       es: 'Segun el texto, ¿por que la subrogacion no aplica en seguros de personas?',
       en: 'According to the text, why does subrogation not apply in personal insurance?',
+      fr: "Selon le texte, pourquoi la subrogation ne s'applique-t-elle pas aux assurances de personnes ?",
     },
     options: [
       opt('apt-ver-07-a', 'Porque no hay tercero responsable / Because there is no responsible third party', 'Because there is no responsible third party', 0),
@@ -301,6 +320,7 @@ const analyticalQuestions: AptitudeQuestion[] = [
     content: {
       es: 'Si todos los clientes de alto riesgo pagan primas mas altas, y Juan paga una prima alta, ¿cual de las siguientes afirmaciones es necesariamente verdadera?',
       en: 'If all high-risk clients pay higher premiums, and Juan pays a high premium, which of the following statements is necessarily true?',
+      fr: 'Si tous les clients à haut risque paient des primes plus élevées, et que Juan paie une prime élevée, laquelle des affirmations suivantes est nécessairement vraie ?',
     },
     options: [
       opt('apt-ana-01-a', 'Juan es un cliente de alto riesgo / Juan is a high-risk client', 'Juan is a high-risk client', 0),
@@ -319,10 +339,12 @@ const analyticalQuestions: AptitudeQuestion[] = [
     context: {
       es: 'Una aseguradora clasifica sus clientes en tres niveles: A (bajo riesgo), B (riesgo medio) y C (alto riesgo). Las reglas son:\n- Clientes menores de 25 anos siempre son nivel B o C.\n- Clientes con mas de 2 siniestros en el ultimo ano son nivel C.\n- Clientes con historial limpio y mayores de 30 son nivel A.',
       en: 'An insurer classifies its clients into three levels: A (low risk), B (medium risk) and C (high risk). The rules are:\n- Clients under 25 are always level B or C.\n- Clients with more than 2 claims in the last year are level C.\n- Clients with a clean record and over 30 are level A.',
+      fr: "Un assureur classe ses clients en trois niveaux : A (risque faible), B (risque moyen) et C (risque élevé). Les règles sont :\n- Les clients de moins de 25 ans sont toujours de niveau B ou C.\n- Les clients ayant plus de 2 sinistres dans la dernière année sont de niveau C.\n- Les clients avec un dossier vierge et de plus de 30 ans sont de niveau A.",
     },
     content: {
       es: 'Maria tiene 22 anos y tuvo 3 siniestros el ultimo ano. ¿Cual es su clasificacion?',
       en: 'Maria is 22 years old and had 3 claims last year. What is her classification?',
+      fr: "Maria a 22 ans et a eu 3 sinistres l'année dernière. Quelle est sa classification ?",
     },
     options: [
       opt('apt-ana-02-a', 'Nivel A / Level A', 'Level A', 0),
@@ -341,10 +363,12 @@ const analyticalQuestions: AptitudeQuestion[] = [
     context: {
       es: 'En una reunion, cinco gerentes (Ana, Bruno, Clara, Diego, Elena) deben sentarse en una fila. Se sabe que:\n- Ana no puede sentarse junto a Bruno.\n- Clara debe estar en uno de los dos extremos.\n- Diego se sienta inmediatamente a la derecha de Elena.',
       en: 'In a meeting, five managers (Ana, Bruno, Clara, Diego, Elena) must sit in a row. It is known that:\n- Ana cannot sit next to Bruno.\n- Clara must be at one of the two ends.\n- Diego sits immediately to the right of Elena.',
+      fr: "Lors d'une réunion, cinq directeurs (Ana, Bruno, Clara, Diego, Elena) doivent s'asseoir en rang. On sait que :\n- Ana ne peut pas s'asseoir à côté de Bruno.\n- Clara doit être à l'une des deux extrémités.\n- Diego s'assoit immédiatement à droite d'Elena.",
     },
     content: {
       es: 'Si Clara esta en el extremo izquierdo y Elena esta en la segunda posicion, ¿quien puede estar en la posicion 4?',
       en: 'If Clara is at the left end and Elena is in the second position, who can be in position 4?',
+      fr: "Si Clara est à l'extrémité gauche et Elena est en deuxième position, qui peut être en position 4 ?",
     },
     options: [
       opt('apt-ana-03-a', 'Solo Ana / Only Ana', 'Only Ana', 0),
@@ -363,10 +387,12 @@ const analyticalQuestions: AptitudeQuestion[] = [
     context: {
       es: 'Datos de renovacion de polizas por canal de venta:\nCanal digital: 2020: 60%, 2021: 65%, 2022: 72%, 2023: 78%\nAgentes: 2020: 80%, 2021: 78%, 2022: 75%, 2023: 73%\nCorredores: 2020: 70%, 2021: 71%, 2022: 70%, 2023: 69%',
       en: 'Policy renewal data by sales channel:\nDigital channel: 2020: 60%, 2021: 65%, 2022: 72%, 2023: 78%\nAgents: 2020: 80%, 2021: 78%, 2022: 75%, 2023: 73%\nBrokers: 2020: 70%, 2021: 71%, 2022: 70%, 2023: 69%',
+      fr: "Données de renouvellement de polices par canal de vente :\nCanal numérique : 2020 : 60 %, 2021 : 65 %, 2022 : 72 %, 2023 : 78 %\nAgents : 2020 : 80 %, 2021 : 78 %, 2022 : 75 %, 2023 : 73 %\nCourtiers : 2020 : 70 %, 2021 : 71 %, 2022 : 70 %, 2023 : 69 %",
     },
     content: {
       es: '¿Cual de las siguientes conclusiones se puede deducir de los datos?',
       en: 'Which of the following conclusions can be deduced from the data?',
+      fr: 'Laquelle des conclusions suivantes peut être déduite des données ?',
     },
     options: [
       opt('apt-ana-04-a', 'Los agentes siempre tendran mejor renovacion que el canal digital / Agents will always have better renewal than digital', 'Agents will always have better renewal than digital', 0),
@@ -385,6 +411,7 @@ const analyticalQuestions: AptitudeQuestion[] = [
     content: {
       es: 'Una compania de seguros observa que: (1) El 90% de las reclamaciones fraudulentas se presentan dentro de los primeros 6 meses de la poliza. (2) El 30% de todas las reclamaciones se presentan en los primeros 6 meses. (3) El 5% de todas las reclamaciones son fraudulentas. Si una reclamacion se presenta en el mes 3, ¿cual es la probabilidad aproximada de que sea fraudulenta?',
       en: 'An insurance company observes that: (1) 90% of fraudulent claims are filed within the first 6 months of the policy. (2) 30% of all claims are filed in the first 6 months. (3) 5% of all claims are fraudulent. If a claim is filed in month 3, what is the approximate probability it is fraudulent?',
+      fr: "Une compagnie d'assurance observe que : (1) 90 % des réclamations frauduleuses sont déposées dans les 6 premiers mois de la police. (2) 30 % de toutes les réclamations sont déposées dans les 6 premiers mois. (3) 5 % de toutes les réclamations sont frauduleuses. Si une réclamation est déposée au mois 3, quelle est la probabilité approximative qu'elle soit frauduleuse ?",
     },
     options: [
       opt('apt-ana-05-a', '5%', '5%', 0),
@@ -403,10 +430,12 @@ const analyticalQuestions: AptitudeQuestion[] = [
     context: {
       es: 'Un sistema de deteccion de fraude utiliza tres indicadores independientes (X, Y, Z). La politica establece:\n- Si X e Y son positivos, se investiga.\n- Si solo Z es positivo, se marca para revision.\n- Si X y Z son positivos pero Y es negativo, se investiga solo si el monto supera $10,000.\n- Si ninguno es positivo, se aprueba automaticamente.',
       en: 'A fraud detection system uses three independent indicators (X, Y, Z). The policy states:\n- If X and Y are positive, investigate.\n- If only Z is positive, flag for review.\n- If X and Z are positive but Y is negative, investigate only if the amount exceeds $10,000.\n- If none are positive, auto-approve.',
+      fr: "Un système de détection de fraude utilise trois indicateurs indépendants (X, Y, Z). La politique stipule :\n- Si X et Y sont positifs, enquêter.\n- Si seul Z est positif, signaler pour examen.\n- Si X et Z sont positifs mais Y est négatif, enquêter uniquement si le montant dépasse 10 000 $.\n- Si aucun n'est positif, approuver automatiquement.",
     },
     content: {
       es: 'Un caso muestra X positivo, Y negativo, Z positivo y un monto de $8,500. ¿Cual es la accion correcta?',
       en: 'A case shows X positive, Y negative, Z positive, and an amount of $8,500. What is the correct action?',
+      fr: "Un cas montre X positif, Y négatif, Z positif et un montant de 8 500 $. Quelle est l'action correcte ?",
     },
     options: [
       opt('apt-ana-06-a', 'Investigar / Investigate', 'Investigate', 0),
@@ -429,14 +458,17 @@ export const aptitudeTestConfig: AptitudeTestConfig = {
   name: {
     es: 'Prueba de Aptitud para el Sector Asegurador',
     en: 'Aptitude Test for the Insurance Sector',
+    fr: "Test d'aptitude pour le secteur de l'assurance",
   },
   description: {
     es: 'Evaluacion de habilidades numericas, verbales y analiticas aplicadas al contexto de seguros y negocios. Consta de 20 preguntas con un tiempo limite de 15 minutos.',
     en: 'Assessment of numerical, verbal, and analytical skills applied to the insurance and business context. Consists of 20 questions with a 15-minute time limit.',
+    fr: "Évaluation des compétences numériques, verbales et analytiques appliquées au contexte de l'assurance et des affaires. Comprend 20 questions avec une limite de temps de 15 minutes.",
   },
   targetRole: {
     es: 'Profesional del sector asegurador',
     en: 'Insurance sector professional',
+    fr: "Professionnel du secteur de l'assurance",
   },
   questions: [...numericalQuestions, ...verbalQuestions, ...analyticalQuestions],
   totalTimeLimitMinutes: 15,

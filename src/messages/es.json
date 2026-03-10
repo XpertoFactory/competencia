@@ -36,7 +36,8 @@
     "settings": "Configuración",
     "language": "Idioma",
     "spanish": "Español",
-    "english": "Inglés"
+    "english": "Inglés",
+    "french": "Francés"
   },
   "landing": {
     "title": "Evaluación de Competencias Profesionales",
@@ -843,5 +844,32 @@
     "updated": "Actualizado correctamente",
     "deleted": "Eliminado correctamente",
     "evaluationSubmitted": "Evaluación enviada correctamente"
+  },
+  "profiles": {
+    "filterBySector": "Filtrar por sector",
+    "filterByLevel": "Filtrar por nivel",
+    "allSectors": "Todos los sectores",
+    "allLevels": "Todos los niveles",
+    "sectors": {
+      "insurance": "Seguros",
+      "education": "Educación",
+      "retail-services": "Comercio y Servicios",
+      "healthcare": "Salud",
+      "transportation": "Transporte",
+      "finance-accounting": "Finanzas y Contabilidad",
+      "compliance-legal": "Cumplimiento y Legal",
+      "human-resources": "Recursos Humanos",
+      "commercial-business": "Comercial y Negocios",
+      "collections-credit": "Cobros y Crédito",
+      "customer-service": "Servicio al Cliente",
+      "general-management": "Gerencia General"
+    },
+    "levels": {
+      "executive": "Ejecutivo (C-Suite)",
+      "managerial": "Gerencial",
+      "professional-specialist": "Profesional / Especialista",
+      "administrative": "Administrativo",
+      "operative": "Operativo"
+    }
   }
 }
