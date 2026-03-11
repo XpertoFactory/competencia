@@ -29,6 +29,7 @@ import {
   FileText,
   Shield,
   Megaphone,
+  Bot,
 } from 'lucide-react';
 
 type Section =
@@ -43,7 +44,9 @@ type Section =
   | 'employees'
   | 'jobFit'
   | 'organizations'
-  | 'results';
+  | 'results'
+  | 'resources'
+  | 'aiStaff';
 
 const evalItemIcons: Record<string, React.ElementType> = {
   professional: Briefcase,
@@ -93,6 +96,8 @@ const SECTION_NAV: SectionNavItem[] = [
   { key: 'jobFit', icon: Target, color: 'text-violet-600', bgColor: 'bg-violet-100' },
   { key: 'organizations', icon: Building2, color: 'text-sky-600', bgColor: 'bg-sky-100' },
   { key: 'results', icon: BarChart3, color: 'text-teal-600', bgColor: 'bg-teal-100' },
+  { key: 'resources', icon: BookOpen, color: 'text-amber-600', bgColor: 'bg-amber-100' },
+  { key: 'aiStaff', icon: Bot, color: 'text-gray-700', bgColor: 'bg-gray-900 text-white' },
 ];
 
 function FeatureList({ items, color = 'text-green-500' }: { items: string[]; color?: string }) {
@@ -135,7 +140,7 @@ export default function InstructionsPage() {
         {/* Section Navigation Cards */}
         <section className="bg-white border-b border-gray-200 py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap justify-center gap-2">
               {SECTION_NAV.map(({ key, icon: Icon, color, bgColor }) => (
                 <button
                   key={key}
@@ -549,6 +554,50 @@ export default function InstructionsPage() {
                   items={['f1', 'f2', 'f3', 'f4', 'f5', 'f6'].map(k => t(`resultsSection.features.${k}`))}
                   color="text-teal-500"
                 />
+              </div>
+            )}
+
+            {/* ===== RESOURCES ===== */}
+            {activeSection === 'resources' && (
+              <div>
+                <SectionHeader
+                  icon={BookOpen}
+                  title={t('resourcesSection.title')}
+                  description={t('resourcesSection.description')}
+                  color="text-amber-600"
+                  bgColor="bg-amber-100"
+                />
+                <FeatureList
+                  items={['f1', 'f2', 'f3', 'f4', 'f5', 'f6'].map(k => t(`resourcesSection.features.${k}`))}
+                  color="text-amber-500"
+                />
+              </div>
+            )}
+
+            {/* ===== AI STAFF ===== */}
+            {activeSection === 'aiStaff' && (
+              <div>
+                <SectionHeader
+                  icon={Bot}
+                  title={t('aiStaffSection.title')}
+                  description={t('aiStaffSection.description')}
+                  color="text-gray-900"
+                  bgColor="bg-gray-100"
+                />
+                <FeatureList
+                  items={['f1', 'f2', 'f3', 'f4', 'f5', 'f6'].map(k => t(`aiStaffSection.features.${k}`))}
+                  color="text-gray-700"
+                />
+                <div className="mt-8">
+                  <Link
+                    href={`/${locale}/ai-staff`}
+                    className="inline-flex items-center gap-2 bg-gray-900 text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-gray-800 transition-colors text-sm"
+                  >
+                    <Bot className="w-4 h-4" />
+                    {t('sections.aiStaff')}
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             )}
 

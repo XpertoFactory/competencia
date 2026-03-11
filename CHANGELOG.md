@@ -1,5 +1,58 @@
 # Changelog
 
+## [0.9.0] - 2026-03-11
+
+### Resources Section
+- New `/resources` hub page with three sections: Opinion, Best Practices (coming soon), FAQs
+- 8 expert opinion articles on HR, careers, and AI (with commentary from 4 personas)
+- 2 FAQ pages: HR Management FAQs and Career Planning FAQs (12 questions each, accordion-style)
+- Shared `PersonaQuote` and `ArticleLayout` components for article pages
+- 4 expert personas: Carlos Miranda Levy (founder), Billy Nakamura-Jensen, Naila Okafor-Reyes, Ainthony Moreau-Chen
+- Resources link added to Header navigation (desktop and mobile)
+- Features page updated with Resources section
+
+### Benefits (Value Proposition) Page
+- New `/benefits` page focused on ROI and measurable value
+- Three audience tabs: For Businesses, For Individuals, For HR Companies & Professionals
+- Business benefits: cost reduction (60%), time savings (85%), HR operations efficiency, recruitment (3x faster), retention (40%), productivity (25%)
+- Individual benefits: career path savings, earning potential (+30%), accelerated growth (2x)
+- White-label platform pitch for HR companies with 4 feature cards and included tools checklist
+- Key stats hero bar and bottom CTA section
+
+### AI Staff Page
+- New `/ai-staff` page: custom-built AI agents for organizations
+- Hero section: "Can't find the right person? We'll create them for you."
+- 6 AI agent roles: Assistant, Supervisor, Consultant, Advisor, Analyst, Coordinator
+- 6 differentiators: built for your org, culture-aligned, team-integrated, continuously tuned, domain-trained, secure
+- 4-step "How It Works" timeline: Discovery, Design, Integration, Optimization
+- 6 department use cases: HR, Finance, Operations, Sales, Support, Legal
+- AI Staff sections added to Features and Benefits pages
+
+### Admin User Management
+- New `/admin/users` page for super administrators
+- User list with search, filter (all/with org/without org), and stats cards
+- User detail view with profile info, organization memberships, and evaluations
+- Assign users to organizations with role selection (viewer/member/admin/owner)
+- Remove users from organizations with confirmation
+- Click-through to evaluation results
+- Sidebar link and quick action added to admin dashboard
+
+### Navigation Updates
+- Header nav order: Home, Features, Benefits, AI Staff, Resources, Evaluations
+- All new pages with full trilingual support (ES/EN/FR)
+
+### New Pages
+- `/resources` — Resources hub (Opinion, Best Practices, FAQs)
+- `/resources/opinion/*` — 8 opinion articles
+- `/resources/faqs/*` — 2 FAQ pages
+- `/benefits` — Value proposition with audience-specific tabs
+- `/ai-staff` — Custom AI agents service page
+- `/admin/users` — User management for super administrators
+
+### New Firestore Functions
+- `getAllUserProfiles()` — Get all registered users
+- `getOrganizationsList()` — Get all organizations
+
 ## [0.8.0] - 2026-03-11
 
 ### Recruitment Process

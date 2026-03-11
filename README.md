@@ -22,6 +22,10 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 - **Candidate Management** - Full candidate pipeline with status tracking, file uploads, checklists, scoring, and invitation system
 - **Candidate Portal** - Self-service profile editing for candidates with multi-org support
 - **Post-Hire Tools** - Employee management, probation tracking, 360/180 reviews, climate surveys
+- **Resources** - Expert opinion articles, FAQs, and best practices on HR and careers in the AI era
+- **Benefits Page** - Value proposition with ROI metrics for businesses, individuals, and HR companies
+- **AI Staff** - Custom-built AI agents aligned with your organization's culture, values, and processes
+- **User Management** - Super admins can view all users, their evaluations, and assign them to organizations
 - **AI Analysis** - Optional AI-powered evaluation via Claude, OpenAI, or Gemini
 - **PDF Export** - Downloadable evaluation reports
 - **Shareable Links** - Generate evaluation links for candidates
@@ -61,11 +65,15 @@ src/
       probation/             # Probation evaluations
       reviews/               # 360/180 reviews
       settings/              # App settings (AI key management)
+      users/                 # User management for super admins
+    ai-staff/                # AI Staff service page
     auth/                    # User login and registration
+    benefits/                # Value proposition and ROI page
     candidate/               # Candidate self-service portal
     evaluation/[profileId]/  # Competency evaluation flow
     features/                # Platform features and instructions
     profiles/                # Browsable profile directory
+    resources/               # Expert articles, FAQs, and best practices
     results/[evaluationId]/  # Results display
     tests/                   # Test hub (cognitive, personality, DISC, aptitude)
   components/                # Reusable UI components
@@ -73,6 +81,7 @@ src/
     evaluation/              # Evaluation step components
     layout/                  # Header, Footer
     org/                     # OrgProvider, OrgSwitcher
+    resources/               # PersonaQuote, ArticleLayout
     results/                 # Results display components
     ui/                      # Shared UI primitives
   lib/

@@ -194,6 +194,12 @@ export default function AdminPage() {
                   {t('jobFit') || 'Ajuste al Puesto'}
                 </button>
               </Link>
+              <Link href={`/${locale}/admin/users`}>
+                <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">
+                  <UserSearch className="w-5 h-5" />
+                  {t('userManagement') || 'User Management'}
+                </button>
+              </Link>
               <Link href={`/${locale}/admin/organizations`}>
                 <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">
                   <Building2 className="w-5 h-5" />
@@ -338,6 +344,7 @@ function DashboardContent({ t, locale }: { t: any; locale: string }) {
     { icon: ClipboardCheck, label: l('Probatoria', 'Probation'), href: `/${locale}/admin/probation`, color: 'bg-amber-100 text-amber-600' },
     { icon: Star, label: l('Evaluaciones 360°', '360° Reviews'), href: `/${locale}/admin/reviews`, color: 'bg-orange-100 text-orange-600' },
     { icon: ThermometerSun, label: l('Clima Laboral', 'Climate'), href: `/${locale}/admin/climate`, color: 'bg-rose-100 text-rose-600' },
+    { icon: UserSearch, label: l('Gestión de Usuarios', 'User Management'), href: `/${locale}/admin/users`, color: 'bg-sky-100 text-sky-600' },
     { icon: Building2, label: l('Organizaciones', 'Organizations'), href: `/${locale}/admin/organizations`, color: 'bg-slate-100 text-slate-600' },
     { icon: Settings, label: l('Configuración', 'Settings'), href: `/${locale}/admin/settings`, color: 'bg-gray-100 text-gray-600' },
   ];

@@ -129,6 +129,42 @@ export function Header() {
               {t('features')}
             </Link>
 
+            <Link
+              href={`/${locale}/benefits`}
+              className={cn(
+                'text-sm font-medium transition-colors',
+                pathname === `/${locale}/benefits`
+                  ? 'text-primary-600'
+                  : 'text-gray-600 hover:text-gray-900'
+              )}
+            >
+              {t('benefits')}
+            </Link>
+
+            <Link
+              href={`/${locale}/ai-staff`}
+              className={cn(
+                'text-sm font-medium transition-colors',
+                pathname === `/${locale}/ai-staff`
+                  ? 'text-primary-600'
+                  : 'text-gray-600 hover:text-gray-900'
+              )}
+            >
+              {t('aiStaff')}
+            </Link>
+
+            <Link
+              href={`/${locale}/resources`}
+              className={cn(
+                'text-sm font-medium transition-colors',
+                pathname.startsWith(`/${locale}/resources`)
+                  ? 'text-primary-600'
+                  : 'text-gray-600 hover:text-gray-900'
+              )}
+            >
+              {t('resources')}
+            </Link>
+
             {/* Evaluations Dropdown */}
             <div className="relative" ref={evalMenuRef}>
               <button
@@ -304,6 +340,45 @@ export function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               {t('features')}
+            </Link>
+
+            <Link
+              href={`/${locale}/benefits`}
+              className={cn(
+                'block px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                pathname === `/${locale}/benefits`
+                  ? 'bg-primary-50 text-primary-600'
+                  : 'text-gray-600 hover:bg-gray-50'
+              )}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('benefits')}
+            </Link>
+
+            <Link
+              href={`/${locale}/ai-staff`}
+              className={cn(
+                'block px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                pathname === `/${locale}/ai-staff`
+                  ? 'bg-primary-50 text-primary-600'
+                  : 'text-gray-600 hover:bg-gray-50'
+              )}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('aiStaff')}
+            </Link>
+
+            <Link
+              href={`/${locale}/resources`}
+              className={cn(
+                'block px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                pathname.startsWith(`/${locale}/resources`)
+                  ? 'bg-primary-50 text-primary-600'
+                  : 'text-gray-600 hover:bg-gray-50'
+              )}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('resources')}
             </Link>
 
             {/* Mobile Evaluations Section */}

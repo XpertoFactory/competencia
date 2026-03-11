@@ -709,6 +709,18 @@ export async function createOrUpdateUserProfile(userId: string, data: Partial<Us
 }
 
 // ==========================================
+// Admin User Management
+// ==========================================
+
+export async function getAllUserProfiles(): Promise<UserProfile[]> {
+  return getDocuments<UserProfile>(COLLECTIONS.USER_PROFILES, orderBy('createdAt', 'desc'));
+}
+
+export async function getOrganizationsList(): Promise<Organization[]> {
+  return getDocuments<Organization>(COLLECTIONS.ORGANIZATIONS, orderBy('name', 'asc'));
+}
+
+// ==========================================
 // Positions (Recruitment)
 // ==========================================
 
