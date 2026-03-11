@@ -102,7 +102,142 @@
       "tip1": "Find a quiet environment with a stable internet connection before starting",
       "tip2": "Answer based on your actual behavior, not what you think is expected",
       "tip3": "You can download your results as a PDF for your records"
-    }
+    },
+    "newSubtitle": "Discover all the tools and features of the skaills platform",
+    "sections": {
+      "evaluations": "Evaluations",
+      "tests": "Specialized Tests",
+      "profiles": "Professional Profiles",
+      "candidates": "Candidate Management",
+      "reviews": "360° / 180° Reviews",
+      "climate": "Climate Surveys",
+      "employees": "Employee Management",
+      "jobFit": "Job Fit Analysis",
+      "organizations": "Organizations",
+      "results": "Results & Reports"
+    },
+    "evaluationsSection": {
+      "title": "Competency Evaluations",
+      "description": "Evaluate professional skills, soft skills, and readiness for change across 43 profiles in 15 industry sectors.",
+      "features": {
+        "f1": "43 evaluation profiles across 15 sectors and 5 levels (executive to operative)",
+        "f2": "700+ trilingual questions (ES/EN/FR) covering 5 question types",
+        "f3": "Automated scoring with AI-powered analysis and recommendations",
+        "f4": "Shareable evaluation links for remote candidate assessment",
+        "f5": "PDF export and detailed results with strength/growth analysis"
+      }
+    },
+    "testsSection": {
+      "title": "Specialized Tests",
+      "description": "Go beyond competencies with cognitive, personality, behavioral, aptitude, and technical assessments.",
+      "cognitive": {
+        "title": "Cognitive Test",
+        "desc": "20 timed IQ-style questions measuring logical reasoning, pattern recognition, and problem-solving. Results include IQ estimate and percentile ranking."
+      },
+      "personality": {
+        "title": "Personality Profile",
+        "desc": "50-question Big Five (OCEAN) assessment measuring Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism."
+      },
+      "disc": {
+        "title": "DISC Assessment",
+        "desc": "28 forced-choice pairs measuring behavioral style: Dominance, Influence, Steadiness, and Conscientiousness."
+      },
+      "aptitude": {
+        "title": "Aptitude Test",
+        "desc": "20 questions evaluating numerical reasoning, verbal comprehension, and analytical thinking abilities."
+      },
+      "technical": {
+        "title": "Technical Knowledge",
+        "desc": "Case study-based evaluation with role-specific scenarios testing practical knowledge and decision-making."
+      }
+    },
+    "profilesSection": {
+      "title": "Professional Profiles",
+      "description": "Browse and select from 43 evaluation profiles organized by industry sector and career level.",
+      "sectors": "15 industry sectors including technology, banking, healthcare, insurance, education, hospitality, and more",
+      "levels": "5 career levels: Executive, Managerial, Professional/Specialist, Administrative, Operative",
+      "customizable": "Each profile includes tailored competency categories and evaluation questions"
+    },
+    "candidatesSection": {
+      "title": "Candidate Management",
+      "description": "Organization managers can maintain a complete candidate database with pipeline tracking, file management, and evaluation integration.",
+      "features": {
+        "f1": "Full candidate profiles with contact info, files (CV, photo, certificates), and custom checklists",
+        "f2": "6-stage hiring pipeline: Interest Received → Contacted → Interviewed → Evaluated → Reference Check → Final Review",
+        "f3": "Manager scoring (0-100), recommendations (hire, discard, contact, keep info), and private comments",
+        "f4": "Link candidates to job positions and view their evaluation/test results",
+        "f5": "Send invitation links — candidates register and become linked automatically",
+        "f6": "Candidate self-service portal for updating personal info and uploading documents"
+      }
+    },
+    "reviewsSection": {
+      "title": "360° and 180° Reviews",
+      "description": "Run multi-rater performance review campaigns with customizable evaluation criteria.",
+      "features": {
+        "f1": "Create review campaigns with configurable type (360° or 180°), date range, and participant selection",
+        "f2": "Assign raters by role: self, supervisor, peer, or subordinate",
+        "f3": "Track completion status and view scores across 9 dimensions (leadership, communication, teamwork, etc.)",
+        "f4": "Compare ratings across rater roles for comprehensive performance insights"
+      }
+    },
+    "climateSection": {
+      "title": "Workplace Climate Surveys",
+      "description": "Measure organizational health with anonymous surveys across key workplace dimensions.",
+      "features": {
+        "f1": "Create surveys with scale and open-text questions across 6 categories",
+        "f2": "Categories: work environment, leadership, communication, growth, compensation, work-life balance",
+        "f3": "Anonymous response collection with department targeting",
+        "f4": "Results dashboard with category scores, department breakdowns, highlights, and concerns"
+      }
+    },
+    "employeesSection": {
+      "title": "Employee Management",
+      "description": "Manage your workforce with lifecycle tracking and probation period monitoring.",
+      "features": {
+        "f1": "Employee database with position, department, supervisor, and hire date",
+        "f2": "Probation period evaluations with score tracking and alerts",
+        "f3": "Link employees to evaluation profiles for ongoing assessment"
+      }
+    },
+    "jobFitSection": {
+      "title": "Job Fit Analysis",
+      "description": "Match candidates to job requirements with weighted multi-dimensional scoring.",
+      "features": {
+        "f1": "Define job profiles with minimum scores, preferred DISC styles, and custom weights",
+        "f2": "6-dimension weighted scoring: competency, cognitive, personality, aptitude, DISC, technical",
+        "f3": "Gap analysis with priority classification (critical, important, minor)",
+        "f4": "Side-by-side candidate comparison with radar charts"
+      }
+    },
+    "organizationsSection": {
+      "title": "Organizations",
+      "description": "Multi-tenant organization management with role-based access control.",
+      "features": {
+        "f1": "Create and manage organizations with customizable settings",
+        "f2": "Invite members by email with role assignment (owner, admin, member, viewer)",
+        "f3": "Configure AI analysis providers and API keys per organization",
+        "f4": "Switch between organizations seamlessly"
+      }
+    },
+    "resultsSection": {
+      "title": "Results & Reports",
+      "description": "Comprehensive reporting with visual charts, PDF exports, and data downloads.",
+      "features": {
+        "f1": "Interactive score gauges with level labels and category drill-down",
+        "f2": "Comparative benchmarks showing candidate performance vs. profile average",
+        "f3": "Radar charts for multi-dimensional competency visualization",
+        "f4": "PDF export with cover page, executive summary, and detailed breakdown",
+        "f5": "CSV and Excel export for evaluation history with custom filters",
+        "f6": "AI-powered analysis with training recommendations (Claude, OpenAI, or Gemini)"
+      }
+    },
+    "getStarted": "Get Started",
+    "learnMore": "Learn More",
+    "forManagers": "For Organization Managers",
+    "forCandidates": "For Candidates",
+    "forEvaluators": "For Evaluators",
+    "platformOverview": "Platform Overview",
+    "allFeatures": "All Features"
   },
   "landing": {
     "title": "skaills — Intelligent Skills",
@@ -761,7 +896,11 @@
     "supervisor": "Supervisor",
     "supervisorEmail": "Supervisor Email",
     "hireDate": "Hire Date",
-    "status": "Status",
+    "status": {
+      "active": "Active",
+      "inactive": "Inactive",
+      "probation": "On probation"
+    },
     "statuses": {
       "probation": "On Probation",
       "active": "Active",
@@ -776,11 +915,6 @@
     "deleteConfirm": {
       "title": "Confirm deletion",
       "message": "Are you sure you want to delete this employee? This action cannot be undone."
-    },
-    "status": {
-      "active": "Active",
-      "inactive": "Inactive",
-      "probation": "On probation"
     }
   },
   "probation": {

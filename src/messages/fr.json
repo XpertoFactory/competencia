@@ -102,7 +102,142 @@
       "tip1": "Trouvez un environnement calme avec une connexion internet stable avant de commencer",
       "tip2": "Répondez en fonction de votre comportement réel, pas de ce que vous pensez qu'on attend de vous",
       "tip3": "Vous pouvez télécharger vos résultats en PDF pour vos archives"
-    }
+    },
+    "newSubtitle": "Découvrez tous les outils et fonctionnalités de la plateforme skaills",
+    "sections": {
+      "evaluations": "Évaluations",
+      "tests": "Tests Spécialisés",
+      "profiles": "Profils Professionnels",
+      "candidates": "Gestion des Candidats",
+      "reviews": "Évaluations 360° / 180°",
+      "climate": "Enquêtes de Climat",
+      "employees": "Gestion des Employés",
+      "jobFit": "Analyse d'Adéquation au Poste",
+      "organizations": "Organisations",
+      "results": "Résultats et Rapports"
+    },
+    "evaluationsSection": {
+      "title": "Évaluations de Compétences",
+      "description": "Évaluez les compétences professionnelles, les compétences relationnelles et la disposition au changement à travers 43 profils dans 15 secteurs d'activité.",
+      "features": {
+        "f1": "43 profils d'évaluation répartis dans 15 secteurs et 5 niveaux (exécutif à opérationnel)",
+        "f2": "Plus de 700 questions trilingues (ES/EN/FR) couvrant 5 types de questions",
+        "f3": "Notation automatisée avec analyse et recommandations alimentées par l'IA",
+        "f4": "Liens d'évaluation partageables pour l'évaluation à distance des candidats",
+        "f5": "Export PDF et résultats détaillés avec analyse des forces et axes d'amélioration"
+      }
+    },
+    "testsSection": {
+      "title": "Tests Spécialisés",
+      "description": "Allez au-delà des compétences avec des évaluations cognitives, de personnalité, comportementales, d'aptitude et techniques.",
+      "cognitive": {
+        "title": "Test Cognitif",
+        "desc": "20 questions chronométrées de type QI mesurant le raisonnement logique, la reconnaissance de motifs et la résolution de problèmes. Les résultats incluent une estimation du QI et un classement en percentile."
+      },
+      "personality": {
+        "title": "Profil de Personnalité",
+        "desc": "Évaluation Big Five (OCEAN) de 50 questions mesurant l'Ouverture, la Conscienciosité, l'Extraversion, l'Agréabilité et le Neuroticisme."
+      },
+      "disc": {
+        "title": "Évaluation DISC",
+        "desc": "28 paires à choix forcé mesurant le style comportemental : Dominance, Influence, Stabilité et Conformité."
+      },
+      "aptitude": {
+        "title": "Test d'Aptitude",
+        "desc": "20 questions évaluant le raisonnement numérique, la compréhension verbale et les capacités de pensée analytique."
+      },
+      "technical": {
+        "title": "Connaissances Techniques",
+        "desc": "Évaluation basée sur des études de cas avec des scénarios spécifiques au rôle testant les connaissances pratiques et la prise de décision."
+      }
+    },
+    "profilesSection": {
+      "title": "Profils Professionnels",
+      "description": "Parcourez et sélectionnez parmi 43 profils d'évaluation organisés par secteur d'activité et niveau de carrière.",
+      "sectors": "15 secteurs d'activité incluant la technologie, la banque, la santé, l'assurance, l'éducation, l'hôtellerie et plus encore",
+      "levels": "5 niveaux de carrière : Exécutif, Direction, Professionnel/Spécialiste, Administratif, Opérationnel",
+      "customizable": "Chaque profil comprend des catégories de compétences et des questions d'évaluation adaptées"
+    },
+    "candidatesSection": {
+      "title": "Gestion des Candidats",
+      "description": "Les responsables d'organisation peuvent maintenir une base de données complète de candidats avec suivi du pipeline, gestion des fichiers et intégration des évaluations.",
+      "features": {
+        "f1": "Profils complets de candidats avec coordonnées, fichiers (CV, photo, certificats) et checklists personnalisées",
+        "f2": "Pipeline de recrutement en 6 étapes : Intérêt Reçu → Contacté → Entretien → Évalué → Vérification des Références → Révision Finale",
+        "f3": "Notation du responsable (0-100), recommandations (embaucher, écarter, contacter, conserver les infos) et commentaires privés",
+        "f4": "Liez les candidats aux postes et consultez leurs résultats d'évaluations et de tests",
+        "f5": "Envoyez des liens d'invitation — les candidats s'inscrivent et sont liés automatiquement",
+        "f6": "Portail en libre-service pour les candidats pour mettre à jour leurs informations et télécharger des documents"
+      }
+    },
+    "reviewsSection": {
+      "title": "Évaluations 360° et 180°",
+      "description": "Menez des campagnes d'évaluation de performance multi-évaluateurs avec des critères d'évaluation personnalisables.",
+      "features": {
+        "f1": "Créez des campagnes d'évaluation avec type configurable (360° ou 180°), plage de dates et sélection des participants",
+        "f2": "Attribuez des évaluateurs par rôle : auto-évaluation, superviseur, pair ou subordonné",
+        "f3": "Suivez l'état d'avancement et consultez les scores sur 9 dimensions (leadership, communication, travail d'équipe, etc.)",
+        "f4": "Comparez les notations entre les rôles d'évaluateurs pour des perspectives de performance complètes"
+      }
+    },
+    "climateSection": {
+      "title": "Enquêtes de Climat au Travail",
+      "description": "Mesurez la santé organisationnelle avec des enquêtes anonymes sur les dimensions clés de l'environnement de travail.",
+      "features": {
+        "f1": "Créez des enquêtes avec des questions à échelle et à texte libre dans 6 catégories",
+        "f2": "Catégories : environnement de travail, leadership, communication, développement, rémunération, équilibre vie professionnelle-vie personnelle",
+        "f3": "Collecte anonyme des réponses avec ciblage par département",
+        "f4": "Tableau de bord des résultats avec scores par catégorie, répartitions par département, points forts et préoccupations"
+      }
+    },
+    "employeesSection": {
+      "title": "Gestion des Employés",
+      "description": "Gérez vos effectifs avec le suivi du cycle de vie et la surveillance des périodes d'essai.",
+      "features": {
+        "f1": "Base de données des employés avec poste, département, superviseur et date d'embauche",
+        "f2": "Évaluations de période d'essai avec suivi des scores et alertes",
+        "f3": "Liez les employés aux profils d'évaluation pour une évaluation continue"
+      }
+    },
+    "jobFitSection": {
+      "title": "Analyse d'Adéquation au Poste",
+      "description": "Comparez les candidats aux exigences du poste avec une notation pondérée multidimensionnelle.",
+      "features": {
+        "f1": "Définissez des profils de poste avec scores minimaux, styles DISC préférés et pondérations personnalisées",
+        "f2": "Notation pondérée sur 6 dimensions : compétences, cognitif, personnalité, aptitude, DISC, technique",
+        "f3": "Analyse des écarts avec classification de priorité (critique, importante, mineure)",
+        "f4": "Comparaison côte à côte des candidats avec graphiques en radar"
+      }
+    },
+    "organizationsSection": {
+      "title": "Organisations",
+      "description": "Gestion multi-entreprise avec contrôle d'accès basé sur les rôles.",
+      "features": {
+        "f1": "Créez et gérez des organisations avec des paramètres personnalisables",
+        "f2": "Invitez des membres par e-mail avec attribution de rôles (propriétaire, administrateur, membre, observateur)",
+        "f3": "Configurez les fournisseurs d'analyse IA et les clés API par organisation",
+        "f4": "Basculez entre les organisations de manière fluide"
+      }
+    },
+    "resultsSection": {
+      "title": "Résultats et Rapports",
+      "description": "Rapports complets avec graphiques visuels, exports PDF et téléchargement de données.",
+      "features": {
+        "f1": "Jauges de score interactives avec étiquettes de niveau et détail par catégorie",
+        "f2": "Benchmarks comparatifs montrant la performance du candidat par rapport à la moyenne du profil",
+        "f3": "Graphiques en radar pour la visualisation multidimensionnelle des compétences",
+        "f4": "Export PDF avec page de couverture, résumé exécutif et détail complet",
+        "f5": "Export CSV et Excel de l'historique des évaluations avec filtres personnalisés",
+        "f6": "Analyse alimentée par l'IA avec recommandations de formation (Claude, OpenAI ou Gemini)"
+      }
+    },
+    "getStarted": "Commencer",
+    "learnMore": "En Savoir Plus",
+    "forManagers": "Pour les Responsables d'Organisation",
+    "forCandidates": "Pour les Candidats",
+    "forEvaluators": "Pour les Évaluateurs",
+    "platformOverview": "Vue d'Ensemble de la Plateforme",
+    "allFeatures": "Toutes les Fonctionnalités"
   },
   "landing": {
     "title": "skaills — Compétences Intelligentes",
@@ -761,7 +896,11 @@
     "supervisor": "Superviseur",
     "supervisorEmail": "E-mail du Superviseur",
     "hireDate": "Date d'Embauche",
-    "status": "Statut",
+    "status": {
+      "active": "Actif",
+      "inactive": "Inactif",
+      "probation": "En période d'essai"
+    },
     "statuses": {
       "probation": "En Période d'Essai",
       "active": "Actif",
@@ -776,11 +915,6 @@
     "deleteConfirm": {
       "title": "Confirmer la suppression",
       "message": "Êtes-vous sûr de vouloir supprimer cet employé ? Cette action est irréversible."
-    },
-    "status": {
-      "active": "Actif",
-      "inactive": "Inactif",
-      "probation": "En période d'essai"
     }
   },
   "probation": {
