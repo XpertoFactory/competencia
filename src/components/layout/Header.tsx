@@ -19,12 +19,16 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [isEvalOpen, setIsEvalOpen] = useState(false);
+  const [isValueOpen, setIsValueOpen] = useState(false);
+  const [isResourcesOpen, setIsResourcesOpen] = useState(false);
   const [user, setUser] = useState<FirebaseUser | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const userMenuRef = useRef<HTMLDivElement>(null);
   const langMenuRef = useRef<HTMLDivElement>(null);
   const evalMenuRef = useRef<HTMLDivElement>(null);
+  const valueMenuRef = useRef<HTMLDivElement>(null);
+  const resourcesMenuRef = useRef<HTMLDivElement>(null);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
@@ -37,6 +41,12 @@ export function Header() {
       }
       if (evalMenuRef.current && !evalMenuRef.current.contains(event.target as Node)) {
         setIsEvalOpen(false);
+      }
+      if (valueMenuRef.current && !valueMenuRef.current.contains(event.target as Node)) {
+        setIsValueOpen(false);
+      }
+      if (resourcesMenuRef.current && !resourcesMenuRef.current.contains(event.target as Node)) {
+        setIsResourcesOpen(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -85,6 +95,8 @@ export function Header() {
     fr: 'Français',
   };
 
+  const isValueActive = pathname === `/${locale}/about` || pathname === `/${locale}/features` || pathname === `/${locale}/benefits`;
+  const isResourcesActive = pathname.startsWith(`/${locale}/resources`);
   const isEvalActive = pathname.startsWith(`/${locale}/profiles`) || pathname.startsWith(`/${locale}/tests`);
 
   return (
@@ -117,29 +129,61 @@ export function Header() {
               {t('home')}
             </Link>
 
-            <Link
-              href={`/${locale}/features`}
-              className={cn(
-                'text-sm font-medium transition-colors',
-                pathname === `/${locale}/features`
-                  ? 'text-primary-600'
-                  : 'text-gray-600 hover:text-gray-900'
+            {/* Value Dropdown */}
+            <div className="relative" ref={valueMenuRef}>
+              <button
+                onClick={() => setIsValueOpen(!isValueOpen)}
+                className={cn(
+                  'flex items-center gap-1 text-sm font-medium transition-colors',
+                  isValueActive
+                    ? 'text-primary-600'
+                    : 'text-gray-600 hover:text-gray-900'
+                )}
+              >
+                {t('value')}
+                <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+              {isValueOpen && (
+                <div className="absolute left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                  <Link
+                    href={`/${locale}/about`}
+                    onClick={() => setIsValueOpen(false)}
+                    className={cn(
+                      'block px-4 py-2 text-sm rounded-t-lg transition-colors',
+                      pathname === `/${locale}/about`
+                        ? 'bg-primary-50 text-primary-600 font-medium'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    )}
+                  >
+                    {t('about')}
+                  </Link>
+                  <Link
+                    href={`/${locale}/features`}
+                    onClick={() => setIsValueOpen(false)}
+                    className={cn(
+                      'block px-4 py-2 text-sm transition-colors',
+                      pathname === `/${locale}/features`
+                        ? 'bg-primary-50 text-primary-600 font-medium'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    )}
+                  >
+                    {t('features')}
+                  </Link>
+                  <Link
+                    href={`/${locale}/benefits`}
+                    onClick={() => setIsValueOpen(false)}
+                    className={cn(
+                      'block px-4 py-2 text-sm rounded-b-lg transition-colors',
+                      pathname === `/${locale}/benefits`
+                        ? 'bg-primary-50 text-primary-600 font-medium'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    )}
+                  >
+                    {t('benefits')}
+                  </Link>
+                </div>
               )}
-            >
-              {t('features')}
-            </Link>
-
-            <Link
-              href={`/${locale}/benefits`}
-              className={cn(
-                'text-sm font-medium transition-colors',
-                pathname === `/${locale}/benefits`
-                  ? 'text-primary-600'
-                  : 'text-gray-600 hover:text-gray-900'
-              )}
-            >
-              {t('benefits')}
-            </Link>
+            </div>
 
             <Link
               href={`/${locale}/ai-staff`}
@@ -153,17 +197,56 @@ export function Header() {
               {t('aiStaff')}
             </Link>
 
-            <Link
-              href={`/${locale}/resources`}
-              className={cn(
-                'text-sm font-medium transition-colors',
-                pathname.startsWith(`/${locale}/resources`)
-                  ? 'text-primary-600'
-                  : 'text-gray-600 hover:text-gray-900'
+            {/* Resources Dropdown */}
+            <div className="relative" ref={resourcesMenuRef}>
+              <button
+                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                className={cn(
+                  'flex items-center gap-1 text-sm font-medium transition-colors',
+                  isResourcesActive
+                    ? 'text-primary-600'
+                    : 'text-gray-600 hover:text-gray-900'
+                )}
+              >
+                {t('resources')}
+                <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+              {isResourcesOpen && (
+                <div className="absolute left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                  <Link
+                    href={`/${locale}/resources`}
+                    onClick={() => setIsResourcesOpen(false)}
+                    className={cn(
+                      'block px-4 py-2 text-sm rounded-t-lg transition-colors',
+                      pathname === `/${locale}/resources`
+                        ? 'bg-primary-50 text-primary-600 font-medium'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    )}
+                  >
+                    {t('opinion')}
+                  </Link>
+                  <Link
+                    href={`/${locale}/resources#best-practices`}
+                    onClick={() => setIsResourcesOpen(false)}
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                  >
+                    {t('bestPractices')}
+                  </Link>
+                  <Link
+                    href={`/${locale}/resources#faqs`}
+                    onClick={() => setIsResourcesOpen(false)}
+                    className={cn(
+                      'block px-4 py-2 text-sm rounded-b-lg transition-colors',
+                      pathname.includes('/resources/faqs')
+                        ? 'bg-primary-50 text-primary-600 font-medium'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    )}
+                  >
+                    {t('faqs')}
+                  </Link>
+                </div>
               )}
-            >
-              {t('resources')}
-            </Link>
+            </div>
 
             {/* Evaluations Dropdown */}
             <div className="relative" ref={evalMenuRef}>
@@ -329,10 +412,26 @@ export function Header() {
               {t('home')}
             </Link>
 
+            {/* Mobile Value Section */}
+            <div className="px-3 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+              {t('value')}
+            </div>
+            <Link
+              href={`/${locale}/about`}
+              className={cn(
+                'block px-3 py-2 pl-6 rounded-lg text-sm font-medium transition-colors',
+                pathname === `/${locale}/about`
+                  ? 'bg-primary-50 text-primary-600'
+                  : 'text-gray-600 hover:bg-gray-50'
+              )}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('about')}
+            </Link>
             <Link
               href={`/${locale}/features`}
               className={cn(
-                'block px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                'block px-3 py-2 pl-6 rounded-lg text-sm font-medium transition-colors',
                 pathname === `/${locale}/features`
                   ? 'bg-primary-50 text-primary-600'
                   : 'text-gray-600 hover:bg-gray-50'
@@ -341,11 +440,10 @@ export function Header() {
             >
               {t('features')}
             </Link>
-
             <Link
               href={`/${locale}/benefits`}
               className={cn(
-                'block px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                'block px-3 py-2 pl-6 rounded-lg text-sm font-medium transition-colors',
                 pathname === `/${locale}/benefits`
                   ? 'bg-primary-50 text-primary-600'
                   : 'text-gray-600 hover:bg-gray-50'
@@ -368,17 +466,40 @@ export function Header() {
               {t('aiStaff')}
             </Link>
 
+            {/* Mobile Resources Section */}
+            <div className="px-3 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+              {t('resources')}
+            </div>
             <Link
               href={`/${locale}/resources`}
               className={cn(
-                'block px-3 py-2 rounded-lg text-sm font-medium transition-colors',
-                pathname.startsWith(`/${locale}/resources`)
+                'block px-3 py-2 pl-6 rounded-lg text-sm font-medium transition-colors',
+                pathname === `/${locale}/resources`
                   ? 'bg-primary-50 text-primary-600'
                   : 'text-gray-600 hover:bg-gray-50'
               )}
               onClick={() => setIsMenuOpen(false)}
             >
-              {t('resources')}
+              {t('opinion')}
+            </Link>
+            <Link
+              href={`/${locale}/resources#best-practices`}
+              className="block px-3 py-2 pl-6 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('bestPractices')}
+            </Link>
+            <Link
+              href={`/${locale}/resources#faqs`}
+              className={cn(
+                'block px-3 py-2 pl-6 rounded-lg text-sm font-medium transition-colors',
+                pathname.includes('/resources/faqs')
+                  ? 'bg-primary-50 text-primary-600'
+                  : 'text-gray-600 hover:bg-gray-50'
+              )}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('faqs')}
             </Link>
 
             {/* Mobile Evaluations Section */}

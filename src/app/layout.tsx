@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'skaills — Intelligent Skills',
     description: 'AI-powered competency evaluation platform. Assess professional skills, cognitive abilities, personality, DISC behavioral styles, and more.',
-    images: [{ url: '/og-image.png', width: 1800, height: 900 }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
     type: 'website',
     siteName: 'skaills',
   },

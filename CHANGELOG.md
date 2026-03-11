@@ -1,5 +1,28 @@
 # Changelog
 
+## [0.9.1] - 2026-03-11
+
+### About Page
+- New `/about` page explaining skaills mission, complete evaluation suite, and service offerings
+- Sections: Hero, Mission, Complete Suite (evaluations, individuals, HR departments, white-label, AI Staff), Explore links grid, Bottom CTA
+- Full trilingual support (ES/EN/FR)
+
+### Navigation Restructuring
+- Replaced flat nav links with dropdown menus for better information architecture
+- New **Value** dropdown: About, Features, Benefits
+- **AI Staff** remains a standalone link
+- New **Resources** dropdown: Opinion, Best Practices, FAQs
+- **Evaluations** dropdown unchanged (Profiles, Specialized)
+- Mobile nav restructured with matching section headers
+
+### Features Page Title
+- Changed title from "Instructions" to "Features & Capabilities" across all 3 languages
+
+### OG Image Optimization
+- Resized OpenGraph share image from 1800×900 to 1200×630 (universal OG standard)
+- Added padding so logo survives WhatsApp square cropping without getting cut off
+- Reduced file size from 338KB to 100KB for faster preview generation
+
 ## [0.9.0] - 2026-03-11
 
 ### Resources Section

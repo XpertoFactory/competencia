@@ -29,7 +29,8 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 - **AI Analysis** - Optional AI-powered evaluation via Claude, OpenAI, or Gemini
 - **PDF Export** - Downloadable evaluation reports
 - **Shareable Links** - Generate evaluation links for candidates
-- **Instructions Page** - Trilingual guide for evaluators and candidates with step-by-step instructions
+- **About Page** - Mission statement, complete evaluation suite overview, and service offerings
+- **Features Page** - Trilingual guide for evaluators and candidates with platform capabilities overview
 - **Trilingual** - Full Spanish, English, and French support via next-intl
 - **Organizations** - Multi-tenant org management with roles (owner/admin/member/viewer) and email invitations
 - **User Authentication** - Email/password and Google sign-in for regular users and admins
@@ -66,6 +67,7 @@ src/
       reviews/               # 360/180 reviews
       settings/              # App settings (AI key management)
       users/                 # User management for super admins
+    about/                   # About page (mission, suite overview)
     ai-staff/                # AI Staff service page
     auth/                    # User login and registration
     benefits/                # Value proposition and ROI page
