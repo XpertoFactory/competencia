@@ -34,6 +34,9 @@ const ALL_SECTORS: ProfileSector[] = [
   'collections-credit',
   'customer-service',
   'general-management',
+  'technology-it',
+  'banking',
+  'hospitality-tourism',
 ];
 
 const ALL_LEVELS: ProfileLevel[] = [

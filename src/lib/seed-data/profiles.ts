@@ -511,6 +511,315 @@ export const profiles: Profile[] = [
     competencyCategories: ['ts-professional', 'ts-soft-skills', 'ts-readiness'],
     isActive: true,
   },
+  {
+    id: 'insurance-ceo',
+    name: {
+      es: 'Director General de Compañía de Seguros',
+      en: 'Insurance Company CEO',
+      fr: 'Directeur Général de Compagnie d\'Assurances',
+    },
+    description: {
+      es: 'Máximo ejecutivo de una compañía de seguros responsable de la visión estratégica, posicionamiento de mercado, gobernanza regulatoria, estrategia de productos y distribución, gestión de reaseguro, solvencia y capital, relaciones con la junta directiva, liderazgo de la industria, gestión de crisis, desarrollo de cultura organizacional y talento, transformación digital e insurtech, riesgo climático y ESG, y toma de decisiones basada en datos.',
+      en: 'Top executive of an insurance company responsible for strategic vision, market positioning, regulatory governance, product and distribution strategy, reinsurance management, solvency and capital, board relations, industry leadership, crisis management, organizational culture and talent development, digital transformation and insurtech, climate risk and ESG, and data-driven decision making.',
+      fr: 'Cadre dirigeant d\'une compagnie d\'assurances responsable de la vision stratégique, du positionnement sur le marché, de la gouvernance réglementaire, de la stratégie produits et distribution, de la gestion de la réassurance, de la solvabilité et du capital, des relations avec le conseil d\'administration, du leadership sectoriel, de la gestion de crise, du développement de la culture organisationnelle et des talents, de la transformation numérique et de l\'insurtech, du risque climatique et ESG, et de la prise de décision basée sur les données.',
+    },
+    sectors: ['insurance'] as ProfileSector[],
+    level: 'executive' as ProfileLevel,
+    competencyCategories: ['ins-ceo-professional', 'ins-ceo-soft-skills', 'ins-ceo-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'insurance-broker-ceo',
+    name: {
+      es: 'Director General de Empresa de Corretaje de Seguros',
+      en: 'Insurance Broker Company CEO',
+      fr: 'Directeur Général de Société de Courtage en Assurances',
+    },
+    description: {
+      es: 'Máximo ejecutivo de una empresa de corretaje de seguros responsable de la estrategia comercial, gestión de cartera de clientes, relaciones con aseguradoras, análisis de mercado y colocación de riesgos, diversificación de ingresos, cumplimiento regulatorio, liderazgo consultivo, desarrollo de equipos, negociación, presencia en la industria, distribución digital, analítica de datos e insights de clientes, y desarrollo de nuevos productos y mercados.',
+      en: 'Top executive of an insurance brokerage firm responsible for business strategy, client portfolio management, carrier relationships, market analysis and risk placement, revenue diversification, regulatory compliance, advisory leadership, team development, negotiation, industry presence, digital distribution, data analytics and client insights, and new product and market development.',
+      fr: 'Cadre dirigeant d\'une société de courtage en assurances responsable de la stratégie commerciale, de la gestion du portefeuille clients, des relations avec les assureurs, de l\'analyse de marché et du placement des risques, de la diversification des revenus, de la conformité réglementaire, du leadership consultatif, du développement des équipes, de la négociation, de la présence sectorielle, de la distribution numérique, de l\'analytique de données et des insights clients, et du développement de nouveaux produits et marchés.',
+    },
+    sectors: ['insurance'] as ProfileSector[],
+    level: 'executive' as ProfileLevel,
+    competencyCategories: ['ins-broker-professional', 'ins-broker-soft-skills', 'ins-broker-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'insurance-cro',
+    name: {
+      es: 'Director de Riesgos',
+      en: 'Chief Risk Officer (CRO)',
+      fr: 'Directeur des Risques',
+    },
+    description: {
+      es: 'Ejecutivo de alta dirección en el sector asegurador responsable del marco de gestión de riesgos empresariales, solvencia y adecuación de capital, modelización de catástrofes y riesgo natural, gestión de riesgo operacional, supervisión de riesgo de inversión, riesgo regulatorio y cumplimiento, cultura de riesgos, reportes al directorio, colaboración interfuncional, liderazgo en crisis, riesgos emergentes (ciber, clima, pandemia), analítica de riesgos e IA, y planificación de escenarios y pruebas de estrés.',
+      en: 'Senior executive in the insurance sector responsible for enterprise risk management framework, solvency and capital adequacy, catastrophe modeling and nat-cat risk, operational risk management, investment risk oversight, regulatory risk and compliance, risk culture evangelism, board risk reporting, cross-functional collaboration, crisis leadership, emerging risks (cyber, climate, pandemic), risk analytics and AI, and scenario planning and stress testing.',
+      fr: 'Cadre dirigeant dans le secteur de l\'assurance responsable du cadre de gestion des risques d\'entreprise, de la solvabilité et de l\'adéquation du capital, de la modélisation des catastrophes et du risque naturel, de la gestion du risque opérationnel, de la supervision du risque d\'investissement, du risque réglementaire et de la conformité, de la culture du risque, des rapports de risque au conseil d\'administration, de la collaboration interfonctionnelle, du leadership en situation de crise, des risques émergents (cyber, climat, pandémie), de l\'analytique des risques et de l\'IA, et de la planification de scénarios et des tests de résistance.',
+    },
+    sectors: ['insurance'] as ProfileSector[],
+    level: 'executive' as ProfileLevel,
+    competencyCategories: ['ins-cro-professional', 'ins-cro-soft-skills', 'ins-cro-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'insurance-cuo',
+    name: {
+      es: 'Director de Suscripción',
+      en: 'Chief Underwriting Officer (CUO)',
+      fr: 'Directeur de la Souscription',
+    },
+    description: {
+      es: 'Ejecutivo de alta dirección en el sector asegurador responsable de la estrategia y filosofía de suscripción, gestión de rentabilidad del portafolio, pricing y adecuación de tarifas, selección de riesgos y apetito de riesgo, optimización del reaseguro, supervisión de reservas técnicas, desarrollo y mentoría de suscriptores, relaciones con corredores y agentes, comunicación ejecutiva, storytelling de datos, suscripción predictiva e IA, seguros paramétricos y embebidos, y suscripción ajustada al clima.',
+      en: 'Senior executive in the insurance sector responsible for underwriting strategy and philosophy, portfolio profitability management, pricing and rate adequacy, risk selection and appetite, reinsurance optimization, technical reserving oversight, underwriter development and mentoring, broker/agent relationship management, executive communication, data storytelling, predictive underwriting and AI, parametric and embedded insurance, and climate-adjusted underwriting.',
+      fr: 'Cadre dirigeant dans le secteur de l\'assurance responsable de la stratégie et de la philosophie de souscription, de la gestion de la rentabilité du portefeuille, de la tarification et de l\'adéquation des taux, de la sélection des risques et de l\'appétit pour le risque, de l\'optimisation de la réassurance, de la supervision des réserves techniques, du développement et du mentorat des souscripteurs, de la gestion des relations avec les courtiers et agents, de la communication exécutive, du storytelling de données, de la souscription prédictive et de l\'IA, des assurances paramétriques et intégrées, et de la souscription ajustée au climat.',
+    },
+    sectors: ['insurance'] as ProfileSector[],
+    level: 'executive' as ProfileLevel,
+    competencyCategories: ['ins-cuo-professional', 'ins-cuo-soft-skills', 'ins-cuo-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'insurance-actuary',
+    name: {
+      es: 'Actuario Jefe',
+      en: 'Chief Actuary',
+      fr: 'Actuaire en Chef',
+    },
+    description: {
+      es: 'Ejecutivo de alta dirección en el sector asegurador responsable de la tarificación y pricing, reservas y valoración de pasivos, modelización de capital (Solvencia II/ORSA), optimización del reaseguro, cumplimiento NIIF 17, estudios de experiencia y tablas de mortalidad/morbilidad, traducción de hallazgos técnicos para ejecutivos, influencia interdepartamental, mentoría de equipos actuariales, relaciones con reguladores, aprendizaje automático en ciencias actuariales, modelización de riesgo climático, y pricing en tiempo real y telemática.',
+      en: 'Senior executive in the insurance sector responsible for pricing and tarification, reserving and liability valuation, capital modeling (Solvency II/ORSA), reinsurance optimization, IFRS 17 compliance, experience studies and mortality/morbidity tables, translating technical findings for executives, cross-departmental influence, mentoring actuarial teams, regulatory relationship management, machine learning in actuarial science, climate risk modeling, and real-time pricing and telematics.',
+      fr: 'Cadre dirigeant dans le secteur de l\'assurance responsable de la tarification, des réserves et de la valorisation des passifs, de la modélisation du capital (Solvabilité II/ORSA), de l\'optimisation de la réassurance, de la conformité IFRS 17, des études d\'expérience et des tables de mortalité/morbidité, de la traduction des résultats techniques pour les dirigeants, de l\'influence interdépartementale, du mentorat des équipes actuarielles, des relations avec les régulateurs, de l\'apprentissage automatique en sciences actuarielles, de la modélisation du risque climatique, et de la tarification en temps réel et de la télématique.',
+    },
+    sectors: ['insurance'] as ProfileSector[],
+    level: 'executive' as ProfileLevel,
+    competencyCategories: ['ins-actuary-professional', 'ins-actuary-soft-skills', 'ins-actuary-readiness'],
+    isActive: true,
+  },
+  // --- Technology / IT ---
+  {
+    id: 'software-developer',
+    name: {
+      es: 'Desarrollador de Software',
+      en: 'Software Developer',
+      fr: 'Développeur Logiciel',
+    },
+    description: {
+      es: 'Ingeniero de software profesional especializado en diseño, desarrollo y mantenimiento de aplicaciones. Requiere competencias en arquitectura de software, programación, pruebas, DevOps y metodologías ágiles.',
+      en: 'Professional software engineer specialized in the design, development, and maintenance of applications. Requires competencies in software architecture, programming, testing, DevOps, and agile methodologies.',
+      fr: 'Ingénieur logiciel professionnel spécialisé dans la conception, le développement et la maintenance d\'applications. Nécessite des compétences en architecture logicielle, programmation, tests, DevOps et méthodologies agiles.',
+    },
+    sectors: ['technology-it'] as ProfileSector[],
+    level: 'professional-specialist' as ProfileLevel,
+    competencyCategories: ['tech-swdev-professional', 'tech-swdev-soft-skills', 'tech-swdev-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'it-manager',
+    name: {
+      es: 'Gerente de TI / CTO',
+      en: 'IT Manager / CTO',
+      fr: 'Directeur IT / CTO',
+    },
+    description: {
+      es: 'Ejecutivo responsable de la estrategia tecnológica, infraestructura, equipos de desarrollo y transformación digital de la organización. Requiere competencias en liderazgo tecnológico, gobernanza de TI, gestión de presupuestos y alineación tecnología-negocio.',
+      en: 'Executive responsible for the technology strategy, infrastructure, development teams, and digital transformation of the organization. Requires competencies in technology leadership, IT governance, budget management, and technology-business alignment.',
+      fr: 'Cadre dirigeant responsable de la stratégie technologique, de l\'infrastructure, des équipes de développement et de la transformation numérique de l\'organisation. Nécessite des compétences en leadership technologique, gouvernance IT, gestion budgétaire et alignement technologie-affaires.',
+    },
+    sectors: ['technology-it'] as ProfileSector[],
+    level: 'executive' as ProfileLevel,
+    competencyCategories: ['tech-itmgr-professional', 'tech-itmgr-soft-skills', 'tech-itmgr-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'data-analyst',
+    name: {
+      es: 'Analista de Datos / Científico de Datos',
+      en: 'Data Analyst / Data Scientist',
+      fr: 'Analyste de Données / Scientifique des Données',
+    },
+    description: {
+      es: 'Profesional especializado en la recolección, análisis e interpretación de datos para apoyar la toma de decisiones empresariales. Requiere competencias en estadística, programación analítica, visualización de datos y comunicación de insights.',
+      en: 'Professional specialized in data collection, analysis, and interpretation to support business decision-making. Requires competencies in statistics, analytical programming, data visualization, and insight communication.',
+      fr: 'Professionnel spécialisé dans la collecte, l\'analyse et l\'interprétation des données pour soutenir la prise de décisions d\'entreprise. Nécessite des compétences en statistiques, programmation analytique, visualisation de données et communication d\'insights.',
+    },
+    sectors: ['technology-it'] as ProfileSector[],
+    level: 'professional-specialist' as ProfileLevel,
+    competencyCategories: ['tech-data-professional', 'tech-data-soft-skills', 'tech-data-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'cybersecurity-analyst',
+    name: {
+      es: 'Analista de Ciberseguridad',
+      en: 'Cybersecurity Analyst',
+      fr: 'Analyste en Cybersécurité',
+    },
+    description: {
+      es: 'Profesional especializado en la protección de sistemas informáticos, redes y datos contra amenazas cibernéticas. Requiere competencias en seguridad de redes, análisis de vulnerabilidades, respuesta a incidentes, cumplimiento normativo y concienciación en seguridad.',
+      en: 'Professional specialized in protecting computer systems, networks, and data against cyber threats. Requires competencies in network security, vulnerability analysis, incident response, regulatory compliance, and security awareness.',
+      fr: 'Professionnel spécialisé dans la protection des systèmes informatiques, réseaux et données contre les cybermenaces. Nécessite des compétences en sécurité réseau, analyse de vulnérabilités, réponse aux incidents, conformité réglementaire et sensibilisation à la sécurité.',
+    },
+    sectors: ['technology-it'] as ProfileSector[],
+    level: 'professional-specialist' as ProfileLevel,
+    competencyCategories: ['tech-cyber-professional', 'tech-cyber-soft-skills', 'tech-cyber-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'agile-project-manager',
+    name: {
+      es: 'Gerente de Proyectos Ágil',
+      en: 'Agile Project Manager',
+      fr: 'Chef de Projet Agile',
+    },
+    description: {
+      es: 'Profesional de nivel gerencial responsable de liderar proyectos tecnológicos usando metodologías ágiles (Scrum, Kanban, SAFe). Requiere competencias en facilitación de equipos, gestión de backlog, entrega continua, gestión de stakeholders y mejora de procesos.',
+      en: 'Managerial-level professional responsible for leading technology projects using agile methodologies (Scrum, Kanban, SAFe). Requires competencies in team facilitation, backlog management, continuous delivery, stakeholder management, and process improvement.',
+      fr: 'Professionnel de niveau managérial responsable de la conduite de projets technologiques avec des méthodologies agiles (Scrum, Kanban, SAFe). Nécessite des compétences en facilitation d\'équipes, gestion du backlog, livraison continue, gestion des parties prenantes et amélioration des processus.',
+    },
+    sectors: ['technology-it'] as ProfileSector[],
+    level: 'managerial' as ProfileLevel,
+    competencyCategories: ['tech-apm-professional', 'tech-apm-soft-skills', 'tech-apm-readiness'],
+    isActive: true,
+  },
+  // --- Hospitality & Tourism ---
+  {
+    id: 'hotel-general-manager',
+    name: {
+      es: 'Gerente General de Hotel',
+      en: 'Hotel General Manager',
+      fr: 'Directeur Général d\'Hôtel',
+    },
+    description: {
+      es: 'Ejecutivo responsable de la operación integral de un hotel, incluyendo gestión de ingresos, experiencia del huésped, liderazgo de equipos multidisciplinarios, cumplimiento normativo y posicionamiento competitivo en el mercado hotelero.',
+      en: 'Executive responsible for the overall operation of a hotel, including revenue management, guest experience, leadership of multidisciplinary teams, regulatory compliance, and competitive positioning in the hospitality market.',
+      fr: 'Cadre responsable de l\'exploitation globale d\'un hôtel, incluant la gestion des revenus, l\'expérience client, le leadership d\'équipes multidisciplinaires, la conformité réglementaire et le positionnement concurrentiel sur le marché hôtelier.',
+    },
+    sectors: ['hospitality-tourism'] as ProfileSector[],
+    level: 'managerial' as ProfileLevel,
+    competencyCategories: ['hosp-hgm-professional', 'hosp-hgm-soft-skills', 'hosp-hgm-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'restaurant-manager',
+    name: {
+      es: 'Gerente de Restaurante',
+      en: 'Restaurant Manager',
+      fr: 'Directeur de Restaurant',
+    },
+    description: {
+      es: 'Profesional responsable de la gestión operativa y financiera de un restaurante, incluyendo control de costos de alimentos y bebidas, servicio al cliente, gestión de personal, cumplimiento sanitario y estrategias de rentabilidad.',
+      en: 'Professional responsible for the operational and financial management of a restaurant, including food and beverage cost control, customer service, staff management, health compliance, and profitability strategies.',
+      fr: 'Professionnel responsable de la gestion opérationnelle et financière d\'un restaurant, incluant le contrôle des coûts alimentaires, le service client, la gestion du personnel, la conformité sanitaire et les stratégies de rentabilité.',
+    },
+    sectors: ['hospitality-tourism'] as ProfileSector[],
+    level: 'managerial' as ProfileLevel,
+    competencyCategories: ['hosp-rm-professional', 'hosp-rm-soft-skills', 'hosp-rm-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'front-desk-agent',
+    name: {
+      es: 'Agente de Recepción / Servicios al Huésped',
+      en: 'Front Desk / Guest Services Agent',
+      fr: 'Agent de Réception / Services aux Clients',
+    },
+    description: {
+      es: 'Profesional operativo encargado de la recepción hotelera, check-in/check-out, atención de solicitudes y quejas de huéspedes, coordinación con housekeeping y otros departamentos, y manejo de sistemas de gestión hotelera (PMS).',
+      en: 'Operative professional in charge of hotel front desk operations, check-in/check-out, handling guest requests and complaints, coordinating with housekeeping and other departments, and managing property management systems (PMS).',
+      fr: 'Professionnel opérationnel chargé de la réception hôtelière, du check-in/check-out, du traitement des demandes et plaintes des clients, de la coordination avec l\'entretien ménager et d\'autres départements, et de la gestion des systèmes de gestion hôtelière (PMS).',
+    },
+    sectors: ['hospitality-tourism'] as ProfileSector[],
+    level: 'operative' as ProfileLevel,
+    competencyCategories: ['hosp-fda-professional', 'hosp-fda-soft-skills', 'hosp-fda-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'chef-kitchen-manager',
+    name: {
+      es: 'Chef / Gerente de Cocina',
+      en: 'Chef / Kitchen Manager',
+      fr: 'Chef / Responsable de Cuisine',
+    },
+    description: {
+      es: 'Especialista culinario responsable de la planificación de menús, control de calidad alimentaria, gestión de inventarios de cocina, liderazgo del equipo culinario, cumplimiento de normas de higiene y seguridad alimentaria, y creatividad gastronómica.',
+      en: 'Culinary specialist responsible for menu planning, food quality control, kitchen inventory management, culinary team leadership, food hygiene and safety compliance, and gastronomic creativity.',
+      fr: 'Spécialiste culinaire responsable de la planification des menus, du contrôle de la qualité alimentaire, de la gestion des stocks de cuisine, du leadership de l\'équipe culinaire, de la conformité aux normes d\'hygiène et de sécurité alimentaire, et de la créativité gastronomique.',
+    },
+    sectors: ['hospitality-tourism'] as ProfileSector[],
+    level: 'professional-specialist' as ProfileLevel,
+    competencyCategories: ['hosp-ckm-professional', 'hosp-ckm-soft-skills', 'hosp-ckm-readiness'],
+    isActive: true,
+  },
+  // --- Banking ---
+  {
+    id: 'bank-branch-manager',
+    name: {
+      es: 'Gerente de Sucursal Bancaria',
+      en: 'Bank Branch Manager',
+      fr: 'Directeur d\'Agence Bancaire',
+    },
+    description: {
+      es: 'Líder responsable de la operación integral de una sucursal bancaria, incluyendo gestión comercial, cumplimiento regulatorio, administración de personal, experiencia del cliente y cumplimiento de metas financieras. Requiere competencias en liderazgo, gestión de riesgos operativos y desarrollo de negocios.',
+      en: 'Leader responsible for the comprehensive operation of a bank branch, including commercial management, regulatory compliance, personnel administration, customer experience, and achievement of financial targets. Requires competencies in leadership, operational risk management, and business development.',
+      fr: 'Leader responsable de l\'opération intégrale d\'une agence bancaire, incluant la gestion commerciale, la conformité réglementaire, l\'administration du personnel, l\'expérience client et l\'atteinte des objectifs financiers. Nécessite des compétences en leadership, gestion des risques opérationnels et développement des affaires.',
+    },
+    sectors: ['banking'] as ProfileSector[],
+    level: 'managerial' as ProfileLevel,
+    competencyCategories: ['bank-bm-professional', 'bank-bm-soft-skills', 'bank-bm-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'loan-officer',
+    name: {
+      es: 'Oficial de Crédito / Analista de Crédito',
+      en: 'Loan Officer / Credit Analyst',
+      fr: 'Agent de Crédit / Analyste de Crédit',
+    },
+    description: {
+      es: 'Profesional especializado en la evaluación, estructuración y aprobación de créditos bancarios. Analiza la capacidad de pago, garantías y riesgo crediticio de solicitantes individuales y empresariales. Requiere competencias en análisis financiero, normativa crediticia y gestión de cartera.',
+      en: 'Professional specialized in the evaluation, structuring, and approval of bank loans. Analyzes repayment capacity, collateral, and credit risk for individual and corporate applicants. Requires competencies in financial analysis, credit regulation, and portfolio management.',
+      fr: 'Professionnel spécialisé dans l\'évaluation, la structuration et l\'approbation de crédits bancaires. Analyse la capacité de remboursement, les garanties et le risque de crédit des demandeurs individuels et entreprises. Nécessite des compétences en analyse financière, réglementation du crédit et gestion de portefeuille.',
+    },
+    sectors: ['banking'] as ProfileSector[],
+    level: 'professional-specialist' as ProfileLevel,
+    competencyCategories: ['bank-lo-professional', 'bank-lo-soft-skills', 'bank-lo-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'investment-advisor',
+    name: {
+      es: 'Asesor de Inversiones',
+      en: 'Investment Advisor',
+      fr: 'Conseiller en Investissements',
+    },
+    description: {
+      es: 'Profesional especializado en asesoría patrimonial y productos de inversión bancarios. Evalúa perfiles de riesgo del cliente, recomienda portafolios diversificados y asegura el cumplimiento de normativas de protección al inversionista. Requiere competencias en mercados financieros, planificación patrimonial y relación con clientes de alto valor.',
+      en: 'Professional specialized in wealth advisory and banking investment products. Evaluates client risk profiles, recommends diversified portfolios, and ensures compliance with investor protection regulations. Requires competencies in financial markets, wealth planning, and high-net-worth client relationships.',
+      fr: 'Professionnel spécialisé dans le conseil patrimonial et les produits d\'investissement bancaires. Évalue les profils de risque des clients, recommande des portefeuilles diversifiés et assure la conformité aux réglementations de protection des investisseurs. Nécessite des compétences en marchés financiers, planification patrimoniale et relations avec les clients à forte valeur.',
+    },
+    sectors: ['banking'] as ProfileSector[],
+    level: 'professional-specialist' as ProfileLevel,
+    competencyCategories: ['bank-ia-professional', 'bank-ia-soft-skills', 'bank-ia-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'bank-teller',
+    name: {
+      es: 'Cajero Bancario / Oficial de Operaciones',
+      en: 'Bank Teller / Operations Officer',
+      fr: 'Caissier Bancaire / Agent des Opérations',
+    },
+    description: {
+      es: 'Profesional operativo responsable de la atención directa al cliente en ventanilla, procesamiento de transacciones bancarias, manejo de efectivo, prevención de fraudes y cumplimiento de protocolos de seguridad. Requiere competencias en precisión operativa, servicio al cliente y detección de operaciones sospechosas.',
+      en: 'Operative professional responsible for direct customer service at the counter, processing banking transactions, cash handling, fraud prevention, and compliance with security protocols. Requires competencies in operational accuracy, customer service, and detection of suspicious operations.',
+      fr: 'Professionnel opérationnel responsable du service direct au client au guichet, du traitement des transactions bancaires, de la gestion des espèces, de la prévention de la fraude et du respect des protocoles de sécurité. Nécessite des compétences en précision opérationnelle, service client et détection d\'opérations suspectes.',
+    },
+    sectors: ['banking'] as ProfileSector[],
+    level: 'operative' as ProfileLevel,
+    competencyCategories: ['bank-bt-professional', 'bank-bt-soft-skills', 'bank-bt-readiness'],
+    isActive: true,
+  },
 ];
 
 // ============================================================================
@@ -4788,6 +5097,2229 @@ export const competencyCategories: CompetencyCategory[] = [
         },
         weight: 0.3,
       },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // INSURANCE CEO CATEGORIES
+  // ============================================================================
+  {
+    id: 'ins-ceo-professional',
+    name: {
+      es: 'Habilidades Profesionales',
+      en: 'Professional Skills',
+      fr: 'Compétences Professionnelles',
+    },
+    description: {
+      es: 'Competencias técnicas y estratégicas requeridas para dirigir una compañía de seguros, incluyendo visión de mercado, gobernanza regulatoria, estrategia de productos, distribución, reaseguro y gestión de capital.',
+      en: 'Technical and strategic competencies required to lead an insurance company, including market vision, regulatory governance, product strategy, distribution, reinsurance, and capital management.',
+      fr: 'Compétences techniques et stratégiques requises pour diriger une compagnie d\'assurances, y compris la vision du marché, la gouvernance réglementaire, la stratégie produits, la distribution, la réassurance et la gestion du capital.',
+    },
+    competencies: [
+      {
+        id: 'ins-ceo-strategic-vision',
+        name: { es: 'Visión Estratégica y Posicionamiento de Mercado', en: 'Strategic Vision & Market Positioning', fr: 'Vision Stratégique et Positionnement sur le Marché' },
+        description: {
+          es: 'Capacidad para definir la dirección estratégica de la compañía, identificar oportunidades de mercado, anticipar tendencias competitivas y posicionar la marca como líder en el sector asegurador.',
+          en: 'Ability to define the company\'s strategic direction, identify market opportunities, anticipate competitive trends, and position the brand as a leader in the insurance sector.',
+          fr: 'Capacité à définir la direction stratégique de l\'entreprise, identifier les opportunités de marché, anticiper les tendances concurrentielles et positionner la marque comme leader dans le secteur de l\'assurance.',
+        },
+        weight: 0.18,
+      },
+      {
+        id: 'ins-ceo-regulatory-governance',
+        name: { es: 'Gobernanza Regulatoria y Cumplimiento', en: 'Regulatory Governance & Compliance', fr: 'Gouvernance Réglementaire et Conformité' },
+        description: {
+          es: 'Dominio del marco regulatorio del sector asegurador, incluyendo relaciones con superintendencias, cumplimiento de normativas de solvencia, protección al consumidor y gobierno corporativo.',
+          en: 'Mastery of the insurance regulatory framework, including relations with supervisory authorities, compliance with solvency regulations, consumer protection, and corporate governance.',
+          fr: 'Maîtrise du cadre réglementaire du secteur de l\'assurance, y compris les relations avec les autorités de supervision, la conformité aux réglementations de solvabilité, la protection des consommateurs et la gouvernance d\'entreprise.',
+        },
+        weight: 0.18,
+      },
+      {
+        id: 'ins-ceo-product-portfolio',
+        name: { es: 'Estrategia de Portafolio de Productos', en: 'Product Portfolio Strategy', fr: 'Stratégie de Portefeuille de Produits' },
+        description: {
+          es: 'Capacidad para diseñar y gestionar un portafolio de productos de seguros diversificado, equilibrado y rentable, alineado con las necesidades del mercado y los objetivos de la compañía.',
+          en: 'Ability to design and manage a diversified, balanced, and profitable insurance product portfolio aligned with market needs and company objectives.',
+          fr: 'Capacité à concevoir et gérer un portefeuille de produits d\'assurance diversifié, équilibré et rentable, aligné sur les besoins du marché et les objectifs de l\'entreprise.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-ceo-distribution',
+        name: { es: 'Gestión de Distribución y Canales', en: 'Distribution & Channel Management', fr: 'Gestion de la Distribution et des Canaux' },
+        description: {
+          es: 'Habilidad para diseñar y optimizar la estrategia de distribución multicanal, incluyendo agentes, corredores, bancaseguros, canales digitales y alianzas estratégicas.',
+          en: 'Skill in designing and optimizing multi-channel distribution strategy, including agents, brokers, bancassurance, digital channels, and strategic alliances.',
+          fr: 'Compétence dans la conception et l\'optimisation de la stratégie de distribution multicanal, y compris les agents, les courtiers, la bancassurance, les canaux numériques et les alliances stratégiques.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-ceo-reinsurance',
+        name: { es: 'Estrategia de Reaseguro', en: 'Reinsurance Strategy', fr: 'Stratégie de Réassurance' },
+        description: {
+          es: 'Comprensión estratégica del reaseguro como herramienta de gestión de riesgo, incluyendo diseño de programas, negociación con reaseguradores y optimización de la retención.',
+          en: 'Strategic understanding of reinsurance as a risk management tool, including program design, negotiation with reinsurers, and retention optimization.',
+          fr: 'Compréhension stratégique de la réassurance comme outil de gestion des risques, y compris la conception de programmes, la négociation avec les réassureurs et l\'optimisation de la rétention.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-ceo-capital-solvency',
+        name: { es: 'Gestión de Capital y Solvencia', en: 'Capital Management & Solvency', fr: 'Gestion du Capital et Solvabilité' },
+        description: {
+          es: 'Capacidad para gestionar la estructura de capital, garantizar la solvencia de la compañía, optimizar el retorno sobre el capital y cumplir con los requisitos regulatorios de adecuación de capital.',
+          en: 'Ability to manage capital structure, ensure company solvency, optimize return on capital, and comply with regulatory capital adequacy requirements.',
+          fr: 'Capacité à gérer la structure du capital, assurer la solvabilité de l\'entreprise, optimiser le rendement du capital et se conformer aux exigences réglementaires d\'adéquation du capital.',
+        },
+        weight: 0.16,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'ins-ceo-soft-skills',
+    name: {
+      es: 'Habilidades Blandas',
+      en: 'Soft Skills',
+      fr: 'Compétences Interpersonnelles',
+    },
+    description: {
+      es: 'Competencias interpersonales y de liderazgo estratégico esenciales para el CEO de una compañía de seguros, incluyendo gestión de directorio, liderazgo sectorial, gestión de crisis y desarrollo de cultura y talento.',
+      en: 'Interpersonal and strategic leadership competencies essential for an insurance company CEO, including board management, industry leadership, crisis management, and culture and talent development.',
+      fr: 'Compétences interpersonnelles et de leadership stratégique essentielles pour le PDG d\'une compagnie d\'assurances, y compris la gestion du conseil d\'administration, le leadership sectoriel, la gestion de crise et le développement de la culture et des talents.',
+    },
+    competencies: [
+      {
+        id: 'ins-ceo-board-management',
+        name: { es: 'Gestión del Directorio y Partes Interesadas', en: 'Board & Stakeholder Management', fr: 'Gestion du Conseil d\'Administration et des Parties Prenantes' },
+        description: {
+          es: 'Habilidad para gestionar relaciones con el directorio, accionistas, reguladores y demás partes interesadas clave, asegurando alineación estratégica y confianza institucional.',
+          en: 'Skill in managing relationships with the board, shareholders, regulators, and other key stakeholders, ensuring strategic alignment and institutional trust.',
+          fr: 'Compétence dans la gestion des relations avec le conseil d\'administration, les actionnaires, les régulateurs et les autres parties prenantes clés, en assurant l\'alignement stratégique et la confiance institutionnelle.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-ceo-industry-leadership',
+        name: { es: 'Liderazgo y Representación Sectorial', en: 'Industry Leadership & Representation', fr: 'Leadership et Représentation Sectorielle' },
+        description: {
+          es: 'Capacidad para representar a la compañía ante asociaciones gremiales, foros internacionales, medios de comunicación y entidades gubernamentales, posicionándola como referente del sector.',
+          en: 'Ability to represent the company before industry associations, international forums, media, and government entities, positioning it as a sector benchmark.',
+          fr: 'Capacité à représenter l\'entreprise auprès des associations professionnelles, des forums internationaux, des médias et des entités gouvernementales, en la positionnant comme référence du secteur.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-ceo-crisis-management',
+        name: { es: 'Gestión de Crisis', en: 'Crisis Management', fr: 'Gestion de Crise' },
+        description: {
+          es: 'Capacidad para liderar la organización durante eventos catastróficos, crisis reputacionales, disrupciones operativas o crisis financieras, tomando decisiones rápidas y comunicando con transparencia.',
+          en: 'Ability to lead the organization during catastrophic events, reputational crises, operational disruptions, or financial crises, making swift decisions and communicating transparently.',
+          fr: 'Capacité à diriger l\'organisation lors d\'événements catastrophiques, de crises de réputation, de perturbations opérationnelles ou de crises financières, en prenant des décisions rapides et en communiquant avec transparence.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-ceo-culture-talent',
+        name: { es: 'Cultura Organizacional y Desarrollo de Talento', en: 'Organizational Culture & Talent Development', fr: 'Culture Organisationnelle et Développement des Talents' },
+        description: {
+          es: 'Habilidad para construir una cultura organizacional sólida, atraer y retener talento de primer nivel, fomentar la diversidad e inclusión, y desarrollar la próxima generación de líderes del sector asegurador.',
+          en: 'Skill in building a strong organizational culture, attracting and retaining top talent, fostering diversity and inclusion, and developing the next generation of insurance sector leaders.',
+          fr: 'Compétence dans la construction d\'une culture organisationnelle solide, l\'attraction et la rétention des meilleurs talents, la promotion de la diversité et de l\'inclusion, et le développement de la prochaine génération de leaders du secteur de l\'assurance.',
+        },
+        weight: 0.25,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'ins-ceo-readiness',
+    name: {
+      es: 'Disposición al Cambio',
+      en: 'Readiness for Change',
+      fr: 'Disposition au Changement',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante la transformación digital, riesgos climáticos y ESG, y la evolución hacia un modelo de negocio basado en datos en el sector asegurador.',
+      en: 'Adaptability to digital transformation, climate risks and ESG, and the evolution toward a data-driven business model in the insurance sector.',
+      fr: 'Adaptabilité à la transformation numérique, aux risques climatiques et ESG, et à l\'évolution vers un modèle d\'affaires axé sur les données dans le secteur de l\'assurance.',
+    },
+    competencies: [
+      {
+        id: 'ins-ceo-insurtech',
+        name: { es: 'Insurtech y Transformación Digital', en: 'Insurtech & Digital Transformation', fr: 'Insurtech et Transformation Numérique' },
+        description: {
+          es: 'Disposición para liderar la adopción de tecnologías insurtech, automatización de procesos, plataformas digitales de distribución y nuevos modelos de negocio habilitados por la tecnología.',
+          en: 'Willingness to lead the adoption of insurtech technologies, process automation, digital distribution platforms, and new technology-enabled business models.',
+          fr: 'Volonté de diriger l\'adoption des technologies insurtech, l\'automatisation des processus, les plateformes de distribution numérique et les nouveaux modèles d\'affaires rendus possibles par la technologie.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'ins-ceo-climate-esg',
+        name: { es: 'Riesgo Climático y ESG', en: 'Climate Risk & ESG', fr: 'Risque Climatique et ESG' },
+        description: {
+          es: 'Capacidad para integrar criterios ESG en la estrategia corporativa, evaluar el impacto del cambio climático en el negocio asegurador y desarrollar productos sostenibles.',
+          en: 'Ability to integrate ESG criteria into corporate strategy, assess the impact of climate change on the insurance business, and develop sustainable products.',
+          fr: 'Capacité à intégrer les critères ESG dans la stratégie d\'entreprise, évaluer l\'impact du changement climatique sur l\'activité d\'assurance et développer des produits durables.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'ins-ceo-data-driven',
+        name: { es: 'Toma de Decisiones Basada en Datos', en: 'Data-Driven Decision Making', fr: 'Prise de Décision Basée sur les Données' },
+        description: {
+          es: 'Disposición para impulsar una cultura de analítica avanzada, inteligencia artificial y ciencia de datos para fundamentar decisiones estratégicas, mejorar la experiencia del cliente y optimizar operaciones.',
+          en: 'Willingness to drive a culture of advanced analytics, artificial intelligence, and data science to inform strategic decisions, improve customer experience, and optimize operations.',
+          fr: 'Volonté de promouvoir une culture d\'analytique avancée, d\'intelligence artificielle et de science des données pour éclairer les décisions stratégiques, améliorer l\'expérience client et optimiser les opérations.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // INSURANCE BROKER CEO CATEGORIES
+  // ============================================================================
+  {
+    id: 'ins-broker-professional',
+    name: {
+      es: 'Habilidades Profesionales',
+      en: 'Professional Skills',
+      fr: 'Compétences Professionnelles',
+    },
+    description: {
+      es: 'Competencias técnicas y estratégicas requeridas para dirigir una empresa de corretaje de seguros, incluyendo estrategia de negocio, gestión de cartera, relaciones con aseguradoras, análisis de mercado, diversificación y cumplimiento.',
+      en: 'Technical and strategic competencies required to lead an insurance brokerage firm, including business strategy, portfolio management, carrier relationships, market analysis, diversification, and compliance.',
+      fr: 'Compétences techniques et stratégiques requises pour diriger une société de courtage en assurances, y compris la stratégie d\'affaires, la gestion de portefeuille, les relations avec les assureurs, l\'analyse de marché, la diversification et la conformité.',
+    },
+    competencies: [
+      {
+        id: 'ins-broker-business-strategy',
+        name: { es: 'Estrategia de Negocio de Corretaje', en: 'Brokerage Business Strategy', fr: 'Stratégie d\'Affaires de Courtage' },
+        description: {
+          es: 'Capacidad para diseñar y ejecutar la estrategia de negocio del corretaje, incluyendo posicionamiento de mercado, crecimiento orgánico e inorgánico, y diferenciación competitiva.',
+          en: 'Ability to design and execute the brokerage business strategy, including market positioning, organic and inorganic growth, and competitive differentiation.',
+          fr: 'Capacité à concevoir et exécuter la stratégie d\'affaires du courtage, y compris le positionnement sur le marché, la croissance organique et inorganique, et la différenciation concurrentielle.',
+        },
+        weight: 0.18,
+      },
+      {
+        id: 'ins-broker-client-portfolio',
+        name: { es: 'Gestión de Cartera de Clientes', en: 'Client Portfolio Management', fr: 'Gestion du Portefeuille Clients' },
+        description: {
+          es: 'Habilidad para gestionar y expandir la cartera de clientes, asegurando altos niveles de retención, cross-selling y satisfacción, con enfoque en clientes corporativos e institucionales.',
+          en: 'Skill in managing and expanding the client portfolio, ensuring high retention rates, cross-selling, and satisfaction, with a focus on corporate and institutional clients.',
+          fr: 'Compétence dans la gestion et l\'expansion du portefeuille clients, en assurant des taux de rétention élevés, des ventes croisées et la satisfaction, avec un accent sur les clients corporatifs et institutionnels.',
+        },
+        weight: 0.18,
+      },
+      {
+        id: 'ins-broker-carrier-relations',
+        name: { es: 'Gestión de Relaciones con Aseguradoras', en: 'Carrier Relationship Management', fr: 'Gestion des Relations avec les Assureurs' },
+        description: {
+          es: 'Capacidad para construir y mantener relaciones estratégicas con compañías aseguradoras, negociar condiciones preferenciales y asegurar acceso a los mejores productos y capacidades del mercado.',
+          en: 'Ability to build and maintain strategic relationships with insurance carriers, negotiate preferential terms, and ensure access to the best products and market capacities.',
+          fr: 'Capacité à construire et maintenir des relations stratégiques avec les compagnies d\'assurance, négocier des conditions préférentielles et assurer l\'accès aux meilleurs produits et capacités du marché.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-broker-market-placement',
+        name: { es: 'Análisis de Mercado y Colocación', en: 'Market Analysis & Placement', fr: 'Analyse de Marché et Placement' },
+        description: {
+          es: 'Habilidad para analizar condiciones del mercado asegurador, identificar las mejores opciones de colocación de riesgos y estructurar programas de seguros complejos para los clientes.',
+          en: 'Skill in analyzing insurance market conditions, identifying optimal risk placement options, and structuring complex insurance programs for clients.',
+          fr: 'Compétence dans l\'analyse des conditions du marché de l\'assurance, l\'identification des meilleures options de placement des risques et la structuration de programmes d\'assurance complexes pour les clients.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-broker-revenue-diversification',
+        name: { es: 'Diversificación de Ingresos', en: 'Revenue Diversification', fr: 'Diversification des Revenus' },
+        description: {
+          es: 'Capacidad para desarrollar fuentes de ingresos complementarias más allá de las comisiones tradicionales, incluyendo consultoría de riesgos, servicios de gestión de siniestros y soluciones tecnológicas.',
+          en: 'Ability to develop complementary revenue streams beyond traditional commissions, including risk consulting, claims management services, and technology solutions.',
+          fr: 'Capacité à développer des sources de revenus complémentaires au-delà des commissions traditionnelles, y compris le conseil en risques, les services de gestion des sinistres et les solutions technologiques.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-broker-regulatory',
+        name: { es: 'Cumplimiento Regulatorio para Corredores', en: 'Regulatory Compliance for Brokers', fr: 'Conformité Réglementaire pour les Courtiers' },
+        description: {
+          es: 'Conocimiento y cumplimiento del marco regulatorio aplicable a intermediarios de seguros, incluyendo licencias, obligaciones fiduciarias, prevención de lavado de activos y protección de datos.',
+          en: 'Knowledge of and compliance with the regulatory framework applicable to insurance intermediaries, including licensing, fiduciary obligations, anti-money laundering, and data protection.',
+          fr: 'Connaissance et conformité au cadre réglementaire applicable aux intermédiaires d\'assurance, y compris les licences, les obligations fiduciaires, la lutte contre le blanchiment d\'argent et la protection des données.',
+        },
+        weight: 0.16,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'ins-broker-soft-skills',
+    name: {
+      es: 'Habilidades Blandas',
+      en: 'Soft Skills',
+      fr: 'Compétences Interpersonnelles',
+    },
+    description: {
+      es: 'Competencias interpersonales y de liderazgo esenciales para el CEO de una empresa de corretaje de seguros, incluyendo liderazgo consultivo, desarrollo de equipos, negociación y presencia en la industria.',
+      en: 'Interpersonal and leadership competencies essential for an insurance brokerage CEO, including advisory leadership, team development, negotiation, and industry presence.',
+      fr: 'Compétences interpersonnelles et de leadership essentielles pour le PDG d\'une société de courtage en assurances, y compris le leadership consultatif, le développement des équipes, la négociation et la présence sectorielle.',
+    },
+    competencies: [
+      {
+        id: 'ins-broker-advisory-leadership',
+        name: { es: 'Liderazgo Consultivo al Cliente', en: 'Client Advisory Leadership', fr: 'Leadership Consultatif Client' },
+        description: {
+          es: 'Capacidad para posicionarse como asesor de confianza de los clientes, ofreciendo soluciones integrales de gestión de riesgos que trasciendan la simple colocación de pólizas.',
+          en: 'Ability to position oneself as a trusted client advisor, offering comprehensive risk management solutions that go beyond simple policy placement.',
+          fr: 'Capacité à se positionner comme conseiller de confiance des clients, en offrant des solutions complètes de gestion des risques qui dépassent le simple placement de polices.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-broker-team-building',
+        name: { es: 'Desarrollo y Retención de Equipos', en: 'Team Building & Retention', fr: 'Développement et Rétention des Équipes' },
+        description: {
+          es: 'Habilidad para construir, desarrollar y retener equipos de alto desempeño en un mercado competitivo por talento especializado en seguros y gestión de riesgos.',
+          en: 'Skill in building, developing, and retaining high-performance teams in a competitive market for specialized insurance and risk management talent.',
+          fr: 'Compétence dans la construction, le développement et la rétention d\'équipes de haute performance dans un marché concurrentiel pour les talents spécialisés en assurance et gestion des risques.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-broker-negotiation',
+        name: { es: 'Negociación e Influencia', en: 'Negotiation & Influence', fr: 'Négociation et Influence' },
+        description: {
+          es: 'Capacidad para negociar condiciones favorables con aseguradoras en nombre de los clientes, influir en decisiones de suscripción y obtener términos competitivos en el mercado.',
+          en: 'Ability to negotiate favorable terms with carriers on behalf of clients, influence underwriting decisions, and obtain competitive market terms.',
+          fr: 'Capacité à négocier des conditions favorables avec les assureurs au nom des clients, influencer les décisions de souscription et obtenir des conditions concurrentielles sur le marché.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-broker-networking',
+        name: { es: 'Networking y Presencia en la Industria', en: 'Networking & Industry Presence', fr: 'Réseautage et Présence dans l\'Industrie' },
+        description: {
+          es: 'Habilidad para construir una red de contactos influyente en el sector asegurador, participar activamente en asociaciones gremiales y posicionar la marca del corretaje a nivel nacional e internacional.',
+          en: 'Skill in building an influential network of contacts in the insurance sector, actively participating in industry associations, and positioning the brokerage brand nationally and internationally.',
+          fr: 'Compétence dans la construction d\'un réseau de contacts influent dans le secteur de l\'assurance, la participation active aux associations professionnelles et le positionnement de la marque du courtage au niveau national et international.',
+        },
+        weight: 0.25,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'ins-broker-readiness',
+    name: {
+      es: 'Disposición al Cambio',
+      en: 'Readiness for Change',
+      fr: 'Disposition au Changement',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante la distribución digital, analítica de datos y desarrollo de nuevos productos y mercados en el sector de intermediación de seguros.',
+      en: 'Adaptability to digital distribution, data analytics, and new product and market development in the insurance intermediation sector.',
+      fr: 'Adaptabilité à la distribution numérique, à l\'analytique de données et au développement de nouveaux produits et marchés dans le secteur de l\'intermédiation en assurance.',
+    },
+    competencies: [
+      {
+        id: 'ins-broker-digital-distribution',
+        name: { es: 'Distribución Digital y Plataformas', en: 'Digital Distribution & Platforms', fr: 'Distribution Numérique et Plateformes' },
+        description: {
+          es: 'Disposición para adoptar plataformas digitales de distribución, comparadores de seguros, portales de autoservicio para clientes y herramientas de cotización automatizada.',
+          en: 'Willingness to adopt digital distribution platforms, insurance comparators, client self-service portals, and automated quoting tools.',
+          fr: 'Volonté d\'adopter des plateformes de distribution numérique, des comparateurs d\'assurance, des portails en libre-service pour les clients et des outils de cotation automatisée.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'ins-broker-data-analytics',
+        name: { es: 'Analítica de Datos e Insights de Clientes', en: 'Data Analytics & Client Insights', fr: 'Analytique de Données et Insights Clients' },
+        description: {
+          es: 'Capacidad para aprovechar la analítica de datos para comprender mejor las necesidades de los clientes, predecir renovaciones, identificar oportunidades de venta cruzada y mejorar la retención.',
+          en: 'Ability to leverage data analytics to better understand client needs, predict renewals, identify cross-selling opportunities, and improve retention.',
+          fr: 'Capacité à exploiter l\'analytique de données pour mieux comprendre les besoins des clients, prédire les renouvellements, identifier les opportunités de vente croisée et améliorer la rétention.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'ins-broker-new-markets',
+        name: { es: 'Desarrollo de Nuevos Productos y Mercados', en: 'New Product & Market Development', fr: 'Développement de Nouveaux Produits et Marchés' },
+        description: {
+          es: 'Disposición para explorar nuevos segmentos de mercado, desarrollar soluciones innovadoras de seguros y expandir la oferta hacia riesgos emergentes como ciberseguros, seguros paramétricos y microinsurance.',
+          en: 'Willingness to explore new market segments, develop innovative insurance solutions, and expand offerings toward emerging risks such as cyber insurance, parametric insurance, and microinsurance.',
+          fr: 'Volonté d\'explorer de nouveaux segments de marché, développer des solutions d\'assurance innovantes et étendre l\'offre vers les risques émergents tels que la cyberassurance, l\'assurance paramétrique et la micro-assurance.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // INSURANCE CRO (CHIEF RISK OFFICER) CATEGORIES
+  // ============================================================================
+  {
+    id: 'ins-cro-professional',
+    name: {
+      es: 'Habilidades Profesionales',
+      en: 'Professional Skills',
+      fr: 'Compétences Professionnelles',
+    },
+    description: {
+      es: 'Competencias técnicas y estratégicas de gestión de riesgos requeridas para un Director de Riesgos en el sector asegurador, incluyendo ERM, solvencia, modelización de catástrofes, riesgo operacional, inversiones y cumplimiento regulatorio.',
+      en: 'Technical and strategic risk management competencies required for a CRO in the insurance sector, including ERM, solvency, catastrophe modeling, operational risk, investments, and regulatory compliance.',
+      fr: 'Compétences techniques et stratégiques de gestion des risques requises pour un Directeur des Risques dans le secteur de l\'assurance, y compris l\'ERM, la solvabilité, la modélisation des catastrophes, le risque opérationnel, les investissements et la conformité réglementaire.',
+    },
+    competencies: [
+      {
+        id: 'ins-cro-erm-framework',
+        name: { es: 'Marco de Gestión de Riesgos Empresariales', en: 'Enterprise Risk Management Framework', fr: 'Cadre de Gestion des Risques d\'Entreprise' },
+        description: {
+          es: 'Capacidad para diseñar, implementar y supervisar un marco integral de gestión de riesgos empresariales (ERM) que abarque todos los tipos de riesgo y se alinee con la estrategia corporativa.',
+          en: 'Ability to design, implement, and oversee a comprehensive enterprise risk management (ERM) framework encompassing all risk types and aligned with corporate strategy.',
+          fr: 'Capacité à concevoir, mettre en œuvre et superviser un cadre complet de gestion des risques d\'entreprise (ERM) englobant tous les types de risques et aligné sur la stratégie d\'entreprise.',
+        },
+        weight: 0.18,
+      },
+      {
+        id: 'ins-cro-solvency',
+        name: { es: 'Solvencia y Adecuación de Capital', en: 'Solvency & Capital Adequacy', fr: 'Solvabilité et Adéquation du Capital' },
+        description: {
+          es: 'Dominio de los marcos regulatorios de solvencia (Solvencia II, ORSA, RBC), incluyendo cálculo de requerimientos de capital, evaluación interna de riesgos y solvencia, y gestión del ratio de solvencia.',
+          en: 'Mastery of solvency regulatory frameworks (Solvency II, ORSA, RBC), including capital requirement calculations, own risk and solvency assessment, and solvency ratio management.',
+          fr: 'Maîtrise des cadres réglementaires de solvabilité (Solvabilité II, ORSA, RBC), y compris le calcul des exigences de capital, l\'évaluation interne des risques et de la solvabilité, et la gestion du ratio de solvabilité.',
+        },
+        weight: 0.18,
+      },
+      {
+        id: 'ins-cro-cat-modeling',
+        name: { es: 'Modelización de Catástrofes y Riesgo Natural', en: 'Catastrophe Modeling & Nat-Cat Risk', fr: 'Modélisation des Catastrophes et Risque Naturel' },
+        description: {
+          es: 'Habilidad para utilizar e interpretar modelos de catástrofes naturales, evaluar la exposición a eventos catastróficos y diseñar estrategias de mitigación y transferencia de riesgo.',
+          en: 'Skill in using and interpreting natural catastrophe models, assessing exposure to catastrophic events, and designing risk mitigation and transfer strategies.',
+          fr: 'Compétence dans l\'utilisation et l\'interprétation des modèles de catastrophes naturelles, l\'évaluation de l\'exposition aux événements catastrophiques et la conception de stratégies d\'atténuation et de transfert des risques.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-cro-operational-risk',
+        name: { es: 'Gestión de Riesgo Operacional', en: 'Operational Risk Management', fr: 'Gestion du Risque Opérationnel' },
+        description: {
+          es: 'Capacidad para identificar, medir y mitigar riesgos operacionales, incluyendo fraude, fallas de procesos, riesgo tecnológico, continuidad del negocio y riesgo de terceros.',
+          en: 'Ability to identify, measure, and mitigate operational risks, including fraud, process failures, technology risk, business continuity, and third-party risk.',
+          fr: 'Capacité à identifier, mesurer et atténuer les risques opérationnels, y compris la fraude, les défaillances de processus, le risque technologique, la continuité des activités et le risque lié aux tiers.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-cro-investment-risk',
+        name: { es: 'Supervisión de Riesgo de Inversión', en: 'Investment Risk Oversight', fr: 'Supervision du Risque d\'Investissement' },
+        description: {
+          es: 'Habilidad para supervisar y gestionar los riesgos asociados al portafolio de inversiones de la aseguradora, incluyendo riesgo de mercado, crediticio, de liquidez y de concentración.',
+          en: 'Skill in overseeing and managing risks associated with the insurer\'s investment portfolio, including market, credit, liquidity, and concentration risk.',
+          fr: 'Compétence dans la supervision et la gestion des risques associés au portefeuille d\'investissements de l\'assureur, y compris le risque de marché, de crédit, de liquidité et de concentration.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-cro-regulatory-risk',
+        name: { es: 'Riesgo Regulatorio y Cumplimiento', en: 'Regulatory Risk & Compliance', fr: 'Risque Réglementaire et Conformité' },
+        description: {
+          es: 'Capacidad para anticipar y gestionar riesgos regulatorios, asegurar el cumplimiento normativo, y mantener relaciones constructivas con los entes supervisores del sector asegurador.',
+          en: 'Ability to anticipate and manage regulatory risks, ensure regulatory compliance, and maintain constructive relationships with insurance sector supervisory bodies.',
+          fr: 'Capacité à anticiper et gérer les risques réglementaires, assurer la conformité réglementaire et maintenir des relations constructives avec les organismes de supervision du secteur de l\'assurance.',
+        },
+        weight: 0.16,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'ins-cro-soft-skills',
+    name: {
+      es: 'Habilidades Blandas',
+      en: 'Soft Skills',
+      fr: 'Compétences Interpersonnelles',
+    },
+    description: {
+      es: 'Competencias interpersonales y de liderazgo esenciales para un Director de Riesgos, incluyendo evangelización de cultura de riesgos, reportes al directorio, colaboración interfuncional y liderazgo en crisis.',
+      en: 'Interpersonal and leadership competencies essential for a CRO, including risk culture evangelism, board reporting, cross-functional collaboration, and crisis leadership.',
+      fr: 'Compétences interpersonnelles et de leadership essentielles pour un Directeur des Risques, y compris l\'évangélisation de la culture du risque, les rapports au conseil d\'administration, la collaboration interfonctionnelle et le leadership en situation de crise.',
+    },
+    competencies: [
+      {
+        id: 'ins-cro-risk-culture',
+        name: { es: 'Evangelización de Cultura de Riesgos', en: 'Risk Culture Evangelism', fr: 'Évangélisation de la Culture du Risque' },
+        description: {
+          es: 'Capacidad para fomentar una cultura organizacional donde la gestión de riesgos sea responsabilidad de todos, promoviendo la conciencia y el comportamiento prudente en todos los niveles.',
+          en: 'Ability to foster an organizational culture where risk management is everyone\'s responsibility, promoting awareness and prudent behavior at all levels.',
+          fr: 'Capacité à promouvoir une culture organisationnelle où la gestion des risques est la responsabilité de tous, en favorisant la sensibilisation et un comportement prudent à tous les niveaux.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-cro-board-reporting',
+        name: { es: 'Reportes de Riesgo al Directorio', en: 'Board Risk Reporting', fr: 'Rapports de Risque au Conseil d\'Administration' },
+        description: {
+          es: 'Habilidad para comunicar información compleja de riesgos de manera clara, concisa y accionable al directorio y la alta dirección, facilitando la toma de decisiones informada.',
+          en: 'Skill in communicating complex risk information clearly, concisely, and actionably to the board and senior management, facilitating informed decision-making.',
+          fr: 'Compétence dans la communication d\'informations complexes sur les risques de manière claire, concise et exploitable au conseil d\'administration et à la direction générale, facilitant la prise de décision éclairée.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-cro-cross-functional',
+        name: { es: 'Colaboración Interfuncional', en: 'Cross-Functional Collaboration', fr: 'Collaboration Interfonctionnelle' },
+        description: {
+          es: 'Capacidad para trabajar eficazmente con suscripción, actuaría, inversiones, operaciones y tecnología, integrando la perspectiva de riesgos en todas las decisiones de negocio.',
+          en: 'Ability to work effectively with underwriting, actuarial, investments, operations, and technology, integrating the risk perspective into all business decisions.',
+          fr: 'Capacité à travailler efficacement avec la souscription, l\'actuariat, les investissements, les opérations et la technologie, en intégrant la perspective des risques dans toutes les décisions commerciales.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-cro-crisis-leadership',
+        name: { es: 'Liderazgo en Crisis', en: 'Crisis Leadership', fr: 'Leadership en Situation de Crise' },
+        description: {
+          es: 'Habilidad para liderar la respuesta organizacional ante eventos de riesgo materializados, coordinando equipos multidisciplinarios, comunicando con claridad y ejecutando planes de contingencia.',
+          en: 'Skill in leading the organizational response to materialized risk events, coordinating multidisciplinary teams, communicating clearly, and executing contingency plans.',
+          fr: 'Compétence dans la conduite de la réponse organisationnelle aux événements de risque matérialisés, la coordination d\'équipes multidisciplinaires, la communication claire et l\'exécution de plans de contingence.',
+        },
+        weight: 0.25,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'ins-cro-readiness',
+    name: {
+      es: 'Disposición al Cambio',
+      en: 'Readiness for Change',
+      fr: 'Disposition au Changement',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante riesgos emergentes, nuevas tecnologías de analítica de riesgos y evolución de las metodologías de planificación de escenarios en el sector asegurador.',
+      en: 'Adaptability to emerging risks, new risk analytics technologies, and evolving scenario planning methodologies in the insurance sector.',
+      fr: 'Adaptabilité aux risques émergents, aux nouvelles technologies d\'analytique des risques et à l\'évolution des méthodologies de planification de scénarios dans le secteur de l\'assurance.',
+    },
+    competencies: [
+      {
+        id: 'ins-cro-emerging-risks',
+        name: { es: 'Riesgos Emergentes (Ciber, Clima, Pandemia)', en: 'Emerging Risks (Cyber, Climate, Pandemic)', fr: 'Risques Émergents (Cyber, Climat, Pandémie)' },
+        description: {
+          es: 'Disposición para identificar, evaluar y desarrollar respuestas ante riesgos emergentes como ciberataques, cambio climático, pandemias, inteligencia artificial y riesgos geopolíticos.',
+          en: 'Willingness to identify, assess, and develop responses to emerging risks such as cyberattacks, climate change, pandemics, artificial intelligence, and geopolitical risks.',
+          fr: 'Volonté d\'identifier, évaluer et développer des réponses aux risques émergents tels que les cyberattaques, le changement climatique, les pandémies, l\'intelligence artificielle et les risques géopolitiques.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'ins-cro-risk-analytics',
+        name: { es: 'Analítica de Riesgos e IA', en: 'Risk Analytics & AI', fr: 'Analytique des Risques et IA' },
+        description: {
+          es: 'Capacidad para adoptar herramientas avanzadas de analítica de riesgos, inteligencia artificial y machine learning para mejorar la identificación, medición y monitoreo de riesgos.',
+          en: 'Ability to adopt advanced risk analytics tools, artificial intelligence, and machine learning to improve risk identification, measurement, and monitoring.',
+          fr: 'Capacité à adopter des outils avancés d\'analytique des risques, d\'intelligence artificielle et d\'apprentissage automatique pour améliorer l\'identification, la mesure et le suivi des risques.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'ins-cro-scenario-planning',
+        name: { es: 'Planificación de Escenarios y Pruebas de Estrés', en: 'Scenario Planning & Stress Testing', fr: 'Planification de Scénarios et Tests de Résistance' },
+        description: {
+          es: 'Disposición para desarrollar y ejecutar ejercicios de planificación de escenarios, pruebas de estrés y análisis de sensibilidad que fortalezcan la resiliencia organizacional.',
+          en: 'Willingness to develop and execute scenario planning exercises, stress tests, and sensitivity analyses that strengthen organizational resilience.',
+          fr: 'Volonté de développer et exécuter des exercices de planification de scénarios, des tests de résistance et des analyses de sensibilité qui renforcent la résilience organisationnelle.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // INSURANCE CUO (CHIEF UNDERWRITING OFFICER) CATEGORIES
+  // ============================================================================
+  {
+    id: 'ins-cuo-professional',
+    name: {
+      es: 'Habilidades Profesionales',
+      en: 'Professional Skills',
+      fr: 'Compétences Professionnelles',
+    },
+    description: {
+      es: 'Competencias técnicas y estratégicas de suscripción requeridas para un Director de Suscripción, incluyendo estrategia de suscripción, rentabilidad del portafolio, pricing, selección de riesgos, reaseguro y reservas técnicas.',
+      en: 'Technical and strategic underwriting competencies required for a CUO, including underwriting strategy, portfolio profitability, pricing, risk selection, reinsurance, and technical reserving.',
+      fr: 'Compétences techniques et stratégiques de souscription requises pour un Directeur de la Souscription, y compris la stratégie de souscription, la rentabilité du portefeuille, la tarification, la sélection des risques, la réassurance et les réserves techniques.',
+    },
+    competencies: [
+      {
+        id: 'ins-cuo-strategy',
+        name: { es: 'Estrategia y Filosofía de Suscripción', en: 'Underwriting Strategy & Philosophy', fr: 'Stratégie et Philosophie de Souscription' },
+        description: {
+          es: 'Capacidad para definir y comunicar la filosofía de suscripción de la compañía, estableciendo guías claras de apetito de riesgo, criterios de aceptación y estándares de calidad.',
+          en: 'Ability to define and communicate the company\'s underwriting philosophy, establishing clear risk appetite guidelines, acceptance criteria, and quality standards.',
+          fr: 'Capacité à définir et communiquer la philosophie de souscription de l\'entreprise, en établissant des directives claires d\'appétit pour le risque, des critères d\'acceptation et des normes de qualité.',
+        },
+        weight: 0.18,
+      },
+      {
+        id: 'ins-cuo-portfolio-profitability',
+        name: { es: 'Gestión de Rentabilidad del Portafolio', en: 'Portfolio Profitability Management', fr: 'Gestion de la Rentabilité du Portefeuille' },
+        description: {
+          es: 'Habilidad para analizar, monitorear y optimizar la rentabilidad del portafolio de suscripción, identificando líneas de negocio rentables y tomando acciones correctivas en segmentos con bajo desempeño.',
+          en: 'Skill in analyzing, monitoring, and optimizing the underwriting portfolio profitability, identifying profitable lines of business and taking corrective actions on underperforming segments.',
+          fr: 'Compétence dans l\'analyse, le suivi et l\'optimisation de la rentabilité du portefeuille de souscription, l\'identification des lignes d\'activité rentables et la prise de mesures correctives sur les segments sous-performants.',
+        },
+        weight: 0.18,
+      },
+      {
+        id: 'ins-cuo-pricing',
+        name: { es: 'Pricing y Adecuación de Tarifas', en: 'Pricing & Rate Adequacy', fr: 'Tarification et Adéquation des Taux' },
+        description: {
+          es: 'Capacidad para supervisar la tarificación técnica, asegurar la adecuación de primas, evaluar la suficiencia de tasas y ajustar precios según las condiciones del mercado y la experiencia siniestral.',
+          en: 'Ability to oversee technical pricing, ensure premium adequacy, evaluate rate sufficiency, and adjust prices based on market conditions and loss experience.',
+          fr: 'Capacité à superviser la tarification technique, assurer l\'adéquation des primes, évaluer la suffisance des taux et ajuster les prix en fonction des conditions du marché et de l\'expérience sinistre.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-cuo-risk-selection',
+        name: { es: 'Selección de Riesgos y Apetito de Riesgo', en: 'Risk Selection & Appetite', fr: 'Sélection des Risques et Appétit pour le Risque' },
+        description: {
+          es: 'Habilidad para definir y aplicar criterios rigurosos de selección de riesgos, gestionando el apetito de riesgo de la compañía y asegurando una cartera diversificada y equilibrada.',
+          en: 'Skill in defining and applying rigorous risk selection criteria, managing the company\'s risk appetite, and ensuring a diversified and balanced portfolio.',
+          fr: 'Compétence dans la définition et l\'application de critères rigoureux de sélection des risques, la gestion de l\'appétit pour le risque de l\'entreprise et la garantie d\'un portefeuille diversifié et équilibré.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-cuo-reinsurance',
+        name: { es: 'Optimización del Reaseguro', en: 'Reinsurance Optimization', fr: 'Optimisation de la Réassurance' },
+        description: {
+          es: 'Capacidad para diseñar y optimizar el programa de reaseguro, negociar con reaseguradores, y asegurar una protección adecuada que maximice la capacidad de suscripción.',
+          en: 'Ability to design and optimize the reinsurance program, negotiate with reinsurers, and ensure adequate protection that maximizes underwriting capacity.',
+          fr: 'Capacité à concevoir et optimiser le programme de réassurance, négocier avec les réassureurs et assurer une protection adéquate qui maximise la capacité de souscription.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-cuo-reserving',
+        name: { es: 'Supervisión de Reservas Técnicas', en: 'Technical Reserving Oversight', fr: 'Supervision des Réserves Techniques' },
+        description: {
+          es: 'Habilidad para supervisar la constitución y adecuación de reservas técnicas, asegurando que reflejen adecuadamente las obligaciones futuras y cumplan con los requisitos regulatorios.',
+          en: 'Skill in overseeing the establishment and adequacy of technical reserves, ensuring they adequately reflect future obligations and comply with regulatory requirements.',
+          fr: 'Compétence dans la supervision de la constitution et de l\'adéquation des réserves techniques, en s\'assurant qu\'elles reflètent adéquatement les obligations futures et respectent les exigences réglementaires.',
+        },
+        weight: 0.16,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'ins-cuo-soft-skills',
+    name: {
+      es: 'Habilidades Blandas',
+      en: 'Soft Skills',
+      fr: 'Compétences Interpersonnelles',
+    },
+    description: {
+      es: 'Competencias interpersonales y de liderazgo esenciales para un Director de Suscripción, incluyendo desarrollo de suscriptores, relaciones con intermediarios, comunicación ejecutiva y storytelling de datos.',
+      en: 'Interpersonal and leadership competencies essential for a CUO, including underwriter development, intermediary relationships, executive communication, and data storytelling.',
+      fr: 'Compétences interpersonnelles et de leadership essentielles pour un Directeur de la Souscription, y compris le développement des souscripteurs, les relations avec les intermédiaires, la communication exécutive et le storytelling de données.',
+    },
+    competencies: [
+      {
+        id: 'ins-cuo-mentoring',
+        name: { es: 'Desarrollo y Mentoría de Suscriptores', en: 'Underwriter Development & Mentoring', fr: 'Développement et Mentorat des Souscripteurs' },
+        description: {
+          es: 'Capacidad para desarrollar el talento de suscripción, transferir conocimiento técnico, establecer estándares de formación y crear programas de mentoría que fortalezcan las capacidades del equipo.',
+          en: 'Ability to develop underwriting talent, transfer technical knowledge, establish training standards, and create mentoring programs that strengthen team capabilities.',
+          fr: 'Capacité à développer les talents de souscription, transférer les connaissances techniques, établir des normes de formation et créer des programmes de mentorat qui renforcent les capacités de l\'équipe.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-cuo-broker-relations',
+        name: { es: 'Gestión de Relaciones con Corredores y Agentes', en: 'Broker/Agent Relationship Management', fr: 'Gestion des Relations avec les Courtiers et Agents' },
+        description: {
+          es: 'Habilidad para construir y mantener relaciones productivas con corredores y agentes de seguros, equilibrando las necesidades comerciales con la disciplina técnica de suscripción.',
+          en: 'Skill in building and maintaining productive relationships with insurance brokers and agents, balancing commercial needs with technical underwriting discipline.',
+          fr: 'Compétence dans la construction et le maintien de relations productives avec les courtiers et agents d\'assurance, en équilibrant les besoins commerciaux avec la discipline technique de souscription.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-cuo-exec-communication',
+        name: { es: 'Comunicación Ejecutiva', en: 'Executive Communication', fr: 'Communication Exécutive' },
+        description: {
+          es: 'Capacidad para comunicar estrategias, resultados y desafíos de suscripción de manera clara y persuasiva al comité ejecutivo, directorio y partes interesadas clave.',
+          en: 'Ability to communicate underwriting strategies, results, and challenges clearly and persuasively to the executive committee, board, and key stakeholders.',
+          fr: 'Capacité à communiquer les stratégies, résultats et défis de souscription de manière claire et persuasive au comité exécutif, au conseil d\'administration et aux parties prenantes clés.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-cuo-data-storytelling',
+        name: { es: 'Storytelling de Datos', en: 'Data Storytelling', fr: 'Storytelling de Données' },
+        description: {
+          es: 'Habilidad para transformar datos complejos de suscripción y siniestralidad en narrativas comprensibles y accionables que faciliten la toma de decisiones a todos los niveles.',
+          en: 'Skill in transforming complex underwriting and loss data into comprehensible and actionable narratives that facilitate decision-making at all levels.',
+          fr: 'Compétence dans la transformation de données complexes de souscription et de sinistralité en récits compréhensibles et exploitables qui facilitent la prise de décision à tous les niveaux.',
+        },
+        weight: 0.25,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'ins-cuo-readiness',
+    name: {
+      es: 'Disposición al Cambio',
+      en: 'Readiness for Change',
+      fr: 'Disposition au Changement',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante la suscripción predictiva, nuevos modelos de seguros y la necesidad de ajustar la suscripción al cambio climático.',
+      en: 'Adaptability to predictive underwriting, new insurance models, and the need to adjust underwriting to climate change.',
+      fr: 'Adaptabilité à la souscription prédictive, aux nouveaux modèles d\'assurance et à la nécessité d\'ajuster la souscription au changement climatique.',
+    },
+    competencies: [
+      {
+        id: 'ins-cuo-predictive-uw',
+        name: { es: 'Suscripción Predictiva e IA', en: 'Predictive Underwriting & AI', fr: 'Souscription Prédictive et IA' },
+        description: {
+          es: 'Disposición para integrar modelos predictivos, inteligencia artificial y machine learning en los procesos de suscripción, mejorando la precisión en la selección y tarificación de riesgos.',
+          en: 'Willingness to integrate predictive models, artificial intelligence, and machine learning into underwriting processes, improving accuracy in risk selection and pricing.',
+          fr: 'Volonté d\'intégrer des modèles prédictifs, l\'intelligence artificielle et l\'apprentissage automatique dans les processus de souscription, améliorant la précision dans la sélection et la tarification des risques.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'ins-cuo-parametric-embedded',
+        name: { es: 'Seguros Paramétricos y Embebidos', en: 'Parametric & Embedded Insurance', fr: 'Assurances Paramétriques et Intégrées' },
+        description: {
+          es: 'Capacidad para evaluar y desarrollar productos de seguros paramétricos basados en índices, así como seguros embebidos integrados en plataformas y ecosistemas digitales.',
+          en: 'Ability to evaluate and develop index-based parametric insurance products, as well as embedded insurance integrated into digital platforms and ecosystems.',
+          fr: 'Capacité à évaluer et développer des produits d\'assurance paramétrique basés sur des indices, ainsi que des assurances intégrées dans des plateformes et écosystèmes numériques.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'ins-cuo-climate-uw',
+        name: { es: 'Suscripción Ajustada al Clima', en: 'Climate-Adjusted Underwriting', fr: 'Souscription Ajustée au Climat' },
+        description: {
+          es: 'Disposición para incorporar escenarios de cambio climático en los modelos de suscripción, ajustar tarifas y condiciones según proyecciones climáticas y desarrollar coberturas para riesgos climáticos emergentes.',
+          en: 'Willingness to incorporate climate change scenarios into underwriting models, adjust rates and conditions based on climate projections, and develop coverages for emerging climate risks.',
+          fr: 'Volonté d\'incorporer des scénarios de changement climatique dans les modèles de souscription, d\'ajuster les taux et les conditions en fonction des projections climatiques et de développer des couvertures pour les risques climatiques émergents.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // INSURANCE CHIEF ACTUARY CATEGORIES
+  // ============================================================================
+  {
+    id: 'ins-actuary-professional',
+    name: {
+      es: 'Habilidades Profesionales',
+      en: 'Professional Skills',
+      fr: 'Compétences Professionnelles',
+    },
+    description: {
+      es: 'Competencias técnicas y estratégicas actuariales requeridas para un Actuario Jefe, incluyendo tarificación, reservas, modelización de capital, reaseguro, NIIF 17 y estudios de experiencia.',
+      en: 'Technical and strategic actuarial competencies required for a Chief Actuary, including pricing, reserving, capital modeling, reinsurance, IFRS 17, and experience studies.',
+      fr: 'Compétences techniques et stratégiques actuarielles requises pour un Actuaire en Chef, y compris la tarification, les réserves, la modélisation du capital, la réassurance, l\'IFRS 17 et les études d\'expérience.',
+    },
+    competencies: [
+      {
+        id: 'ins-actuary-pricing',
+        name: { es: 'Tarificación y Pricing', en: 'Pricing & Tarification', fr: 'Tarification et Pricing' },
+        description: {
+          es: 'Dominio de las metodologías actuariales de tarificación, incluyendo análisis de frecuencia y severidad, modelos GLM, credibilidad y ajuste de tarifas a las condiciones del mercado.',
+          en: 'Mastery of actuarial pricing methodologies, including frequency and severity analysis, GLM models, credibility theory, and rate adjustments to market conditions.',
+          fr: 'Maîtrise des méthodologies actuarielles de tarification, y compris l\'analyse de la fréquence et de la sévérité, les modèles GLM, la théorie de la crédibilité et l\'ajustement des tarifs aux conditions du marché.',
+        },
+        weight: 0.18,
+      },
+      {
+        id: 'ins-actuary-reserving',
+        name: { es: 'Reservas y Valoración de Pasivos', en: 'Reserving & Liability Valuation', fr: 'Réserves et Valorisation des Passifs' },
+        description: {
+          es: 'Habilidad para estimar y supervisar las reservas técnicas de la compañía utilizando métodos como Chain Ladder, Bornhuetter-Ferguson y análisis de siniestros individuales, asegurando adecuación y cumplimiento regulatorio.',
+          en: 'Skill in estimating and overseeing the company\'s technical reserves using methods such as Chain Ladder, Bornhuetter-Ferguson, and individual claims analysis, ensuring adequacy and regulatory compliance.',
+          fr: 'Compétence dans l\'estimation et la supervision des réserves techniques de l\'entreprise en utilisant des méthodes telles que Chain Ladder, Bornhuetter-Ferguson et l\'analyse individuelle des sinistres, en assurant l\'adéquation et la conformité réglementaire.',
+        },
+        weight: 0.18,
+      },
+      {
+        id: 'ins-actuary-capital-modeling',
+        name: { es: 'Modelización de Capital (Solvencia II/ORSA)', en: 'Capital Modeling (Solvency II/ORSA)', fr: 'Modélisation du Capital (Solvabilité II/ORSA)' },
+        description: {
+          es: 'Capacidad para desarrollar y mantener modelos internos de capital, calcular requerimientos de capital regulatorio bajo Solvencia II, y liderar el proceso de evaluación interna de riesgos y solvencia (ORSA).',
+          en: 'Ability to develop and maintain internal capital models, calculate regulatory capital requirements under Solvency II, and lead the own risk and solvency assessment (ORSA) process.',
+          fr: 'Capacité à développer et maintenir des modèles internes de capital, calculer les exigences de capital réglementaire sous Solvabilité II et diriger le processus d\'évaluation interne des risques et de la solvabilité (ORSA).',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-actuary-reinsurance',
+        name: { es: 'Optimización del Reaseguro', en: 'Reinsurance Optimization', fr: 'Optimisation de la Réassurance' },
+        description: {
+          es: 'Habilidad para modelar y optimizar la estructura de reaseguro desde una perspectiva actuarial, evaluando el costo-beneficio de diferentes programas y su impacto en la volatilidad de resultados.',
+          en: 'Skill in modeling and optimizing the reinsurance structure from an actuarial perspective, evaluating the cost-benefit of different programs and their impact on results volatility.',
+          fr: 'Compétence dans la modélisation et l\'optimisation de la structure de réassurance d\'un point de vue actuariel, en évaluant le rapport coût-bénéfice des différents programmes et leur impact sur la volatilité des résultats.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-actuary-ifrs17',
+        name: { es: 'Cumplimiento NIIF 17', en: 'IFRS 17 Compliance', fr: 'Conformité IFRS 17' },
+        description: {
+          es: 'Dominio de la norma NIIF 17 de contratos de seguros, incluyendo modelos de medición (BBA, PAA, VFA), márgenes de servicio contractual, y la transición desde marcos contables anteriores.',
+          en: 'Mastery of the IFRS 17 insurance contracts standard, including measurement models (BBA, PAA, VFA), contractual service margins, and the transition from previous accounting frameworks.',
+          fr: 'Maîtrise de la norme IFRS 17 sur les contrats d\'assurance, y compris les modèles de mesure (BBA, PAA, VFA), les marges de service contractuelles et la transition depuis les cadres comptables précédents.',
+        },
+        weight: 0.16,
+      },
+      {
+        id: 'ins-actuary-experience-studies',
+        name: { es: 'Estudios de Experiencia y Tablas de Mortalidad/Morbilidad', en: 'Experience Studies & Mortality/Morbidity Tables', fr: 'Études d\'Expérience et Tables de Mortalité/Morbidité' },
+        description: {
+          es: 'Capacidad para realizar estudios de experiencia actuarial, desarrollar y ajustar tablas de mortalidad, morbilidad y persistencia, y aplicar los resultados a la tarificación y reservas.',
+          en: 'Ability to conduct actuarial experience studies, develop and adjust mortality, morbidity, and persistency tables, and apply results to pricing and reserving.',
+          fr: 'Capacité à réaliser des études d\'expérience actuarielle, développer et ajuster des tables de mortalité, morbidité et persistance, et appliquer les résultats à la tarification et aux réserves.',
+        },
+        weight: 0.16,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'ins-actuary-soft-skills',
+    name: {
+      es: 'Habilidades Blandas',
+      en: 'Soft Skills',
+      fr: 'Compétences Interpersonnelles',
+    },
+    description: {
+      es: 'Competencias interpersonales y de liderazgo esenciales para un Actuario Jefe, incluyendo traducción de hallazgos técnicos, influencia interdepartamental, mentoría de equipos y relaciones con reguladores.',
+      en: 'Interpersonal and leadership competencies essential for a Chief Actuary, including translating technical findings, cross-departmental influence, team mentoring, and regulatory relationships.',
+      fr: 'Compétences interpersonnelles et de leadership essentielles pour un Actuaire en Chef, y compris la traduction des résultats techniques, l\'influence interdépartementale, le mentorat d\'équipes et les relations avec les régulateurs.',
+    },
+    competencies: [
+      {
+        id: 'ins-actuary-technical-translation',
+        name: { es: 'Traducción de Hallazgos Técnicos para Ejecutivos', en: 'Translating Technical Findings for Executives', fr: 'Traduction des Résultats Techniques pour les Dirigeants' },
+        description: {
+          es: 'Capacidad para traducir análisis actuariales complejos en recomendaciones claras y accionables para la alta dirección, facilitando la comprensión de implicaciones financieras y de riesgo.',
+          en: 'Ability to translate complex actuarial analyses into clear, actionable recommendations for senior management, facilitating understanding of financial and risk implications.',
+          fr: 'Capacité à traduire des analyses actuarielles complexes en recommandations claires et exploitables pour la direction générale, facilitant la compréhension des implications financières et de risque.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-actuary-cross-dept-influence',
+        name: { es: 'Influencia Interdepartamental', en: 'Cross-Departmental Influence', fr: 'Influence Interdépartementale' },
+        description: {
+          es: 'Habilidad para influir en decisiones de suscripción, inversiones, productos y estrategia desde la perspectiva actuarial, construyendo credibilidad y relaciones de confianza con otras áreas.',
+          en: 'Skill in influencing underwriting, investment, product, and strategy decisions from the actuarial perspective, building credibility and trust relationships with other departments.',
+          fr: 'Compétence dans l\'influence des décisions de souscription, d\'investissement, de produits et de stratégie d\'un point de vue actuariel, en construisant la crédibilité et des relations de confiance avec les autres départements.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-actuary-team-mentoring',
+        name: { es: 'Mentoría de Equipos Actuariales', en: 'Mentoring Actuarial Teams', fr: 'Mentorat des Équipes Actuarielles' },
+        description: {
+          es: 'Capacidad para desarrollar, motivar y retener talento actuarial, fomentando el crecimiento profesional, la certificación y la innovación metodológica dentro del equipo.',
+          en: 'Ability to develop, motivate, and retain actuarial talent, fostering professional growth, certification, and methodological innovation within the team.',
+          fr: 'Capacité à développer, motiver et retenir les talents actuariels, en favorisant la croissance professionnelle, la certification et l\'innovation méthodologique au sein de l\'équipe.',
+        },
+        weight: 0.25,
+      },
+      {
+        id: 'ins-actuary-regulatory-relations',
+        name: { es: 'Gestión de Relaciones con Reguladores', en: 'Regulatory Relationship Management', fr: 'Gestion des Relations avec les Régulateurs' },
+        description: {
+          es: 'Habilidad para mantener relaciones constructivas con los entes reguladores, responder a requerimientos actuariales, participar en consultas regulatorias y representar a la compañía ante autoridades de supervisión.',
+          en: 'Skill in maintaining constructive relationships with regulators, responding to actuarial requirements, participating in regulatory consultations, and representing the company before supervisory authorities.',
+          fr: 'Compétence dans le maintien de relations constructives avec les régulateurs, la réponse aux exigences actuarielles, la participation aux consultations réglementaires et la représentation de l\'entreprise auprès des autorités de supervision.',
+        },
+        weight: 0.25,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'ins-actuary-readiness',
+    name: {
+      es: 'Disposición al Cambio',
+      en: 'Readiness for Change',
+      fr: 'Disposition au Changement',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante el aprendizaje automático en ciencias actuariales, la modelización de riesgo climático y la evolución hacia el pricing en tiempo real y la telemática.',
+      en: 'Adaptability to machine learning in actuarial science, climate risk modeling, and the evolution toward real-time pricing and telematics.',
+      fr: 'Adaptabilité à l\'apprentissage automatique en sciences actuarielles, à la modélisation du risque climatique et à l\'évolution vers la tarification en temps réel et la télématique.',
+    },
+    competencies: [
+      {
+        id: 'ins-actuary-ml',
+        name: { es: 'Aprendizaje Automático en Ciencias Actuariales', en: 'Machine Learning in Actuarial Science', fr: 'Apprentissage Automatique en Sciences Actuarielles' },
+        description: {
+          es: 'Disposición para integrar técnicas de machine learning y ciencia de datos en los procesos actuariales tradicionales, mejorando la precisión predictiva y automatizando análisis repetitivos.',
+          en: 'Willingness to integrate machine learning and data science techniques into traditional actuarial processes, improving predictive accuracy and automating repetitive analyses.',
+          fr: 'Volonté d\'intégrer les techniques d\'apprentissage automatique et de science des données dans les processus actuariels traditionnels, améliorant la précision prédictive et automatisant les analyses répétitives.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'ins-actuary-climate-modeling',
+        name: { es: 'Modelización de Riesgo Climático', en: 'Climate Risk Modeling', fr: 'Modélisation du Risque Climatique' },
+        description: {
+          es: 'Capacidad para incorporar modelos de cambio climático en las proyecciones actuariales, ajustar supuestos de frecuencia y severidad según escenarios climáticos y valorar el impacto a largo plazo en reservas y capital.',
+          en: 'Ability to incorporate climate change models into actuarial projections, adjust frequency and severity assumptions based on climate scenarios, and assess long-term impact on reserves and capital.',
+          fr: 'Capacité à incorporer des modèles de changement climatique dans les projections actuarielles, ajuster les hypothèses de fréquence et de sévérité selon les scénarios climatiques et évaluer l\'impact à long terme sur les réserves et le capital.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'ins-actuary-realtime-pricing',
+        name: { es: 'Pricing en Tiempo Real y Telemática', en: 'Real-Time Pricing & Telematics', fr: 'Tarification en Temps Réel et Télématique' },
+        description: {
+          es: 'Disposición para desarrollar modelos de tarificación dinámica basados en datos en tiempo real, telemática, IoT y comportamiento del asegurado, evolucionando desde la tarificación estática tradicional.',
+          en: 'Willingness to develop dynamic pricing models based on real-time data, telematics, IoT, and policyholder behavior, evolving from traditional static pricing.',
+          fr: 'Volonté de développer des modèles de tarification dynamique basés sur des données en temps réel, la télématique, l\'IoT et le comportement de l\'assuré, en évoluant depuis la tarification statique traditionnelle.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 3,
+  },
+  // ==========================================================================
+  // HOSPITALITY & TOURISM — Hotel General Manager
+  // ==========================================================================
+  {
+    id: 'hosp-hgm-professional',
+    name: {
+      es: 'Habilidades Profesionales — Gerente General de Hotel',
+      en: 'Professional Skills — Hotel General Manager',
+      fr: 'Compétences Professionnelles — Directeur Général d\'Hôtel',
+    },
+    description: {
+      es: 'Conocimientos técnicos en operación hotelera, gestión de ingresos y estándares de calidad.',
+      en: 'Technical knowledge in hotel operations, revenue management, and quality standards.',
+      fr: 'Connaissances techniques en exploitation hôtelière, gestion des revenus et normes de qualité.',
+    },
+    competencies: [
+      {
+        id: 'hosp-hgm-hotel-operations',
+        name: { es: 'Operaciones Hoteleras', en: 'Hotel Operations', fr: 'Opérations Hôtelières' },
+        description: {
+          es: 'Capacidad para gestionar las operaciones diarias del hotel: recepción, housekeeping, mantenimiento, alimentos y bebidas, y seguridad.',
+          en: 'Ability to manage daily hotel operations: front desk, housekeeping, maintenance, food and beverage, and security.',
+          fr: 'Capacité à gérer les opérations quotidiennes de l\'hôtel : réception, entretien ménager, maintenance, restauration et sécurité.',
+        },
+        weight: 0.3,
+      },
+      {
+        id: 'hosp-hgm-revenue-management',
+        name: { es: 'Gestión de Ingresos', en: 'Revenue Management', fr: 'Gestion des Revenus' },
+        description: {
+          es: 'Dominio de estrategias de pricing dinámico, gestión de ocupación, distribución de canales y maximización del RevPAR.',
+          en: 'Mastery of dynamic pricing strategies, occupancy management, channel distribution, and RevPAR maximization.',
+          fr: 'Maîtrise des stratégies de tarification dynamique, gestion du taux d\'occupation, distribution des canaux et maximisation du RevPAR.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-hgm-quality-standards',
+        name: { es: 'Estándares de Calidad y Cumplimiento', en: 'Quality Standards & Compliance', fr: 'Normes de Qualité et Conformité' },
+        description: {
+          es: 'Conocimiento de normativas turísticas, estándares de marca, certificaciones de calidad (ISO, AAA, Forbes) y regulación local.',
+          en: 'Knowledge of tourism regulations, brand standards, quality certifications (ISO, AAA, Forbes), and local regulation.',
+          fr: 'Connaissance des réglementations touristiques, normes de marque, certifications qualité (ISO, AAA, Forbes) et réglementation locale.',
+        },
+        weight: 0.35,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'hosp-hgm-soft-skills',
+    name: {
+      es: 'Habilidades Blandas — Gerente General de Hotel',
+      en: 'Soft Skills — Hotel General Manager',
+      fr: 'Compétences Interpersonnelles — Directeur Général d\'Hôtel',
+    },
+    description: {
+      es: 'Competencias interpersonales para liderar equipos multidisciplinarios y garantizar la excelencia en la experiencia del huésped.',
+      en: 'Interpersonal competencies for leading multidisciplinary teams and ensuring guest experience excellence.',
+      fr: 'Compétences interpersonnelles pour diriger des équipes multidisciplinaires et garantir l\'excellence de l\'expérience client.',
+    },
+    competencies: [
+      {
+        id: 'hosp-hgm-leadership',
+        name: { es: 'Liderazgo Multidepartamental', en: 'Multi-Departmental Leadership', fr: 'Leadership Multidépartemental' },
+        description: {
+          es: 'Capacidad para dirigir y motivar equipos de diferentes departamentos, alinear objetivos y fomentar la colaboración interdisciplinaria.',
+          en: 'Ability to lead and motivate teams across departments, align goals, and foster cross-functional collaboration.',
+          fr: 'Capacité à diriger et motiver des équipes de différents départements, aligner les objectifs et favoriser la collaboration interdisciplinaire.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-hgm-guest-relations',
+        name: { es: 'Relaciones con Huéspedes', en: 'Guest Relations', fr: 'Relations avec les Clients' },
+        description: {
+          es: 'Habilidad para manejar quejas VIP, construir relaciones con huéspedes frecuentes y garantizar la satisfacción del cliente.',
+          en: 'Skill in handling VIP complaints, building relationships with frequent guests, and ensuring customer satisfaction.',
+          fr: 'Compétence dans la gestion des plaintes VIP, la construction de relations avec les clients réguliers et la satisfaction client.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-hgm-communication',
+        name: { es: 'Comunicación Ejecutiva', en: 'Executive Communication', fr: 'Communication Exécutive' },
+        description: {
+          es: 'Capacidad de comunicación efectiva con propietarios, inversionistas, medios de comunicación y autoridades turísticas.',
+          en: 'Effective communication ability with owners, investors, media, and tourism authorities.',
+          fr: 'Capacité de communication efficace avec les propriétaires, investisseurs, médias et autorités touristiques.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'hosp-hgm-readiness',
+    name: {
+      es: 'Disposición al Cambio — Gerente General de Hotel',
+      en: 'Readiness for Change — Hotel General Manager',
+      fr: 'Disposition au Changement — Directeur Général d\'Hôtel',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante la transformación digital hotelera, turismo sostenible y nuevas expectativas del viajero.',
+      en: 'Adaptability to hotel digital transformation, sustainable tourism, and new traveler expectations.',
+      fr: 'Adaptabilité à la transformation numérique hôtelière, au tourisme durable et aux nouvelles attentes des voyageurs.',
+    },
+    competencies: [
+      {
+        id: 'hosp-hgm-digital-transformation',
+        name: { es: 'Transformación Digital Hotelera', en: 'Hotel Digital Transformation', fr: 'Transformation Numérique Hôtelière' },
+        description: {
+          es: 'Disposición para adoptar tecnologías como check-in móvil, IoT en habitaciones, chatbots y plataformas de gestión hotelera en la nube.',
+          en: 'Willingness to adopt technologies such as mobile check-in, in-room IoT, chatbots, and cloud-based hotel management platforms.',
+          fr: 'Volonté d\'adopter des technologies telles que le check-in mobile, l\'IoT dans les chambres, les chatbots et les plateformes de gestion hôtelière en nuage.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-hgm-sustainability',
+        name: { es: 'Turismo Sostenible', en: 'Sustainable Tourism', fr: 'Tourisme Durable' },
+        description: {
+          es: 'Capacidad para implementar prácticas de sostenibilidad ambiental, certificaciones verdes y reducción de huella de carbono.',
+          en: 'Ability to implement environmental sustainability practices, green certifications, and carbon footprint reduction.',
+          fr: 'Capacité à mettre en œuvre des pratiques de durabilité environnementale, des certifications vertes et la réduction de l\'empreinte carbone.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-hgm-new-traveler',
+        name: { es: 'Nuevas Expectativas del Viajero', en: 'New Traveler Expectations', fr: 'Nouvelles Attentes des Voyageurs' },
+        description: {
+          es: 'Adaptación a las tendencias del viajero moderno: experiencias personalizadas, bienestar, bleisure y economía colaborativa.',
+          en: 'Adaptation to modern traveler trends: personalized experiences, wellness, bleisure, and the sharing economy.',
+          fr: 'Adaptation aux tendances du voyageur moderne : expériences personnalisées, bien-être, bleisure et économie collaborative.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 3,
+  },
+  // ==========================================================================
+  // HOSPITALITY & TOURISM — Restaurant Manager
+  // ==========================================================================
+  {
+    id: 'hosp-rm-professional',
+    name: {
+      es: 'Habilidades Profesionales — Gerente de Restaurante',
+      en: 'Professional Skills — Restaurant Manager',
+      fr: 'Compétences Professionnelles — Directeur de Restaurant',
+    },
+    description: {
+      es: 'Conocimientos técnicos en operación de restaurante, control de costos y cumplimiento sanitario.',
+      en: 'Technical knowledge in restaurant operations, cost control, and health compliance.',
+      fr: 'Connaissances techniques en exploitation de restaurant, contrôle des coûts et conformité sanitaire.',
+    },
+    competencies: [
+      {
+        id: 'hosp-rm-fb-operations',
+        name: { es: 'Operaciones de A&B', en: 'F&B Operations', fr: 'Opérations de Restauration' },
+        description: {
+          es: 'Gestión de la operación diaria del restaurante: flujo de servicio, mise en place, estándares de servicio y gestión de reservas.',
+          en: 'Management of daily restaurant operations: service flow, mise en place, service standards, and reservation management.',
+          fr: 'Gestion de l\'exploitation quotidienne du restaurant : flux de service, mise en place, normes de service et gestion des réservations.',
+        },
+        weight: 0.3,
+      },
+      {
+        id: 'hosp-rm-cost-control',
+        name: { es: 'Control de Costos y Rentabilidad', en: 'Cost Control & Profitability', fr: 'Contrôle des Coûts et Rentabilité' },
+        description: {
+          es: 'Dominio del food cost, beverage cost, control de merma, ingeniería de menú y análisis de rentabilidad por platillo.',
+          en: 'Mastery of food cost, beverage cost, waste control, menu engineering, and per-dish profitability analysis.',
+          fr: 'Maîtrise du coût alimentaire, du coût des boissons, du contrôle des pertes, de l\'ingénierie des menus et de l\'analyse de rentabilité par plat.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-rm-health-safety',
+        name: { es: 'Higiene y Seguridad Alimentaria', en: 'Food Hygiene & Safety', fr: 'Hygiène et Sécurité Alimentaire' },
+        description: {
+          es: 'Conocimiento de normativas sanitarias (HACCP, BPM), inspecciones, manejo de alérgenos y trazabilidad de alimentos.',
+          en: 'Knowledge of health regulations (HACCP, GMP), inspections, allergen management, and food traceability.',
+          fr: 'Connaissance des réglementations sanitaires (HACCP, BPF), inspections, gestion des allergènes et traçabilité alimentaire.',
+        },
+        weight: 0.35,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'hosp-rm-soft-skills',
+    name: {
+      es: 'Habilidades Blandas — Gerente de Restaurante',
+      en: 'Soft Skills — Restaurant Manager',
+      fr: 'Compétences Interpersonnelles — Directeur de Restaurant',
+    },
+    description: {
+      es: 'Competencias interpersonales para gestionar equipos de servicio y cocina, resolver conflictos y fidelizar clientes.',
+      en: 'Interpersonal competencies for managing service and kitchen teams, resolving conflicts, and building customer loyalty.',
+      fr: 'Compétences interpersonnelles pour gérer les équipes de service et de cuisine, résoudre les conflits et fidéliser les clients.',
+    },
+    competencies: [
+      {
+        id: 'hosp-rm-team-management',
+        name: { es: 'Gestión de Equipo', en: 'Team Management', fr: 'Gestion d\'Équipe' },
+        description: {
+          es: 'Capacidad para reclutar, capacitar, programar turnos y retener talento en un entorno de alta rotación.',
+          en: 'Ability to recruit, train, schedule shifts, and retain talent in a high-turnover environment.',
+          fr: 'Capacité à recruter, former, planifier les horaires et retenir les talents dans un environnement à forte rotation.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-rm-customer-experience',
+        name: { es: 'Experiencia del Cliente', en: 'Customer Experience', fr: 'Expérience Client' },
+        description: {
+          es: 'Habilidad para crear experiencias gastronómicas memorables, manejar quejas y gestionar reputación en línea.',
+          en: 'Skill in creating memorable dining experiences, handling complaints, and managing online reputation.',
+          fr: 'Compétence dans la création d\'expériences gastronomiques mémorables, la gestion des plaintes et la réputation en ligne.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-rm-pressure-management',
+        name: { es: 'Manejo Bajo Presión', en: 'Performance Under Pressure', fr: 'Gestion sous Pression' },
+        description: {
+          es: 'Capacidad para mantener la calma y tomar decisiones rápidas durante el servicio de alta demanda (rush hours).',
+          en: 'Ability to stay calm and make quick decisions during high-demand service periods (rush hours).',
+          fr: 'Capacité à rester calme et à prendre des décisions rapides pendant les périodes de forte demande (heures de pointe).',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'hosp-rm-readiness',
+    name: {
+      es: 'Disposición al Cambio — Gerente de Restaurante',
+      en: 'Readiness for Change — Restaurant Manager',
+      fr: 'Disposition au Changement — Directeur de Restaurant',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante las nuevas tendencias gastronómicas, delivery digital y sostenibilidad alimentaria.',
+      en: 'Adaptability to new gastronomic trends, digital delivery, and food sustainability.',
+      fr: 'Adaptabilité aux nouvelles tendances gastronomiques, à la livraison numérique et à la durabilité alimentaire.',
+    },
+    competencies: [
+      {
+        id: 'hosp-rm-digital-delivery',
+        name: { es: 'Canales Digitales y Delivery', en: 'Digital Channels & Delivery', fr: 'Canaux Numériques et Livraison' },
+        description: {
+          es: 'Disposición para gestionar plataformas de delivery, pedidos en línea, menús digitales y marketing en redes sociales.',
+          en: 'Willingness to manage delivery platforms, online ordering, digital menus, and social media marketing.',
+          fr: 'Volonté de gérer les plateformes de livraison, les commandes en ligne, les menus numériques et le marketing sur les réseaux sociaux.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-rm-gastronomic-trends',
+        name: { es: 'Tendencias Gastronómicas', en: 'Gastronomic Trends', fr: 'Tendances Gastronomiques' },
+        description: {
+          es: 'Apertura para incorporar tendencias como cocina plant-based, cocina de autor, fusión y gastronomía experiencial.',
+          en: 'Openness to incorporate trends such as plant-based cuisine, signature cuisine, fusion, and experiential gastronomy.',
+          fr: 'Ouverture pour intégrer des tendances telles que la cuisine végétale, la cuisine d\'auteur, la fusion et la gastronomie expérientielle.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-rm-food-sustainability',
+        name: { es: 'Sostenibilidad Alimentaria', en: 'Food Sustainability', fr: 'Durabilité Alimentaire' },
+        description: {
+          es: 'Capacidad para implementar prácticas de cero desperdicio, proveedores locales, empaques sostenibles y trazabilidad.',
+          en: 'Ability to implement zero-waste practices, local sourcing, sustainable packaging, and traceability.',
+          fr: 'Capacité à mettre en œuvre des pratiques zéro déchet, l\'approvisionnement local, les emballages durables et la traçabilité.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 3,
+  },
+  // ==========================================================================
+  // HOSPITALITY & TOURISM — Front Desk Agent
+  // ==========================================================================
+  {
+    id: 'hosp-fda-professional',
+    name: {
+      es: 'Habilidades Profesionales — Agente de Recepción',
+      en: 'Professional Skills — Front Desk Agent',
+      fr: 'Compétences Professionnelles — Agent de Réception',
+    },
+    description: {
+      es: 'Conocimientos técnicos en recepción hotelera, sistemas PMS y procedimientos operativos.',
+      en: 'Technical knowledge in hotel front desk operations, PMS systems, and operational procedures.',
+      fr: 'Connaissances techniques en réception hôtelière, systèmes PMS et procédures opérationnelles.',
+    },
+    competencies: [
+      {
+        id: 'hosp-fda-front-desk-ops',
+        name: { es: 'Operaciones de Recepción', en: 'Front Desk Operations', fr: 'Opérations de Réception' },
+        description: {
+          es: 'Dominio de los procesos de check-in/check-out, asignación de habitaciones, manejo de llaves y coordinación con housekeeping.',
+          en: 'Mastery of check-in/check-out processes, room assignment, key management, and housekeeping coordination.',
+          fr: 'Maîtrise des processus de check-in/check-out, attribution des chambres, gestion des clés et coordination avec l\'entretien ménager.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-fda-pms-systems',
+        name: { es: 'Sistemas de Gestión Hotelera (PMS)', en: 'Property Management Systems (PMS)', fr: 'Systèmes de Gestion Hôtelière (PMS)' },
+        description: {
+          es: 'Habilidad para operar sistemas PMS (Opera, Cloudbeds, etc.), gestionar reservas, facturación y reportes operativos.',
+          en: 'Skill in operating PMS systems (Opera, Cloudbeds, etc.), managing reservations, billing, and operational reports.',
+          fr: 'Compétence dans l\'utilisation des systèmes PMS (Opera, Cloudbeds, etc.), la gestion des réservations, la facturation et les rapports opérationnels.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-fda-cash-handling',
+        name: { es: 'Manejo de Caja y Facturación', en: 'Cash Handling & Billing', fr: 'Gestion de Caisse et Facturation' },
+        description: {
+          es: 'Capacidad para manejar transacciones en efectivo, tarjeta y crédito, cuadrar caja y procesar facturación de huéspedes.',
+          en: 'Ability to handle cash, card, and credit transactions, balance the cash drawer, and process guest billing.',
+          fr: 'Capacité à gérer les transactions en espèces, par carte et à crédit, équilibrer la caisse et traiter la facturation des clients.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'hosp-fda-soft-skills',
+    name: {
+      es: 'Habilidades Blandas — Agente de Recepción',
+      en: 'Soft Skills — Front Desk Agent',
+      fr: 'Compétences Interpersonnelles — Agent de Réception',
+    },
+    description: {
+      es: 'Competencias interpersonales para la atención directa al huésped y trabajo en equipo operativo.',
+      en: 'Interpersonal competencies for direct guest service and operational teamwork.',
+      fr: 'Compétences interpersonnelles pour le service direct aux clients et le travail d\'équipe opérationnel.',
+    },
+    competencies: [
+      {
+        id: 'hosp-fda-guest-service',
+        name: { es: 'Servicio al Huésped', en: 'Guest Service', fr: 'Service aux Clients' },
+        description: {
+          es: 'Capacidad para brindar un servicio cálido, profesional y personalizado a cada huésped.',
+          en: 'Ability to provide warm, professional, and personalized service to each guest.',
+          fr: 'Capacité à offrir un service chaleureux, professionnel et personnalisé à chaque client.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-fda-conflict-resolution',
+        name: { es: 'Resolución de Conflictos', en: 'Conflict Resolution', fr: 'Résolution de Conflits' },
+        description: {
+          es: 'Habilidad para manejar quejas, situaciones difíciles y huéspedes insatisfechos con empatía y soluciones efectivas.',
+          en: 'Skill in handling complaints, difficult situations, and dissatisfied guests with empathy and effective solutions.',
+          fr: 'Compétence dans la gestion des plaintes, des situations difficiles et des clients insatisfaits avec empathie et solutions efficaces.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-fda-teamwork',
+        name: { es: 'Trabajo en Equipo Operativo', en: 'Operational Teamwork', fr: 'Travail d\'Équipe Opérationnel' },
+        description: {
+          es: 'Capacidad para coordinarse eficazmente con housekeeping, mantenimiento, bell service y otros departamentos.',
+          en: 'Ability to coordinate effectively with housekeeping, maintenance, bell service, and other departments.',
+          fr: 'Capacité à se coordonner efficacement avec l\'entretien ménager, la maintenance, le service de bagages et d\'autres départements.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'hosp-fda-readiness',
+    name: {
+      es: 'Disposición al Cambio — Agente de Recepción',
+      en: 'Readiness for Change — Front Desk Agent',
+      fr: 'Disposition au Changement — Agent de Réception',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante nuevas tecnologías de recepción, autoservicio y comunicación digital con huéspedes.',
+      en: 'Adaptability to new front desk technologies, self-service, and digital guest communication.',
+      fr: 'Adaptabilité aux nouvelles technologies de réception, au libre-service et à la communication numérique avec les clients.',
+    },
+    competencies: [
+      {
+        id: 'hosp-fda-tech-adoption',
+        name: { es: 'Adopción Tecnológica', en: 'Technology Adoption', fr: 'Adoption Technologique' },
+        description: {
+          es: 'Disposición para aprender y utilizar nuevas herramientas: check-in móvil, kioscos de autoservicio, tabletas y apps de comunicación.',
+          en: 'Willingness to learn and use new tools: mobile check-in, self-service kiosks, tablets, and communication apps.',
+          fr: 'Volonté d\'apprendre et d\'utiliser de nouveaux outils : check-in mobile, bornes libre-service, tablettes et applications de communication.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-fda-multilingual',
+        name: { es: 'Comunicación Multilingüe', en: 'Multilingual Communication', fr: 'Communication Multilingue' },
+        description: {
+          es: 'Apertura para desarrollar competencias lingüísticas adicionales y comunicarse con huéspedes internacionales.',
+          en: 'Openness to develop additional language skills and communicate with international guests.',
+          fr: 'Ouverture pour développer des compétences linguistiques supplémentaires et communiquer avec des clients internationaux.',
+        },
+        weight: 0.3,
+      },
+      {
+        id: 'hosp-fda-service-evolution',
+        name: { es: 'Evolución del Servicio', en: 'Service Evolution', fr: 'Évolution du Service' },
+        description: {
+          es: 'Capacidad para adaptarse a nuevos estándares de servicio, protocolos post-pandemia y expectativas cambiantes del viajero.',
+          en: 'Ability to adapt to new service standards, post-pandemic protocols, and changing traveler expectations.',
+          fr: 'Capacité à s\'adapter aux nouvelles normes de service, aux protocoles post-pandémie et aux attentes changeantes des voyageurs.',
+        },
+        weight: 0.35,
+      },
+    ],
+    order: 3,
+  },
+  // ==========================================================================
+  // HOSPITALITY & TOURISM — Chef / Kitchen Manager
+  // ==========================================================================
+  {
+    id: 'hosp-ckm-professional',
+    name: {
+      es: 'Habilidades Profesionales — Chef / Gerente de Cocina',
+      en: 'Professional Skills — Chef / Kitchen Manager',
+      fr: 'Compétences Professionnelles — Chef / Responsable de Cuisine',
+    },
+    description: {
+      es: 'Conocimientos técnicos en artes culinarias, gestión de cocina y seguridad alimentaria.',
+      en: 'Technical knowledge in culinary arts, kitchen management, and food safety.',
+      fr: 'Connaissances techniques en arts culinaires, gestion de cuisine et sécurité alimentaire.',
+    },
+    competencies: [
+      {
+        id: 'hosp-ckm-culinary-expertise',
+        name: { es: 'Expertise Culinaria', en: 'Culinary Expertise', fr: 'Expertise Culinaire' },
+        description: {
+          es: 'Dominio de técnicas culinarias, diseño de menús, maridaje, presentación de platos y creatividad gastronómica.',
+          en: 'Mastery of culinary techniques, menu design, pairing, plating, and gastronomic creativity.',
+          fr: 'Maîtrise des techniques culinaires, conception de menus, accords mets-vins, dressage et créativité gastronomique.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-ckm-kitchen-management',
+        name: { es: 'Gestión de Cocina', en: 'Kitchen Management', fr: 'Gestion de Cuisine' },
+        description: {
+          es: 'Capacidad para gestionar inventarios, proveedores, costos de materia prima, mise en place y flujo de producción.',
+          en: 'Ability to manage inventory, suppliers, raw material costs, mise en place, and production flow.',
+          fr: 'Capacité à gérer les stocks, les fournisseurs, les coûts des matières premières, la mise en place et le flux de production.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-ckm-food-safety',
+        name: { es: 'Seguridad Alimentaria', en: 'Food Safety', fr: 'Sécurité Alimentaire' },
+        description: {
+          es: 'Conocimiento y aplicación de normas HACCP, BPM, manejo de temperaturas, trazabilidad y gestión de alérgenos.',
+          en: 'Knowledge and application of HACCP, GMP standards, temperature management, traceability, and allergen management.',
+          fr: 'Connaissance et application des normes HACCP, BPF, gestion des températures, traçabilité et gestion des allergènes.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'hosp-ckm-soft-skills',
+    name: {
+      es: 'Habilidades Blandas — Chef / Gerente de Cocina',
+      en: 'Soft Skills — Chef / Kitchen Manager',
+      fr: 'Compétences Interpersonnelles — Chef / Responsable de Cuisine',
+    },
+    description: {
+      es: 'Competencias interpersonales para liderar brigadas de cocina y colaborar con el equipo de servicio.',
+      en: 'Interpersonal competencies for leading kitchen brigades and collaborating with the service team.',
+      fr: 'Compétences interpersonnelles pour diriger les brigades de cuisine et collaborer avec l\'équipe de service.',
+    },
+    competencies: [
+      {
+        id: 'hosp-ckm-brigade-leadership',
+        name: { es: 'Liderazgo de Brigada', en: 'Brigade Leadership', fr: 'Leadership de Brigade' },
+        description: {
+          es: 'Capacidad para dirigir la brigada de cocina, delegar tareas, capacitar cocineros y mantener la disciplina operativa.',
+          en: 'Ability to lead the kitchen brigade, delegate tasks, train cooks, and maintain operational discipline.',
+          fr: 'Capacité à diriger la brigade de cuisine, déléguer les tâches, former les cuisiniers et maintenir la discipline opérationnelle.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-ckm-stress-management',
+        name: { es: 'Gestión del Estrés en Cocina', en: 'Kitchen Stress Management', fr: 'Gestion du Stress en Cuisine' },
+        description: {
+          es: 'Habilidad para mantener la calma, la calidad y la eficiencia durante servicios de alta presión.',
+          en: 'Skill in maintaining calm, quality, and efficiency during high-pressure service periods.',
+          fr: 'Compétence dans le maintien du calme, de la qualité et de l\'efficacité pendant les services à haute pression.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-ckm-collaboration',
+        name: { es: 'Colaboración con Servicio', en: 'Front-of-House Collaboration', fr: 'Collaboration avec le Service' },
+        description: {
+          es: 'Capacidad para comunicarse y coordinarse con el equipo de salón, sommelier y gerencia para garantizar una experiencia integrada.',
+          en: 'Ability to communicate and coordinate with the front-of-house team, sommelier, and management for an integrated experience.',
+          fr: 'Capacité à communiquer et se coordonner avec l\'équipe de salle, le sommelier et la direction pour une expérience intégrée.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'hosp-ckm-readiness',
+    name: {
+      es: 'Disposición al Cambio — Chef / Gerente de Cocina',
+      en: 'Readiness for Change — Chef / Kitchen Manager',
+      fr: 'Disposition au Changement — Chef / Responsable de Cuisine',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante nuevas tendencias culinarias, tecnología de cocina y sostenibilidad alimentaria.',
+      en: 'Adaptability to new culinary trends, kitchen technology, and food sustainability.',
+      fr: 'Adaptabilité aux nouvelles tendances culinaires, à la technologie de cuisine et à la durabilité alimentaire.',
+    },
+    competencies: [
+      {
+        id: 'hosp-ckm-culinary-innovation',
+        name: { es: 'Innovación Culinaria', en: 'Culinary Innovation', fr: 'Innovation Culinaire' },
+        description: {
+          es: 'Disposición para experimentar con nuevas técnicas (sous-vide, fermentación, cocina molecular), ingredientes y presentaciones.',
+          en: 'Willingness to experiment with new techniques (sous-vide, fermentation, molecular gastronomy), ingredients, and presentations.',
+          fr: 'Volonté d\'expérimenter de nouvelles techniques (sous-vide, fermentation, gastronomie moléculaire), ingrédients et présentations.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'hosp-ckm-kitchen-tech',
+        name: { es: 'Tecnología en Cocina', en: 'Kitchen Technology', fr: 'Technologie en Cuisine' },
+        description: {
+          es: 'Apertura para adoptar equipos modernos, sistemas de gestión de recetas digitales y automatización parcial de procesos.',
+          en: 'Openness to adopt modern equipment, digital recipe management systems, and partial process automation.',
+          fr: 'Ouverture pour adopter des équipements modernes, des systèmes de gestion de recettes numériques et l\'automatisation partielle des processus.',
+        },
+        weight: 0.3,
+      },
+      {
+        id: 'hosp-ckm-sustainable-cooking',
+        name: { es: 'Cocina Sostenible', en: 'Sustainable Cooking', fr: 'Cuisine Durable' },
+        description: {
+          es: 'Capacidad para adoptar prácticas de cocina sostenible: reducción de desperdicio, aprovechamiento integral, ingredientes locales y estacionales.',
+          en: 'Ability to adopt sustainable cooking practices: waste reduction, whole-ingredient usage, local and seasonal ingredients.',
+          fr: 'Capacité à adopter des pratiques de cuisine durable : réduction des déchets, utilisation intégrale des ingrédients, produits locaux et de saison.',
+        },
+        weight: 0.35,
+      },
+    ],
+    order: 3,
+  },
+  // =========================================================================
+  // BANKING — Bank Branch Manager
+  // =========================================================================
+  {
+    id: 'bank-bm-professional',
+    name: {
+      es: 'Habilidades Profesionales — Gerente de Sucursal',
+      en: 'Professional Skills — Branch Manager',
+      fr: 'Compétences Professionnelles — Directeur d\'Agence',
+    },
+    description: {
+      es: 'Conocimientos técnicos en operaciones bancarias, gestión comercial de sucursal, cumplimiento regulatorio y administración de riesgos operativos.',
+      en: 'Technical knowledge in banking operations, branch commercial management, regulatory compliance, and operational risk administration.',
+      fr: 'Connaissances techniques en opérations bancaires, gestion commerciale d\'agence, conformité réglementaire et administration des risques opérationnels.',
+    },
+    competencies: [
+      {
+        id: 'bank-bm-branch-operations',
+        name: { es: 'Gestión de Operaciones de Sucursal', en: 'Branch Operations Management', fr: 'Gestion des Opérations d\'Agence' },
+        description: {
+          es: 'Capacidad para supervisar y optimizar los procesos operativos diarios de la sucursal, incluyendo apertura/cierre, arqueos, cuadres de caja, gestión de bóveda y cumplimiento de estándares de servicio.',
+          en: 'Ability to oversee and optimize daily branch operational processes, including opening/closing, cash counts, vault management, and compliance with service standards.',
+          fr: 'Capacité à superviser et optimiser les processus opérationnels quotidiens de l\'agence, incluant ouverture/fermeture, comptages, gestion du coffre et respect des standards de service.',
+        },
+        weight: 0.3,
+      },
+      {
+        id: 'bank-bm-commercial-mgmt',
+        name: { es: 'Gestión Comercial y Metas', en: 'Commercial Management & Targets', fr: 'Gestion Commerciale et Objectifs' },
+        description: {
+          es: 'Habilidad para diseñar estrategias comerciales locales, impulsar la colocación de productos bancarios, gestionar la cartera de clientes y alcanzar las metas de captación, colocación y rentabilidad.',
+          en: 'Skill in designing local commercial strategies, driving banking product placement, managing the client portfolio, and achieving deposit, lending, and profitability targets.',
+          fr: 'Compétence pour concevoir des stratégies commerciales locales, promouvoir les produits bancaires, gérer le portefeuille clients et atteindre les objectifs de captation, placement et rentabilité.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-bm-regulatory',
+        name: { es: 'Cumplimiento Regulatorio Bancario', en: 'Banking Regulatory Compliance', fr: 'Conformité Réglementaire Bancaire' },
+        description: {
+          es: 'Conocimiento de normativas bancarias (prevención de lavado de dinero, conocimiento del cliente KYC, protección al usuario financiero) y capacidad para implementar controles internos efectivos.',
+          en: 'Knowledge of banking regulations (anti-money laundering, KYC, financial consumer protection) and ability to implement effective internal controls.',
+          fr: 'Connaissance des réglementations bancaires (lutte anti-blanchiment, KYC, protection du consommateur financier) et capacité à mettre en place des contrôles internes efficaces.',
+        },
+        weight: 0.35,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'bank-bm-soft-skills',
+    name: {
+      es: 'Habilidades Blandas — Gerente de Sucursal',
+      en: 'Soft Skills — Branch Manager',
+      fr: 'Compétences Interpersonnelles — Directeur d\'Agence',
+    },
+    description: {
+      es: 'Competencias de liderazgo, comunicación y gestión de equipos necesarias para dirigir una sucursal bancaria de alto rendimiento.',
+      en: 'Leadership, communication, and team management competencies needed to lead a high-performing bank branch.',
+      fr: 'Compétences en leadership, communication et gestion d\'équipe nécessaires pour diriger une agence bancaire performante.',
+    },
+    competencies: [
+      {
+        id: 'bank-bm-leadership',
+        name: { es: 'Liderazgo y Desarrollo de Equipo', en: 'Leadership & Team Development', fr: 'Leadership et Développement d\'Équipe' },
+        description: {
+          es: 'Capacidad para motivar, formar y desarrollar al equipo de la sucursal, gestionar el desempeño individual y colectivo, y crear un ambiente de trabajo productivo.',
+          en: 'Ability to motivate, train, and develop the branch team, manage individual and collective performance, and create a productive work environment.',
+          fr: 'Capacité à motiver, former et développer l\'équipe de l\'agence, gérer la performance individuelle et collective, et créer un environnement de travail productif.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-bm-client-relationship',
+        name: { es: 'Relación con Clientes Clave', en: 'Key Client Relationship Management', fr: 'Gestion des Relations Clients Clés' },
+        description: {
+          es: 'Habilidad para establecer y mantener relaciones de confianza con clientes estratégicos, resolver escalaciones y garantizar una experiencia superior de servicio.',
+          en: 'Skill in establishing and maintaining trusted relationships with strategic clients, resolving escalations, and ensuring a superior service experience.',
+          fr: 'Compétence pour établir et maintenir des relations de confiance avec les clients stratégiques, résoudre les escalades et garantir une expérience de service supérieure.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-bm-conflict-resolution',
+        name: { es: 'Resolución de Conflictos', en: 'Conflict Resolution', fr: 'Résolution de Conflits' },
+        description: {
+          es: 'Capacidad para mediar y resolver conflictos entre colaboradores, con clientes o con otras áreas del banco, manteniendo la armonía operativa.',
+          en: 'Ability to mediate and resolve conflicts among staff, with clients, or with other bank departments, maintaining operational harmony.',
+          fr: 'Capacité à médier et résoudre les conflits entre collaborateurs, avec les clients ou d\'autres départements, en maintenant l\'harmonie opérationnelle.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'bank-bm-readiness',
+    name: {
+      es: 'Disposición al Cambio — Gerente de Sucursal',
+      en: 'Readiness for Change — Branch Manager',
+      fr: 'Disposition au Changement — Directeur d\'Agence',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante la transformación digital bancaria, nuevos modelos de sucursal y evolución de las expectativas del cliente.',
+      en: 'Adaptability to banking digital transformation, new branch models, and evolving customer expectations.',
+      fr: 'Adaptabilité à la transformation numérique bancaire, aux nouveaux modèles d\'agence et à l\'évolution des attentes des clients.',
+    },
+    competencies: [
+      {
+        id: 'bank-bm-digital-transformation',
+        name: { es: 'Transformación Digital de Sucursal', en: 'Branch Digital Transformation', fr: 'Transformation Numérique de l\'Agence' },
+        description: {
+          es: 'Disposición para liderar la migración hacia canales digitales, autoservicio y modelos de sucursal híbrida que combinan atención presencial con tecnología.',
+          en: 'Willingness to lead migration toward digital channels, self-service, and hybrid branch models combining in-person service with technology.',
+          fr: 'Volonté de mener la migration vers les canaux numériques, le libre-service et les modèles d\'agence hybrides combinant service en personne et technologie.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-bm-change-management',
+        name: { es: 'Gestión del Cambio Organizacional', en: 'Organizational Change Management', fr: 'Gestion du Changement Organisationnel' },
+        description: {
+          es: 'Capacidad para implementar nuevas políticas, procesos y tecnologías en la sucursal, gestionando la resistencia al cambio del equipo.',
+          en: 'Ability to implement new policies, processes, and technologies in the branch while managing team resistance to change.',
+          fr: 'Capacité à mettre en œuvre de nouvelles politiques, processus et technologies dans l\'agence, en gérant la résistance au changement de l\'équipe.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-bm-innovation',
+        name: { es: 'Innovación en Servicio Bancario', en: 'Banking Service Innovation', fr: 'Innovation dans le Service Bancaire' },
+        description: {
+          es: 'Disposición para adoptar nuevas prácticas de atención al cliente, productos financieros emergentes y modelos de negocio que respondan a las necesidades cambiantes del mercado.',
+          en: 'Willingness to adopt new customer service practices, emerging financial products, and business models responding to changing market needs.',
+          fr: 'Volonté d\'adopter de nouvelles pratiques de service client, produits financiers émergents et modèles d\'affaires répondant aux besoins changeants du marché.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 3,
+  },
+  // =========================================================================
+  // BANKING — Loan Officer / Credit Analyst
+  // =========================================================================
+  {
+    id: 'bank-lo-professional',
+    name: {
+      es: 'Habilidades Profesionales — Oficial de Crédito',
+      en: 'Professional Skills — Loan Officer',
+      fr: 'Compétences Professionnelles — Agent de Crédit',
+    },
+    description: {
+      es: 'Conocimientos técnicos en análisis crediticio, evaluación de riesgos, estructuración de préstamos y normativa de otorgamiento de crédito.',
+      en: 'Technical knowledge in credit analysis, risk assessment, loan structuring, and credit granting regulations.',
+      fr: 'Connaissances techniques en analyse de crédit, évaluation des risques, structuration de prêts et réglementation d\'octroi de crédit.',
+    },
+    competencies: [
+      {
+        id: 'bank-lo-credit-analysis',
+        name: { es: 'Análisis Crediticio', en: 'Credit Analysis', fr: 'Analyse de Crédit' },
+        description: {
+          es: 'Capacidad para evaluar estados financieros, flujos de caja, capacidad de pago y perfil de riesgo de solicitantes de crédito individuales y empresariales.',
+          en: 'Ability to evaluate financial statements, cash flows, repayment capacity, and risk profile of individual and corporate credit applicants.',
+          fr: 'Capacité à évaluer les états financiers, flux de trésorerie, capacité de remboursement et profil de risque des demandeurs de crédit.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-lo-loan-structuring',
+        name: { es: 'Estructuración de Créditos', en: 'Loan Structuring', fr: 'Structuration de Crédits' },
+        description: {
+          es: 'Habilidad para diseñar condiciones crediticias (plazo, tasa, garantías, covenants) que equilibren la viabilidad para el cliente con la protección del banco.',
+          en: 'Skill in designing credit terms (tenor, rate, collateral, covenants) that balance client viability with bank protection.',
+          fr: 'Compétence pour concevoir des conditions de crédit (durée, taux, garanties, covenants) équilibrant la viabilité du client et la protection de la banque.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-lo-portfolio-mgmt',
+        name: { es: 'Gestión de Cartera Crediticia', en: 'Credit Portfolio Management', fr: 'Gestion du Portefeuille de Crédit' },
+        description: {
+          es: 'Capacidad para monitorear la cartera asignada, detectar señales tempranas de deterioro, gestionar la morosidad y ejecutar acciones preventivas de recuperación.',
+          en: 'Ability to monitor the assigned portfolio, detect early deterioration signals, manage delinquency, and execute preventive recovery actions.',
+          fr: 'Capacité à surveiller le portefeuille assigné, détecter les signaux précoces de détérioration, gérer les impayés et exécuter des actions préventives de recouvrement.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'bank-lo-soft-skills',
+    name: {
+      es: 'Habilidades Blandas — Oficial de Crédito',
+      en: 'Soft Skills — Loan Officer',
+      fr: 'Compétences Interpersonnelles — Agent de Crédit',
+    },
+    description: {
+      es: 'Competencias interpersonales para la relación con solicitantes de crédito, negociación de condiciones y comunicación de decisiones.',
+      en: 'Interpersonal competencies for relationships with credit applicants, negotiation of terms, and communication of decisions.',
+      fr: 'Compétences interpersonnelles pour la relation avec les demandeurs de crédit, la négociation des conditions et la communication des décisions.',
+    },
+    competencies: [
+      {
+        id: 'bank-lo-negotiation',
+        name: { es: 'Negociación Crediticia', en: 'Credit Negotiation', fr: 'Négociation de Crédit' },
+        description: {
+          es: 'Habilidad para negociar términos y condiciones de crédito que satisfagan al cliente mientras protegen los intereses del banco.',
+          en: 'Skill in negotiating credit terms and conditions that satisfy the client while protecting the bank\'s interests.',
+          fr: 'Compétence pour négocier des termes et conditions de crédit satisfaisant le client tout en protégeant les intérêts de la banque.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-lo-analytical-comm',
+        name: { es: 'Comunicación Analítica', en: 'Analytical Communication', fr: 'Communication Analytique' },
+        description: {
+          es: 'Capacidad para presentar análisis crediticios complejos de forma clara ante comités de crédito, superiores y clientes.',
+          en: 'Ability to present complex credit analyses clearly to credit committees, supervisors, and clients.',
+          fr: 'Capacité à présenter des analyses de crédit complexes de manière claire aux comités de crédit, supérieurs et clients.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-lo-ethical-judgment',
+        name: { es: 'Juicio Ético y Objetividad', en: 'Ethical Judgment & Objectivity', fr: 'Jugement Éthique et Objectivité' },
+        description: {
+          es: 'Integridad para tomar decisiones crediticias objetivas, resistir presiones indebidas y mantener los estándares de riesgo del banco.',
+          en: 'Integrity to make objective credit decisions, resist undue pressure, and maintain the bank\'s risk standards.',
+          fr: 'Intégrité pour prendre des décisions de crédit objectives, résister aux pressions indues et maintenir les standards de risque de la banque.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'bank-lo-readiness',
+    name: {
+      es: 'Disposición al Cambio — Oficial de Crédito',
+      en: 'Readiness for Change — Loan Officer',
+      fr: 'Disposition au Changement — Agent de Crédit',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante la digitalización del crédito, nuevos modelos de scoring y evolución regulatoria.',
+      en: 'Adaptability to credit digitalization, new scoring models, and regulatory evolution.',
+      fr: 'Adaptabilité à la numérisation du crédit, aux nouveaux modèles de scoring et à l\'évolution réglementaire.',
+    },
+    competencies: [
+      {
+        id: 'bank-lo-digital-lending',
+        name: { es: 'Crédito Digital y Automatizado', en: 'Digital & Automated Lending', fr: 'Crédit Numérique et Automatisé' },
+        description: {
+          es: 'Disposición para adoptar plataformas de originación digital, modelos de scoring automatizado y procesos de aprobación en línea.',
+          en: 'Willingness to adopt digital origination platforms, automated scoring models, and online approval processes.',
+          fr: 'Volonté d\'adopter des plateformes d\'origination numérique, modèles de scoring automatisé et processus d\'approbation en ligne.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-lo-alt-data',
+        name: { es: 'Datos Alternativos en Evaluación', en: 'Alternative Data in Assessment', fr: 'Données Alternatives en Évaluation' },
+        description: {
+          es: 'Apertura para incorporar fuentes de datos no tradicionales (transaccionales, comportamentales, redes sociales) en la evaluación crediticia.',
+          en: 'Openness to incorporating non-traditional data sources (transactional, behavioral, social media) in credit assessment.',
+          fr: 'Ouverture à l\'incorporation de sources de données non traditionnelles (transactionnelles, comportementales, réseaux sociaux) dans l\'évaluation de crédit.',
+        },
+        weight: 0.3,
+      },
+      {
+        id: 'bank-lo-regulatory-evolution',
+        name: { es: 'Evolución Regulatoria', en: 'Regulatory Evolution', fr: 'Évolution Réglementaire' },
+        description: {
+          es: 'Capacidad para adaptarse a cambios normativos en materia crediticia, estándares de Basilea, NIIF 9 y regulaciones de protección al consumidor.',
+          en: 'Ability to adapt to regulatory changes in credit matters, Basel standards, IFRS 9, and consumer protection regulations.',
+          fr: 'Capacité à s\'adapter aux changements réglementaires en matière de crédit, normes de Bâle, IFRS 9 et réglementations de protection du consommateur.',
+        },
+        weight: 0.35,
+      },
+    ],
+    order: 3,
+  },
+  // =========================================================================
+  // BANKING — Investment Advisor
+  // =========================================================================
+  {
+    id: 'bank-ia-professional',
+    name: {
+      es: 'Habilidades Profesionales — Asesor de Inversiones',
+      en: 'Professional Skills — Investment Advisor',
+      fr: 'Compétences Professionnelles — Conseiller en Investissements',
+    },
+    description: {
+      es: 'Conocimientos técnicos en mercados financieros, productos de inversión, gestión de portafolios y normativa de protección al inversionista.',
+      en: 'Technical knowledge in financial markets, investment products, portfolio management, and investor protection regulations.',
+      fr: 'Connaissances techniques en marchés financiers, produits d\'investissement, gestion de portefeuilles et réglementation de protection des investisseurs.',
+    },
+    competencies: [
+      {
+        id: 'bank-ia-market-knowledge',
+        name: { es: 'Conocimiento de Mercados Financieros', en: 'Financial Markets Knowledge', fr: 'Connaissance des Marchés Financiers' },
+        description: {
+          es: 'Comprensión profunda de mercados de renta fija, variable, derivados, divisas y tendencias macroeconómicas que afectan las inversiones.',
+          en: 'Deep understanding of fixed income, equity, derivatives, foreign exchange markets, and macroeconomic trends affecting investments.',
+          fr: 'Compréhension approfondie des marchés de taux, actions, dérivés, devises et tendances macroéconomiques affectant les investissements.',
+        },
+        weight: 0.3,
+      },
+      {
+        id: 'bank-ia-portfolio-advisory',
+        name: { es: 'Asesoría de Portafolio', en: 'Portfolio Advisory', fr: 'Conseil en Portefeuille' },
+        description: {
+          es: 'Capacidad para construir y recomendar portafolios de inversión diversificados alineados al perfil de riesgo, horizonte temporal y objetivos del cliente.',
+          en: 'Ability to build and recommend diversified investment portfolios aligned with the client\'s risk profile, time horizon, and goals.',
+          fr: 'Capacité à construire et recommander des portefeuilles d\'investissement diversifiés alignés sur le profil de risque, l\'horizon temporel et les objectifs du client.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-ia-suitability',
+        name: { es: 'Idoneidad y Cumplimiento (Suitability)', en: 'Suitability & Compliance', fr: 'Adéquation et Conformité' },
+        description: {
+          es: 'Conocimiento de regulaciones de idoneidad (suitability), perfilamiento de riesgo del inversionista, y cumplimiento de normativas de transparencia y protección.',
+          en: 'Knowledge of suitability regulations, investor risk profiling, and compliance with transparency and protection rules.',
+          fr: 'Connaissance des réglementations d\'adéquation, profilage de risque des investisseurs et conformité aux normes de transparence et de protection.',
+        },
+        weight: 0.35,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'bank-ia-soft-skills',
+    name: {
+      es: 'Habilidades Blandas — Asesor de Inversiones',
+      en: 'Soft Skills — Investment Advisor',
+      fr: 'Compétences Interpersonnelles — Conseiller en Investissements',
+    },
+    description: {
+      es: 'Competencias interpersonales para la relación con clientes de alto valor patrimonial, generación de confianza y comunicación de estrategias financieras.',
+      en: 'Interpersonal competencies for relationships with high-net-worth clients, trust building, and communication of financial strategies.',
+      fr: 'Compétences interpersonnelles pour la relation avec les clients à forte valeur patrimoniale, génération de confiance et communication de stratégies financières.',
+    },
+    competencies: [
+      {
+        id: 'bank-ia-trust-building',
+        name: { es: 'Construcción de Confianza', en: 'Trust Building', fr: 'Construction de la Confiance' },
+        description: {
+          es: 'Habilidad para generar relaciones de largo plazo basadas en confianza, transparencia y resultados consistentes con clientes patrimoniales.',
+          en: 'Skill in building long-term relationships based on trust, transparency, and consistent results with wealth clients.',
+          fr: 'Compétence pour bâtir des relations à long terme basées sur la confiance, la transparence et des résultats constants avec les clients patrimoniaux.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-ia-financial-comm',
+        name: { es: 'Comunicación Financiera Clara', en: 'Clear Financial Communication', fr: 'Communication Financière Claire' },
+        description: {
+          es: 'Capacidad para explicar conceptos financieros complejos, riesgos y rendimientos esperados de forma comprensible para clientes no especializados.',
+          en: 'Ability to explain complex financial concepts, risks, and expected returns in an understandable way for non-specialist clients.',
+          fr: 'Capacité à expliquer des concepts financiers complexes, risques et rendements attendus de manière compréhensible pour des clients non spécialistes.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-ia-needs-discovery',
+        name: { es: 'Descubrimiento de Necesidades', en: 'Needs Discovery', fr: 'Découverte des Besoins' },
+        description: {
+          es: 'Habilidad para identificar las necesidades patrimoniales, metas de vida y preocupaciones financieras del cliente mediante escucha activa y preguntas estratégicas.',
+          en: 'Skill in identifying client wealth needs, life goals, and financial concerns through active listening and strategic questioning.',
+          fr: 'Compétence pour identifier les besoins patrimoniaux, objectifs de vie et préoccupations financières du client par l\'écoute active et le questionnement stratégique.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'bank-ia-readiness',
+    name: {
+      es: 'Disposición al Cambio — Asesor de Inversiones',
+      en: 'Readiness for Change — Investment Advisor',
+      fr: 'Disposition au Changement — Conseiller en Investissements',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante la evolución de los mercados financieros, plataformas digitales de inversión y nuevas clases de activos.',
+      en: 'Adaptability to the evolution of financial markets, digital investment platforms, and new asset classes.',
+      fr: 'Adaptabilité à l\'évolution des marchés financiers, des plateformes d\'investissement numériques et des nouvelles classes d\'actifs.',
+    },
+    competencies: [
+      {
+        id: 'bank-ia-digital-wealth',
+        name: { es: 'Plataformas Digitales de Inversión', en: 'Digital Investment Platforms', fr: 'Plateformes d\'Investissement Numériques' },
+        description: {
+          es: 'Disposición para adoptar y asesorar sobre robo-advisors, plataformas de inversión en línea y herramientas digitales de gestión patrimonial.',
+          en: 'Willingness to adopt and advise on robo-advisors, online investment platforms, and digital wealth management tools.',
+          fr: 'Volonté d\'adopter et conseiller sur les robo-advisors, plateformes d\'investissement en ligne et outils numériques de gestion patrimoniale.',
+        },
+        weight: 0.3,
+      },
+      {
+        id: 'bank-ia-new-assets',
+        name: { es: 'Nuevas Clases de Activos', en: 'New Asset Classes', fr: 'Nouvelles Classes d\'Actifs' },
+        description: {
+          es: 'Apertura para incorporar activos alternativos (ESG, criptoactivos regulados, private equity accesible, activos tokenizados) en las recomendaciones de inversión.',
+          en: 'Openness to incorporating alternative assets (ESG, regulated crypto assets, accessible private equity, tokenized assets) in investment recommendations.',
+          fr: 'Ouverture à l\'incorporation d\'actifs alternatifs (ESG, crypto-actifs réglementés, private equity accessible, actifs tokenisés) dans les recommandations d\'investissement.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-ia-behavioral-finance',
+        name: { es: 'Finanzas Conductuales', en: 'Behavioral Finance', fr: 'Finance Comportementale' },
+        description: {
+          es: 'Disposición para aplicar principios de finanzas conductuales en la asesoría, ayudando a los clientes a superar sesgos cognitivos en sus decisiones de inversión.',
+          en: 'Willingness to apply behavioral finance principles in advisory, helping clients overcome cognitive biases in their investment decisions.',
+          fr: 'Volonté d\'appliquer les principes de la finance comportementale dans le conseil, aidant les clients à surmonter les biais cognitifs dans leurs décisions d\'investissement.',
+        },
+        weight: 0.35,
+      },
+    ],
+    order: 3,
+  },
+  // =========================================================================
+  // BANKING — Bank Teller / Operations Officer
+  // =========================================================================
+  {
+    id: 'bank-bt-professional',
+    name: {
+      es: 'Habilidades Profesionales — Cajero Bancario',
+      en: 'Professional Skills — Bank Teller',
+      fr: 'Compétences Professionnelles — Caissier Bancaire',
+    },
+    description: {
+      es: 'Conocimientos técnicos en procesamiento de transacciones, manejo de efectivo, prevención de fraudes y uso de sistemas bancarios centrales.',
+      en: 'Technical knowledge in transaction processing, cash handling, fraud prevention, and use of core banking systems.',
+      fr: 'Connaissances techniques en traitement des transactions, gestion des espèces, prévention de la fraude et utilisation des systèmes bancaires centraux.',
+    },
+    competencies: [
+      {
+        id: 'bank-bt-transactions',
+        name: { es: 'Procesamiento de Transacciones', en: 'Transaction Processing', fr: 'Traitement des Transactions' },
+        description: {
+          es: 'Capacidad para ejecutar depósitos, retiros, transferencias, pagos de servicios y cambio de divisas con precisión, velocidad y cumplimiento de procedimientos.',
+          en: 'Ability to execute deposits, withdrawals, transfers, bill payments, and foreign exchange with accuracy, speed, and procedure compliance.',
+          fr: 'Capacité à exécuter dépôts, retraits, transferts, paiements de services et change de devises avec précision, rapidité et respect des procédures.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-bt-cash-handling',
+        name: { es: 'Manejo de Efectivo y Valores', en: 'Cash & Valuables Handling', fr: 'Gestion des Espèces et Valeurs' },
+        description: {
+          es: 'Habilidad para contar, verificar, custodiar y cuadrar efectivo y valores, detectar billetes falsos y mantener los niveles de caja requeridos.',
+          en: 'Skill in counting, verifying, safeguarding, and balancing cash and valuables, detecting counterfeit bills, and maintaining required cash levels.',
+          fr: 'Compétence pour compter, vérifier, garder et équilibrer espèces et valeurs, détecter les faux billets et maintenir les niveaux de caisse requis.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-bt-fraud-prevention',
+        name: { es: 'Prevención de Fraude y PLD', en: 'Fraud Prevention & AML', fr: 'Prévention de la Fraude et LCB' },
+        description: {
+          es: 'Conocimiento de indicadores de fraude, operaciones sospechosas, protocolos de prevención de lavado de dinero y reportes de operaciones inusuales.',
+          en: 'Knowledge of fraud indicators, suspicious operations, anti-money laundering protocols, and unusual transaction reporting.',
+          fr: 'Connaissance des indicateurs de fraude, opérations suspectes, protocoles de lutte contre le blanchiment et signalement d\'opérations inhabituelles.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 1,
+  },
+  {
+    id: 'bank-bt-soft-skills',
+    name: {
+      es: 'Habilidades Blandas — Cajero Bancario',
+      en: 'Soft Skills — Bank Teller',
+      fr: 'Compétences Interpersonnelles — Caissier Bancaire',
+    },
+    description: {
+      es: 'Competencias de servicio al cliente, atención bajo presión y trabajo en equipo necesarias para la atención en ventanilla.',
+      en: 'Customer service, working under pressure, and teamwork competencies needed for counter service.',
+      fr: 'Compétences en service client, travail sous pression et travail d\'équipe nécessaires pour le service au guichet.',
+    },
+    competencies: [
+      {
+        id: 'bank-bt-customer-service',
+        name: { es: 'Atención al Cliente en Ventanilla', en: 'Counter Customer Service', fr: 'Service Client au Guichet' },
+        description: {
+          es: 'Capacidad para atender a los clientes con amabilidad, eficiencia y profesionalismo, incluso en situaciones de alta demanda o clientes difíciles.',
+          en: 'Ability to serve customers with friendliness, efficiency, and professionalism, even during high-demand situations or with difficult customers.',
+          fr: 'Capacité à servir les clients avec amabilité, efficacité et professionnalisme, même en situation de forte demande ou avec des clients difficiles.',
+        },
+        weight: 0.4,
+      },
+      {
+        id: 'bank-bt-accuracy',
+        name: { es: 'Precisión y Atención al Detalle', en: 'Accuracy & Attention to Detail', fr: 'Précision et Attention aux Détails' },
+        description: {
+          es: 'Rigurosidad para ejecutar transacciones sin errores, verificar documentación y mantener registros exactos bajo presión de tiempo.',
+          en: 'Rigor in executing transactions without errors, verifying documentation, and maintaining accurate records under time pressure.',
+          fr: 'Rigueur dans l\'exécution des transactions sans erreurs, la vérification des documents et le maintien de registres exacts sous pression temporelle.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-bt-teamwork',
+        name: { es: 'Trabajo en Equipo Operativo', en: 'Operational Teamwork', fr: 'Travail d\'Équipe Opérationnel' },
+        description: {
+          es: 'Habilidad para colaborar con compañeros de ventanilla, supervisores y otras áreas para mantener la fluidez operativa de la sucursal.',
+          en: 'Skill in collaborating with fellow tellers, supervisors, and other areas to maintain the branch\'s operational flow.',
+          fr: 'Compétence pour collaborer avec les collègues guichetiers, superviseurs et autres services pour maintenir la fluidité opérationnelle de l\'agence.',
+        },
+        weight: 0.25,
+      },
+    ],
+    order: 2,
+  },
+  {
+    id: 'bank-bt-readiness',
+    name: {
+      es: 'Disposición al Cambio — Cajero Bancario',
+      en: 'Readiness for Change — Bank Teller',
+      fr: 'Disposition au Changement — Caissier Bancaire',
+    },
+    description: {
+      es: 'Capacidad de adaptación ante la automatización de transacciones, nuevos canales digitales y la evolución del rol de ventanilla.',
+      en: 'Adaptability to transaction automation, new digital channels, and the evolution of the teller role.',
+      fr: 'Adaptabilité à l\'automatisation des transactions, aux nouveaux canaux numériques et à l\'évolution du rôle de guichetier.',
+    },
+    competencies: [
+      {
+        id: 'bank-bt-automation',
+        name: { es: 'Adaptación a la Automatización', en: 'Adaptation to Automation', fr: 'Adaptation à l\'Automatisation' },
+        description: {
+          es: 'Disposición para trabajar con ATMs inteligentes, kioscos de autoservicio y sistemas automatizados que transforman las tareas tradicionales de ventanilla.',
+          en: 'Willingness to work with smart ATMs, self-service kiosks, and automated systems that transform traditional teller tasks.',
+          fr: 'Volonté de travailler avec des DAB intelligents, bornes de libre-service et systèmes automatisés transformant les tâches traditionnelles du guichet.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-bt-role-evolution',
+        name: { es: 'Evolución del Rol a Asesor', en: 'Role Evolution to Advisor', fr: 'Évolution du Rôle vers Conseiller' },
+        description: {
+          es: 'Apertura para evolucionar de un rol transaccional a uno consultivo, ofreciendo orientación básica sobre productos bancarios y derivando a especialistas.',
+          en: 'Openness to evolving from a transactional role to a consultative one, offering basic guidance on banking products and referring to specialists.',
+          fr: 'Ouverture à l\'évolution d\'un rôle transactionnel vers un rôle consultatif, offrant des conseils de base sur les produits bancaires et orientant vers les spécialistes.',
+        },
+        weight: 0.35,
+      },
+      {
+        id: 'bank-bt-digital-literacy',
+        name: { es: 'Alfabetización Digital', en: 'Digital Literacy', fr: 'Littératie Numérique' },
+        description: {
+          es: 'Capacidad para aprender y utilizar nuevos sistemas bancarios, aplicaciones móviles del banco y herramientas digitales de servicio al cliente.',
+          en: 'Ability to learn and use new banking systems, the bank\'s mobile applications, and digital customer service tools.',
+          fr: 'Capacité à apprendre et utiliser de nouveaux systèmes bancaires, applications mobiles de la banque et outils numériques de service client.',
+        },
+        weight: 0.3,
+      },
+    ],
+    order: 3,
+  },
+  // ==========================================================================
+  // TECHNOLOGY / IT — Software Developer
+  // ==========================================================================
+  {
+    id: 'tech-swdev-professional',
+    name: { es: 'Habilidades Profesionales de Desarrollo de Software', en: 'Software Development Professional Skills', fr: 'Compétences Professionnelles en Développement Logiciel' },
+    description: { es: 'Conocimientos técnicos en ingeniería de software, arquitectura, programación y prácticas de calidad.', en: 'Technical knowledge in software engineering, architecture, programming, and quality practices.', fr: 'Connaissances techniques en ingénierie logicielle, architecture, programmation et pratiques de qualité.' },
+    competencies: [
+      { id: 'software-engineering', name: { es: 'Ingeniería de Software', en: 'Software Engineering', fr: 'Ingénierie Logicielle' }, description: { es: 'Dominio de patrones de diseño, principios SOLID, arquitectura de software y buenas prácticas de desarrollo.', en: 'Mastery of design patterns, SOLID principles, software architecture, and development best practices.', fr: 'Maîtrise des patrons de conception, principes SOLID, architecture logicielle et bonnes pratiques de développement.' }, weight: 0.3 },
+      { id: 'coding-proficiency', name: { es: 'Competencia en Programación', en: 'Coding Proficiency', fr: 'Compétence en Programmation' }, description: { es: 'Capacidad para escribir código limpio, eficiente y mantenible en múltiples lenguajes y frameworks.', en: 'Ability to write clean, efficient, and maintainable code across multiple languages and frameworks.', fr: 'Capacité à écrire du code propre, efficace et maintenable dans plusieurs langages et frameworks.' }, weight: 0.3 },
+      { id: 'testing-quality', name: { es: 'Pruebas y Calidad', en: 'Testing & Quality', fr: 'Tests et Qualité' }, description: { es: 'Conocimiento y aplicación de estrategias de pruebas unitarias, integración, end-to-end y revisión de código.', en: 'Knowledge and application of unit, integration, end-to-end testing strategies and code review.', fr: 'Connaissance et application de stratégies de tests unitaires, d\'intégration, end-to-end et revue de code.' }, weight: 0.2 },
+      { id: 'devops-cicd', name: { es: 'DevOps y CI/CD', en: 'DevOps & CI/CD', fr: 'DevOps et CI/CD' }, description: { es: 'Experiencia con pipelines de integración y despliegue continuo, contenedores, infraestructura como código y monitoreo.', en: 'Experience with continuous integration and deployment pipelines, containers, infrastructure as code, and monitoring.', fr: 'Expérience avec les pipelines d\'intégration et de déploiement continus, conteneurs, infrastructure as code et surveillance.' }, weight: 0.2 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'tech-swdev-soft-skills',
+    name: { es: 'Habilidades Blandas del Desarrollador', en: 'Developer Soft Skills', fr: 'Compétences Interpersonnelles du Développeur' },
+    description: { es: 'Competencias interpersonales y de colaboración esenciales para el trabajo en equipos de desarrollo.', en: 'Interpersonal and collaboration competencies essential for working in development teams.', fr: 'Compétences interpersonnelles et de collaboration essentielles pour le travail en équipes de développement.' },
+    competencies: [
+      { id: 'team-collaboration', name: { es: 'Colaboración en Equipo', en: 'Team Collaboration', fr: 'Collaboration en Équipe' }, description: { es: 'Capacidad para trabajar efectivamente en equipos ágiles, participar en revisiones de código y compartir conocimientos.', en: 'Ability to work effectively in agile teams, participate in code reviews, and share knowledge.', fr: 'Capacité à travailler efficacement en équipes agiles, participer aux revues de code et partager les connaissances.' }, weight: 0.35 },
+      { id: 'technical-communication', name: { es: 'Comunicación Técnica', en: 'Technical Communication', fr: 'Communication Technique' }, description: { es: 'Habilidad para documentar código, explicar decisiones técnicas y comunicar complejidades a audiencias no técnicas.', en: 'Ability to document code, explain technical decisions, and communicate complexities to non-technical audiences.', fr: 'Capacité à documenter le code, expliquer les décisions techniques et communiquer les complexités aux audiences non techniques.' }, weight: 0.35 },
+      { id: 'problem-solving-dev', name: { es: 'Resolución de Problemas', en: 'Problem Solving', fr: 'Résolution de Problèmes' }, description: { es: 'Capacidad analítica para depurar, diagnosticar y resolver problemas técnicos complejos de manera sistemática.', en: 'Analytical ability to debug, diagnose, and solve complex technical problems systematically.', fr: 'Capacité analytique à déboguer, diagnostiquer et résoudre systématiquement des problèmes techniques complexes.' }, weight: 0.3 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'tech-swdev-readiness',
+    name: { es: 'Disposición al Cambio del Desarrollador', en: 'Developer Readiness for Change', fr: 'Disposition au Changement du Développeur' },
+    description: { es: 'Capacidad de adaptación ante nuevas tecnologías, frameworks y paradigmas de desarrollo.', en: 'Adaptability to new technologies, frameworks, and development paradigms.', fr: 'Adaptabilité aux nouvelles technologies, frameworks et paradigmes de développement.' },
+    competencies: [
+      { id: 'continuous-learning', name: { es: 'Aprendizaje Continuo', en: 'Continuous Learning', fr: 'Apprentissage Continu' }, description: { es: 'Disposición para mantenerse actualizado con nuevos lenguajes, frameworks y herramientas del ecosistema tecnológico.', en: 'Willingness to stay updated with new languages, frameworks, and tools in the technology ecosystem.', fr: 'Volonté de rester à jour avec les nouveaux langages, frameworks et outils de l\'écosystème technologique.' }, weight: 0.35 },
+      { id: 'ai-adoption', name: { es: 'Adopción de IA en Desarrollo', en: 'AI Adoption in Development', fr: 'Adoption de l\'IA en Développement' }, description: { es: 'Apertura para integrar herramientas de IA (copilots, generación de código, testing automatizado) en el flujo de trabajo diario.', en: 'Openness to integrating AI tools (copilots, code generation, automated testing) into daily workflow.', fr: 'Ouverture à l\'intégration d\'outils d\'IA (copilotes, génération de code, tests automatisés) dans le flux de travail quotidien.' }, weight: 0.35 },
+      { id: 'cloud-native-mindset', name: { es: 'Mentalidad Cloud-Native', en: 'Cloud-Native Mindset', fr: 'Mentalité Cloud-Native' }, description: { es: 'Disposición para adoptar arquitecturas cloud-native, microservicios, serverless y prácticas de desarrollo distribuido.', en: 'Willingness to adopt cloud-native architectures, microservices, serverless, and distributed development practices.', fr: 'Volonté d\'adopter les architectures cloud-native, microservices, serverless et pratiques de développement distribué.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+  // ==========================================================================
+  // TECHNOLOGY / IT — IT Manager / CTO
+  // ==========================================================================
+  {
+    id: 'tech-itmgr-professional',
+    name: { es: 'Habilidades Profesionales de Gestión de TI', en: 'IT Management Professional Skills', fr: 'Compétences Professionnelles en Gestion IT' },
+    description: { es: 'Conocimientos técnicos y estratégicos para la dirección tecnológica de una organización.', en: 'Technical and strategic knowledge for leading an organization\'s technology direction.', fr: 'Connaissances techniques et stratégiques pour la direction technologique d\'une organisation.' },
+    competencies: [
+      { id: 'technology-strategy', name: { es: 'Estrategia Tecnológica', en: 'Technology Strategy', fr: 'Stratégie Technologique' }, description: { es: 'Capacidad para definir y ejecutar la hoja de ruta tecnológica alineada con los objetivos de negocio.', en: 'Ability to define and execute the technology roadmap aligned with business objectives.', fr: 'Capacité à définir et exécuter la feuille de route technologique alignée avec les objectifs d\'affaires.' }, weight: 0.3 },
+      { id: 'it-governance', name: { es: 'Gobernanza de TI', en: 'IT Governance', fr: 'Gouvernance IT' }, description: { es: 'Conocimiento de marcos de gobierno de TI (ITIL, COBIT), gestión de riesgos tecnológicos y cumplimiento normativo.', en: 'Knowledge of IT governance frameworks (ITIL, COBIT), technology risk management, and regulatory compliance.', fr: 'Connaissance des cadres de gouvernance IT (ITIL, COBIT), gestion des risques technologiques et conformité réglementaire.' }, weight: 0.25 },
+      { id: 'budget-vendor-mgmt', name: { es: 'Gestión de Presupuesto y Proveedores', en: 'Budget & Vendor Management', fr: 'Gestion Budgétaire et Fournisseurs' }, description: { es: 'Habilidad para gestionar presupuestos de TI, negociar con proveedores y optimizar el retorno de inversión tecnológica.', en: 'Ability to manage IT budgets, negotiate with vendors, and optimize technology return on investment.', fr: 'Capacité à gérer les budgets IT, négocier avec les fournisseurs et optimiser le retour sur investissement technologique.' }, weight: 0.2 },
+      { id: 'infrastructure-architecture', name: { es: 'Infraestructura y Arquitectura', en: 'Infrastructure & Architecture', fr: 'Infrastructure et Architecture' }, description: { es: 'Comprensión de arquitectura empresarial, infraestructura cloud, seguridad y escalabilidad de sistemas.', en: 'Understanding of enterprise architecture, cloud infrastructure, security, and system scalability.', fr: 'Compréhension de l\'architecture d\'entreprise, infrastructure cloud, sécurité et évolutivité des systèmes.' }, weight: 0.25 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'tech-itmgr-soft-skills',
+    name: { es: 'Habilidades Blandas del Gerente de TI', en: 'IT Manager Soft Skills', fr: 'Compétences Interpersonnelles du Directeur IT' },
+    description: { es: 'Competencias de liderazgo, comunicación y gestión de equipos tecnológicos.', en: 'Leadership, communication, and technology team management competencies.', fr: 'Compétences en leadership, communication et gestion d\'équipes technologiques.' },
+    competencies: [
+      { id: 'tech-leadership', name: { es: 'Liderazgo Tecnológico', en: 'Technology Leadership', fr: 'Leadership Technologique' }, description: { es: 'Capacidad para inspirar y dirigir equipos técnicos, fomentar la innovación y gestionar el talento tecnológico.', en: 'Ability to inspire and lead technical teams, foster innovation, and manage technology talent.', fr: 'Capacité à inspirer et diriger des équipes techniques, favoriser l\'innovation et gérer le talent technologique.' }, weight: 0.35 },
+      { id: 'stakeholder-management', name: { es: 'Gestión de Stakeholders', en: 'Stakeholder Management', fr: 'Gestion des Parties Prenantes' }, description: { es: 'Habilidad para comunicar la visión tecnológica a la junta directiva, traducir necesidades de negocio a soluciones técnicas.', en: 'Ability to communicate the technology vision to the board, translate business needs into technical solutions.', fr: 'Capacité à communiquer la vision technologique au conseil d\'administration, traduire les besoins d\'affaires en solutions techniques.' }, weight: 0.35 },
+      { id: 'change-management', name: { es: 'Gestión del Cambio', en: 'Change Management', fr: 'Gestion du Changement' }, description: { es: 'Capacidad para liderar procesos de transformación digital, gestionar resistencia al cambio y asegurar adopción tecnológica.', en: 'Ability to lead digital transformation processes, manage resistance to change, and ensure technology adoption.', fr: 'Capacité à diriger des processus de transformation numérique, gérer la résistance au changement et assurer l\'adoption technologique.' }, weight: 0.3 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'tech-itmgr-readiness',
+    name: { es: 'Disposición al Cambio del Gerente de TI', en: 'IT Manager Readiness for Change', fr: 'Disposition au Changement du Directeur IT' },
+    description: { es: 'Capacidad de adaptación ante tendencias emergentes en tecnología empresarial.', en: 'Adaptability to emerging trends in enterprise technology.', fr: 'Adaptabilité aux tendances émergentes en technologie d\'entreprise.' },
+    competencies: [
+      { id: 'digital-transformation', name: { es: 'Transformación Digital', en: 'Digital Transformation', fr: 'Transformation Numérique' }, description: { es: 'Disposición para liderar la adopción de tecnologías emergentes y rediseñar procesos de negocio digitalmente.', en: 'Willingness to lead the adoption of emerging technologies and digitally redesign business processes.', fr: 'Volonté de diriger l\'adoption de technologies émergentes et de redessiner numériquement les processus d\'affaires.' }, weight: 0.35 },
+      { id: 'ai-ml-enterprise', name: { es: 'IA y ML Empresarial', en: 'Enterprise AI & ML', fr: 'IA et ML d\'Entreprise' }, description: { es: 'Apertura para implementar soluciones de inteligencia artificial y machine learning a escala organizacional.', en: 'Openness to implementing artificial intelligence and machine learning solutions at organizational scale.', fr: 'Ouverture à l\'implémentation de solutions d\'intelligence artificielle et d\'apprentissage automatique à l\'échelle organisationnelle.' }, weight: 0.35 },
+      { id: 'zero-trust-security', name: { es: 'Seguridad Zero Trust', en: 'Zero Trust Security', fr: 'Sécurité Zero Trust' }, description: { es: 'Disposición para evolucionar hacia modelos de seguridad zero-trust y protección de datos en entornos híbridos y multi-cloud.', en: 'Willingness to evolve toward zero-trust security models and data protection in hybrid and multi-cloud environments.', fr: 'Volonté d\'évoluer vers des modèles de sécurité zero-trust et la protection des données dans des environnements hybrides et multi-cloud.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+  // ==========================================================================
+  // TECHNOLOGY / IT — Data Analyst / Data Scientist
+  // ==========================================================================
+  {
+    id: 'tech-data-professional',
+    name: { es: 'Habilidades Profesionales de Análisis de Datos', en: 'Data Analysis Professional Skills', fr: 'Compétences Professionnelles en Analyse de Données' },
+    description: { es: 'Conocimientos técnicos en estadística, programación analítica, modelado de datos y herramientas de BI.', en: 'Technical knowledge in statistics, analytical programming, data modeling, and BI tools.', fr: 'Connaissances techniques en statistiques, programmation analytique, modélisation de données et outils de BI.' },
+    competencies: [
+      { id: 'statistical-analysis', name: { es: 'Análisis Estadístico', en: 'Statistical Analysis', fr: 'Analyse Statistique' }, description: { es: 'Dominio de métodos estadísticos, pruebas de hipótesis, regresión y análisis multivariante para extraer insights de datos.', en: 'Mastery of statistical methods, hypothesis testing, regression, and multivariate analysis to extract data insights.', fr: 'Maîtrise des méthodes statistiques, tests d\'hypothèses, régression et analyse multivariée pour extraire des insights des données.' }, weight: 0.3 },
+      { id: 'data-programming', name: { es: 'Programación Analítica', en: 'Analytical Programming', fr: 'Programmation Analytique' }, description: { es: 'Competencia en Python, R, SQL y herramientas de procesamiento de datos a escala (Spark, pandas).', en: 'Proficiency in Python, R, SQL, and data processing tools at scale (Spark, pandas).', fr: 'Compétence en Python, R, SQL et outils de traitement de données à grande échelle (Spark, pandas).' }, weight: 0.25 },
+      { id: 'data-visualization', name: { es: 'Visualización de Datos', en: 'Data Visualization', fr: 'Visualisation de Données' }, description: { es: 'Habilidad para crear visualizaciones efectivas y dashboards con herramientas como Tableau, Power BI o matplotlib.', en: 'Ability to create effective visualizations and dashboards with tools like Tableau, Power BI, or matplotlib.', fr: 'Capacité à créer des visualisations efficaces et des tableaux de bord avec des outils comme Tableau, Power BI ou matplotlib.' }, weight: 0.2 },
+      { id: 'ml-modeling', name: { es: 'Modelado con Machine Learning', en: 'Machine Learning Modeling', fr: 'Modélisation avec Machine Learning' }, description: { es: 'Capacidad para construir, evaluar y desplegar modelos predictivos y de clasificación usando técnicas de ML.', en: 'Ability to build, evaluate, and deploy predictive and classification models using ML techniques.', fr: 'Capacité à construire, évaluer et déployer des modèles prédictifs et de classification avec des techniques de ML.' }, weight: 0.25 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'tech-data-soft-skills',
+    name: { es: 'Habilidades Blandas del Analista de Datos', en: 'Data Analyst Soft Skills', fr: 'Compétences Interpersonnelles de l\'Analyste de Données' },
+    description: { es: 'Competencias interpersonales para comunicar hallazgos y colaborar con equipos multidisciplinarios.', en: 'Interpersonal competencies for communicating findings and collaborating with multidisciplinary teams.', fr: 'Compétences interpersonnelles pour communiquer les résultats et collaborer avec des équipes multidisciplinaires.' },
+    competencies: [
+      { id: 'data-storytelling', name: { es: 'Narrativa de Datos', en: 'Data Storytelling', fr: 'Narration de Données' }, description: { es: 'Capacidad para traducir análisis complejos en narrativas claras y accionables para audiencias no técnicas.', en: 'Ability to translate complex analyses into clear and actionable narratives for non-technical audiences.', fr: 'Capacité à traduire des analyses complexes en récits clairs et exploitables pour des audiences non techniques.' }, weight: 0.4 },
+      { id: 'cross-functional-collab', name: { es: 'Colaboración Interfuncional', en: 'Cross-Functional Collaboration', fr: 'Collaboration Interfonctionnelle' }, description: { es: 'Habilidad para trabajar con equipos de negocio, ingeniería y producto para definir y resolver problemas con datos.', en: 'Ability to work with business, engineering, and product teams to define and solve problems with data.', fr: 'Capacité à travailler avec les équipes métier, ingénierie et produit pour définir et résoudre des problèmes avec les données.' }, weight: 0.3 },
+      { id: 'critical-thinking-data', name: { es: 'Pensamiento Crítico Analítico', en: 'Analytical Critical Thinking', fr: 'Pensée Critique Analytique' }, description: { es: 'Capacidad para cuestionar supuestos, identificar sesgos en datos y validar la integridad de los análisis.', en: 'Ability to question assumptions, identify data biases, and validate the integrity of analyses.', fr: 'Capacité à remettre en question les hypothèses, identifier les biais dans les données et valider l\'intégrité des analyses.' }, weight: 0.3 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'tech-data-readiness',
+    name: { es: 'Disposición al Cambio del Analista de Datos', en: 'Data Analyst Readiness for Change', fr: 'Disposition au Changement de l\'Analyste de Données' },
+    description: { es: 'Capacidad de adaptación ante la evolución de herramientas y técnicas de ciencia de datos.', en: 'Adaptability to the evolution of data science tools and techniques.', fr: 'Adaptabilité à l\'évolution des outils et techniques de science des données.' },
+    competencies: [
+      { id: 'generative-ai-data', name: { es: 'IA Generativa en Análisis de Datos', en: 'Generative AI in Data Analysis', fr: 'IA Générative en Analyse de Données' }, description: { es: 'Disposición para integrar modelos de lenguaje y herramientas de IA generativa en flujos de análisis de datos.', en: 'Willingness to integrate language models and generative AI tools into data analysis workflows.', fr: 'Volonté d\'intégrer des modèles de langage et des outils d\'IA générative dans les flux d\'analyse de données.' }, weight: 0.35 },
+      { id: 'real-time-analytics', name: { es: 'Analítica en Tiempo Real', en: 'Real-Time Analytics', fr: 'Analytique en Temps Réel' }, description: { es: 'Apertura para adoptar plataformas de streaming analytics y procesamiento de datos en tiempo real.', en: 'Openness to adopting streaming analytics platforms and real-time data processing.', fr: 'Ouverture à l\'adoption de plateformes d\'analytique en streaming et au traitement de données en temps réel.' }, weight: 0.35 },
+      { id: 'data-ethics', name: { es: 'Ética de Datos y Privacidad', en: 'Data Ethics & Privacy', fr: 'Éthique des Données et Vie Privée' }, description: { es: 'Disposición para implementar prácticas de datos responsables, privacidad diferencial y gobernanza ética de modelos.', en: 'Willingness to implement responsible data practices, differential privacy, and ethical model governance.', fr: 'Volonté de mettre en œuvre des pratiques de données responsables, confidentialité différentielle et gouvernance éthique des modèles.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+  // ==========================================================================
+  // TECHNOLOGY / IT — Cybersecurity Analyst
+  // ==========================================================================
+  {
+    id: 'tech-cyber-professional',
+    name: { es: 'Habilidades Profesionales de Ciberseguridad', en: 'Cybersecurity Professional Skills', fr: 'Compétences Professionnelles en Cybersécurité' },
+    description: { es: 'Conocimientos técnicos en seguridad de la información, redes, análisis de amenazas y respuesta a incidentes.', en: 'Technical knowledge in information security, networking, threat analysis, and incident response.', fr: 'Connaissances techniques en sécurité de l\'information, réseaux, analyse des menaces et réponse aux incidents.' },
+    competencies: [
+      { id: 'network-security', name: { es: 'Seguridad de Redes', en: 'Network Security', fr: 'Sécurité Réseau' }, description: { es: 'Dominio de firewalls, IDS/IPS, segmentación de redes, VPN y protocolos de seguridad de red.', en: 'Mastery of firewalls, IDS/IPS, network segmentation, VPN, and network security protocols.', fr: 'Maîtrise des pare-feu, IDS/IPS, segmentation réseau, VPN et protocoles de sécurité réseau.' }, weight: 0.25 },
+      { id: 'vulnerability-assessment', name: { es: 'Evaluación de Vulnerabilidades', en: 'Vulnerability Assessment', fr: 'Évaluation des Vulnérabilités' }, description: { es: 'Capacidad para realizar análisis de vulnerabilidades, pruebas de penetración y evaluaciones de riesgo de seguridad.', en: 'Ability to perform vulnerability analysis, penetration testing, and security risk assessments.', fr: 'Capacité à réaliser des analyses de vulnérabilités, tests de pénétration et évaluations des risques de sécurité.' }, weight: 0.25 },
+      { id: 'incident-response', name: { es: 'Respuesta a Incidentes', en: 'Incident Response', fr: 'Réponse aux Incidents' }, description: { es: 'Habilidad para detectar, contener, erradicar y recuperarse de incidentes de seguridad siguiendo procedimientos establecidos.', en: 'Ability to detect, contain, eradicate, and recover from security incidents following established procedures.', fr: 'Capacité à détecter, contenir, éradiquer et se remettre d\'incidents de sécurité selon les procédures établies.' }, weight: 0.25 },
+      { id: 'security-compliance', name: { es: 'Cumplimiento y Normativa de Seguridad', en: 'Security Compliance & Standards', fr: 'Conformité et Normes de Sécurité' }, description: { es: 'Conocimiento de marcos regulatorios (ISO 27001, NIST, GDPR, PCI-DSS) y auditorías de seguridad.', en: 'Knowledge of regulatory frameworks (ISO 27001, NIST, GDPR, PCI-DSS) and security audits.', fr: 'Connaissance des cadres réglementaires (ISO 27001, NIST, RGPD, PCI-DSS) et audits de sécurité.' }, weight: 0.25 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'tech-cyber-soft-skills',
+    name: { es: 'Habilidades Blandas del Analista de Ciberseguridad', en: 'Cybersecurity Analyst Soft Skills', fr: 'Compétences Interpersonnelles de l\'Analyste en Cybersécurité' },
+    description: { es: 'Competencias interpersonales para comunicar riesgos, capacitar usuarios y colaborar bajo presión.', en: 'Interpersonal competencies for communicating risks, training users, and collaborating under pressure.', fr: 'Compétences interpersonnelles pour communiquer les risques, former les utilisateurs et collaborer sous pression.' },
+    competencies: [
+      { id: 'risk-communication', name: { es: 'Comunicación de Riesgos', en: 'Risk Communication', fr: 'Communication des Risques' }, description: { es: 'Habilidad para comunicar amenazas y riesgos de seguridad de manera clara a la dirección y usuarios no técnicos.', en: 'Ability to communicate security threats and risks clearly to management and non-technical users.', fr: 'Capacité à communiquer clairement les menaces et risques de sécurité à la direction et aux utilisateurs non techniques.' }, weight: 0.35 },
+      { id: 'security-awareness-training', name: { es: 'Capacitación en Concienciación', en: 'Security Awareness Training', fr: 'Formation de Sensibilisation' }, description: { es: 'Capacidad para diseñar y ejecutar programas de concienciación en seguridad para toda la organización.', en: 'Ability to design and execute security awareness programs for the entire organization.', fr: 'Capacité à concevoir et exécuter des programmes de sensibilisation à la sécurité pour toute l\'organisation.' }, weight: 0.3 },
+      { id: 'pressure-management', name: { es: 'Manejo bajo Presión', en: 'Pressure Management', fr: 'Gestion sous Pression' }, description: { es: 'Capacidad para mantener la calma, tomar decisiones rápidas y coordinar respuestas durante incidentes de seguridad críticos.', en: 'Ability to remain calm, make quick decisions, and coordinate responses during critical security incidents.', fr: 'Capacité à rester calme, prendre des décisions rapides et coordonner les réponses lors d\'incidents de sécurité critiques.' }, weight: 0.35 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'tech-cyber-readiness',
+    name: { es: 'Disposición al Cambio del Analista de Ciberseguridad', en: 'Cybersecurity Analyst Readiness for Change', fr: 'Disposition au Changement de l\'Analyste en Cybersécurité' },
+    description: { es: 'Capacidad de adaptación ante la evolución del panorama de amenazas cibernéticas.', en: 'Adaptability to the evolving cyber threat landscape.', fr: 'Adaptabilité à l\'évolution du paysage des cybermenaces.' },
+    competencies: [
+      { id: 'ai-powered-threats', name: { es: 'Amenazas Potenciadas por IA', en: 'AI-Powered Threats', fr: 'Menaces Alimentées par l\'IA' }, description: { es: 'Disposición para enfrentar amenazas generadas por IA, deepfakes y ataques automatizados de nueva generación.', en: 'Willingness to confront AI-generated threats, deepfakes, and next-generation automated attacks.', fr: 'Volonté de faire face aux menaces générées par l\'IA, deepfakes et attaques automatisées de nouvelle génération.' }, weight: 0.35 },
+      { id: 'cloud-security-evolution', name: { es: 'Evolución de Seguridad Cloud', en: 'Cloud Security Evolution', fr: 'Évolution de la Sécurité Cloud' }, description: { es: 'Apertura para adaptar estrategias de seguridad a entornos multi-cloud, edge computing y arquitecturas serverless.', en: 'Openness to adapting security strategies to multi-cloud environments, edge computing, and serverless architectures.', fr: 'Ouverture à l\'adaptation des stratégies de sécurité aux environnements multi-cloud, edge computing et architectures serverless.' }, weight: 0.35 },
+      { id: 'regulatory-evolution', name: { es: 'Evolución Regulatoria', en: 'Regulatory Evolution', fr: 'Évolution Réglementaire' }, description: { es: 'Disposición para adaptarse a nuevas regulaciones de privacidad, ciberseguridad y protección de datos a nivel global.', en: 'Willingness to adapt to new privacy, cybersecurity, and data protection regulations globally.', fr: 'Volonté de s\'adapter aux nouvelles réglementations de confidentialité, cybersécurité et protection des données à l\'échelle mondiale.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+  // ==========================================================================
+  // TECHNOLOGY / IT — Agile Project Manager
+  // ==========================================================================
+  {
+    id: 'tech-apm-professional',
+    name: { es: 'Habilidades Profesionales de Gestión Ágil de Proyectos', en: 'Agile Project Management Professional Skills', fr: 'Compétences Professionnelles en Gestion de Projet Agile' },
+    description: { es: 'Conocimientos técnicos en metodologías ágiles, gestión de entregas y métricas de rendimiento de equipos.', en: 'Technical knowledge in agile methodologies, delivery management, and team performance metrics.', fr: 'Connaissances techniques en méthodologies agiles, gestion des livraisons et métriques de performance d\'équipe.' },
+    competencies: [
+      { id: 'agile-frameworks', name: { es: 'Frameworks Ágiles', en: 'Agile Frameworks', fr: 'Cadres Agiles' }, description: { es: 'Dominio de Scrum, Kanban, SAFe y capacidad para seleccionar y adaptar el framework adecuado al contexto del proyecto.', en: 'Mastery of Scrum, Kanban, SAFe, and ability to select and adapt the right framework to the project context.', fr: 'Maîtrise de Scrum, Kanban, SAFe et capacité à sélectionner et adapter le cadre approprié au contexte du projet.' }, weight: 0.3 },
+      { id: 'delivery-management', name: { es: 'Gestión de Entregas', en: 'Delivery Management', fr: 'Gestion des Livraisons' }, description: { es: 'Capacidad para planificar releases, gestionar dependencias, mitigar riesgos y asegurar entregas de valor continuas.', en: 'Ability to plan releases, manage dependencies, mitigate risks, and ensure continuous value delivery.', fr: 'Capacité à planifier les releases, gérer les dépendances, atténuer les risques et assurer des livraisons de valeur continues.' }, weight: 0.25 },
+      { id: 'metrics-improvement', name: { es: 'Métricas y Mejora Continua', en: 'Metrics & Continuous Improvement', fr: 'Métriques et Amélioration Continue' }, description: { es: 'Uso de métricas ágiles (velocity, lead time, cycle time, burndown) para impulsar la mejora continua del equipo.', en: 'Use of agile metrics (velocity, lead time, cycle time, burndown) to drive continuous team improvement.', fr: 'Utilisation de métriques agiles (vélocité, lead time, cycle time, burndown) pour stimuler l\'amélioration continue de l\'équipe.' }, weight: 0.2 },
+      { id: 'backlog-prioritization', name: { es: 'Priorización de Backlog', en: 'Backlog Prioritization', fr: 'Priorisation du Backlog' }, description: { es: 'Habilidad para colaborar con product owners en la priorización basada en valor, impacto y esfuerzo.', en: 'Ability to collaborate with product owners on value-based, impact, and effort prioritization.', fr: 'Capacité à collaborer avec les product owners sur la priorisation basée sur la valeur, l\'impact et l\'effort.' }, weight: 0.25 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'tech-apm-soft-skills',
+    name: { es: 'Habilidades Blandas del Gerente de Proyectos Ágil', en: 'Agile Project Manager Soft Skills', fr: 'Compétences Interpersonnelles du Chef de Projet Agile' },
+    description: { es: 'Competencias de facilitación, liderazgo servicial y gestión de conflictos en equipos ágiles.', en: 'Facilitation, servant leadership, and conflict management competencies in agile teams.', fr: 'Compétences en facilitation, leadership serviteur et gestion des conflits dans les équipes agiles.' },
+    competencies: [
+      { id: 'facilitation-coaching', name: { es: 'Facilitación y Coaching', en: 'Facilitation & Coaching', fr: 'Facilitation et Coaching' }, description: { es: 'Capacidad para facilitar ceremonias ágiles, coaching de equipos y promover la auto-organización.', en: 'Ability to facilitate agile ceremonies, coach teams, and promote self-organization.', fr: 'Capacité à faciliter les cérémonies agiles, coacher les équipes et promouvoir l\'auto-organisation.' }, weight: 0.35 },
+      { id: 'conflict-resolution', name: { es: 'Resolución de Conflictos', en: 'Conflict Resolution', fr: 'Résolution de Conflits' }, description: { es: 'Habilidad para mediar conflictos dentro del equipo y entre stakeholders, fomentando un ambiente colaborativo.', en: 'Ability to mediate conflicts within the team and between stakeholders, fostering a collaborative environment.', fr: 'Capacité à résoudre les conflits au sein de l\'équipe et entre les parties prenantes, favorisant un environnement collaboratif.' }, weight: 0.3 },
+      { id: 'stakeholder-engagement', name: { es: 'Engagement de Stakeholders', en: 'Stakeholder Engagement', fr: 'Engagement des Parties Prenantes' }, description: { es: 'Capacidad para gestionar expectativas, comunicar progreso y mantener la confianza de los stakeholders del proyecto.', en: 'Ability to manage expectations, communicate progress, and maintain project stakeholder trust.', fr: 'Capacité à gérer les attentes, communiquer le progrès et maintenir la confiance des parties prenantes du projet.' }, weight: 0.35 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'tech-apm-readiness',
+    name: { es: 'Disposición al Cambio del Gerente de Proyectos Ágil', en: 'Agile PM Readiness for Change', fr: 'Disposition au Changement du Chef de Projet Agile' },
+    description: { es: 'Capacidad de adaptación ante la evolución de metodologías de gestión de proyectos y equipos distribuidos.', en: 'Adaptability to the evolution of project management methodologies and distributed teams.', fr: 'Adaptabilité à l\'évolution des méthodologies de gestion de projet et des équipes distribuées.' },
+    competencies: [
+      { id: 'remote-hybrid-teams', name: { es: 'Equipos Remotos e Híbridos', en: 'Remote & Hybrid Teams', fr: 'Équipes Distantes et Hybrides' }, description: { es: 'Disposición para liderar equipos distribuidos geográficamente con herramientas de colaboración asíncrona.', en: 'Willingness to lead geographically distributed teams with asynchronous collaboration tools.', fr: 'Volonté de diriger des équipes distribuées géographiquement avec des outils de collaboration asynchrone.' }, weight: 0.35 },
+      { id: 'ai-augmented-pm', name: { es: 'PM Aumentada con IA', en: 'AI-Augmented PM', fr: 'PM Augmentée par l\'IA' }, description: { es: 'Apertura para adoptar herramientas de IA que automatizan la planificación, estimación y seguimiento de proyectos.', en: 'Openness to adopting AI tools that automate project planning, estimation, and tracking.', fr: 'Ouverture à l\'adoption d\'outils d\'IA qui automatisent la planification, l\'estimation et le suivi des projets.' }, weight: 0.35 },
+      { id: 'continuous-delivery-culture', name: { es: 'Cultura de Entrega Continua', en: 'Continuous Delivery Culture', fr: 'Culture de Livraison Continue' }, description: { es: 'Disposición para evolucionar hacia modelos de entrega continua, DevOps integrado y experimentación rápida.', en: 'Willingness to evolve toward continuous delivery models, integrated DevOps, and rapid experimentation.', fr: 'Volonté d\'évoluer vers des modèles de livraison continue, DevOps intégré et expérimentation rapide.' }, weight: 0.3 },
     ],
     order: 3,
   },

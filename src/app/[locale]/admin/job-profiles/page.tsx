@@ -83,7 +83,7 @@ export default function JobProfilesPage() {
   const tc = useTranslations('common');
   const te = useTranslations('errors');
   const ts = useTranslations('success');
-  const locale = useLocale() as 'es' | 'en';
+  const locale = useLocale() as 'es' | 'en' | 'fr';
 
   const [jobProfiles, setJobProfiles] = useState<JobProfile[]>([]);
   const [profiles, setProfiles] = useState<Profile[]>([]);
@@ -194,10 +194,10 @@ export default function JobProfilesPage() {
     setEditingProfile((prev) => ({ ...prev, [key]: value }));
   }
 
-  function updateLocalizedField(field: 'title' | 'department' | 'description', lang: 'es' | 'en', value: string) {
+  function updateLocalizedField(field: 'title' | 'department' | 'description', value: string) {
     setEditingProfile((prev) => ({
       ...prev,
-      [field]: { ...prev[field], [lang]: value },
+      [field]: { es: value, en: value, fr: value },
     }));
   }
 
@@ -233,7 +233,7 @@ export default function JobProfilesPage() {
 
   function getProfileName(profileId: string): string {
     const profile = profiles.find((p) => p.id === profileId);
-    return profile ? profile.name[locale] : profileId;
+    return profile ? (profile.name[locale] || profile.name.es) : profileId;
   }
 
   const weightsSum = editingProfile.requirements.weights
@@ -307,59 +307,27 @@ export default function JobProfilesPage() {
               <CardContent>
                 <div className="space-y-6">
                   {/* Title */}
-                  <div>
-                    <h3 className="text-sm font-semibold text-gray-700 mb-2">{t('titleField')}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <Input
-                        label="Español"
-                        value={editingProfile.title.es}
-                        onChange={(e) => updateLocalizedField('title', 'es', e.target.value)}
-                        required
-                      />
-                      <Input
-                        label="English"
-                        value={editingProfile.title.en}
-                        onChange={(e) => updateLocalizedField('title', 'en', e.target.value)}
-                        required
-                      />
-                    </div>
-                  </div>
+                  <Input
+                    label={t('titleField')}
+                    value={editingProfile.title[locale] || editingProfile.title.es}
+                    onChange={(e) => updateLocalizedField('title', e.target.value)}
+                    required
+                  />
 
                   {/* Department */}
-                  <div>
-                    <h3 className="text-sm font-semibold text-gray-700 mb-2">{t('department')}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <Input
-                        label="Español"
-                        value={editingProfile.department.es}
-                        onChange={(e) => updateLocalizedField('department', 'es', e.target.value)}
-                        required
-                      />
-                      <Input
-                        label="English"
-                        value={editingProfile.department.en}
-                        onChange={(e) => updateLocalizedField('department', 'en', e.target.value)}
-                        required
-                      />
-                    </div>
-                  </div>
+                  <Input
+                    label={t('department')}
+                    value={editingProfile.department[locale] || editingProfile.department.es}
+                    onChange={(e) => updateLocalizedField('department', e.target.value)}
+                    required
+                  />
 
                   {/* Description */}
-                  <div>
-                    <h3 className="text-sm font-semibold text-gray-700 mb-2">{t('description')}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <TextArea
-                        label="Español"
-                        value={editingProfile.description.es}
-                        onChange={(e) => updateLocalizedField('description', 'es', e.target.value)}
-                      />
-                      <TextArea
-                        label="English"
-                        value={editingProfile.description.en}
-                        onChange={(e) => updateLocalizedField('description', 'en', e.target.value)}
-                      />
-                    </div>
-                  </div>
+                  <TextArea
+                    label={t('description')}
+                    value={editingProfile.description[locale] || editingProfile.description.es}
+                    onChange={(e) => updateLocalizedField('description', e.target.value)}
+                  />
 
                   {/* Linked Profile */}
                   <Select
@@ -368,7 +336,7 @@ export default function JobProfilesPage() {
                     onChange={(e) => updateField('profileId', e.target.value)}
                     options={profiles.map((p) => ({
                       value: p.id,
-                      label: p.name[locale],
+                      label: p.name[locale] || p.name.es,
                     }))}
                     placeholder={`-- ${tc('optional')} --`}
                   />
@@ -382,7 +350,7 @@ export default function JobProfilesPage() {
                       className="h-4 w-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
                     />
                     <span className="text-sm font-medium text-gray-700">
-                      {editingProfile.isActive ? 'Active' : 'Inactive'}
+                      {editingProfile.isActive ? tc('active') : tc('inactive')}
                     </span>
                   </label>
 
@@ -464,7 +432,7 @@ export default function JobProfilesPage() {
                                 onChange={() => toggleDISCStyle(dim)}
                                 className="h-4 w-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500"
                               />
-                              <span className="text-sm text-gray-700 capitalize">{dim}</span>
+                              <span className="text-sm text-gray-700">{t(`disc_${dim}`)}</span>
                             </label>
                           );
                         })}
@@ -480,7 +448,7 @@ export default function JobProfilesPage() {
                         variant={Math.abs(weightsSum - 1.0) < 0.01 ? 'success' : 'warning'}
                         size="sm"
                       >
-                        {locale === 'es' ? 'Suma' : 'Sum'}: {weightsSum.toFixed(2)}
+                        {t('weightsSum')}: {weightsSum.toFixed(2)}
                       </Badge>
                     </div>
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
@@ -489,7 +457,7 @@ export default function JobProfilesPage() {
                       ).map((key) => (
                         <Input
                           key={key}
-                          label={key.charAt(0).toUpperCase() + key.slice(1)}
+                          label={t(`weight_${key}`)}
                           type="number"
                           min={0}
                           max={1}
@@ -501,9 +469,7 @@ export default function JobProfilesPage() {
                     </div>
                     {Math.abs(weightsSum - 1.0) >= 0.01 && (
                       <p className="mt-2 text-sm text-yellow-600">
-                        {locale === 'es'
-                          ? 'Los pesos deben sumar 1.0'
-                          : 'Weights should sum to 1.0'}
+                        {t('weightsMustSum')}
                       </p>
                     )}
                   </div>
@@ -545,9 +511,7 @@ export default function JobProfilesPage() {
                             variant={jp.isActive ? 'success' : 'default'}
                             size="sm"
                           >
-                            {jp.isActive
-                              ? locale === 'es' ? 'Activo' : 'Active'
-                              : locale === 'es' ? 'Inactivo' : 'Inactive'}
+                            {jp.isActive ? tc('active') : tc('inactive')}
                           </Badge>
                         </div>
                         <p className="text-sm text-gray-500 mb-1">

@@ -13,13 +13,33 @@ import {
   TrainingPath,
   ResourceList,
   StrategiesList,
+  DetailedResponses,
+  ComparativeBenchmark,
 } from '@/components/results';
 import { Download, Share2, User, Calendar, Loader2, AlertCircle, Clock, Check } from 'lucide-react';
-import { getResult, getEvaluation, COLLECTIONS, subscribeToDocument } from '@/lib/firebase/firestore';
+import {
+  getResult,
+  getEvaluation,
+  getQuestions,
+  getCategories,
+  getResultsByProfile,
+  COLLECTIONS,
+  subscribeToDocument,
+} from '@/lib/firebase/firestore';
 import { generateResultsPdf } from '@/lib/pdf/generateReport';
-import type { AnalysisResult, Evaluation } from '@/types';
+import type { AnalysisResult, Evaluation, Question, CompetencyCategory } from '@/types';
+import type { BenchmarkDimension } from '@/components/results/ComparativeBenchmark';
 
 type PageState = 'loading' | 'analyzing' | 'ready' | 'error';
+
+interface CategoryGroup {
+  categoryId: string;
+  categoryName: string;
+  questions: Array<{
+    question: Question;
+    response?: Evaluation['responses'][number];
+  }>;
+}
 
 export default function ResultsPage() {
   const params = useParams();
@@ -33,6 +53,14 @@ export default function ResultsPage() {
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
   const [showCopiedFeedback, setShowCopiedFeedback] = useState(false);
 
+  // Detailed responses state
+  const [categoryGroups, setCategoryGroups] = useState<CategoryGroup[]>([]);
+  const [loadingDetails, setLoadingDetails] = useState(false);
+
+  // Benchmark state
+  const [benchmarkDimensions, setBenchmarkDimensions] = useState<BenchmarkDimension[]>([]);
+  const [benchmarkSamples, setBenchmarkSamples] = useState(0);
+
   useEffect(() => {
     let unsubscribe: (() => void) | null = null;
 
@@ -44,6 +72,12 @@ export default function ResultsPage() {
         if (analysisResult) {
           setResult(analysisResult);
           setPageState('ready');
+
+          // Fetch evaluation for detailed responses
+          const eval_ = await getEvaluation(evaluationId);
+          if (eval_) {
+            setEvaluation(eval_);
+          }
           return;
         }
 
@@ -93,6 +127,96 @@ export default function ResultsPage() {
       if (unsubscribe) unsubscribe();
     };
   }, [evaluationId]);
+
+  // Load detailed responses and benchmark when result is ready
+  useEffect(() => {
+    if (!result) return;
+
+    async function loadDetails() {
+      if (!result) return;
+      setLoadingDetails(true);
+      try {
+        // Get the evaluation if we don't have it yet
+        let eval_ = evaluation;
+        if (!eval_) {
+          eval_ = await getEvaluation(evaluationId);
+          if (eval_) setEvaluation(eval_);
+        }
+
+        // Fetch questions and categories for detailed responses
+        if (eval_ && result.profileId) {
+          const [questions, categories] = await Promise.all([
+            getQuestions(result.profileId),
+            getCategories(),
+          ]);
+
+          // Group questions by category
+          const groupMap = new Map<string, CategoryGroup>();
+          for (const q of questions) {
+            if (!groupMap.has(q.categoryId)) {
+              const cat = categories.find((c) => c.id === q.categoryId);
+              const catName = cat
+                ? locale === 'en'
+                  ? cat.name.en
+                  : cat.name.es
+                : q.categoryId;
+              groupMap.set(q.categoryId, {
+                categoryId: q.categoryId,
+                categoryName: catName,
+                questions: [],
+              });
+            }
+            const group = groupMap.get(q.categoryId)!;
+            const response = eval_!.responses?.find((r) => r.questionId === q.id);
+            group.questions.push({ question: q, response });
+          }
+          setCategoryGroups(Array.from(groupMap.values()));
+        }
+
+        // Fetch benchmark data
+        if (result.profileId) {
+          const allResults = await getResultsByProfile(result.profileId);
+          if (allResults.length >= 2) {
+            const avgProfessional =
+              allResults.reduce((sum, r) => sum + r.indices.professional, 0) / allResults.length;
+            const avgSoftSkills =
+              allResults.reduce((sum, r) => sum + r.indices.softSkills, 0) / allResults.length;
+            const avgReadiness =
+              allResults.reduce((sum, r) => sum + r.indices.readiness, 0) / allResults.length;
+
+            setBenchmarkDimensions([
+              {
+                key: 'professional',
+                label: t('results.indices.professional'),
+                candidateScore: result.indices.professional,
+                averageScore: avgProfessional,
+              },
+              {
+                key: 'softSkills',
+                label: t('results.indices.softSkills'),
+                candidateScore: result.indices.softSkills,
+                averageScore: avgSoftSkills,
+              },
+              {
+                key: 'readiness',
+                label: t('results.indices.readiness'),
+                candidateScore: result.indices.readiness,
+                averageScore: avgReadiness,
+              },
+            ]);
+            setBenchmarkSamples(allResults.length);
+          }
+        }
+      } catch (err) {
+        console.error('Error loading details:', err);
+      } finally {
+        setLoadingDetails(false);
+      }
+    }
+
+    loadDetails();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [result?.id]);
 
   const handleDownloadPdf = async () => {
     if (!result || isGeneratingPdf) return;
@@ -265,10 +389,32 @@ export default function ResultsPage() {
                 softSkills: t('results.indices.softSkills'),
                 readiness: t('results.indices.readiness'),
               }}
+              locale={locale}
               showRadar
               showCircular
             />
           </section>
+
+          {/* Comparative Benchmark */}
+          {benchmarkSamples >= 2 && (
+            <section className="mb-10">
+              <ComparativeBenchmark
+                dimensions={benchmarkDimensions}
+                locale={locale}
+                totalSamples={benchmarkSamples}
+              />
+            </section>
+          )}
+
+          {/* Detailed Responses */}
+          {categoryGroups.length > 0 && (
+            <section className="mb-10">
+              <DetailedResponses
+                categories={categoryGroups}
+                locale={locale}
+              />
+            </section>
+          )}
 
           {/* Strengths and Opportunities */}
           <section className="mb-10">

@@ -67,7 +67,7 @@ interface DepartmentBreakdown {
 export default function ClimateSurveyPage() {
   const t = useTranslations('climate');
   const tc = useTranslations('common');
-  const locale = useLocale() as 'es' | 'en';
+  const locale = useLocale() as 'es' | 'en' | 'fr';
 
   const [view, setView] = useState<ViewMode>('list');
   const [loading, setLoading] = useState(true);
@@ -77,10 +77,8 @@ export default function ClimateSurveyPage() {
   const [selectedSurveyId, setSelectedSurveyId] = useState<string | null>(null);
 
   // Form state
-  const [nameEs, setNameEs] = useState('');
-  const [nameEn, setNameEn] = useState('');
-  const [descEs, setDescEs] = useState('');
-  const [descEn, setDescEn] = useState('');
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const [status, setStatus] = useState<'draft' | 'active' | 'closed'>('draft');
@@ -118,10 +116,8 @@ export default function ClimateSurveyPage() {
   };
 
   const resetForm = () => {
-    setNameEs('');
-    setNameEn('');
-    setDescEs('');
-    setDescEn('');
+    setName('');
+    setDescription('');
     setStartDate('');
     setEndDate('');
     setStatus('draft');
@@ -139,10 +135,8 @@ export default function ClimateSurveyPage() {
 
   const openEditForm = (survey: ClimateSurvey) => {
     setEditingSurvey(survey);
-    setNameEs(survey.name.es);
-    setNameEn(survey.name.en);
-    setDescEs(survey.description.es);
-    setDescEn(survey.description.en);
+    setName(survey.name[locale] || survey.name.es);
+    setDescription(survey.description[locale] || survey.description.es);
     setStartDate(formatDate(survey.startDate));
     setEndDate(formatDate(survey.endDate));
     setStatus(survey.status);
@@ -202,10 +196,8 @@ export default function ClimateSurveyPage() {
     setQuestions((prev) => {
       const updated = [...prev];
       const q = { ...updated[index] };
-      if (field === 'contentEs') {
-        q.content = { ...q.content, es: value };
-      } else if (field === 'contentEn') {
-        q.content = { ...q.content, en: value };
+      if (field === 'content') {
+        q.content = { es: value, en: value, fr: value };
       } else if (field === 'category') {
         q.category = value as ClimateCategory;
       } else if (field === 'type') {
@@ -221,8 +213,8 @@ export default function ClimateSurveyPage() {
     try {
       const survey: ClimateSurvey = {
         id: editingSurvey?.id || generateId(),
-        name: { es: nameEs, en: nameEn, fr: nameEn },
-        description: { es: descEs, en: descEn, fr: descEn },
+        name: { es: name, en: name, fr: name },
+        description: { es: description, en: description, fr: description },
         questions,
         startDate: Timestamp.fromDate(new Date(startDate)),
         endDate: Timestamp.fromDate(new Date(endDate)),
@@ -473,34 +465,19 @@ export default function ClimateSurveyPage() {
         </CardHeader>
         <CardContent className="space-y-6">
           {/* Name */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Input
-              label="Name (ES)"
-              value={nameEs}
-              onChange={(e) => setNameEs(e.target.value)}
-              required
-            />
-            <Input
-              label="Name (EN)"
-              value={nameEn}
-              onChange={(e) => setNameEn(e.target.value)}
-              required
-            />
-          </div>
+          <Input
+            label={locale === 'es' ? 'Nombre' : locale === 'fr' ? 'Nom' : 'Name'}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            required
+          />
 
           {/* Description */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <TextArea
-              label="Description (ES)"
-              value={descEs}
-              onChange={(e) => setDescEs(e.target.value)}
-            />
-            <TextArea
-              label="Description (EN)"
-              value={descEn}
-              onChange={(e) => setDescEn(e.target.value)}
-            />
-          </div>
+          <TextArea
+            label={locale === 'es' ? 'Descripción' : 'Description'}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+          />
 
           {/* Dates and Status */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -593,11 +570,11 @@ export default function ClimateSurveyPage() {
           <div>
             <div className="flex items-center justify-between mb-4">
               <label className="block text-sm font-medium text-gray-700">
-                Questions ({questions.length})
+                {locale === 'es' ? 'Preguntas' : locale === 'fr' ? 'Questions' : 'Questions'} ({questions.length})
               </label>
               <Button type="button" variant="outline" size="sm" onClick={handleAddQuestion}>
                 <Plus className="w-4 h-4 mr-1" />
-                Add Question
+                {locale === 'es' ? 'Agregar Pregunta' : locale === 'fr' ? 'Ajouter une Question' : 'Add Question'}
               </Button>
             </div>
 
@@ -618,24 +595,16 @@ export default function ClimateSurveyPage() {
                       </button>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      <Input
-                        label="Content (ES)"
-                        value={q.content.es}
-                        onChange={(e) => updateQuestion(idx, 'contentEs', e.target.value)}
-                        required
-                      />
-                      <Input
-                        label="Content (EN)"
-                        value={q.content.en}
-                        onChange={(e) => updateQuestion(idx, 'contentEn', e.target.value)}
-                        required
-                      />
-                    </div>
+                    <Input
+                      label={locale === 'es' ? 'Contenido de la Pregunta' : locale === 'fr' ? 'Contenu de la Question' : 'Question Content'}
+                      value={q.content[locale] || q.content.es}
+                      onChange={(e) => updateQuestion(idx, 'content', e.target.value)}
+                      required
+                    />
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       <Select
-                        label="Category"
+                        label={locale === 'es' ? 'Categoría' : locale === 'fr' ? 'Catégorie' : 'Category'}
                         value={q.category}
                         onChange={(e) => updateQuestion(idx, 'category', e.target.value)}
                         options={CLIMATE_CATEGORIES.map((cat) => ({
@@ -644,12 +613,12 @@ export default function ClimateSurveyPage() {
                         }))}
                       />
                       <Select
-                        label="Type"
+                        label={locale === 'es' ? 'Tipo' : 'Type'}
                         value={q.type}
                         onChange={(e) => updateQuestion(idx, 'type', e.target.value)}
                         options={[
-                          { value: 'scale', label: 'Scale (1-5)' },
-                          { value: 'open-text', label: 'Open Text' },
+                          { value: 'scale', label: locale === 'es' ? 'Escala (1-5)' : locale === 'fr' ? 'Échelle (1-5)' : 'Scale (1-5)' },
+                          { value: 'open-text', label: locale === 'es' ? 'Texto Abierto' : locale === 'fr' ? 'Texte Libre' : 'Open Text' },
                         ]}
                       />
                     </div>
@@ -667,7 +636,7 @@ export default function ClimateSurveyPage() {
             >
               {tc('cancel')}
             </Button>
-            <Button onClick={handleSave} disabled={saving || !nameEs || !startDate || !endDate}>
+            <Button onClick={handleSave} disabled={saving || !name || !startDate || !endDate}>
               {saving && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
               {tc('save')}
             </Button>
@@ -735,7 +704,7 @@ export default function ClimateSurveyPage() {
             {/* Category Score Bars */}
             <Card variant="bordered">
               <CardHeader>
-                <CardTitle>Category Scores</CardTitle>
+                <CardTitle>{locale === 'es' ? 'Puntuaciones por Categoría' : locale === 'fr' ? 'Scores par Catégorie' : 'Category Scores'}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {categoryScores.map((cs) => (

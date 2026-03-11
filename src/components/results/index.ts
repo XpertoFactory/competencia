@@ -19,3 +19,9 @@ export type {
   ResourceListProps,
   StrategiesListProps,
 } from './RecommendationsList';
+
+export { DetailedResponses } from './DetailedResponses';
+export type { DetailedResponsesProps } from './DetailedResponses';
+
+export { ComparativeBenchmark } from './ComparativeBenchmark';
+export type { ComparativeBenchmarkProps } from './ComparativeBenchmark';

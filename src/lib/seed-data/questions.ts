@@ -7,6 +7,11 @@ import { acctMgrProfessionalQuestions, acctMgrSoftSkillsQuestions, acctMgrReadin
 import { techSupProfessionalQuestions, techSupSoftSkillsQuestions, techSupReadinessQuestions } from './questions-technical-support';
 import { bmProfessionalQuestions, bmSoftSkillsQuestions, bmReadinessQuestions } from './questions-business-manager';
 import { cfoProfessionalQuestions, cfoSoftSkillsQuestions, cfoReadinessQuestions } from './cfo-questions';
+import { insCeoProfessionalQuestions, insCeoSoftSkillsQuestions, insCeoReadinessQuestions, insBrokerProfessionalQuestions, insBrokerSoftSkillsQuestions, insBrokerReadinessQuestions } from './insurance-ceo-questions';
+import { insCroProfessionalQuestions, insCroSoftSkillsQuestions, insCroReadinessQuestions, insCuoProfessionalQuestions, insCuoSoftSkillsQuestions, insCuoReadinessQuestions, insActuaryProfessionalQuestions, insActuarySoftSkillsQuestions, insActuaryReadinessQuestions } from './insurance-risk-questions';
+import { techSwdevProfessionalQuestions, techSwdevSoftSkillsQuestions, techSwdevReadinessQuestions, techItmgrProfessionalQuestions, techItmgrSoftSkillsQuestions, techItmgrReadinessQuestions, techDataProfessionalQuestions, techDataSoftSkillsQuestions, techDataReadinessQuestions, techCyberProfessionalQuestions, techCyberSoftSkillsQuestions, techCyberReadinessQuestions, techApmProfessionalQuestions, techApmSoftSkillsQuestions, techApmReadinessQuestions } from './tech-questions';
+import { bankBmProfessionalQuestions, bankBmSoftSkillsQuestions, bankBmReadinessQuestions, bankLoProfessionalQuestions, bankLoSoftSkillsQuestions, bankLoReadinessQuestions, bankIaProfessionalQuestions, bankIaSoftSkillsQuestions, bankIaReadinessQuestions, bankBtProfessionalQuestions, bankBtSoftSkillsQuestions, bankBtReadinessQuestions } from './banking-questions';
+import { hospHgmProfessionalQuestions, hospHgmSoftSkillsQuestions, hospHgmReadinessQuestions, hospRmProfessionalQuestions, hospRmSoftSkillsQuestions, hospRmReadinessQuestions, hospFdaProfessionalQuestions, hospFdaSoftSkillsQuestions, hospFdaReadinessQuestions, hospCkmProfessionalQuestions, hospCkmSoftSkillsQuestions, hospCkmReadinessQuestions } from './hospitality-questions';
 
 // ============================================================================
 // SHARED QUESTIONS (used by both profiles for soft-skills and readiness)
@@ -7097,6 +7102,82 @@ export const questions: Question[] = [
   ...cfoProfessionalQuestions,
   ...cfoSoftSkillsQuestions,
   ...cfoReadinessQuestions,
+
+  // Insurance Company CEO
+  ...insCeoProfessionalQuestions,
+  ...insCeoSoftSkillsQuestions,
+  ...insCeoReadinessQuestions,
+  // Insurance Broker Company CEO
+  ...insBrokerProfessionalQuestions,
+  ...insBrokerSoftSkillsQuestions,
+  ...insBrokerReadinessQuestions,
+  // Chief Risk Officer (CRO)
+  ...insCroProfessionalQuestions,
+  ...insCroSoftSkillsQuestions,
+  ...insCroReadinessQuestions,
+  // Chief Underwriting Officer (CUO)
+  ...insCuoProfessionalQuestions,
+  ...insCuoSoftSkillsQuestions,
+  ...insCuoReadinessQuestions,
+  // Chief Actuary
+  ...insActuaryProfessionalQuestions,
+  ...insActuarySoftSkillsQuestions,
+  ...insActuaryReadinessQuestions,
+
+  // Technology/IT - Software Developer
+  ...techSwdevProfessionalQuestions,
+  ...techSwdevSoftSkillsQuestions,
+  ...techSwdevReadinessQuestions,
+  // Technology/IT - IT Manager / CTO
+  ...techItmgrProfessionalQuestions,
+  ...techItmgrSoftSkillsQuestions,
+  ...techItmgrReadinessQuestions,
+  // Technology/IT - Data Analyst
+  ...techDataProfessionalQuestions,
+  ...techDataSoftSkillsQuestions,
+  ...techDataReadinessQuestions,
+  // Technology/IT - Cybersecurity Analyst
+  ...techCyberProfessionalQuestions,
+  ...techCyberSoftSkillsQuestions,
+  ...techCyberReadinessQuestions,
+  // Technology/IT - Agile Project Manager
+  ...techApmProfessionalQuestions,
+  ...techApmSoftSkillsQuestions,
+  ...techApmReadinessQuestions,
+
+  // Banking - Branch Manager
+  ...bankBmProfessionalQuestions,
+  ...bankBmSoftSkillsQuestions,
+  ...bankBmReadinessQuestions,
+  // Banking - Loan Officer
+  ...bankLoProfessionalQuestions,
+  ...bankLoSoftSkillsQuestions,
+  ...bankLoReadinessQuestions,
+  // Banking - Investment Advisor
+  ...bankIaProfessionalQuestions,
+  ...bankIaSoftSkillsQuestions,
+  ...bankIaReadinessQuestions,
+  // Banking - Bank Teller
+  ...bankBtProfessionalQuestions,
+  ...bankBtSoftSkillsQuestions,
+  ...bankBtReadinessQuestions,
+
+  // Hospitality - Hotel General Manager
+  ...hospHgmProfessionalQuestions,
+  ...hospHgmSoftSkillsQuestions,
+  ...hospHgmReadinessQuestions,
+  // Hospitality - Restaurant Manager
+  ...hospRmProfessionalQuestions,
+  ...hospRmSoftSkillsQuestions,
+  ...hospRmReadinessQuestions,
+  // Hospitality - Front Desk Agent
+  ...hospFdaProfessionalQuestions,
+  ...hospFdaSoftSkillsQuestions,
+  ...hospFdaReadinessQuestions,
+  // Hospitality - Chef / Kitchen Manager
+  ...hospCkmProfessionalQuestions,
+  ...hospCkmSoftSkillsQuestions,
+  ...hospCkmReadinessQuestions,
 
   // Primary School Educator
   ...primEdProfessionalQuestions,

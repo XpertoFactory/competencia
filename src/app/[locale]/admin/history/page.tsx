@@ -28,7 +28,7 @@ export default function HistoryPage() {
 
   const [evaluations, setEvaluations] = useState<Evaluation[]>([]);
   const [profiles, setProfiles] = useState<Profile[]>([]);
-  const [scores, setScores] = useState<Record<string, number | null>>({});
+  const [scores, setScores] = useState<Record<string, { professional: number; softSkills: number; readiness: number; average: number } | null>>({});
   const [loading, setLoading] = useState(true);
   const [loadingScores, setLoadingScores] = useState(false);
 
@@ -61,13 +61,18 @@ export default function HistoryPage() {
               return { id: ev.id, result };
             })
           );
-          const scoreMap: Record<string, number | null> = {};
+          const scoreMap: Record<string, { professional: number; softSkills: number; readiness: number; average: number } | null> = {};
           scoreResults.forEach((sr) => {
             if (sr.status === 'fulfilled' && sr.value.result) {
               const indices = sr.value.result.indices;
               const avg =
                 (indices.professional + indices.softSkills + indices.readiness) / 3;
-              scoreMap[sr.value.id] = Math.round(avg);
+              scoreMap[sr.value.id] = {
+                professional: Math.round(indices.professional),
+                softSkills: Math.round(indices.softSkills),
+                readiness: Math.round(indices.readiness),
+                average: Math.round(avg),
+              };
             }
           });
           setScores(scoreMap);
@@ -189,25 +194,57 @@ export default function HistoryPage() {
     return date.toLocaleDateString(locale);
   };
 
+  // Export column headers (localized inline)
+  const getExportHeaders = () => [
+    locale === 'es' ? 'Nombre del Candidato' : 'Candidate Name',
+    locale === 'es' ? 'Email del Candidato' : 'Candidate Email',
+    locale === 'es' ? 'Perfil' : 'Profile Name',
+    locale === 'es' ? 'Estado' : 'Status',
+    locale === 'es' ? 'Puntuación Profesional' : 'Professional Score',
+    locale === 'es' ? 'Habilidades Blandas' : 'Soft Skills Score',
+    locale === 'es' ? 'Disposición al Cambio' : 'Readiness Score',
+    locale === 'es' ? 'Puntuación Promedio' : 'Average Score',
+    locale === 'es' ? 'Fecha' : 'Date',
+    locale === 'es' ? 'ID de Evaluación' : 'Evaluation ID',
+  ];
+
+  // Build export rows from the filtered (filter-aware) data
+  const getExportRows = () =>
+    filtered.map((ev) => {
+      const s = scores[ev.id];
+      return [
+        ev.candidateName || '',
+        ev.candidateEmail || '',
+        getProfileName(ev.profileId),
+        ev.status,
+        s ? `${s.professional}%` : '',
+        s ? `${s.softSkills}%` : '',
+        s ? `${s.readiness}%` : '',
+        s ? `${s.average}%` : '',
+        formatDate(ev.startedAt),
+        ev.id,
+      ];
+    });
+
+  // Trigger a file download from a Blob
+  const downloadBlob = (blob: Blob, filename: string) => {
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   // Export CSV
   const exportCSV = () => {
-    const headers = [
-      t('candidate'),
-      t('email'),
-      t('profile'),
-      t('status'),
-      t('date'),
-    ];
-    const rows = filtered.map((ev) => [
-      ev.candidateName || '',
-      ev.candidateEmail || '',
-      getProfileName(ev.profileId),
-      ev.status,
-      formatDate(ev.startedAt),
-    ]);
+    const headers = getExportHeaders();
+    const rows = getExportRows();
 
     const csvContent = [
-      headers.join(','),
+      headers.map((h) => `"${h}"`).join(','),
       ...rows.map((row) =>
         row.map((cell) => `"${String(cell).replace(/"/g, '""')}"`).join(',')
       ),
@@ -216,49 +253,43 @@ export default function HistoryPage() {
     const blob = new Blob(['\uFEFF' + csvContent], {
       type: 'text/csv;charset=utf-8;',
     });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `evaluations-history-${new Date().toISOString().split('T')[0]}.csv`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
+    downloadBlob(blob, `evaluations-history-${new Date().toISOString().split('T')[0]}.csv`);
   };
 
-  // Export Excel (tab-delimited with .xls extension)
+  // Export Excel (HTML table that Excel can open natively)
   const exportExcel = () => {
-    const headers = [
-      t('candidate'),
-      t('email'),
-      t('profile'),
-      t('status'),
-      t('date'),
-    ];
-    const rows = filtered.map((ev) => [
-      ev.candidateName || '',
-      ev.candidateEmail || '',
-      getProfileName(ev.profileId),
-      ev.status,
-      formatDate(ev.startedAt),
-    ]);
+    const headers = getExportHeaders();
+    const rows = getExportRows();
 
-    const tsvContent = [
-      headers.join('\t'),
-      ...rows.map((row) => row.map((cell) => String(cell).replace(/\t/g, ' ')).join('\t')),
-    ].join('\n');
+    const htmlContent = `
+<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<meta charset="UTF-8">
+<!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet>
+<x:Name>Evaluations</x:Name>
+<x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions>
+</x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]-->
+<style>
+  table { border-collapse: collapse; }
+  th { background-color: #4472C4; color: #FFFFFF; font-weight: bold; padding: 8px 12px; border: 1px solid #D9E2F3; text-align: left; }
+  td { padding: 6px 12px; border: 1px solid #D9E2F3; }
+  tr:nth-child(even) td { background-color: #F2F2F2; }
+</style>
+</head>
+<body>
+<table>
+  <thead><tr>${headers.map((h) => `<th>${h}</th>`).join('')}</tr></thead>
+  <tbody>
+    ${rows.map((row) => `<tr>${row.map((cell) => `<td>${String(cell).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</td>`).join('')}</tr>`).join('\n    ')}
+  </tbody>
+</table>
+</body>
+</html>`.trim();
 
-    const blob = new Blob(['\uFEFF' + tsvContent], {
+    const blob = new Blob(['\uFEFF' + htmlContent], {
       type: 'application/vnd.ms-excel;charset=utf-8;',
     });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `evaluations-history-${new Date().toISOString().split('T')[0]}.xls`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
+    downloadBlob(blob, `evaluations-history-${new Date().toISOString().split('T')[0]}.xls`);
   };
 
   // Profile filter options
@@ -357,28 +388,35 @@ export default function HistoryPage() {
                   </div>
 
                   {/* Record count and export buttons */}
-                  <div className="flex flex-wrap items-center justify-between mt-4 gap-3">
+                  <div className="flex flex-wrap items-center justify-between mt-4 pt-4 border-t border-gray-200 gap-3">
                     <span className="text-sm text-gray-600">
                       {t('totalRecords', { count: filtered.length })}
                     </span>
-                    <div className="flex gap-2">
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-gray-500 mr-1">
+                        {locale === 'es'
+                          ? `Exportar ${filtered.length} registro${filtered.length !== 1 ? 's' : ''}`
+                          : `Export ${filtered.length} record${filtered.length !== 1 ? 's' : ''}`}
+                      </span>
                       <Button
                         variant="outline"
                         size="sm"
                         onClick={exportCSV}
                         disabled={filtered.length === 0}
+                        className="gap-1.5"
                       >
-                        <Download className="w-4 h-4 mr-2" />
-                        {t('exportCsv')}
+                        <Download className="w-4 h-4" />
+                        CSV
                       </Button>
                       <Button
                         variant="outline"
                         size="sm"
                         onClick={exportExcel}
                         disabled={filtered.length === 0}
+                        className="gap-1.5"
                       >
-                        <FileSpreadsheet className="w-4 h-4 mr-2" />
-                        {t('exportExcel')}
+                        <FileSpreadsheet className="w-4 h-4" />
+                        Excel
                       </Button>
                     </div>
                   </div>
@@ -443,7 +481,7 @@ export default function HistoryPage() {
                                   loadingScores ? (
                                     <Loader2 className="w-4 h-4 animate-spin text-gray-400" />
                                   ) : (
-                                    scores[ev.id] !== undefined ? `${scores[ev.id]}%` : '-'
+                                    scores[ev.id] ? `${scores[ev.id]!.average}%` : '-'
                                   )
                                 ) : (
                                   '-'

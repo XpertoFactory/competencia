@@ -65,7 +65,7 @@ const EMPTY_CAMPAIGN: Omit<ReviewCampaign, 'id' | 'createdAt'> = {
 export default function ReviewsPage() {
   const t = useTranslations('reviews');
   const tc = useTranslations('common');
-  const locale = useLocale() as 'es' | 'en';
+  const locale = useLocale() as 'es' | 'en' | 'fr';
 
   // State
   const [view, setView] = useState<View>('list');
@@ -440,49 +440,26 @@ export default function ReviewsPage() {
         <Card variant="bordered">
           <CardContent>
             <div className="space-y-5 py-2">
-              {/* Name ES */}
+              {/* Name */}
               <Input
-                label={`${t('campaignName')} (ES)`}
-                value={formData.name.es}
+                label={t('campaignName')}
+                value={formData.name[locale] || formData.name.es}
                 onChange={(e) =>
                   setFormData((prev) => ({
                     ...prev,
-                    name: { ...prev.name, es: e.target.value },
+                    name: { es: e.target.value, en: e.target.value, fr: e.target.value },
                   }))
                 }
                 required
               />
-              {/* Name EN */}
-              <Input
-                label={`${t('campaignName')} (EN)`}
-                value={formData.name.en}
-                onChange={(e) =>
-                  setFormData((prev) => ({
-                    ...prev,
-                    name: { ...prev.name, en: e.target.value },
-                  }))
-                }
-                required
-              />
-              {/* Description ES */}
+              {/* Description */}
               <TextArea
-                label={`${t('description')} (ES)`}
-                value={formData.description.es}
+                label={t('description')}
+                value={formData.description[locale] || formData.description.es}
                 onChange={(e) =>
                   setFormData((prev) => ({
                     ...prev,
-                    description: { ...prev.description, es: e.target.value },
-                  }))
-                }
-              />
-              {/* Description EN */}
-              <TextArea
-                label={`${t('description')} (EN)`}
-                value={formData.description.en}
-                onChange={(e) =>
-                  setFormData((prev) => ({
-                    ...prev,
-                    description: { ...prev.description, en: e.target.value },
+                    description: { es: e.target.value, en: e.target.value, fr: e.target.value },
                   }))
                 }
               />

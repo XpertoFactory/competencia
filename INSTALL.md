@@ -79,7 +79,7 @@ NEXT_PUBLIC_FIREBASE_APP_ID=your-app-id
 GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/sa-key.json npx tsx scripts/seed.ts
 ```
 
-This seeds: profiles (30 roles with sector/level categorization), competency categories, archetype profiles, resources, questions (480+), test configs, and app settings.
+This seeds: profiles (43 roles across 15 sectors with level categorization), competency categories, archetype profiles, resources, questions (700+), test configs, and app settings.
 
 ### Create the Admin Document
 

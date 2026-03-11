@@ -31,6 +31,8 @@ export default function UserLoginPage() {
     } catch (err: any) {
       if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
         setError(t('auth.invalidCredentials'));
+      } else if (err.code === 'auth/invalid-login-credentials') {
+        setError(t('auth.invalidCredentials'));
       } else {
         setError(t('errors.loginFailed'));
       }

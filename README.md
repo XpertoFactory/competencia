@@ -6,16 +6,17 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 
 ## Features
 
-- **30 Evaluation Profiles** - Across 12 sectors (insurance, education, healthcare, retail, finance, HR, etc.) and 5 levels (executive to operative)
-- **Competency Evaluations** - 480+ trilingual questions (5 types: multiple choice, scale, ranking, open text, scenario)
+- **43 Evaluation Profiles** - Across 15 sectors (insurance, education, healthcare, retail, finance, HR, technology, banking, hospitality, etc.) and 5 levels (executive to operative)
+- **Competency Evaluations** - 700+ trilingual questions (5 types: multiple choice, scale, ranking, open text, scenario)
 - **Cognitive Tests** - Timed IQ-style assessments with percentile scoring
 - **Personality Tests** - Big Five (OCEAN) personality profiling via Likert scale
 - **DISC Assessments** - Forced-choice behavioral style profiling
 - **Aptitude Tests** - Numerical, verbal, and analytical reasoning
 - **Technical Tests** - Case study-based knowledge evaluation
 - **Job-Fit Scoring** - Weighted multi-dimensional candidate-to-role matching with gap analysis
-- **Candidate Comparison** - Side-by-side radar chart comparison
+- **Candidate Comparison** - Side-by-side radar chart comparison with benchmarks
 - **Evaluation History** - Searchable database with CSV/Excel export
+- **Profiles Page** - Dedicated browsable profile directory with sector/level filters
 - **Post-Hire Tools** - Employee management, probation tracking, 360/180 reviews, climate surveys
 - **AI Analysis** - Optional AI-powered evaluation via Claude, OpenAI, or Gemini
 - **PDF Export** - Downloadable evaluation reports
@@ -57,6 +58,7 @@ src/
     auth/                    # User login and registration
     evaluation/[profileId]/  # Competency evaluation flow
     instructions/            # Instructions for evaluators and candidates
+    profiles/                # Browsable profile directory
     results/[evaluationId]/  # Results display
     tests/                   # Test hub (cognitive, personality, DISC, aptitude)
   components/                # Reusable UI components

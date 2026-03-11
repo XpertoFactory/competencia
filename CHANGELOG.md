@@ -1,5 +1,44 @@
 # Changelog
 
+## [0.6.0] - 2026-03-10
+
+### New Sectors & Profiles
+- Added 3 new sectors: Technology/IT (5 profiles), Banking (4 profiles), Hospitality/Tourism (4 profiles)
+- 13 new evaluation profiles with trilingual competency categories and questions
+- Extended `ProfileSector` type with `technology-it`, `banking`, `hospitality-tourism`
+
+### Profiles Page & Navigation
+- New `/profiles` page with sector/level filters and 3-column card grid
+- Restructured navigation: "Evaluations" dropdown with "Profiles" and "Specialized" sub-items
+- Click-outside handling for all dropdowns using ref-based mousedown pattern
+
+### Results & Dashboard Enhancements
+- Larger circular score gauges with localized level labels and gradient card backgrounds
+- Category drill-down component with expandable sections and per-question scores
+- Comparative benchmark component (candidate score vs profile average)
+- Redesigned admin dashboard with summary stats row and recent evaluations table
+- Enhanced PDF reports with cover page, executive summary, and better visual layout
+- Richer CSV/Excel exports with 10 columns and filter-aware downloads
+
+### Form Simplification
+- Climate surveys: single Name/Description field per locale (was dual ES/EN)
+- Reviews: single Campaign Name/Description field per locale (was dual ES/EN)
+- Job profiles: single Title/Department/Description field per locale (was dual ES/EN)
+- All form field labels translated according to active locale
+
+### Translation Fixes
+- Added 25+ missing review translation keys (status labels, role labels, score keys)
+- Fixed hardcoded DISC/weight labels in job profiles page
+- Fixed missing jobFit.noJobProfiles/noJobProfilesHint keys
+- Changed "Linked Insurance Profile" to "Linked Profile" across all languages
+- Translated climate survey question section labels (Questions, Add Question, Content, Category, Type)
+
+### Fixes
+- Fixed admin dropdown not showing (silent error in checkAdminStatus)
+- Fixed dropdowns not opening in React 18 (replaced stopPropagation with ref-based contains pattern)
+- Fixed email/password login error handling (added invalid-login-credentials code)
+- Fixed Active/Inactive badges using hardcoded strings in job profiles list
+
 ## [0.5.0] - 2026-03-10
 
 ### Organizations

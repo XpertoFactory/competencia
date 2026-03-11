@@ -5,41 +5,55 @@ import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui';
-import { Menu, X, Globe, LogIn, LogOut, User } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { Menu, X, Globe, LogIn, LogOut, User, Shield, ChevronDown } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { onAuthChange, signOut, checkAdminStatus } from '@/lib/firebase/auth';
-import { Shield, ChevronDown } from 'lucide-react';
 import type { User as FirebaseUser } from 'firebase/auth';
 
 export function Header() {
   const t = useTranslations('navigation');
-  const tc = useTranslations('common');
   const locale = useLocale();
   const pathname = usePathname();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [isEvalOpen, setIsEvalOpen] = useState(false);
   const [user, setUser] = useState<FirebaseUser | null>(null);
   const [isAdmin, setIsAdmin] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
+  const userMenuRef = useRef<HTMLDivElement>(null);
+  const langMenuRef = useRef<HTMLDivElement>(null);
+  const evalMenuRef = useRef<HTMLDivElement>(null);
 
   // Close dropdowns when clicking outside
   useEffect(() => {
-    const handleClickOutside = () => {
-      setIsUserMenuOpen(false);
-      setIsLangOpen(false);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target as Node)) {
+        setIsUserMenuOpen(false);
+      }
+      if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
+        setIsLangOpen(false);
+      }
+      if (evalMenuRef.current && !evalMenuRef.current.contains(event.target as Node)) {
+        setIsEvalOpen(false);
+      }
     };
-    document.addEventListener('click', handleClickOutside);
-    return () => document.removeEventListener('click', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   useEffect(() => {
     const unsubscribe = onAuthChange(async (firebaseUser) => {
       setUser(firebaseUser);
       if (firebaseUser) {
-        const adminUser = await checkAdminStatus(firebaseUser.uid);
-        setIsAdmin(!!adminUser);
+        try {
+          const adminUser = await checkAdminStatus(firebaseUser.uid);
+          setIsAdmin(!!adminUser);
+        } catch (err) {
+          console.error('Admin status check failed:', err);
+          setIsAdmin(false);
+        }
       } else {
         setIsAdmin(false);
       }
@@ -71,21 +85,14 @@ export function Header() {
     fr: 'Français',
   };
 
-  const navLinks = [
-    { href: `/${locale}`, label: t('home') },
-    { href: `/${locale}/instructions`, label: t('instructions') },
-    { href: `/${locale}/tests`, label: t('tests') },
-  ];
+  const isEvalActive = pathname.startsWith(`/${locale}/profiles`) || pathname.startsWith(`/${locale}/tests`);
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link
-            href={`/${locale}`}
-            className="flex items-center"
-          >
+          <Link href={`/${locale}`} className="flex items-center">
             <Image
               src="/logo.png"
               alt="skaills"
@@ -98,26 +105,79 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
+            <Link
+              href={`/${locale}`}
+              className={cn(
+                'text-sm font-medium transition-colors',
+                pathname === `/${locale}`
+                  ? 'text-primary-600'
+                  : 'text-gray-600 hover:text-gray-900'
+              )}
+            >
+              {t('home')}
+            </Link>
+
+            <Link
+              href={`/${locale}/instructions`}
+              className={cn(
+                'text-sm font-medium transition-colors',
+                pathname === `/${locale}/instructions`
+                  ? 'text-primary-600'
+                  : 'text-gray-600 hover:text-gray-900'
+              )}
+            >
+              {t('instructions')}
+            </Link>
+
+            {/* Evaluations Dropdown */}
+            <div className="relative" ref={evalMenuRef}>
+              <button
+                onClick={() => setIsEvalOpen(!isEvalOpen)}
                 className={cn(
-                  'text-sm font-medium transition-colors',
-                  pathname === link.href
+                  'flex items-center gap-1 text-sm font-medium transition-colors',
+                  isEvalActive
                     ? 'text-primary-600'
                     : 'text-gray-600 hover:text-gray-900'
                 )}
               >
-                {link.label}
-              </Link>
-            ))}
+                {t('evaluations')}
+                <ChevronDown className="w-3.5 h-3.5" />
+              </button>
+              {isEvalOpen && (
+                <div className="absolute left-0 mt-1 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                  <Link
+                    href={`/${locale}/profiles`}
+                    onClick={() => setIsEvalOpen(false)}
+                    className={cn(
+                      'block px-4 py-2 text-sm rounded-t-lg transition-colors',
+                      pathname === `/${locale}/profiles`
+                        ? 'bg-primary-50 text-primary-600 font-medium'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    )}
+                  >
+                    {t('profiles')}
+                  </Link>
+                  <Link
+                    href={`/${locale}/tests`}
+                    onClick={() => setIsEvalOpen(false)}
+                    className={cn(
+                      'block px-4 py-2 text-sm rounded-b-lg transition-colors',
+                      pathname.startsWith(`/${locale}/tests`)
+                        ? 'bg-primary-50 text-primary-600 font-medium'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    )}
+                  >
+                    {t('specialized')}
+                  </Link>
+                </div>
+              )}
+            </div>
 
             {/* User Auth Section */}
             {user ? (
-              <div className="relative">
+              <div className="relative" ref={userMenuRef}>
                 <button
-                  onClick={(e) => { e.stopPropagation(); setIsUserMenuOpen(!isUserMenuOpen); }}
+                  onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                   className="flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
                 >
                   <User className="w-4 h-4 text-gray-500" />
@@ -170,11 +230,11 @@ export function Header() {
             )}
 
             {/* Language Switcher */}
-            <div className="relative">
+            <div className="relative" ref={langMenuRef}>
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={(e) => { e.stopPropagation(); setIsLangOpen(!isLangOpen); }}
+                onClick={() => setIsLangOpen(!isLangOpen)}
                 className="flex items-center gap-2"
               >
                 <Globe className="w-4 h-4" />
@@ -220,21 +280,60 @@ export function Header() {
       {isMenuOpen && (
         <nav className="md:hidden border-t border-gray-200 bg-white">
           <div className="px-4 py-3 space-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={cn(
-                  'block px-3 py-2 rounded-lg text-sm font-medium transition-colors',
-                  pathname === link.href
-                    ? 'bg-primary-50 text-primary-600'
-                    : 'text-gray-600 hover:bg-gray-50'
-                )}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <Link
+              href={`/${locale}`}
+              className={cn(
+                'block px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                pathname === `/${locale}`
+                  ? 'bg-primary-50 text-primary-600'
+                  : 'text-gray-600 hover:bg-gray-50'
+              )}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('home')}
+            </Link>
+
+            <Link
+              href={`/${locale}/instructions`}
+              className={cn(
+                'block px-3 py-2 rounded-lg text-sm font-medium transition-colors',
+                pathname === `/${locale}/instructions`
+                  ? 'bg-primary-50 text-primary-600'
+                  : 'text-gray-600 hover:bg-gray-50'
+              )}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('instructions')}
+            </Link>
+
+            {/* Mobile Evaluations Section */}
+            <div className="px-3 py-1 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+              {t('evaluations')}
+            </div>
+            <Link
+              href={`/${locale}/profiles`}
+              className={cn(
+                'block px-3 py-2 pl-6 rounded-lg text-sm font-medium transition-colors',
+                pathname === `/${locale}/profiles`
+                  ? 'bg-primary-50 text-primary-600'
+                  : 'text-gray-600 hover:bg-gray-50'
+              )}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('profiles')}
+            </Link>
+            <Link
+              href={`/${locale}/tests`}
+              className={cn(
+                'block px-3 py-2 pl-6 rounded-lg text-sm font-medium transition-colors',
+                pathname.startsWith(`/${locale}/tests`)
+                  ? 'bg-primary-50 text-primary-600'
+                  : 'text-gray-600 hover:bg-gray-50'
+              )}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('specialized')}
+            </Link>
 
             {/* Mobile User Auth */}
             {user ? (

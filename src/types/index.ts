@@ -19,7 +19,10 @@ export type ProfileSector =
   | 'commercial-business'
   | 'collections-credit'
   | 'customer-service'
-  | 'general-management';
+  | 'general-management'
+  | 'technology-it'
+  | 'banking'
+  | 'hospitality-tourism';
 
 export type ProfileLevel =
   | 'executive'

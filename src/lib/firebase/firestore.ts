@@ -270,6 +270,14 @@ export async function getResult(
   return results[0] || null;
 }
 
+// Get all results for a given profile (for benchmark averages)
+export async function getResultsByProfile(profileId: string): Promise<AnalysisResult[]> {
+  return getDocuments<AnalysisResult>(
+    COLLECTIONS.RESULTS,
+    where('profileId', '==', profileId)
+  );
+}
+
 // Archetype profile operations
 export async function getArchetypeProfiles(
   category?: string

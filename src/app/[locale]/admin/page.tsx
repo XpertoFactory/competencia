@@ -31,6 +31,9 @@ import {
   Star,
   ThermometerSun,
   Building2,
+  TrendingUp,
+  Activity,
+  ExternalLink,
 } from 'lucide-react';
 import { AuthGuard, useAuth } from '@/components/auth';
 import { OrgSwitcher } from '@/components/org';
@@ -47,6 +50,7 @@ import {
   getCategories,
   generateId,
   setDocument,
+  getEmployees,
 } from '@/lib/firebase/firestore';
 import type {
   Evaluation,
@@ -59,13 +63,16 @@ import type {
   ResourceType,
   CompetencyCategory,
   LocalizedString,
+  AnalysisResult,
+  Employee,
 } from '@/types';
 
 interface DashboardStats {
   totalEvaluations: number;
-  completedToday: number;
-  inProgress: number;
+  analyzedEvaluations: number;
+  activeProfiles: number;
   averageScore: number;
+  activeEmployees: number;
 }
 
 interface RecentEvaluation {
@@ -74,6 +81,7 @@ interface RecentEvaluation {
   profileName: string;
   status: 'in-progress' | 'completed' | 'analyzed';
   completedAt: Date | null;
+  startedAt: Date | null;
   score: number | null;
 }
 
@@ -222,44 +230,54 @@ export default function AdminPage() {
 function DashboardContent({ t, locale }: { t: any; locale: string }) {
   const [stats, setStats] = useState<DashboardStats>({
     totalEvaluations: 0,
-    completedToday: 0,
-    inProgress: 0,
+    analyzedEvaluations: 0,
+    activeProfiles: 0,
     averageScore: 0,
+    activeEmployees: 0,
   });
   const [recentEvaluations, setRecentEvaluations] = useState<RecentEvaluation[]>([]);
   const [loading, setLoading] = useState(true);
 
+  const l = (es: string, en: string) => locale === 'es' ? es : en;
+
   useEffect(() => {
     async function fetchDashboardData() {
       try {
-        const [evaluations, profiles] = await Promise.all([
-          getEvaluations(undefined, 100),
-          getProfiles(false),
+        const [evaluations, profiles, employees, results] = await Promise.all([
+          getEvaluations(undefined, 200),
+          getProfiles(true),
+          getEmployees().catch(() => [] as Employee[]),
+          getDocuments<AnalysisResult>(COLLECTIONS.RESULTS).catch(() => [] as AnalysisResult[]),
         ]);
 
         const profileMap = new Map(profiles.map((p) => [p.id, p]));
-        const today = new Date();
-        today.setHours(0, 0, 0, 0);
 
-        const completedEvals = evaluations.filter(
-          (e) => e.status === 'completed' || e.status === 'analyzed'
-        );
-        const todayCompleted = completedEvals.filter((e) => {
-          if (!e.completedAt) return false;
-          const d = e.completedAt.toDate ? e.completedAt.toDate() : new Date(e.completedAt as any);
-          return d >= today;
-        });
-        const inProgressEvals = evaluations.filter((e) => e.status === 'in-progress');
+        // Calculate average score from analysis results
+        let avgScore = 0;
+        if (results.length > 0) {
+          const totalScore = results.reduce((sum, r) => {
+            const indices = r.indices;
+            const avg = (indices.professional + indices.softSkills + indices.readiness) / 3;
+            return sum + avg;
+          }, 0);
+          avgScore = Math.round(totalScore / results.length);
+        }
+
+        const analyzedCount = evaluations.filter((e) => e.status === 'analyzed').length;
+
+        // Build a map of evaluationId -> result for score lookup
+        const resultMap = new Map(results.map((r) => [r.evaluationId, r]));
 
         setStats({
           totalEvaluations: evaluations.length,
-          completedToday: todayCompleted.length,
-          inProgress: inProgressEvals.length,
-          averageScore: 0, // Will be calculated when results are available
+          analyzedEvaluations: analyzedCount,
+          activeProfiles: profiles.length,
+          averageScore: avgScore,
+          activeEmployees: employees.length,
         });
 
         setRecentEvaluations(
-          evaluations.slice(0, 5).map((e) => {
+          evaluations.slice(0, 10).map((e) => {
             const profile = profileMap.get(e.profileId);
             const profileName = profile
               ? (locale === 'en' ? profile.name.en : profile.name.es)
@@ -267,13 +285,21 @@ function DashboardContent({ t, locale }: { t: any; locale: string }) {
             const completedAt = e.completedAt
               ? (e.completedAt.toDate ? e.completedAt.toDate() : new Date(e.completedAt as any))
               : null;
+            const startedAt = e.startedAt
+              ? (e.startedAt.toDate ? e.startedAt.toDate() : new Date(e.startedAt as any))
+              : null;
+            const result = resultMap.get(e.id);
+            const score = result
+              ? Math.round((result.indices.professional + result.indices.softSkills + result.indices.readiness) / 3)
+              : null;
             return {
               id: e.id,
               candidateName: e.candidateName,
               profileName,
               status: e.status,
               completedAt,
-              score: null,
+              startedAt,
+              score,
             };
           })
         );
@@ -294,35 +320,64 @@ function DashboardContent({ t, locale }: { t: any; locale: string }) {
     );
   }
 
-  return (
-    <div className="space-y-6">
-      <h1 className="text-2xl font-bold text-gray-900">{t('dashboard')}</h1>
+  const quickActions = [
+    { icon: Users, label: l('Perfiles Profesionales', 'Professional Profiles'), href: `/${locale}/admin`, tab: 'profiles' as const, color: 'bg-blue-100 text-blue-600' },
+    { icon: Briefcase, label: l('Perfiles de Puesto', 'Job Profiles'), href: `/${locale}/admin/job-profiles`, color: 'bg-indigo-100 text-indigo-600' },
+    { icon: Target, label: l('Ajuste al Puesto', 'Job Fit'), href: `/${locale}/admin/job-fit`, color: 'bg-violet-100 text-violet-600' },
+    { icon: GitCompare, label: l('Comparación', 'Comparison'), href: `/${locale}/admin/comparison`, color: 'bg-cyan-100 text-cyan-600' },
+    { icon: History, label: l('Historial', 'History'), href: `/${locale}/admin/history`, color: 'bg-teal-100 text-teal-600' },
+    { icon: UserCheck, label: l('Empleados', 'Employees'), href: `/${locale}/admin/employees`, color: 'bg-emerald-100 text-emerald-600' },
+    { icon: ClipboardCheck, label: l('Probatoria', 'Probation'), href: `/${locale}/admin/probation`, color: 'bg-amber-100 text-amber-600' },
+    { icon: Star, label: l('Evaluaciones 360°', '360° Reviews'), href: `/${locale}/admin/reviews`, color: 'bg-orange-100 text-orange-600' },
+    { icon: ThermometerSun, label: l('Clima Laboral', 'Climate'), href: `/${locale}/admin/climate`, color: 'bg-rose-100 text-rose-600' },
+    { icon: Building2, label: l('Organizaciones', 'Organizations'), href: `/${locale}/admin/organizations`, color: 'bg-slate-100 text-slate-600' },
+    { icon: Settings, label: l('Configuración', 'Settings'), href: `/${locale}/admin/settings`, color: 'bg-gray-100 text-gray-600' },
+  ];
 
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+  return (
+    <div className="space-y-8">
+      {/* Header */}
+      <div>
+        <h1 className="text-2xl font-bold text-gray-900">{t('dashboard')}</h1>
+        <p className="text-sm text-gray-500 mt-1">
+          {l('Resumen general de la plataforma', 'Platform overview')}
+        </p>
+      </div>
+
+      {/* Summary Stats Row */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
         <StatCard
-          title={t('stats.totalEvaluations')}
+          title={l('Total Evaluaciones', 'Total Evaluations')}
           value={stats.totalEvaluations}
           icon={BarChart3}
           color="blue"
         />
         <StatCard
-          title={t('stats.completedToday')}
-          value={stats.completedToday}
+          title={l('Analizadas', 'Analyzed')}
+          value={stats.analyzedEvaluations}
           icon={CheckCircle}
           color="green"
+          subtitle={stats.totalEvaluations > 0
+            ? `${Math.round((stats.analyzedEvaluations / stats.totalEvaluations) * 100)}%`
+            : undefined}
         />
         <StatCard
-          title={t('stats.inProgress')}
-          value={stats.inProgress}
-          icon={Clock}
-          color="amber"
+          title={l('Perfiles Activos', 'Active Profiles')}
+          value={stats.activeProfiles}
+          icon={Users}
+          color="indigo"
         />
         <StatCard
-          title={t('stats.averageScore')}
-          value={`${stats.averageScore}%`}
-          icon={BarChart3}
+          title={l('Puntaje Promedio', 'Average Score')}
+          value={stats.averageScore > 0 ? `${stats.averageScore}%` : '—'}
+          icon={TrendingUp}
           color="purple"
+        />
+        <StatCard
+          title={l('Empleados', 'Employees')}
+          value={stats.activeEmployees}
+          icon={UserCheck}
+          color="emerald"
         />
       </div>
 
@@ -330,100 +385,112 @@ function DashboardContent({ t, locale }: { t: any; locale: string }) {
       <Card variant="bordered">
         <CardHeader>
           <div className="flex justify-between items-center">
-            <CardTitle>{t('recentEvaluations')}</CardTitle>
-            <Button variant="ghost" size="sm">
-              {t('viewAll')}
-              <ChevronRight className="w-4 h-4 ml-1" />
-            </Button>
+            <CardTitle className="flex items-center gap-2">
+              <Activity className="w-5 h-5 text-gray-400" />
+              {l('Evaluaciones Recientes', 'Recent Evaluations')}
+            </CardTitle>
           </div>
         </CardHeader>
         <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">
-                    {t('table.candidate')}
-                  </th>
-                  <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">
-                    {t('table.profile')}
-                  </th>
-                  <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">
-                    {t('table.status')}
-                  </th>
-                  <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">
-                    {t('table.score')}
-                  </th>
-                  <th className="text-left py-3 px-4 text-sm font-medium text-gray-500">
-                    {t('table.date')}
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {recentEvaluations.map((evaluation) => (
-                  <tr key={evaluation.id} className="border-b border-gray-100">
-                    <td className="py-3 px-4 text-sm text-gray-900">
-                      {evaluation.candidateName}
-                    </td>
-                    <td className="py-3 px-4 text-sm text-gray-600">
-                      {evaluation.profileName}
-                    </td>
-                    <td className="py-3 px-4">
-                      <StatusBadge status={evaluation.status} t={t} />
-                    </td>
-                    <td className="py-3 px-4 text-sm text-gray-900">
-                      {evaluation.score ? `${evaluation.score}%` : '-'}
-                    </td>
-                    <td className="py-3 px-4 text-sm text-gray-600">
-                      {evaluation.completedAt
-                        ? evaluation.completedAt.toLocaleDateString(
-                            locale === 'es' ? 'es-ES' : 'en-US'
-                          )
-                        : '-'}
-                    </td>
+          {recentEvaluations.length === 0 ? (
+            <div className="text-center py-8 text-gray-400">
+              <BarChart3 className="w-10 h-10 mx-auto mb-2 opacity-50" />
+              <p>{l('Sin evaluaciones aún', 'No evaluations yet')}</p>
+            </div>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full">
+                <thead>
+                  <tr className="border-b border-gray-200">
+                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                      {l('Candidato', 'Candidate')}
+                    </th>
+                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider hidden sm:table-cell">
+                      {l('Perfil', 'Profile')}
+                    </th>
+                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                      {l('Estado', 'Status')}
+                    </th>
+                    <th className="text-left py-3 px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider hidden md:table-cell">
+                      {l('Fecha', 'Date')}
+                    </th>
+                    <th className="text-right py-3 px-4 text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                      {l('Acción', 'Action')}
+                    </th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody className="divide-y divide-gray-50">
+                  {recentEvaluations.map((evaluation) => (
+                    <tr key={evaluation.id} className="hover:bg-gray-50/50 transition-colors">
+                      <td className="py-3 px-4">
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 rounded-full bg-primary-100 flex items-center justify-center text-primary-700 text-sm font-semibold flex-shrink-0">
+                            {evaluation.candidateName.charAt(0).toUpperCase()}
+                          </div>
+                          <div className="min-w-0">
+                            <p className="text-sm font-medium text-gray-900 truncate">{evaluation.candidateName}</p>
+                            <p className="text-xs text-gray-400 truncate sm:hidden">{evaluation.profileName}</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td className="py-3 px-4 text-sm text-gray-600 hidden sm:table-cell">
+                        <span className="truncate block max-w-[200px]">{evaluation.profileName}</span>
+                      </td>
+                      <td className="py-3 px-4">
+                        <StatusBadge status={evaluation.status} t={t} />
+                      </td>
+                      <td className="py-3 px-4 text-sm text-gray-500 hidden md:table-cell">
+                        {(evaluation.completedAt || evaluation.startedAt)
+                          ? (evaluation.completedAt || evaluation.startedAt)!.toLocaleDateString(
+                              locale === 'es' ? 'es-ES' : 'en-US',
+                              { day: 'numeric', month: 'short', year: 'numeric' }
+                            )
+                          : '—'}
+                      </td>
+                      <td className="py-3 px-4 text-right">
+                        {evaluation.status === 'analyzed' ? (
+                          <Link href={`/${locale}/results/${evaluation.id}`}>
+                            <Button variant="ghost" size="sm" className="text-primary-600 hover:text-primary-800">
+                              <ExternalLink className="w-4 h-4" />
+                            </Button>
+                          </Link>
+                        ) : (
+                          <span className="text-xs text-gray-300">—</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </CardContent>
       </Card>
 
-      {/* Quick Actions */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <Card variant="bordered" className="hover:border-primary-300 transition-colors cursor-pointer">
-          <CardContent className="p-4 flex items-center gap-4">
-            <div className="p-3 rounded-lg bg-blue-100">
-              <Users className="w-6 h-6 text-blue-600" />
-            </div>
-            <div>
-              <p className="font-medium text-gray-900">{t('quickActions.createProfile')}</p>
-              <p className="text-sm text-gray-500">{t('quickActions.createProfileDesc')}</p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card variant="bordered" className="hover:border-primary-300 transition-colors cursor-pointer">
-          <CardContent className="p-4 flex items-center gap-4">
-            <div className="p-3 rounded-lg bg-green-100">
-              <FileQuestion className="w-6 h-6 text-green-600" />
-            </div>
-            <div>
-              <p className="font-medium text-gray-900">{t('quickActions.addQuestions')}</p>
-              <p className="text-sm text-gray-500">{t('quickActions.addQuestionsDesc')}</p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card variant="bordered" className="hover:border-primary-300 transition-colors cursor-pointer">
-          <CardContent className="p-4 flex items-center gap-4">
-            <div className="p-3 rounded-lg bg-purple-100">
-              <BookOpen className="w-6 h-6 text-purple-600" />
-            </div>
-            <div>
-              <p className="font-medium text-gray-900">{t('quickActions.manageResources')}</p>
-              <p className="text-sm text-gray-500">{t('quickActions.manageResourcesDesc')}</p>
-            </div>
-          </CardContent>
-        </Card>
+      {/* Quick Actions Grid */}
+      <div>
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">
+          {l('Acceso Rápido', 'Quick Access')}
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3">
+          {quickActions.map((action) => {
+            const Icon = action.icon;
+            return (
+              <Link key={action.label} href={action.href}>
+                <Card variant="bordered" className="hover:border-primary-300 hover:shadow-md transition-all cursor-pointer group h-full">
+                  <CardContent className="p-4 flex flex-col items-center text-center gap-3">
+                    <div className={`p-3 rounded-xl ${action.color} group-hover:scale-110 transition-transform`}>
+                      <Icon className="w-5 h-5" />
+                    </div>
+                    <p className="text-sm font-medium text-gray-700 group-hover:text-gray-900 leading-tight">
+                      {action.label}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
@@ -1345,12 +1412,16 @@ function EvaluationsContent({ t, locale }: { t: any; locale: string }) {
             const completedAt = e.completedAt
               ? (e.completedAt.toDate ? e.completedAt.toDate() : new Date(e.completedAt as any))
               : null;
+            const startedAt = e.startedAt
+              ? (e.startedAt.toDate ? e.startedAt.toDate() : new Date(e.startedAt as any))
+              : null;
             return {
               id: e.id,
               candidateName: e.candidateName,
               profileName,
               status: e.status,
               completedAt,
+              startedAt,
               score: null,
             };
           })
@@ -1454,27 +1525,35 @@ interface StatCardProps {
   title: string;
   value: string | number;
   icon: React.ElementType;
-  color: 'blue' | 'green' | 'amber' | 'purple';
+  color: 'blue' | 'green' | 'amber' | 'purple' | 'indigo' | 'emerald';
+  subtitle?: string;
 }
 
-function StatCard({ title, value, icon: Icon, color }: StatCardProps) {
-  const colors = {
-    blue: 'bg-blue-100 text-blue-600',
-    green: 'bg-green-100 text-green-600',
-    amber: 'bg-amber-100 text-amber-600',
-    purple: 'bg-purple-100 text-purple-600',
+function StatCard({ title, value, icon: Icon, color, subtitle }: StatCardProps) {
+  const colors: Record<string, string> = {
+    blue: 'bg-blue-50 text-blue-600 ring-blue-100',
+    green: 'bg-green-50 text-green-600 ring-green-100',
+    amber: 'bg-amber-50 text-amber-600 ring-amber-100',
+    purple: 'bg-purple-50 text-purple-600 ring-purple-100',
+    indigo: 'bg-indigo-50 text-indigo-600 ring-indigo-100',
+    emerald: 'bg-emerald-50 text-emerald-600 ring-emerald-100',
   };
 
   return (
-    <Card variant="bordered">
-      <CardContent className="p-4">
-        <div className="flex items-center gap-4">
-          <div className={`p-3 rounded-lg ${colors[color]}`}>
-            <Icon className="w-6 h-6" />
+    <Card variant="bordered" className="hover:shadow-sm transition-shadow">
+      <CardContent className="p-5">
+        <div className="flex items-start justify-between">
+          <div className="space-y-2">
+            <p className="text-sm font-medium text-gray-500">{title}</p>
+            <div className="flex items-baseline gap-2">
+              <p className="text-3xl font-bold text-gray-900">{value}</p>
+              {subtitle && (
+                <span className="text-xs font-medium text-gray-400">{subtitle}</span>
+              )}
+            </div>
           </div>
-          <div>
-            <p className="text-2xl font-bold text-gray-900">{value}</p>
-            <p className="text-sm text-gray-500">{title}</p>
+          <div className={`p-2.5 rounded-xl ring-1 ${colors[color] || colors.blue}`}>
+            <Icon className="w-5 h-5" />
           </div>
         </div>
       </CardContent>
