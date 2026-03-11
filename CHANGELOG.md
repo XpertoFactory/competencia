@@ -1,5 +1,32 @@
 # Changelog
 
+## [0.9.2] - 2026-03-11
+
+### Best Practices
+- New `/resources/best-practices/hr-departments` — comprehensive guide covering modern hiring, multi-dimensional evaluation, AI adoption, skills mapping, process automation, and change management for HR teams
+- New `/resources/best-practices/organizations` — guide for organizations covering learning cultures, employee transformation, innovation adoption, AI integration, strategic workforce planning, and wellbeing through change
+- New `/resources/best-practices/professionals` — guide for individuals covering career ownership, skills transformation, AI literacy, personal branding, resilience, and navigating organizational change
+- Each article includes expert commentary from all 4 ibizai team personas (Carlos Miranda Levy, Billy Nakamura-Jensen, Naila Okafor-Reyes, Ainthony Moreau-Chen)
+- Best Practices section on Resources hub page updated from "Coming Soon" placeholder to 3-card grid linking to articles
+
+### Resources Hub Internationalization
+- Resources hub page (`/resources`) fully internationalized with 41 translation keys per language
+- All section titles, descriptions, article titles/excerpts, and UI labels now use `useTranslations('resources')` instead of hardcoded English
+- Full trilingual support (ES/EN/FR)
+
+### Navigation on Resource Pages
+- Added Header and Footer to all 13 resource pages (8 opinion articles, 2 FAQ pages, 3 best practices)
+- Previously these pages had no site navigation — now consistent with rest of site
+
+### Style Unification
+- All public pages now use the dark hero design pattern (from-gray-900 via-gray-800 to-gray-900 with animated blur orbs and grid overlay)
+- Pages updated: Landing, About, Features, Benefits, Contact
+- Fixed hardcoded English strings in Benefits page (heroTagline, whitelabelSolutionLabel, 9 includedItem keys) — now trilingual
+
+### Translation Fixes
+- Added missing translation keys: `landing.tagline`, `landing.learnMore`, `admin.userManagement`, `admin.users`, `instructions.sections.resources` (FR)
+- Added `benefits.heroTagline`, `benefits.whitelabelSolutionLabel`, `benefits.includedItem1-9` across all 3 languages
+
 ## [0.9.1] - 2026-03-11
 
 ### About Page

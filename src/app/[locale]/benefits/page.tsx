@@ -148,21 +148,23 @@ export default function BenefitsPage() {
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary-700 via-primary-800 to-primary-900 text-white overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl" />
-            <div className="absolute bottom-10 right-10 w-96 h-96 bg-primary-300 rounded-full blur-3xl" />
+        <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-10 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-10 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-500/5 rounded-full blur-3xl" />
           </div>
+          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
             <div className="max-w-3xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-1.5 mb-6">
-                <TrendingUp className="w-4 h-4" />
-                <span className="text-sm font-medium">ROI &amp; Value Proposition</span>
+                <TrendingUp className="w-4 h-4 text-cyan-400" />
+                <span className="text-sm font-medium text-gray-300">{t('heroTagline')}</span>
               </div>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight">
                 {t('title')}
               </h1>
-              <p className="text-lg sm:text-xl text-primary-100 leading-relaxed">
+              <p className="text-lg sm:text-xl text-gray-300 leading-relaxed">
                 {t('subtitle')}
               </p>
             </div>
@@ -179,13 +181,14 @@ export default function BenefitsPage() {
                   key={i}
                   className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10"
                 >
-                  <item.icon className="w-5 h-5 mx-auto mb-2 text-primary-200" />
+                  <item.icon className="w-5 h-5 mx-auto mb-2 text-gray-400" />
                   <p className="text-2xl sm:text-3xl font-extrabold">{item.stat}</p>
-                  <p className="text-xs text-primary-200 mt-1">{item.label}</p>
+                  <p className="text-xs text-gray-400 mt-1">{item.label}</p>
                 </div>
               ))}
             </div>
           </div>
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-50 to-transparent" />
         </section>
 
         {/* Audience Tabs */}
@@ -216,7 +219,7 @@ export default function BenefitsPage() {
 
         {/* BUSINESSES TAB */}
         {activeTab === 'businesses' && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 space-y-16">
             {/* General Savings */}
             <section>
               <div className="flex items-center gap-3 mb-2">
@@ -327,7 +330,7 @@ export default function BenefitsPage() {
 
         {/* INDIVIDUALS TAB */}
         {activeTab === 'individuals' && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
             <div className="max-w-4xl mx-auto space-y-8">
               {/* Hero for Individuals */}
               <div className="text-center mb-4">
@@ -398,7 +401,7 @@ export default function BenefitsPage() {
 
         {/* HR COMPANIES TAB */}
         {activeTab === 'hrCompanies' && (
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
             <div className="max-w-5xl mx-auto">
               {/* White Label Hero */}
               <div className="relative rounded-2xl bg-gradient-to-br from-violet-600 via-purple-700 to-indigo-800 text-white p-8 sm:p-12 mb-10 overflow-hidden">
@@ -411,7 +414,7 @@ export default function BenefitsPage() {
                     <div className="p-2.5 rounded-xl bg-white/20">
                       <Layers className="w-6 h-6" />
                     </div>
-                    <span className="text-sm font-medium text-violet-200 uppercase tracking-wider">White-Label Solution</span>
+                    <span className="text-sm font-medium text-violet-200 uppercase tracking-wider">{t('whitelabelSolutionLabel')}</span>
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-extrabold mb-4">{t('whitelabelTitle')}</h2>
                   <p className="text-lg text-violet-100 leading-relaxed max-w-3xl">{t('whitelabelDesc')}</p>
@@ -457,15 +460,15 @@ export default function BenefitsPage() {
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                   {[
-                    { icon: Users, label: '43 Evaluation Profiles' },
-                    { icon: BarChart3, label: '15 Sectors, 5 Levels' },
-                    { icon: ThermometerSun, label: 'Climate Surveys' },
-                    { icon: Star, label: '360° & 180° Reviews' },
-                    { icon: Megaphone, label: 'Recruitment Campaigns' },
-                    { icon: UserCheck, label: 'Candidate Management' },
-                    { icon: Target, label: 'Job Fit Analysis' },
-                    { icon: Zap, label: 'AI-Powered Reports' },
-                    { icon: FileText, label: 'PDF Export & Sharing' },
+                    { icon: Users, label: t('includedItem1') },
+                    { icon: BarChart3, label: t('includedItem2') },
+                    { icon: ThermometerSun, label: t('includedItem3') },
+                    { icon: Star, label: t('includedItem4') },
+                    { icon: Megaphone, label: t('includedItem5') },
+                    { icon: UserCheck, label: t('includedItem6') },
+                    { icon: Target, label: t('includedItem7') },
+                    { icon: Zap, label: t('includedItem8') },
+                    { icon: FileText, label: t('includedItem9') },
                   ].map((item, i) => (
                     <div
                       key={i}
@@ -494,7 +497,7 @@ export default function BenefitsPage() {
         )}
 
         {/* AI Staff Section */}
-        <section className="py-16 bg-white border-t border-gray-200">
+        <section className="py-16 sm:py-20 bg-white border-t border-gray-200">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="relative rounded-2xl bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white p-8 sm:p-12 overflow-hidden">
               <div className="absolute inset-0">
@@ -542,15 +545,19 @@ export default function BenefitsPage() {
         </section>
 
         {/* Bottom CTA */}
-        <section className="bg-gradient-to-r from-primary-700 to-primary-900 text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+        <section className="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-10 right-[15%] w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-10 left-[15%] w-72 h-72 bg-purple-500/10 rounded-full blur-3xl" />
+          </div>
+          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
             <h2 className="text-2xl sm:text-3xl font-extrabold mb-4">{t('ctaTitle')}</h2>
-            <p className="text-lg text-primary-100 mb-8 max-w-2xl mx-auto">{t('ctaSubtitle')}</p>
+            <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">{t('ctaSubtitle')}</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href={`/${locale}/profiles`}>
                 <Button
                   size="lg"
-                  className="bg-white text-primary-700 hover:bg-primary-50 font-bold"
+                  className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 border-0 font-bold"
                 >
                   <Rocket className="w-5 h-5 mr-2" />
                   {t('ctaButton')}
@@ -560,7 +567,7 @@ export default function BenefitsPage() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-white/30 text-white hover:bg-white/10 font-bold"
+                  className="bg-transparent border-white/30 text-white hover:bg-white/10 font-bold"
                 >
                   {t('ctaContact')}
                   <ChevronRight className="w-4 h-4 ml-2" />

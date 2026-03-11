@@ -22,7 +22,7 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 - **Candidate Management** - Full candidate pipeline with status tracking, file uploads, checklists, scoring, and invitation system
 - **Candidate Portal** - Self-service profile editing for candidates with multi-org support
 - **Post-Hire Tools** - Employee management, probation tracking, 360/180 reviews, climate surveys
-- **Resources** - Expert opinion articles, FAQs, and best practices on HR and careers in the AI era
+- **Resources** - Expert opinion articles, best practices guides (for HR departments, organizations, and professionals), FAQs, and career planning wizard
 - **Benefits Page** - Value proposition with ROI metrics for businesses, individuals, and HR companies
 - **AI Staff** - Custom-built AI agents aligned with your organization's culture, values, and processes
 - **User Management** - Super admins can view all users, their evaluations, and assign them to organizations
@@ -78,7 +78,7 @@ src/
     evaluation/[profileId]/  # Competency evaluation flow
     features/                # Platform features and instructions
     profiles/                # Browsable profile directory
-    resources/               # Expert articles, FAQs, and best practices
+    resources/               # Expert articles, best practices, FAQs, career planning
     results/[evaluationId]/  # Results display
     tests/                   # Test hub (cognitive, personality, DISC, aptitude)
   components/                # Reusable UI components

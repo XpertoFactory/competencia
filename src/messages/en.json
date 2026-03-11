@@ -333,7 +333,9 @@
         "title": "Development plan",
         "description": "Receive personalized recommendations for your professional growth"
       }
-    }
+    },
+    "tagline": "Intelligent Skills Evaluation Platform",
+    "learnMore": "Learn More"
   },
   "registration": {
     "title": "Participant Information",
@@ -710,7 +712,9 @@
         "anonymousEvaluations": "Allow anonymous evaluations",
         "anonymousEvaluationsDesc": "Allow candidates to complete evaluations without providing personal information."
       }
-    }
+    },
+    "userManagement": "User Management",
+    "users": "Users"
   },
   "evaluationLink": {
     "validating": "Validating evaluation link...",
@@ -1650,7 +1654,18 @@
     "aiStaffFeature2": "Aligned with your culture, policies, and values",
     "aiStaffFeature3": "Integrated with your human team — not replacing them",
     "aiStaffFeature4": "Continuously fine-tuned and optimized",
-    "aiStaffCta": "Learn More About AI Staff"
+    "aiStaffCta": "Learn More About AI Staff",
+    "heroTagline": "ROI & Value Proposition",
+    "whitelabelSolutionLabel": "White-Label Solution",
+    "includedItem1": "43 Evaluation Profiles",
+    "includedItem2": "15 Sectors, 5 Levels",
+    "includedItem3": "Climate Surveys",
+    "includedItem4": "360° & 180° Reviews",
+    "includedItem5": "Recruitment Campaigns",
+    "includedItem6": "Candidate Management",
+    "includedItem7": "Job Fit Analysis",
+    "includedItem8": "AI-Powered Reports",
+    "includedItem9": "PDF Export & Sharing"
   },
   "aiStaff": {
     "title": "AI Staff",
@@ -1948,5 +1963,48 @@
       "general-management": "General Management",
       "other": "Other"
     }
+  },
+  "resources": {
+    "pageTitle": "Resources",
+    "pageDesc": "Expert insights, best practices, and answers to help you navigate the intersection of talent management and AI.",
+    "opinionTitle": "Opinion",
+    "opinionDesc": "In-depth analysis and perspectives on how AI is transforming work, careers, and human resources — featuring commentary from our panel of experts.",
+    "readMore": "Read more",
+    "bestPracticesTitle": "Best Practices",
+    "bestPracticesDesc": "Practical guides and frameworks for hiring, evaluating, supporting talent, managing transformation, and adopting AI — tailored for HR departments, organizations, and professionals.",
+    "bpHRTitle": "Best Practices for HR Departments",
+    "bpHRExcerpt": "Modern hiring, multi-dimensional evaluation, AI adoption, skills mapping, process automation, and change management for HR teams.",
+    "bpOrgsTitle": "Best Practices for Organizations",
+    "bpOrgsExcerpt": "Building learning cultures, employee transformation, innovation adoption, AI integration, strategic workforce planning, and supporting wellbeing through change.",
+    "bpProfTitle": "Best Practices for Professionals",
+    "bpProfExcerpt": "Career ownership, skills transformation, AI literacy, personal branding, resilience, innovation adoption, and navigating organizational change.",
+    "careerPlanningTitle": "Career Planning",
+    "careerPlanningCardTitle": "Career Advancement & Growth Planning",
+    "careerPlanningCardDesc": "Answer a few questions about your background and goals to receive a personalized career development plan with AI readiness assessments, learning programs, and expert resources.",
+    "startPlanning": "Start planning",
+    "faqsTitle": "FAQs",
+    "faqsDesc": "Answers to the most common questions about HR management, career planning, and skills evaluation in the age of AI.",
+    "browseFaqs": "Browse FAQs",
+    "backToResources": "Back to Resources",
+    "opArticle1Title": "Human Resources Management in the AI Era: Challenges and Opportunities",
+    "opArticle1Excerpt": "How AI is reshaping HR functions — from recruitment to retention — and what leaders must do today to stay ahead.",
+    "opArticle2Title": "The Role of Human Resources Management in an AI Agents World",
+    "opArticle2Excerpt": "When AI becomes a colleague, HR must evolve from managing people to orchestrating human-AI collaboration.",
+    "opArticle3Title": "The Present and Future of Employment in the AI Era",
+    "opArticle3Excerpt": "From degree-based to skill-based hiring, explore how AI is transforming the employment landscape globally.",
+    "opArticle4Title": "Will the AI Revolution Throw a Balance of Unemployment or an Explosion of New Careers?",
+    "opArticle4Excerpt": "Historical parallels, emerging roles, and the evidence from early AI adoption across industries.",
+    "opArticle5Title": "Building Your Career Path in an AI-Driven World",
+    "opArticle5Excerpt": "Practical strategies for professionals navigating career development when AI is reshaping every industry.",
+    "opArticle6Title": "The Rising Value of Social Skills in the AI Era",
+    "opArticle6Excerpt": "Why emotional intelligence, collaboration, and interpersonal skills are becoming the ultimate competitive advantage.",
+    "opArticle7Title": "Am I Ready for AI? A Personal Readiness Assessment",
+    "opArticle7Excerpt": "An honest framework to evaluate your own preparedness for the AI-transformed workplace.",
+    "opArticle8Title": "Is My Organization Ready for AI? An Organizational Readiness Guide",
+    "opArticle8Excerpt": "Key indicators and action steps to assess and improve your organization's AI adoption readiness.",
+    "faqHRTitle": "HR Management FAQs",
+    "faqHRExcerpt": "Common questions about modern HR management practices, AI integration, and workforce planning.",
+    "faqCareerTitle": "Career Planning FAQs",
+    "faqCareerExcerpt": "Frequently asked questions about career development, skill building, and navigating the AI-era job market."
   }
 }

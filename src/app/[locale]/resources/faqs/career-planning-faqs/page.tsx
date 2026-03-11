@@ -5,6 +5,7 @@ import { useLocale } from 'next-intl';
 import { useState } from 'react';
 import { Button } from '@/components/ui';
 import { ArrowLeft, ChevronDown, ChevronUp } from 'lucide-react';
+import { Header, Footer } from '@/components/layout';
 import { PersonaQuote, PERSONAS } from '@/components/resources/PersonaQuote';
 
 export default function CareerPlanningFAQsPage() {
@@ -199,8 +200,10 @@ export default function CareerPlanningFAQsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto mb-8">
+    <div className="min-h-screen flex flex-col bg-gray-50">
+      <Header />
+      <main className="flex-1 py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto mb-8">
         <Link href={`/${locale}/resources`}>
           <Button variant="ghost" size="sm">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -252,6 +255,8 @@ export default function CareerPlanningFAQsPage() {
           ))}
         </div>
       </div>
+      </main>
+      <Footer />
     </div>
   );
 }

@@ -333,7 +333,9 @@
         "title": "Plan de desarrollo",
         "description": "Recibe recomendaciones personalizadas para tu crecimiento profesional"
       }
-    }
+    },
+    "tagline": "Plataforma Inteligente de Evaluación de Competencias",
+    "learnMore": "Conocer Más"
   },
   "registration": {
     "title": "Información del Participante",
@@ -710,7 +712,9 @@
         "anonymousEvaluations": "Permitir evaluaciones anónimas",
         "anonymousEvaluationsDesc": "Permite que los candidatos completen evaluaciones sin proporcionar información personal."
       }
-    }
+    },
+    "userManagement": "Gestión de Usuarios",
+    "users": "Usuarios"
   },
   "evaluationLink": {
     "validating": "Validando enlace de evaluación...",
@@ -1650,7 +1654,18 @@
     "aiStaffFeature2": "Alineados con su cultura, políticas y valores",
     "aiStaffFeature3": "Integrados con su equipo humano — no los reemplazan",
     "aiStaffFeature4": "Continuamente afinados y optimizados",
-    "aiStaffCta": "Más Información sobre Personal IA"
+    "aiStaffCta": "Más Información sobre Personal IA",
+    "heroTagline": "ROI y Propuesta de Valor",
+    "whitelabelSolutionLabel": "Solución White-Label",
+    "includedItem1": "43 Perfiles de Evaluación",
+    "includedItem2": "15 Sectores, 5 Niveles",
+    "includedItem3": "Encuestas de Clima",
+    "includedItem4": "Evaluaciones 360° y 180°",
+    "includedItem5": "Campañas de Reclutamiento",
+    "includedItem6": "Gestión de Candidatos",
+    "includedItem7": "Análisis de Ajuste al Puesto",
+    "includedItem8": "Reportes con IA",
+    "includedItem9": "Exportación PDF y Compartir"
   },
   "aiStaff": {
     "title": "Personal IA",
@@ -1948,5 +1963,48 @@
       "general-management": "Gerencia General",
       "other": "Otro"
     }
+  },
+  "resources": {
+    "pageTitle": "Recursos",
+    "pageDesc": "Perspectivas expertas, mejores prácticas y respuestas para navegar la intersección entre gestión del talento e IA.",
+    "opinionTitle": "Opinión",
+    "opinionDesc": "Análisis profundo y perspectivas sobre cómo la IA está transformando el trabajo, las carreras y los recursos humanos — con comentarios de nuestro panel de expertos.",
+    "readMore": "Leer más",
+    "bestPracticesTitle": "Mejores Prácticas",
+    "bestPracticesDesc": "Guías prácticas y marcos de trabajo para contratación, evaluación, apoyo al talento, gestión de la transformación y adopción de IA — adaptados para departamentos de RR.HH., organizaciones y profesionales.",
+    "bpHRTitle": "Mejores Prácticas para Departamentos de RR.HH.",
+    "bpHRExcerpt": "Contratación moderna, evaluación multidimensional, adopción de IA, mapeo de competencias, automatización de procesos y gestión del cambio para equipos de RR.HH.",
+    "bpOrgsTitle": "Mejores Prácticas para Organizaciones",
+    "bpOrgsExcerpt": "Construcción de culturas de aprendizaje, transformación de empleados, adopción de innovación, integración de IA, planificación estratégica de la fuerza laboral y apoyo al bienestar durante el cambio.",
+    "bpProfTitle": "Mejores Prácticas para Profesionales",
+    "bpProfExcerpt": "Apropiación de la carrera, transformación de competencias, alfabetización en IA, marca personal, resiliencia, adopción de innovación y navegación del cambio organizacional.",
+    "careerPlanningTitle": "Planificación de Carrera",
+    "careerPlanningCardTitle": "Avance y Planificación de Carrera",
+    "careerPlanningCardDesc": "Responde algunas preguntas sobre tu perfil y objetivos para recibir un plan personalizado de desarrollo profesional con evaluaciones de preparación para IA, programas de aprendizaje y recursos expertos.",
+    "startPlanning": "Comenzar a planificar",
+    "faqsTitle": "Preguntas Frecuentes",
+    "faqsDesc": "Respuestas a las preguntas más comunes sobre gestión de RR.HH., planificación de carrera y evaluación de competencias en la era de la IA.",
+    "browseFaqs": "Ver preguntas",
+    "backToResources": "Volver a Recursos",
+    "opArticle1Title": "Gestión de Recursos Humanos en la Era de la IA: Desafíos y Oportunidades",
+    "opArticle1Excerpt": "Cómo la IA está transformando las funciones de RR.HH. — desde el reclutamiento hasta la retención — y qué deben hacer los líderes hoy para mantenerse adelante.",
+    "opArticle2Title": "El Rol de la Gestión de Recursos Humanos en un Mundo de Agentes de IA",
+    "opArticle2Excerpt": "Cuando la IA se convierte en colega, RR.HH. debe evolucionar de gestionar personas a orquestar la colaboración humano-IA.",
+    "opArticle3Title": "El Presente y Futuro del Empleo en la Era de la IA",
+    "opArticle3Excerpt": "De la contratación basada en títulos a la basada en competencias: cómo la IA transforma el panorama laboral global.",
+    "opArticle4Title": "¿La Revolución de la IA Traerá Desempleo Masivo o una Explosión de Nuevas Carreras?",
+    "opArticle4Excerpt": "Paralelos históricos, roles emergentes y la evidencia de la adopción temprana de IA en distintas industrias.",
+    "opArticle5Title": "Construyendo tu Camino Profesional en un Mundo Impulsado por la IA",
+    "opArticle5Excerpt": "Estrategias prácticas para profesionales que navegan el desarrollo de carrera cuando la IA está transformando cada industria.",
+    "opArticle6Title": "El Valor Creciente de las Habilidades Sociales en la Era de la IA",
+    "opArticle6Excerpt": "Por qué la inteligencia emocional, la colaboración y las habilidades interpersonales se están convirtiendo en la ventaja competitiva definitiva.",
+    "opArticle7Title": "¿Estoy Listo para la IA? Una Evaluación de Preparación Personal",
+    "opArticle7Excerpt": "Un marco honesto para evaluar tu propia preparación para el lugar de trabajo transformado por la IA.",
+    "opArticle8Title": "¿Está Mi Organización Lista para la IA? Una Guía de Preparación Organizacional",
+    "opArticle8Excerpt": "Indicadores clave y pasos de acción para evaluar y mejorar la preparación de tu organización para adoptar IA.",
+    "faqHRTitle": "Preguntas Frecuentes sobre Gestión de RR.HH.",
+    "faqHRExcerpt": "Preguntas comunes sobre prácticas modernas de gestión de RR.HH., integración de IA y planificación de la fuerza laboral.",
+    "faqCareerTitle": "Preguntas Frecuentes sobre Planificación de Carrera",
+    "faqCareerExcerpt": "Preguntas frecuentes sobre desarrollo profesional, construcción de competencias y navegación del mercado laboral en la era de la IA."
   }
 }

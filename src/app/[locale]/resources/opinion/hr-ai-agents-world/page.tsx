@@ -4,14 +4,17 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { Button } from '@/components/ui';
 import { ArrowLeft } from 'lucide-react';
+import { Header, Footer } from '@/components/layout';
 import { PersonaQuote, PERSONAS, ArticleLayout } from '@/components/resources/PersonaQuote';
 
 export default function HRAIAgentsWorldPage() {
   const locale = useLocale();
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto mb-8">
+    <div className="min-h-screen flex flex-col bg-gray-50">
+      <Header />
+      <main className="flex-1 py-8 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto mb-8">
         <Link href={`/${locale}/resources`}>
           <Button variant="ghost" size="sm">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -108,7 +111,9 @@ export default function HRAIAgentsWorldPage() {
             </p>
           </PersonaQuote>
         </div>
-      </ArticleLayout>
+        </ArticleLayout>
+      </main>
+      <Footer />
     </div>
   );
 }
