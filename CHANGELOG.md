@@ -18,10 +18,27 @@
 ### Features Page Title
 - Changed title from "Instructions" to "Features & Capabilities" across all 3 languages
 
+### Career Advancement & Growth Planning Wizard
+- New `/resources/career-planning` page with 4-step interactive wizard
+- Step 1: Sector selection (15 industries)
+- Step 2: Experience level (5 levels) + AI readiness self-assessment
+- Step 3: Skills identification (8 skill areas, select at least 2)
+- Step 4: Career aspirations (8 goal options)
+- Generates personalized career development plan with strengths, growth areas, and action items
+- Links to sector-specific external AI readiness assessments (ibizai.io, lawra.org, insureversia.com, ailearning.global, maimusic.org, 100.cemi.ai)
+- Links to sector-specific external learning programs
+- Recommends relevant internal opinion articles and FAQ pages based on user's profile
+- Career Planning link added to Resources dropdown navigation and Resources hub page
+- Full trilingual support (ES/EN/FR) with 100+ translation keys
+
 ### OG Image Optimization
 - Resized OpenGraph share image from 1800×900 to 1200×630 (universal OG standard)
 - Added padding so logo survives WhatsApp square cropping without getting cut off
 - Reduced file size from 338KB to 100KB for faster preview generation
+
+### Fixes
+- Fixed AI Staff page outline buttons appearing white on dark backgrounds (added `bg-transparent`)
+- Fixed same issue on About page CTA section
 
 ## [0.9.0] - 2026-03-11
 

@@ -240,7 +240,7 @@ export default function AboutPage() {
                 </Button>
               </Link>
               <Link href={`mailto:info@skaills.io?subject=Inquiry`}>
-                <Button variant="outline" size="lg" className="border-white/30 text-white hover:bg-white/10 font-bold">
+                <Button variant="outline" size="lg" className="bg-transparent border-white/30 text-white hover:bg-white/10 font-bold">
                   {t('ctaContact')}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

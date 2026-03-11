@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import { Button } from '@/components/ui';
-import { Menu, X, Globe, LogIn, LogOut, User, Shield, ChevronDown } from 'lucide-react';
+import { Menu, X, Globe, LogIn, LogOut, User, Shield, ChevronDown, Compass } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { onAuthChange, signOut, checkAdminStatus } from '@/lib/firebase/auth';
@@ -224,6 +224,18 @@ export function Header() {
                     )}
                   >
                     {t('opinion')}
+                  </Link>
+                  <Link
+                    href={`/${locale}/resources/career-planning`}
+                    onClick={() => setIsResourcesOpen(false)}
+                    className={cn(
+                      'block px-4 py-2 text-sm transition-colors',
+                      pathname === `/${locale}/resources/career-planning`
+                        ? 'bg-primary-50 text-primary-600 font-medium'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    )}
+                  >
+                    {t('careerPlanning')}
                   </Link>
                   <Link
                     href={`/${locale}/resources#best-practices`}
@@ -481,6 +493,18 @@ export function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               {t('opinion')}
+            </Link>
+            <Link
+              href={`/${locale}/resources/career-planning`}
+              className={cn(
+                'block px-3 py-2 pl-6 rounded-lg text-sm font-medium transition-colors',
+                pathname === `/${locale}/resources/career-planning`
+                  ? 'bg-primary-50 text-primary-600'
+                  : 'text-gray-600 hover:bg-gray-50'
+              )}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('careerPlanning')}
             </Link>
             <Link
               href={`/${locale}/resources#best-practices`}

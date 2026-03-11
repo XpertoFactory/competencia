@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useLocale } from 'next-intl';
 import { Header, Footer } from '@/components/layout';
 import { Card, CardContent } from '@/components/ui';
-import { BookOpen, HelpCircle, Lightbulb, ArrowRight, Clock } from 'lucide-react';
+import { BookOpen, HelpCircle, Lightbulb, ArrowRight, Clock, Compass } from 'lucide-react';
 
 const opinionArticles = [
   {
@@ -155,6 +155,37 @@ export default function ResourcesPage() {
                 Practical guides and frameworks for implementing AI-powered talent management, skills assessment, and organizational development.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Career Planning */}
+        <section className="py-10 bg-gradient-to-br from-emerald-50 to-cyan-50 border-t border-b border-gray-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex items-center gap-2 mb-6">
+              <Compass className="w-5 h-5 text-emerald-600" />
+              <h2 className="text-xl font-bold text-gray-900">Career Planning</h2>
+            </div>
+            <Link href={`/${locale}/resources/career-planning`} className="group block max-w-2xl">
+              <Card variant="bordered" className="hover:border-emerald-300 hover:shadow-lg transition-all bg-white">
+                <CardContent className="p-6 flex items-start gap-4">
+                  <div className="p-3 rounded-xl bg-emerald-100 shrink-0">
+                    <Compass className="w-6 h-6 text-emerald-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-emerald-700 transition-colors">
+                      Career Advancement & Growth Planning
+                    </h3>
+                    <p className="text-sm text-gray-500 mb-3">
+                      Answer a few questions about your background and goals to receive a personalized career development plan with AI readiness assessments, learning programs, and expert resources.
+                    </p>
+                    <span className="flex items-center gap-1 text-sm text-emerald-600 font-medium group-hover:gap-2 transition-all">
+                      Start planning
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </section>
 

@@ -189,7 +189,7 @@ export default function AIStaffPage() {
                   </Button>
                 </Link>
                 <a href="#how-it-works">
-                  <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 font-bold text-base px-8">
+                  <Button variant="outline" size="lg" className="bg-transparent border-white/20 text-white hover:bg-white/10 font-bold text-base px-8">
                     {t('ctaLearnMore')}
                     <ChevronRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -362,7 +362,7 @@ export default function AIStaffPage() {
                 </Button>
               </Link>
               <Link href={`mailto:info@skaills.io?subject=AI Staff Inquiry`}>
-                <Button variant="outline" size="lg" className="border-white/20 text-white hover:bg-white/10 font-bold text-base px-8">
+                <Button variant="outline" size="lg" className="bg-transparent border-white/20 text-white hover:bg-white/10 font-bold text-base px-8">
                   {t('bottomCtaContact')}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
