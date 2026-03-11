@@ -132,12 +132,12 @@ export default function InstructionsPage() {
         {/* Section Navigation Cards */}
         <section className="bg-white border-b border-gray-200 py-6">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin">
+            <div className="flex flex-wrap gap-2">
               {SECTION_NAV.map(({ key, icon: Icon, color, bgColor }) => (
                 <button
                   key={key}
                   onClick={() => setActiveSection(key)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium whitespace-nowrap transition-all shrink-0 ${
+                  className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition-all ${
                     activeSection === key
                       ? `${bgColor} ${color} shadow-sm ring-1 ring-current/20`
                       : 'text-gray-500 hover:bg-gray-100'

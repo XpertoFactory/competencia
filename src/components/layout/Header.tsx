@@ -118,15 +118,15 @@ export function Header() {
             </Link>
 
             <Link
-              href={`/${locale}/instructions`}
+              href={`/${locale}/features`}
               className={cn(
                 'text-sm font-medium transition-colors',
-                pathname === `/${locale}/instructions`
+                pathname === `/${locale}/features`
                   ? 'text-primary-600'
                   : 'text-gray-600 hover:text-gray-900'
               )}
             >
-              {t('instructions')}
+              {t('features')}
             </Link>
 
             {/* Evaluations Dropdown */}
@@ -294,16 +294,16 @@ export function Header() {
             </Link>
 
             <Link
-              href={`/${locale}/instructions`}
+              href={`/${locale}/features`}
               className={cn(
                 'block px-3 py-2 rounded-lg text-sm font-medium transition-colors',
-                pathname === `/${locale}/instructions`
+                pathname === `/${locale}/features`
                   ? 'bg-primary-50 text-primary-600'
                   : 'text-gray-600 hover:bg-gray-50'
               )}
               onClick={() => setIsMenuOpen(false)}
             >
-              {t('instructions')}
+              {t('features')}
             </Link>
 
             {/* Mobile Evaluations Section */}
