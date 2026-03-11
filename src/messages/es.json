@@ -1327,6 +1327,7 @@
       "forPosition": "para el puesto de"
     },
     "deleteConfirm": "¿Está seguro de que desea eliminar este candidato?",
+    "deleteConfirmMessage": "¿Está seguro de que desea eliminar a {name}? Esta acción no se puede deshacer.",
     "processUpdated": "Estado del proceso actualizado",
     "outcomeUpdated": "Resultado actualizado"
   }

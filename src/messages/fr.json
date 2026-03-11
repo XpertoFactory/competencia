@@ -1327,6 +1327,7 @@
       "forPosition": "pour le poste de"
     },
     "deleteConfirm": "Êtes-vous sûr de vouloir supprimer ce candidat ?",
+    "deleteConfirmMessage": "Êtes-vous sûr de vouloir supprimer {name} ? Cette action est irréversible.",
     "processUpdated": "Statut du processus mis à jour",
     "outcomeUpdated": "Résultat mis à jour"
   }
