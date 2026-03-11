@@ -31,6 +31,8 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 - **Shareable Links** - Generate evaluation links for candidates
 - **About Page** - Mission statement, complete evaluation suite overview, and service offerings
 - **Features Page** - Trilingual guide for evaluators and candidates with platform capabilities overview
+- **Contact Form** - Public contact form with 12 interest categories, saved to Firestore with admin management UI
+- **Career Planning Wizard** - Interactive 4-step career growth tool with personalized plans and external AI readiness links
 - **Trilingual** - Full Spanish, English, and French support via next-intl
 - **Organizations** - Multi-tenant org management with roles (owner/admin/member/viewer) and email invitations
 - **User Authentication** - Email/password and Google sign-in for regular users and admins
@@ -72,6 +74,7 @@ src/
     auth/                    # User login and registration
     benefits/                # Value proposition and ROI page
     candidate/               # Candidate self-service portal
+    contact/                 # Contact form page
     evaluation/[profileId]/  # Competency evaluation flow
     features/                # Platform features and instructions
     profiles/                # Browsable profile directory

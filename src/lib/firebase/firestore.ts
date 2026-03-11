@@ -53,6 +53,7 @@ import type {
   CandidateInvite,
   Position,
   RecruitmentCampaign,
+  ContactSubmission,
 } from '@/types';
 
 // Collection names
@@ -95,6 +96,8 @@ export const COLLECTIONS = {
   RECRUITMENT_CAMPAIGNS: 'recruitmentCampaigns',
   CANDIDATES: 'candidates',
   CANDIDATE_INVITES: 'candidateInvites',
+  // Contact
+  CONTACT_SUBMISSIONS: 'contactSubmissions',
 } as const;
 
 // Generic helpers
@@ -841,4 +844,21 @@ export async function getCandidateInvitesByOrg(orgId: string): Promise<Candidate
 
 export async function updateCandidateInvite(inviteId: string, data: Partial<CandidateInvite>): Promise<void> {
   await updateDocument(COLLECTIONS.CANDIDATE_INVITES, inviteId, data);
+}
+
+// --- Contact Submissions ---
+export async function createContactSubmission(submission: ContactSubmission): Promise<void> {
+  await setDoc(doc(firestore, COLLECTIONS.CONTACT_SUBMISSIONS, submission.id), submission);
+}
+
+export async function getContactSubmissions(): Promise<ContactSubmission[]> {
+  return getDocuments<ContactSubmission>(COLLECTIONS.CONTACT_SUBMISSIONS, orderBy('createdAt', 'desc'));
+}
+
+export async function updateContactSubmission(id: string, data: Partial<ContactSubmission>): Promise<void> {
+  await updateDocument(COLLECTIONS.CONTACT_SUBMISSIONS, id, data);
+}
+
+export async function deleteContactSubmission(id: string): Promise<void> {
+  await deleteDoc(doc(firestore, COLLECTIONS.CONTACT_SUBMISSIONS, id));
 }

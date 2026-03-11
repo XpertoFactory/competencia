@@ -35,6 +35,7 @@ import {
   Activity,
   ExternalLink,
   UserSearch,
+  Mail,
 } from 'lucide-react';
 import { AuthGuard, useAuth } from '@/components/auth';
 import { OrgSwitcher } from '@/components/org';
@@ -206,6 +207,12 @@ export default function AdminPage() {
                   {t('organizations') || 'Organizaciones'}
                 </button>
               </Link>
+              <Link href={`/${locale}/admin/contact`}>
+                <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">
+                  <Mail className="w-5 h-5" />
+                  {t('contactSubmissions') || 'Contact Submissions'}
+                </button>
+              </Link>
               <Link href={`/${locale}/admin/settings`}>
                 <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">
                   <Settings className="w-5 h-5" />
@@ -346,6 +353,7 @@ function DashboardContent({ t, locale }: { t: any; locale: string }) {
     { icon: ThermometerSun, label: l('Clima Laboral', 'Climate'), href: `/${locale}/admin/climate`, color: 'bg-rose-100 text-rose-600' },
     { icon: UserSearch, label: l('Gestión de Usuarios', 'User Management'), href: `/${locale}/admin/users`, color: 'bg-sky-100 text-sky-600' },
     { icon: Building2, label: l('Organizaciones', 'Organizations'), href: `/${locale}/admin/organizations`, color: 'bg-slate-100 text-slate-600' },
+    { icon: Mail, label: l('Contacto', 'Contact Submissions'), href: `/${locale}/admin/contact`, color: 'bg-pink-100 text-pink-600' },
     { icon: Settings, label: l('Configuración', 'Settings'), href: `/${locale}/admin/settings`, color: 'bg-gray-100 text-gray-600' },
   ];
 

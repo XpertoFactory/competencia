@@ -36,6 +36,22 @@
 - Added padding so logo survives WhatsApp square cropping without getting cut off
 - Reduced file size from 338KB to 100KB for faster preview generation
 
+### Contact Us
+- New `/contact` page with professional contact form
+- Contact modal component for use throughout the site
+- Form fields: name, email, interest (12 categories), company, role, sector, message
+- Interest categories: White-Label, Reseller, Corporate License, Individual License, Training, Speaking, Consulting, Content Suggestions, Error Reports, Improvement Suggestions, General, Other
+- Submissions saved to Firestore `contactSubmissions` collection
+- New `/admin/contact` page for admins to view, filter, and manage submissions
+- Admin features: status tracking (new/read/replied/archived), internal notes, reply via email, search, delete
+- Contact added as last sub-item in Value dropdown navigation
+- Contact Submissions link added to admin sidebar and quick actions
+- Full trilingual support (ES/EN/FR)
+
+### Firestore Rules
+- Added security rules for contactSubmissions (public create, admin read/update/delete)
+- Added missing rules for candidates, candidateInvites, positions, and recruitmentCampaigns collections
+
 ### Fixes
 - Fixed AI Staff page outline buttons appearing white on dark backgrounds (added `bg-transparent`)
 - Fixed same issue on About page CTA section

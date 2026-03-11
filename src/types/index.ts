@@ -1071,3 +1071,36 @@ export interface CandidateInvite {
   createdAt: Timestamp;
   acceptedAt?: Timestamp;
 }
+
+// Contact form submissions
+export type ContactInterest =
+  | 'white-label'
+  | 'reseller'
+  | 'corporate-license'
+  | 'individual-license'
+  | 'training-program'
+  | 'speaking-engagement'
+  | 'consulting-services'
+  | 'suggest-content'
+  | 'report-errors'
+  | 'suggest-improvements'
+  | 'general'
+  | 'other';
+
+export type ContactStatus = 'new' | 'read' | 'replied' | 'archived';
+
+export interface ContactSubmission {
+  id: string;
+  name: string;
+  email: string;
+  interest: ContactInterest;
+  company?: string;
+  role?: string;
+  sector?: string;
+  message: string;
+  locale: string;
+  status: ContactStatus;
+  createdAt: Timestamp;
+  readAt?: Timestamp;
+  notes?: string;
+}
