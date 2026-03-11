@@ -17,6 +17,8 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 - **Candidate Comparison** - Side-by-side radar chart comparison with benchmarks
 - **Evaluation History** - Searchable database with CSV/Excel export
 - **Profiles Page** - Dedicated browsable profile directory with sector/level filters
+- **Candidate Management** - Full candidate pipeline with status tracking, file uploads, checklists, scoring, and invitation system
+- **Candidate Portal** - Self-service profile editing for candidates with multi-org support
 - **Post-Hire Tools** - Employee management, probation tracking, 360/180 reviews, climate surveys
 - **AI Analysis** - Optional AI-powered evaluation via Claude, OpenAI, or Gemini
 - **PDF Export** - Downloadable evaluation reports
@@ -44,6 +46,7 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 src/
   app/[locale]/              # Next.js pages (locale-aware routing: es/en/fr)
     admin/                   # Admin panel (auth-protected)
+      candidates/            # Candidate management & invitations
       climate/               # Climate surveys
       comparison/            # Candidate comparison
       employees/             # Employee management
@@ -56,6 +59,7 @@ src/
       reviews/               # 360/180 reviews
       settings/              # App settings (AI key management)
     auth/                    # User login and registration
+    candidate/               # Candidate self-service portal
     evaluation/[profileId]/  # Competency evaluation flow
     instructions/            # Instructions for evaluators and candidates
     profiles/                # Browsable profile directory

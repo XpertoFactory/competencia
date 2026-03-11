@@ -906,3 +906,107 @@ export interface UserProfile {
   createdAt: Timestamp;
   updatedAt?: Timestamp;
 }
+
+// ==========================================
+// Candidates
+// ==========================================
+
+export type CandidateProcessStatus =
+  | 'interest-received'
+  | 'contacted'
+  | 'interviewed'
+  | 'evaluated'
+  | 'reference-check'
+  | 'final-review';
+
+export type CandidateOutcome =
+  | 'pending'
+  | 'approved-to-hire'
+  | 'discarded'
+  | 'preserved-for-future';
+
+export type ManagerRecommendation =
+  | 'hire'
+  | 'discard'
+  | 'contact'
+  | 'keep-contact-info'
+  | 'no-recommendation';
+
+export interface CandidateChecklistItem {
+  id: string;
+  label: string;
+  completed: boolean;
+  completedAt?: Timestamp;
+  completedBy?: string;
+}
+
+export interface CandidateFile {
+  id: string;
+  name: string;
+  type: 'cv' | 'picture' | 'certificate' | 'other';
+  storagePath: string;
+  downloadUrl: string;
+  uploadedAt: Timestamp;
+  uploadedBy: string;
+  sizeBytes: number;
+}
+
+export interface CandidateComment {
+  id: string;
+  text: string;
+  authorId: string;
+  authorName: string;
+  createdAt: Timestamp;
+}
+
+export interface Candidate {
+  id: string;
+  orgId: string;
+  // Personal info (candidate-editable)
+  name: string;
+  email: string;
+  phone?: string;
+  linkedinUrl?: string;
+  location?: string;
+  // Process tracking (manager-only)
+  processStatus: CandidateProcessStatus;
+  outcome: CandidateOutcome;
+  // Manager assessment
+  managerScore?: number;
+  recommendation: ManagerRecommendation;
+  comments: CandidateComment[];
+  // Checklist
+  checklist: CandidateChecklistItem[];
+  // Files
+  files: CandidateFile[];
+  // Linked job positions
+  jobProfileIds: string[];
+  // Linked evaluations/tests
+  evaluationIds: string[];
+  testSessionIds: string[];
+  // Linking to Auth user
+  userId?: string;
+  // Metadata
+  source?: 'manual' | 'invitation';
+  createdBy: string;
+  createdAt: Timestamp;
+  updatedAt?: Timestamp;
+}
+
+export type CandidateInviteStatus = 'pending' | 'accepted' | 'expired' | 'cancelled';
+
+export interface CandidateInvite {
+  id: string;
+  orgId: string;
+  orgName: string;
+  candidateId: string;
+  jobProfileIds: string[];
+  email: string;
+  invitedBy: string;
+  invitedByName: string;
+  status: CandidateInviteStatus;
+  message?: string;
+  expiresAt: Timestamp;
+  createdAt: Timestamp;
+  acceptedAt?: Timestamp;
+}

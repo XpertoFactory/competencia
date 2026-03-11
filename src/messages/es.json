@@ -49,7 +49,8 @@
     "login": "Iniciar Sesión",
     "register": "Registrarse",
     "logout": "Cerrar Sesión",
-    "organizations": "Organizaciones"
+    "organizations": "Organizaciones",
+    "candidates": "Candidatos"
   },
   "instructions": {
     "title": "Instrucciones",
@@ -436,6 +437,7 @@
     "jobProfiles": "Perfiles de Puesto",
     "jobFit": "Ajuste al Puesto",
     "organizations": "Organizaciones",
+    "candidates": "Candidatos",
     "settings": {
       "title": "Configuración",
       "backToPanel": "Volver al panel",
@@ -1067,5 +1069,130 @@
       "administrative": "Administrativo",
       "operative": "Operativo"
     }
+  },
+  "candidates": {
+    "title": "Candidatos",
+    "subtitle": "Gestione los candidatos de su organización",
+    "addCandidate": "Agregar Candidato",
+    "sendInvitation": "Enviar Invitación",
+    "noCandidates": "Aún no hay candidatos registrados",
+    "search": "Buscar candidatos...",
+    "totalCandidates": "Total de Candidatos",
+    "filterByStatus": "Filtrar por estado",
+    "filterByOutcome": "Filtrar por resultado",
+    "filterByPosition": "Filtrar por puesto",
+    "allStatuses": "Todos los estados",
+    "allOutcomes": "Todos los resultados",
+    "allPositions": "Todos los puestos",
+    "status": {
+      "interest-received": "Interés recibido",
+      "contacted": "Contactado",
+      "interviewed": "Entrevistado",
+      "evaluated": "Evaluado",
+      "reference-check": "Verificación de referencias",
+      "final-review": "Revisión final"
+    },
+    "outcome": {
+      "pending": "Pendiente",
+      "approved-to-hire": "Aprobado para contratar",
+      "discarded": "Descartado",
+      "preserved-for-future": "Reservado para futuro"
+    },
+    "recommendation": {
+      "hire": "Contratar",
+      "discard": "Descartar",
+      "contact": "Contactar",
+      "keep-contact-info": "Conservar datos de contacto",
+      "no-recommendation": "Sin recomendación"
+    },
+    "tabs": {
+      "profile": "Perfil",
+      "files": "Archivos",
+      "process": "Proceso",
+      "checklist": "Lista de verificación",
+      "assessment": "Evaluación",
+      "comments": "Comentarios",
+      "positions": "Puestos de Trabajo",
+      "evaluations": "Evaluaciones y Resultados"
+    },
+    "form": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono",
+      "linkedin": "LinkedIn",
+      "location": "Ubicación",
+      "save": "Guardar"
+    },
+    "files": {
+      "upload": "Subir Archivo",
+      "cv": "CV / Currículum",
+      "picture": "Foto",
+      "certificate": "Certificado",
+      "other": "Otro",
+      "noFiles": "No se han subido archivos",
+      "fileType": "Tipo de Archivo",
+      "maxSize": "Tamaño máximo: 10MB",
+      "deleteConfirm": "¿Está seguro de que desea eliminar este archivo?"
+    },
+    "checklist": {
+      "addItem": "Agregar Elemento",
+      "placeholder": "Ingrese un elemento de la lista...",
+      "noItems": "No hay elementos en la lista",
+      "completed": "completado",
+      "pending": "pendiente"
+    },
+    "comments": {
+      "addComment": "Agregar Comentario",
+      "placeholder": "Escriba un comentario...",
+      "noComments": "Aún no hay comentarios"
+    },
+    "assessment": {
+      "score": "Puntuación",
+      "recommendation": "Recomendación",
+      "noScore": "Sin puntuación asignada"
+    },
+    "positions": {
+      "link": "Vincular Puesto",
+      "unlink": "Desvincular",
+      "noPositions": "No hay puestos vinculados",
+      "selectPosition": "Seleccione un puesto"
+    },
+    "evaluations": {
+      "noEvaluations": "No hay evaluaciones vinculadas",
+      "viewResults": "Ver Resultados",
+      "linkEvaluation": "Vincular Evaluación"
+    },
+    "invite": {
+      "title": "Enviar Invitación",
+      "email": "Correo del Candidato",
+      "selectPositions": "Seleccionar Puestos",
+      "message": "Mensaje Personalizado (opcional)",
+      "send": "Enviar Invitación",
+      "success": "Invitación enviada exitosamente",
+      "linkCopied": "Enlace de invitación copiado",
+      "expires": "Expira en 30 días",
+      "pendingInvites": "Invitaciones Pendientes",
+      "noInvites": "No hay invitaciones pendientes",
+      "cancel": "Cancelar Invitación",
+      "resend": "Reenviar",
+      "copyLink": "Copiar Enlace",
+      "inviteSent": "Invitación enviada a"
+    },
+    "portal": {
+      "title": "Mis Postulaciones",
+      "noApplications": "No hay postulaciones activas",
+      "editProfile": "Editar Mi Perfil",
+      "viewResults": "Ver Mis Resultados",
+      "myInfo": "Mi Información",
+      "myFiles": "Mis Archivos",
+      "status": "Estado de la Postulación",
+      "positions": "Puestos Postulados",
+      "acceptInvite": "Aceptar Invitación",
+      "inviteFrom": "Invitación de",
+      "forPosition": "para el puesto de"
+    },
+    "deleteConfirm": "¿Está seguro de que desea eliminar este candidato?",
+    "processUpdated": "Estado del proceso actualizado",
+    "outcomeUpdated": "Resultado actualizado"
   }
 }

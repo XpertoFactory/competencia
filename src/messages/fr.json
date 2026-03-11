@@ -49,7 +49,8 @@
     "login": "Connexion",
     "register": "S'inscrire",
     "logout": "Déconnexion",
-    "organizations": "Organisations"
+    "organizations": "Organisations",
+    "candidates": "Candidats"
   },
   "instructions": {
     "title": "Instructions",
@@ -436,6 +437,7 @@
     "jobProfiles": "Fiches de Poste",
     "jobFit": "Adéquation au Poste",
     "organizations": "Organisations",
+    "candidates": "Candidats",
     "settings": {
       "title": "Paramètres",
       "backToPanel": "Retour au panneau",
@@ -1067,5 +1069,130 @@
       "administrative": "Administratif",
       "operative": "Opérationnel"
     }
+  },
+  "candidates": {
+    "title": "Candidats",
+    "subtitle": "Gérez les candidats de votre organisation",
+    "addCandidate": "Ajouter un Candidat",
+    "sendInvitation": "Envoyer une Invitation",
+    "noCandidates": "Aucun candidat enregistré pour le moment",
+    "search": "Rechercher des candidats...",
+    "totalCandidates": "Total des Candidats",
+    "filterByStatus": "Filtrer par statut",
+    "filterByOutcome": "Filtrer par résultat",
+    "filterByPosition": "Filtrer par poste",
+    "allStatuses": "Tous les statuts",
+    "allOutcomes": "Tous les résultats",
+    "allPositions": "Tous les postes",
+    "status": {
+      "interest-received": "Intérêt reçu",
+      "contacted": "Contacté",
+      "interviewed": "Interviewé",
+      "evaluated": "Évalué",
+      "reference-check": "Vérification des références",
+      "final-review": "Révision finale"
+    },
+    "outcome": {
+      "pending": "En attente",
+      "approved-to-hire": "Approuvé pour embauche",
+      "discarded": "Écarté",
+      "preserved-for-future": "Conservé pour l'avenir"
+    },
+    "recommendation": {
+      "hire": "Embaucher",
+      "discard": "Écarter",
+      "contact": "Contacter",
+      "keep-contact-info": "Conserver les coordonnées",
+      "no-recommendation": "Aucune recommandation"
+    },
+    "tabs": {
+      "profile": "Profil",
+      "files": "Fichiers",
+      "process": "Processus",
+      "checklist": "Liste de contrôle",
+      "assessment": "Évaluation",
+      "comments": "Commentaires",
+      "positions": "Postes de Travail",
+      "evaluations": "Évaluations et Résultats"
+    },
+    "form": {
+      "name": "Nom",
+      "email": "Courriel",
+      "phone": "Téléphone",
+      "linkedin": "LinkedIn",
+      "location": "Emplacement",
+      "save": "Enregistrer"
+    },
+    "files": {
+      "upload": "Téléverser un Fichier",
+      "cv": "CV / Curriculum vitae",
+      "picture": "Photo",
+      "certificate": "Certificat",
+      "other": "Autre",
+      "noFiles": "Aucun fichier téléversé",
+      "fileType": "Type de Fichier",
+      "maxSize": "Taille maximale : 10 Mo",
+      "deleteConfirm": "Êtes-vous sûr de vouloir supprimer ce fichier ?"
+    },
+    "checklist": {
+      "addItem": "Ajouter un Élément",
+      "placeholder": "Saisissez un élément de la liste...",
+      "noItems": "Aucun élément dans la liste",
+      "completed": "terminé",
+      "pending": "en attente"
+    },
+    "comments": {
+      "addComment": "Ajouter un Commentaire",
+      "placeholder": "Écrivez un commentaire...",
+      "noComments": "Aucun commentaire pour le moment"
+    },
+    "assessment": {
+      "score": "Score",
+      "recommendation": "Recommandation",
+      "noScore": "Aucun score attribué"
+    },
+    "positions": {
+      "link": "Lier un Poste",
+      "unlink": "Délier",
+      "noPositions": "Aucun poste lié",
+      "selectPosition": "Sélectionnez un poste"
+    },
+    "evaluations": {
+      "noEvaluations": "Aucune évaluation liée",
+      "viewResults": "Voir les Résultats",
+      "linkEvaluation": "Lier une Évaluation"
+    },
+    "invite": {
+      "title": "Envoyer une Invitation",
+      "email": "Courriel du Candidat",
+      "selectPositions": "Sélectionner les Postes",
+      "message": "Message Personnalisé (facultatif)",
+      "send": "Envoyer l'Invitation",
+      "success": "Invitation envoyée avec succès",
+      "linkCopied": "Lien d'invitation copié",
+      "expires": "Expire dans 30 jours",
+      "pendingInvites": "Invitations en Attente",
+      "noInvites": "Aucune invitation en attente",
+      "cancel": "Annuler l'Invitation",
+      "resend": "Renvoyer",
+      "copyLink": "Copier le Lien",
+      "inviteSent": "Invitation envoyée à"
+    },
+    "portal": {
+      "title": "Mes Candidatures",
+      "noApplications": "Aucune candidature active",
+      "editProfile": "Modifier Mon Profil",
+      "viewResults": "Voir Mes Résultats",
+      "myInfo": "Mes Informations",
+      "myFiles": "Mes Fichiers",
+      "status": "Statut de la Candidature",
+      "positions": "Postes Postulés",
+      "acceptInvite": "Accepter l'Invitation",
+      "inviteFrom": "Invitation de",
+      "forPosition": "pour le poste de"
+    },
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer ce candidat ?",
+    "processUpdated": "Statut du processus mis à jour",
+    "outcomeUpdated": "Résultat mis à jour"
   }
 }

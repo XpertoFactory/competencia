@@ -1,6 +1,7 @@
 import { initializeApp, getApps, FirebaseApp } from 'firebase/app';
 import { getFirestore, connectFirestoreEmulator, Firestore } from 'firebase/firestore';
 import { getAuth, connectAuthEmulator, Auth } from 'firebase/auth';
+import { getStorage, FirebaseStorage } from 'firebase/storage';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || 'demo-api-key',
@@ -16,6 +17,7 @@ const useEmulator = process.env.NEXT_PUBLIC_USE_FIREBASE_EMULATOR === 'true';
 let app: FirebaseApp;
 let db: Firestore;
 let auth: Auth;
+let storage: FirebaseStorage;
 let emulatorsConnected = false;
 
 function initializeFirebase() {
@@ -26,6 +28,7 @@ function initializeFirebase() {
   }
   db = getFirestore(app);
   auth = getAuth(app);
+  storage = getStorage(app);
 
   // Connect to emulators if configured (only once)
   if (useEmulator && !emulatorsConnected && typeof window !== 'undefined') {
@@ -35,11 +38,11 @@ function initializeFirebase() {
     console.log('Connected to Firebase Emulators');
   }
 
-  return { app, db, auth };
+  return { app, db, auth, storage };
 }
 
 // Initialize on first import
-const { app: firebaseApp, db: firestore, auth: firebaseAuth } = initializeFirebase();
+const { app: firebaseApp, db: firestore, auth: firebaseAuth, storage: firebaseStorage } = initializeFirebase();
 
-export { firebaseApp, firestore, firebaseAuth };
+export { firebaseApp, firestore, firebaseAuth, firebaseStorage };
 export default firebaseApp;

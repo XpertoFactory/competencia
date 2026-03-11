@@ -49,7 +49,8 @@
     "login": "Log In",
     "register": "Register",
     "logout": "Log Out",
-    "organizations": "Organizations"
+    "organizations": "Organizations",
+    "candidates": "Candidates"
   },
   "instructions": {
     "title": "Instructions",
@@ -436,6 +437,7 @@
     "jobProfiles": "Job Profiles",
     "jobFit": "Job Fit",
     "organizations": "Organizations",
+    "candidates": "Candidates",
     "settings": {
       "title": "Settings",
       "backToPanel": "Back to panel",
@@ -1067,5 +1069,130 @@
       "administrative": "Administrative",
       "operative": "Operative"
     }
+  },
+  "candidates": {
+    "title": "Candidates",
+    "subtitle": "Manage your organization's candidates",
+    "addCandidate": "Add Candidate",
+    "sendInvitation": "Send Invitation",
+    "noCandidates": "No candidates registered yet",
+    "search": "Search candidates...",
+    "totalCandidates": "Total Candidates",
+    "filterByStatus": "Filter by status",
+    "filterByOutcome": "Filter by outcome",
+    "filterByPosition": "Filter by position",
+    "allStatuses": "All statuses",
+    "allOutcomes": "All outcomes",
+    "allPositions": "All positions",
+    "status": {
+      "interest-received": "Interest received",
+      "contacted": "Contacted",
+      "interviewed": "Interviewed",
+      "evaluated": "Evaluated",
+      "reference-check": "Reference check",
+      "final-review": "Final review"
+    },
+    "outcome": {
+      "pending": "Pending",
+      "approved-to-hire": "Approved to hire",
+      "discarded": "Discarded",
+      "preserved-for-future": "Preserved for future"
+    },
+    "recommendation": {
+      "hire": "Hire",
+      "discard": "Discard",
+      "contact": "Contact",
+      "keep-contact-info": "Keep contact info",
+      "no-recommendation": "No recommendation"
+    },
+    "tabs": {
+      "profile": "Profile",
+      "files": "Files",
+      "process": "Process",
+      "checklist": "Checklist",
+      "assessment": "Assessment",
+      "comments": "Comments",
+      "positions": "Job Positions",
+      "evaluations": "Evaluations & Results"
+    },
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "linkedin": "LinkedIn",
+      "location": "Location",
+      "save": "Save"
+    },
+    "files": {
+      "upload": "Upload File",
+      "cv": "CV / Resume",
+      "picture": "Photo",
+      "certificate": "Certificate",
+      "other": "Other",
+      "noFiles": "No files uploaded",
+      "fileType": "File Type",
+      "maxSize": "Max file size: 10MB",
+      "deleteConfirm": "Are you sure you want to delete this file?"
+    },
+    "checklist": {
+      "addItem": "Add Item",
+      "placeholder": "Enter checklist item...",
+      "noItems": "No checklist items",
+      "completed": "completed",
+      "pending": "pending"
+    },
+    "comments": {
+      "addComment": "Add Comment",
+      "placeholder": "Write a comment...",
+      "noComments": "No comments yet"
+    },
+    "assessment": {
+      "score": "Score",
+      "recommendation": "Recommendation",
+      "noScore": "No score assigned"
+    },
+    "positions": {
+      "link": "Link Position",
+      "unlink": "Unlink",
+      "noPositions": "No linked positions",
+      "selectPosition": "Select a position"
+    },
+    "evaluations": {
+      "noEvaluations": "No evaluations linked",
+      "viewResults": "View Results",
+      "linkEvaluation": "Link Evaluation"
+    },
+    "invite": {
+      "title": "Send Invitation",
+      "email": "Candidate Email",
+      "selectPositions": "Select Positions",
+      "message": "Custom Message (optional)",
+      "send": "Send Invitation",
+      "success": "Invitation sent successfully",
+      "linkCopied": "Invitation link copied",
+      "expires": "Expires in 30 days",
+      "pendingInvites": "Pending Invitations",
+      "noInvites": "No pending invitations",
+      "cancel": "Cancel Invitation",
+      "resend": "Resend",
+      "copyLink": "Copy Link",
+      "inviteSent": "Invitation sent to"
+    },
+    "portal": {
+      "title": "My Applications",
+      "noApplications": "No active applications",
+      "editProfile": "Edit My Profile",
+      "viewResults": "View My Results",
+      "myInfo": "My Information",
+      "myFiles": "My Files",
+      "status": "Application Status",
+      "positions": "Applied Positions",
+      "acceptInvite": "Accept Invitation",
+      "inviteFrom": "Invitation from",
+      "forPosition": "for the position of"
+    },
+    "deleteConfirm": "Are you sure you want to delete this candidate?",
+    "processUpdated": "Process status updated",
+    "outcomeUpdated": "Outcome updated"
   }
 }

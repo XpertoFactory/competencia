@@ -49,6 +49,8 @@ import type {
   OrgInvite,
   OrgRole,
   UserProfile,
+  Candidate,
+  CandidateInvite,
 } from '@/types';
 
 // Collection names
@@ -86,6 +88,9 @@ export const COLLECTIONS = {
   ORG_MEMBERS: 'orgMembers',
   ORG_INVITES: 'orgInvites',
   USER_PROFILES: 'userProfiles',
+  // Candidates
+  CANDIDATES: 'candidates',
+  CANDIDATE_INVITES: 'candidateInvites',
 } as const;
 
 // Generic helpers
@@ -697,4 +702,59 @@ export async function createOrUpdateUserProfile(userId: string, data: Partial<Us
       createdAt: serverTimestamp(),
     });
   }
+}
+
+// ==========================================
+// Candidates
+// ==========================================
+
+export async function getCandidates(orgId: string): Promise<Candidate[]> {
+  return getDocuments<Candidate>(COLLECTIONS.CANDIDATES, where('orgId', '==', orgId));
+}
+
+export async function getCandidate(candidateId: string): Promise<Candidate | null> {
+  return getDocument<Candidate>(COLLECTIONS.CANDIDATES, candidateId);
+}
+
+export async function saveCandidate(candidate: Candidate): Promise<void> {
+  await setDoc(doc(firestore, COLLECTIONS.CANDIDATES, candidate.id), candidate);
+}
+
+export async function updateCandidate(candidateId: string, data: Partial<Candidate>): Promise<void> {
+  await updateDocument(COLLECTIONS.CANDIDATES, candidateId, { ...data, updatedAt: serverTimestamp() });
+}
+
+export async function deleteCandidate(candidateId: string): Promise<void> {
+  await deleteDoc(doc(firestore, COLLECTIONS.CANDIDATES, candidateId));
+}
+
+export async function getCandidatesByUser(userId: string): Promise<Candidate[]> {
+  return getDocuments<Candidate>(COLLECTIONS.CANDIDATES, where('userId', '==', userId));
+}
+
+export async function getCandidateByUserAndOrg(userId: string, orgId: string): Promise<Candidate | null> {
+  const results = await getDocuments<Candidate>(
+    COLLECTIONS.CANDIDATES,
+    where('userId', '==', userId),
+    where('orgId', '==', orgId)
+  );
+  return results.length > 0 ? results[0] : null;
+}
+
+// Candidate Invites
+
+export async function createCandidateInvite(invite: CandidateInvite): Promise<void> {
+  await setDoc(doc(firestore, COLLECTIONS.CANDIDATE_INVITES, invite.id), invite);
+}
+
+export async function getCandidateInvite(inviteId: string): Promise<CandidateInvite | null> {
+  return getDocument<CandidateInvite>(COLLECTIONS.CANDIDATE_INVITES, inviteId);
+}
+
+export async function getCandidateInvitesByOrg(orgId: string): Promise<CandidateInvite[]> {
+  return getDocuments<CandidateInvite>(COLLECTIONS.CANDIDATE_INVITES, where('orgId', '==', orgId));
+}
+
+export async function updateCandidateInvite(inviteId: string, data: Partial<CandidateInvite>): Promise<void> {
+  await updateDocument(COLLECTIONS.CANDIDATE_INVITES, inviteId, data);
 }

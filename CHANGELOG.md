@@ -1,5 +1,40 @@
 # Changelog
 
+## [0.7.0] - 2026-03-11
+
+### Candidates Module
+- Full candidate management system for organization managers
+- Candidate profiles with personal info, process status, outcome tracking
+- File uploads to Firebase Storage (CV, photo, certificates)
+- Custom checklists with completion tracking per candidate
+- Manager comments, scoring (0-100 slider), and recommendations
+- Link candidates to one or more job positions
+- View linked evaluation and test results per candidate
+- 6-stage process pipeline: Interest Received → Contacted → Interviewed → Evaluated → Reference Check → Final Review
+- 4 outcome states: Pending, Approved to Hire, Discarded, Preserved for Future
+- 5 recommendation types: Hire, Discard, Contact, Keep Contact Info, No Recommendation
+- Invitation system with shareable links and 30-day expiry
+- Candidate portal at `/candidate` for self-service profile editing
+- Candidates can view their status and linked positions (read-only)
+- Candidates can upload/manage their own CV and photo
+- Multi-organization support (users can be candidates in multiple orgs)
+- Invitation acceptance flow with login/register redirect
+- Admin sidebar and quick actions grid updated with Candidates link
+- Full trilingual support (ES/EN/FR) with 100+ translation keys
+- Firebase Storage initialized for file uploads
+
+### New Pages
+- `/admin/candidates` — Candidate list with search, status/outcome/position filters
+- `/admin/candidates/[candidateId]` — 8-tab candidate detail (profile, files, process, checklist, assessment, comments, positions, evaluations)
+- `/admin/candidates/invite` — Send invitation form with pending invites list
+- `/candidate` — Candidate portal dashboard (list of organizations)
+- `/candidate/[orgId]` — Per-org candidate self-service (edit profile, upload files)
+- `/candidate/invite/[inviteId]` — Invitation acceptance page
+
+### New Collections
+- `candidates` — Candidate records scoped by organization
+- `candidateInvites` — Invitation tokens with status tracking
+
 ## [0.6.0] - 2026-03-10
 
 ### New Sectors & Profiles
