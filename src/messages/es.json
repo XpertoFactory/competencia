@@ -51,6 +51,7 @@
     "register": "Registrarse",
     "logout": "Cerrar Sesión",
     "organizations": "Organizaciones",
+    "recruitment": "Proceso de Reclutamiento",
     "candidates": "Candidatos"
   },
   "instructions": {
@@ -109,6 +110,7 @@
       "evaluations": "Evaluaciones",
       "tests": "Pruebas Especializadas",
       "profiles": "Perfiles Profesionales",
+      "recruitment": "Reclutamiento",
       "candidates": "Gestión de Candidatos",
       "reviews": "Evaluaciones 360° / 180°",
       "climate": "Encuestas de Clima",
@@ -158,6 +160,20 @@
       "sectors": "15 sectores industriales incluyendo tecnología, banca, salud, seguros, educación, hotelería y más",
       "levels": "5 niveles profesionales: Ejecutivo, Gerencial, Profesional/Especialista, Administrativo, Operativo",
       "customizable": "Cada perfil incluye categorías de competencias y preguntas de evaluación adaptadas"
+    },
+    "recruitmentSection": {
+      "title": "Proceso de Reclutamiento",
+      "description": "Gestiona el proceso completo de reclutamiento con posiciones, candidatos y campañas estructuradas.",
+      "features": {
+        "f1": "Define posiciones abiertas con título, departamento, descripción y estado (borrador, abierta, cerrada, en pausa)",
+        "f2": "Vincula posiciones a perfiles de puesto para scoring automático de candidatos",
+        "f3": "Visualiza cuántos candidatos aplican a cada posición y su estado en el proceso",
+        "f4": "Campañas de reclutamiento con asistente paso a paso: Planificación → Preparación → Ejecución → Revisión → Seguimiento",
+        "f5": "Dos plantillas predeterminadas: Reclutamiento Estándar y Día de Carreras, personalizables y duplicables",
+        "f6": "Recomendaciones e insights automáticos en cada etapa de la campaña",
+        "f7": "Vincula campañas a posiciones y candidatos para seguimiento integral",
+        "f8": "Dashboard con estadísticas en tiempo real: posiciones abiertas, candidatos activos, campañas en curso"
+      }
     },
     "candidatesSection": {
       "title": "Gestión de Candidatos",
@@ -573,6 +589,7 @@
     "jobProfiles": "Perfiles de Puesto",
     "jobFit": "Ajuste al Puesto",
     "organizations": "Organizaciones",
+    "recruitment": "Reclutamiento",
     "candidates": "Candidatos",
     "settings": {
       "title": "Configuración",
@@ -1203,6 +1220,102 @@
       "professional-specialist": "Profesional / Especialista",
       "administrative": "Administrativo",
       "operative": "Operativo"
+    }
+  },
+  "recruitment": {
+    "title": "Proceso de Reclutamiento",
+    "subtitle": "Gestiona posiciones abiertas, candidatos y campañas de reclutamiento",
+    "addPosition": "Agregar Posición",
+    "editPosition": "Editar Posición",
+    "createPosition": "Crear Posición",
+    "deletePosition": "Eliminar Posición",
+    "deleteConfirm": "¿Está seguro de que desea eliminar la posición {name}? Esta acción no se puede deshacer.",
+    "positionTitle": "Título del Puesto",
+    "positionTitlePlaceholder": "Ej: Desarrollador Senior",
+    "department": "Departamento",
+    "departmentPlaceholder": "Ej: Tecnología",
+    "positionDescription": "Descripción",
+    "positionDescriptionPlaceholder": "Describe los requisitos y responsabilidades del puesto...",
+    "linkedJobProfile": "Perfil de Puesto Vinculado",
+    "noJobProfile": "Sin perfil de puesto",
+    "linkedProfile": "Perfil vinculado",
+    "maxCandidates": "Máximo de Candidatos",
+    "maxCandidatesPlaceholder": "Ej: 10",
+    "searchPositions": "Buscar posiciones...",
+    "allStatuses": "Todos los estados",
+    "noPositions": "No hay posiciones registradas",
+    "openPositions": "Posiciones Abiertas",
+    "totalCandidates": "Total de Candidatos",
+    "activeCandidates": "Candidatos Activos",
+    "candidates": "Candidatos",
+    "max": "Máx",
+    "viewCandidates": "Ver Candidatos",
+    "inviteCandidates": "Invitar Candidatos",
+    "open": "Abrir",
+    "close": "Cerrar",
+    "hold": "Pausar",
+    "reopen": "Reabrir",
+    "status": {
+      "draft": "Borrador",
+      "open": "Abierta",
+      "closed": "Cerrada",
+      "on-hold": "En Pausa"
+    },
+    "candidateStatus": {
+      "interest-received": "Interés Recibido",
+      "contacted": "Contactado",
+      "interviewed": "Entrevistado",
+      "evaluated": "Evaluado",
+      "reference-check": "Verificación",
+      "final-review": "Revisión Final"
+    },
+    "campaigns": {
+      "title": "Campañas de Reclutamiento",
+      "subtitle": "Planifica y ejecuta campañas de reclutamiento",
+      "addCampaign": "Nueva Campaña",
+      "editCampaign": "Editar Campaña",
+      "deleteCampaign": "Eliminar Campaña",
+      "deleteConfirm": "¿Está seguro de que desea eliminar la campaña {name}?",
+      "campaignTitle": "Título de la Campaña",
+      "campaignTitlePlaceholder": "Ej: Reclutamiento Q1 2026",
+      "campaignDescription": "Descripción",
+      "campaignDescriptionPlaceholder": "Describe el objetivo y alcance de la campaña...",
+      "goal": "Objetivo General",
+      "goalPlaceholder": "Define el objetivo principal de esta campaña...",
+      "noCampaigns": "No hay campañas registradas",
+      "searchCampaigns": "Buscar campañas...",
+      "status": {
+        "draft": "Borrador",
+        "active": "Activa",
+        "completed": "Completada",
+        "cancelled": "Cancelada"
+      },
+      "steps": {
+        "planning": "Planificación",
+        "preparation": "Preparación",
+        "execution": "Ejecución",
+        "postReview": "Revisión Post-Ejecución",
+        "followUp": "Seguimiento"
+      },
+      "wizard": {
+        "title": "Asistente de Campaña",
+        "next": "Siguiente",
+        "prev": "Anterior",
+        "finish": "Finalizar",
+        "step": "Paso {current} de {total}"
+      },
+      "templates": {
+        "standard": "Reclutamiento Estándar",
+        "standardDesc": "Campaña estándar con todas las etapas del proceso de reclutamiento",
+        "careerDay": "Día de Carreras",
+        "careerDayDesc": "Evento de reclutamiento masivo para atraer talento en un solo día",
+        "useTemplate": "Usar Plantilla",
+        "customize": "Personalizar"
+      },
+      "linkedPositions": "Posiciones Vinculadas",
+      "linkedCandidates": "Candidatos Vinculados",
+      "insights": "Información y Sugerencias",
+      "recommendations": "Recomendaciones"
     }
   },
   "candidates": {

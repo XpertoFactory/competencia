@@ -232,6 +232,7 @@ export default function CandidatesPage() {
         comments: existingCandidate?.comments || [],
         checklist: existingCandidate?.checklist || [],
         files: existingCandidate?.files || [],
+        positionIds: existingCandidate?.positionIds || [],
         jobProfileIds: existingCandidate?.jobProfileIds || [],
         evaluationIds: existingCandidate?.evaluationIds || [],
         testSessionIds: existingCandidate?.testSessionIds || [],

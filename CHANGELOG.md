@@ -1,5 +1,33 @@
 # Changelog
 
+## [0.8.0] - 2026-03-11
+
+### Recruitment Process
+- New Recruitment Process module: manage positions, candidates, and campaigns from a unified dashboard
+- Position management: create, open/close/hold positions with department, description, and max candidates
+- Link positions to Job Profiles for automatic candidate scoring
+- Recruitment dashboard with real-time stats: open positions, total/active candidates, active campaigns
+- Recruitment Campaigns with 5-step wizard: Planning → Preparation → Execution → Post-Review → Follow Up
+- Two built-in campaign templates: Standard Recruitment and Career Day (customizable, duplicable)
+- Campaign wizard with per-step checklist items, notes, and contextual insights/recommendations
+- Campaign status tracking: draft, active, completed, cancelled
+- Link campaigns to positions and candidates
+- Admin sidebar updated: Candidates replaced with Recruitment (includes Positions + Candidates + Campaigns)
+- Features page updated with Recruitment section
+- Full trilingual support (ES/EN/FR) with 80+ new translation keys
+
+### New Pages
+- `/admin/recruitment` — Recruitment dashboard with positions, stats, and quick access to candidates/campaigns
+- `/admin/recruitment/campaigns` — Campaign list with search, filters, wizard, and detail view
+
+### New Collections
+- `positions` — Organization-specific positions with status tracking
+- `recruitmentCampaigns` — Campaign records with step-by-step process tracking
+
+### New Types
+- `Position`, `PositionStatus` — Position entity with draft/open/closed/on-hold status
+- `RecruitmentCampaign`, `CampaignStatus`, `CampaignStep`, `CampaignStepKey`, `CampaignStepItem`
+
 ## [0.7.0] - 2026-03-11
 
 ### Candidates Module

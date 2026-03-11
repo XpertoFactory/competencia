@@ -28,6 +28,7 @@ import {
   UserSearch,
   FileText,
   Shield,
+  Megaphone,
 } from 'lucide-react';
 
 type Section =
@@ -35,6 +36,7 @@ type Section =
   | 'evaluations'
   | 'tests'
   | 'profiles'
+  | 'recruitment'
   | 'candidates'
   | 'reviews'
   | 'climate'
@@ -83,7 +85,8 @@ const SECTION_NAV: SectionNavItem[] = [
   { key: 'evaluations', icon: ClipboardList, color: 'text-blue-600', bgColor: 'bg-blue-100' },
   { key: 'tests', icon: Brain, color: 'text-purple-600', bgColor: 'bg-purple-100' },
   { key: 'profiles', icon: Briefcase, color: 'text-indigo-600', bgColor: 'bg-indigo-100' },
-  { key: 'candidates', icon: UserSearch, color: 'text-lime-600', bgColor: 'bg-lime-100' },
+  { key: 'recruitment', icon: Megaphone, color: 'text-lime-600', bgColor: 'bg-lime-100' },
+  { key: 'candidates', icon: UserSearch, color: 'text-cyan-600', bgColor: 'bg-cyan-100' },
   { key: 'reviews', icon: Star, color: 'text-orange-600', bgColor: 'bg-orange-100' },
   { key: 'climate', icon: ThermometerSun, color: 'text-rose-600', bgColor: 'bg-rose-100' },
   { key: 'employees', icon: UserCheck, color: 'text-emerald-600', bgColor: 'bg-emerald-100' },
@@ -407,6 +410,24 @@ export default function InstructionsPage() {
               </div>
             )}
 
+            {/* ===== RECRUITMENT ===== */}
+            {activeSection === 'recruitment' && (
+              <div>
+                <SectionHeader
+                  icon={Megaphone}
+                  title={t('recruitmentSection.title')}
+                  description={t('recruitmentSection.description')}
+                  color="text-lime-600"
+                  bgColor="bg-lime-100"
+                />
+                <Badge label={t('forManagers')} />
+                <FeatureList
+                  items={['f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8'].map(k => t(`recruitmentSection.features.${k}`))}
+                  color="text-lime-500"
+                />
+              </div>
+            )}
+
             {/* ===== CANDIDATES ===== */}
             {activeSection === 'candidates' && (
               <div>
@@ -414,13 +435,13 @@ export default function InstructionsPage() {
                   icon={UserSearch}
                   title={t('candidatesSection.title')}
                   description={t('candidatesSection.description')}
-                  color="text-lime-600"
-                  bgColor="bg-lime-100"
+                  color="text-cyan-600"
+                  bgColor="bg-cyan-100"
                 />
                 <Badge label={t('forManagers')} />
                 <FeatureList
                   items={['f1', 'f2', 'f3', 'f4', 'f5', 'f6'].map(k => t(`candidatesSection.features.${k}`))}
-                  color="text-lime-500"
+                  color="text-cyan-500"
                 />
               </div>
             )}

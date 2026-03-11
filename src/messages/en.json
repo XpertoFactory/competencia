@@ -51,6 +51,7 @@
     "register": "Register",
     "logout": "Log Out",
     "organizations": "Organizations",
+    "recruitment": "Recruitment Process",
     "candidates": "Candidates"
   },
   "instructions": {
@@ -109,6 +110,7 @@
       "evaluations": "Evaluations",
       "tests": "Specialized Tests",
       "profiles": "Professional Profiles",
+      "recruitment": "Recruitment",
       "candidates": "Candidate Management",
       "reviews": "360° / 180° Reviews",
       "climate": "Climate Surveys",
@@ -158,6 +160,20 @@
       "sectors": "15 industry sectors including technology, banking, healthcare, insurance, education, hospitality, and more",
       "levels": "5 career levels: Executive, Managerial, Professional/Specialist, Administrative, Operative",
       "customizable": "Each profile includes tailored competency categories and evaluation questions"
+    },
+    "recruitmentSection": {
+      "title": "Recruitment Process",
+      "description": "Manage the complete recruitment process with positions, candidates, and structured campaigns.",
+      "features": {
+        "f1": "Define open positions with title, department, description, and status (draft, open, closed, on hold)",
+        "f2": "Link positions to job profiles for automatic candidate scoring",
+        "f3": "View how many candidates apply to each position and their pipeline status",
+        "f4": "Recruitment campaigns with step-by-step wizard: Planning → Preparation → Execution → Review → Follow Up",
+        "f5": "Two built-in templates: Standard Recruitment and Career Day, customizable and duplicable",
+        "f6": "Automatic insights and recommendations at each campaign stage",
+        "f7": "Link campaigns to positions and candidates for comprehensive tracking",
+        "f8": "Real-time dashboard with stats: open positions, active candidates, running campaigns"
+      }
     },
     "candidatesSection": {
       "title": "Candidate Management",
@@ -573,6 +589,7 @@
     "jobProfiles": "Job Profiles",
     "jobFit": "Job Fit",
     "organizations": "Organizations",
+    "recruitment": "Recruitment",
     "candidates": "Candidates",
     "settings": {
       "title": "Settings",
@@ -1203,6 +1220,102 @@
       "professional-specialist": "Professional / Specialist",
       "administrative": "Administrative",
       "operative": "Operative"
+    }
+  },
+  "recruitment": {
+    "title": "Recruitment Process",
+    "subtitle": "Manage open positions, candidates, and recruitment campaigns",
+    "addPosition": "Add Position",
+    "editPosition": "Edit Position",
+    "createPosition": "Create Position",
+    "deletePosition": "Delete Position",
+    "deleteConfirm": "Are you sure you want to delete the position {name}? This action cannot be undone.",
+    "positionTitle": "Position Title",
+    "positionTitlePlaceholder": "E.g.: Senior Developer",
+    "department": "Department",
+    "departmentPlaceholder": "E.g.: Technology",
+    "positionDescription": "Description",
+    "positionDescriptionPlaceholder": "Describe the position requirements and responsibilities...",
+    "linkedJobProfile": "Linked Job Profile",
+    "noJobProfile": "No job profile",
+    "linkedProfile": "Linked profile",
+    "maxCandidates": "Max Candidates",
+    "maxCandidatesPlaceholder": "E.g.: 10",
+    "searchPositions": "Search positions...",
+    "allStatuses": "All statuses",
+    "noPositions": "No positions registered",
+    "openPositions": "Open Positions",
+    "totalCandidates": "Total Candidates",
+    "activeCandidates": "Active Candidates",
+    "candidates": "Candidates",
+    "max": "Max",
+    "viewCandidates": "View Candidates",
+    "inviteCandidates": "Invite Candidates",
+    "open": "Open",
+    "close": "Close",
+    "hold": "Hold",
+    "reopen": "Reopen",
+    "status": {
+      "draft": "Draft",
+      "open": "Open",
+      "closed": "Closed",
+      "on-hold": "On Hold"
+    },
+    "candidateStatus": {
+      "interest-received": "Interest Received",
+      "contacted": "Contacted",
+      "interviewed": "Interviewed",
+      "evaluated": "Evaluated",
+      "reference-check": "Reference Check",
+      "final-review": "Final Review"
+    },
+    "campaigns": {
+      "title": "Recruitment Campaigns",
+      "subtitle": "Plan and execute recruitment campaigns",
+      "addCampaign": "New Campaign",
+      "editCampaign": "Edit Campaign",
+      "deleteCampaign": "Delete Campaign",
+      "deleteConfirm": "Are you sure you want to delete the campaign {name}?",
+      "campaignTitle": "Campaign Title",
+      "campaignTitlePlaceholder": "E.g.: Q1 2026 Recruitment",
+      "campaignDescription": "Description",
+      "campaignDescriptionPlaceholder": "Describe the campaign objective and scope...",
+      "goal": "General Goal",
+      "goalPlaceholder": "Define the main goal of this campaign...",
+      "noCampaigns": "No campaigns registered",
+      "searchCampaigns": "Search campaigns...",
+      "status": {
+        "draft": "Draft",
+        "active": "Active",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
+      },
+      "steps": {
+        "planning": "Planning",
+        "preparation": "Preparation",
+        "execution": "Execution",
+        "postReview": "Post-Execution Review",
+        "followUp": "Follow Up"
+      },
+      "wizard": {
+        "title": "Campaign Wizard",
+        "next": "Next",
+        "prev": "Previous",
+        "finish": "Finish",
+        "step": "Step {current} of {total}"
+      },
+      "templates": {
+        "standard": "Standard Recruitment",
+        "standardDesc": "Standard campaign with all stages of the recruitment process",
+        "careerDay": "Career Day",
+        "careerDayDesc": "Mass recruitment event to attract talent in a single day",
+        "useTemplate": "Use Template",
+        "customize": "Customize"
+      },
+      "linkedPositions": "Linked Positions",
+      "linkedCandidates": "Linked Candidates",
+      "insights": "Insights & Suggestions",
+      "recommendations": "Recommendations"
     }
   },
   "candidates": {

@@ -140,10 +140,10 @@ export default function AdminPage() {
             </nav>
 
             <div className="mt-8 pt-4 border-t border-gray-200 space-y-1">
-              <Link href={`/${locale}/admin/candidates`}>
+              <Link href={`/${locale}/admin/recruitment`}>
                 <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-gray-50 transition-colors">
-                  <UserSearch className="w-5 h-5" />
-                  {t('candidates') || 'Candidatos'}
+                  <Briefcase className="w-5 h-5" />
+                  {t('recruitment') || 'Reclutamiento'}
                 </button>
               </Link>
               <Link href={`/${locale}/admin/employees`}>
@@ -333,7 +333,7 @@ function DashboardContent({ t, locale }: { t: any; locale: string }) {
     { icon: Target, label: l('Ajuste al Puesto', 'Job Fit'), href: `/${locale}/admin/job-fit`, color: 'bg-violet-100 text-violet-600' },
     { icon: GitCompare, label: l('Comparación', 'Comparison'), href: `/${locale}/admin/comparison`, color: 'bg-cyan-100 text-cyan-600' },
     { icon: History, label: l('Historial', 'History'), href: `/${locale}/admin/history`, color: 'bg-teal-100 text-teal-600' },
-    { icon: UserSearch, label: l('Candidatos', 'Candidates'), href: `/${locale}/admin/candidates`, color: 'bg-lime-100 text-lime-600' },
+    { icon: Briefcase, label: l('Reclutamiento', 'Recruitment'), href: `/${locale}/admin/recruitment`, color: 'bg-lime-100 text-lime-600' },
     { icon: UserCheck, label: l('Empleados', 'Employees'), href: `/${locale}/admin/employees`, color: 'bg-emerald-100 text-emerald-600' },
     { icon: ClipboardCheck, label: l('Probatoria', 'Probation'), href: `/${locale}/admin/probation`, color: 'bg-amber-100 text-amber-600' },
     { icon: Star, label: l('Evaluaciones 360°', '360° Reviews'), href: `/${locale}/admin/reviews`, color: 'bg-orange-100 text-orange-600' },

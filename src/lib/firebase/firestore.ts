@@ -51,6 +51,8 @@ import type {
   UserProfile,
   Candidate,
   CandidateInvite,
+  Position,
+  RecruitmentCampaign,
 } from '@/types';
 
 // Collection names
@@ -88,7 +90,9 @@ export const COLLECTIONS = {
   ORG_MEMBERS: 'orgMembers',
   ORG_INVITES: 'orgInvites',
   USER_PROFILES: 'userProfiles',
-  // Candidates
+  // Recruitment
+  POSITIONS: 'positions',
+  RECRUITMENT_CAMPAIGNS: 'recruitmentCampaigns',
   CANDIDATES: 'candidates',
   CANDIDATE_INVITES: 'candidateInvites',
 } as const;
@@ -702,6 +706,74 @@ export async function createOrUpdateUserProfile(userId: string, data: Partial<Us
       createdAt: serverTimestamp(),
     });
   }
+}
+
+// ==========================================
+// Positions (Recruitment)
+// ==========================================
+
+export async function getPositions(orgId: string): Promise<Position[]> {
+  const q = query(
+    collection(firestore, COLLECTIONS.POSITIONS),
+    where('orgId', '==', orgId),
+    orderBy('createdAt', 'desc')
+  );
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map(d => ({ id: d.id, ...d.data() } as Position));
+}
+
+export async function getPosition(id: string): Promise<Position | null> {
+  const docRef = doc(firestore, COLLECTIONS.POSITIONS, id);
+  const snap = await getDoc(docRef);
+  return snap.exists() ? ({ id: snap.id, ...snap.data() } as Position) : null;
+}
+
+export async function savePosition(position: Position): Promise<void> {
+  const docRef = doc(firestore, COLLECTIONS.POSITIONS, position.id);
+  await setDoc(docRef, position);
+}
+
+export async function updatePosition(id: string, data: Partial<Position>): Promise<void> {
+  const docRef = doc(firestore, COLLECTIONS.POSITIONS, id);
+  await updateDoc(docRef, { ...data, updatedAt: Timestamp.now() });
+}
+
+export async function deletePosition(id: string): Promise<void> {
+  await deleteDoc(doc(firestore, COLLECTIONS.POSITIONS, id));
+}
+
+// ==========================================
+// Recruitment Campaigns
+// ==========================================
+
+export async function getCampaigns(orgId: string): Promise<RecruitmentCampaign[]> {
+  const q = query(
+    collection(firestore, COLLECTIONS.RECRUITMENT_CAMPAIGNS),
+    where('orgId', '==', orgId),
+    orderBy('createdAt', 'desc')
+  );
+  const snapshot = await getDocs(q);
+  return snapshot.docs.map(d => ({ id: d.id, ...d.data() } as RecruitmentCampaign));
+}
+
+export async function getCampaign(id: string): Promise<RecruitmentCampaign | null> {
+  const docRef = doc(firestore, COLLECTIONS.RECRUITMENT_CAMPAIGNS, id);
+  const snap = await getDoc(docRef);
+  return snap.exists() ? ({ id: snap.id, ...snap.data() } as RecruitmentCampaign) : null;
+}
+
+export async function saveCampaign(campaign: RecruitmentCampaign): Promise<void> {
+  const docRef = doc(firestore, COLLECTIONS.RECRUITMENT_CAMPAIGNS, campaign.id);
+  await setDoc(docRef, campaign);
+}
+
+export async function updateCampaign(id: string, data: Partial<RecruitmentCampaign>): Promise<void> {
+  const docRef = doc(firestore, COLLECTIONS.RECRUITMENT_CAMPAIGNS, id);
+  await updateDoc(docRef, { ...data, updatedAt: Timestamp.now() });
+}
+
+export async function deleteCampaign(id: string): Promise<void> {
+  await deleteDoc(doc(firestore, COLLECTIONS.RECRUITMENT_CAMPAIGNS, id));
 }
 
 // ==========================================

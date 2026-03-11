@@ -48,7 +48,7 @@ All pages are under `src/app/[locale]/` with next-intl locale routing (es/en/fr)
 
 ### Firestore CRUD
 - All database operations go through `src/lib/firebase/firestore.ts`
-- Collections: profiles, competencyCategories, questions, evaluations, results, archetypeProfiles, resources, settings, evaluationLinks, cognitiveTests, personalityTests, aptitudeTests, discTests, testSessions, combinedResults, technicalTests, jobProfiles, employees, probationEvaluations, reviewCampaigns, reviewAssignments, reviewSummaries, climateSurveys, climateResponses, climateSurveyResults, admins, organizations, orgMembers, orgInvites, userProfiles
+- Collections: profiles, competencyCategories, questions, evaluations, results, archetypeProfiles, resources, settings, evaluationLinks, cognitiveTests, personalityTests, aptitudeTests, discTests, testSessions, combinedResults, technicalTests, jobProfiles, employees, probationEvaluations, reviewCampaigns, reviewAssignments, reviewSummaries, climateSurveys, climateResponses, climateSurveyResults, admins, organizations, orgMembers, orgInvites, userProfiles, positions, recruitmentCampaigns, candidates, candidateInvites
 
 ### Organizations
 - Org model: organizations, orgMembers (composite ID `{orgId}_{userId}`), orgInvites

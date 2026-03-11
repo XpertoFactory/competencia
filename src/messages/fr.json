@@ -51,6 +51,7 @@
     "register": "S'inscrire",
     "logout": "Déconnexion",
     "organizations": "Organisations",
+    "recruitment": "Processus de Recrutement",
     "candidates": "Candidats"
   },
   "instructions": {
@@ -109,6 +110,7 @@
       "evaluations": "Évaluations",
       "tests": "Tests Spécialisés",
       "profiles": "Profils Professionnels",
+      "recruitment": "Recrutement",
       "candidates": "Gestion des Candidats",
       "reviews": "Évaluations 360° / 180°",
       "climate": "Enquêtes de Climat",
@@ -158,6 +160,20 @@
       "sectors": "15 secteurs d'activité incluant la technologie, la banque, la santé, l'assurance, l'éducation, l'hôtellerie et plus encore",
       "levels": "5 niveaux de carrière : Exécutif, Direction, Professionnel/Spécialiste, Administratif, Opérationnel",
       "customizable": "Chaque profil comprend des catégories de compétences et des questions d'évaluation adaptées"
+    },
+    "recruitmentSection": {
+      "title": "Processus de Recrutement",
+      "description": "Gérez le processus complet de recrutement avec des postes, des candidats et des campagnes structurées.",
+      "features": {
+        "f1": "Définissez des postes ouverts avec titre, département, description et statut (brouillon, ouvert, fermé, en pause)",
+        "f2": "Liez les postes aux profils de poste pour le scoring automatique des candidats",
+        "f3": "Visualisez combien de candidats postulent à chaque poste et leur statut dans le processus",
+        "f4": "Campagnes de recrutement avec assistant étape par étape : Planification → Préparation → Exécution → Revue → Suivi",
+        "f5": "Deux modèles prédéfinis : Recrutement Standard et Journée Carrières, personnalisables et duplicables",
+        "f6": "Recommandations et insights automatiques à chaque étape de la campagne",
+        "f7": "Liez les campagnes aux postes et candidats pour un suivi complet",
+        "f8": "Tableau de bord avec statistiques en temps réel : postes ouverts, candidats actifs, campagnes en cours"
+      }
     },
     "candidatesSection": {
       "title": "Gestion des Candidats",
@@ -573,6 +589,7 @@
     "jobProfiles": "Fiches de Poste",
     "jobFit": "Adéquation au Poste",
     "organizations": "Organisations",
+    "recruitment": "Recrutement",
     "candidates": "Candidats",
     "settings": {
       "title": "Paramètres",
@@ -1203,6 +1220,102 @@
       "professional-specialist": "Professionnel / Spécialiste",
       "administrative": "Administratif",
       "operative": "Opérationnel"
+    }
+  },
+  "recruitment": {
+    "title": "Processus de Recrutement",
+    "subtitle": "Gérez les postes ouverts, les candidats et les campagnes de recrutement",
+    "addPosition": "Ajouter un Poste",
+    "editPosition": "Modifier le Poste",
+    "createPosition": "Créer le Poste",
+    "deletePosition": "Supprimer le Poste",
+    "deleteConfirm": "Êtes-vous sûr de vouloir supprimer le poste {name} ? Cette action est irréversible.",
+    "positionTitle": "Titre du Poste",
+    "positionTitlePlaceholder": "Ex : Développeur Senior",
+    "department": "Département",
+    "departmentPlaceholder": "Ex : Technologie",
+    "positionDescription": "Description",
+    "positionDescriptionPlaceholder": "Décrivez les exigences et responsabilités du poste...",
+    "linkedJobProfile": "Profil de Poste Lié",
+    "noJobProfile": "Aucun profil de poste",
+    "linkedProfile": "Profil lié",
+    "maxCandidates": "Maximum de Candidats",
+    "maxCandidatesPlaceholder": "Ex : 10",
+    "searchPositions": "Rechercher des postes...",
+    "allStatuses": "Tous les statuts",
+    "noPositions": "Aucun poste enregistré",
+    "openPositions": "Postes Ouverts",
+    "totalCandidates": "Total des Candidats",
+    "activeCandidates": "Candidats Actifs",
+    "candidates": "Candidats",
+    "max": "Max",
+    "viewCandidates": "Voir les Candidats",
+    "inviteCandidates": "Inviter des Candidats",
+    "open": "Ouvrir",
+    "close": "Fermer",
+    "hold": "Suspendre",
+    "reopen": "Rouvrir",
+    "status": {
+      "draft": "Brouillon",
+      "open": "Ouvert",
+      "closed": "Fermé",
+      "on-hold": "En Pause"
+    },
+    "candidateStatus": {
+      "interest-received": "Intérêt Reçu",
+      "contacted": "Contacté",
+      "interviewed": "Interviewé",
+      "evaluated": "Évalué",
+      "reference-check": "Vérification",
+      "final-review": "Révision Finale"
+    },
+    "campaigns": {
+      "title": "Campagnes de Recrutement",
+      "subtitle": "Planifiez et exécutez des campagnes de recrutement",
+      "addCampaign": "Nouvelle Campagne",
+      "editCampaign": "Modifier la Campagne",
+      "deleteCampaign": "Supprimer la Campagne",
+      "deleteConfirm": "Êtes-vous sûr de vouloir supprimer la campagne {name} ?",
+      "campaignTitle": "Titre de la Campagne",
+      "campaignTitlePlaceholder": "Ex : Recrutement T1 2026",
+      "campaignDescription": "Description",
+      "campaignDescriptionPlaceholder": "Décrivez l'objectif et la portée de la campagne...",
+      "goal": "Objectif Général",
+      "goalPlaceholder": "Définissez l'objectif principal de cette campagne...",
+      "noCampaigns": "Aucune campagne enregistrée",
+      "searchCampaigns": "Rechercher des campagnes...",
+      "status": {
+        "draft": "Brouillon",
+        "active": "Active",
+        "completed": "Terminée",
+        "cancelled": "Annulée"
+      },
+      "steps": {
+        "planning": "Planification",
+        "preparation": "Préparation",
+        "execution": "Exécution",
+        "postReview": "Revue Post-Exécution",
+        "followUp": "Suivi"
+      },
+      "wizard": {
+        "title": "Assistant de Campagne",
+        "next": "Suivant",
+        "prev": "Précédent",
+        "finish": "Terminer",
+        "step": "Étape {current} sur {total}"
+      },
+      "templates": {
+        "standard": "Recrutement Standard",
+        "standardDesc": "Campagne standard avec toutes les étapes du processus de recrutement",
+        "careerDay": "Journée Carrières",
+        "careerDayDesc": "Événement de recrutement massif pour attirer des talents en une journée",
+        "useTemplate": "Utiliser le Modèle",
+        "customize": "Personnaliser"
+      },
+      "linkedPositions": "Postes Liés",
+      "linkedCandidates": "Candidats Liés",
+      "insights": "Informations et Suggestions",
+      "recommendations": "Recommandations"
     }
   },
   "candidates": {

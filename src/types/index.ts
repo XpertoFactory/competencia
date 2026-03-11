@@ -908,6 +908,65 @@ export interface UserProfile {
 }
 
 // ==========================================
+// Recruitment Process
+// ==========================================
+
+export type PositionStatus = 'draft' | 'open' | 'closed' | 'on-hold';
+
+export interface Position {
+  id: string;
+  orgId: string;
+  title: LocalizedString;
+  department: LocalizedString;
+  description: LocalizedString;
+  status: PositionStatus;
+  jobProfileId?: string; // optional link to JobProfile for scoring
+  maxCandidates?: number;
+  openedAt?: Timestamp;
+  closedAt?: Timestamp;
+  createdBy: string;
+  createdAt: Timestamp;
+  updatedAt?: Timestamp;
+}
+
+// Recruitment Campaigns
+
+export type CampaignStatus = 'draft' | 'active' | 'completed' | 'cancelled';
+
+export type CampaignStepKey = 'planning' | 'preparation' | 'execution' | 'postReview' | 'followUp';
+
+export interface CampaignStepItem {
+  id: string;
+  text: string;
+  completed: boolean;
+}
+
+export interface CampaignStep {
+  key: CampaignStepKey;
+  title: LocalizedString;
+  description: LocalizedString;
+  items: CampaignStepItem[];
+  notes: string;
+  completed: boolean;
+}
+
+export interface RecruitmentCampaign {
+  id: string;
+  orgId: string;
+  title: LocalizedString;
+  description: LocalizedString;
+  goal: LocalizedString;
+  status: CampaignStatus;
+  steps: CampaignStep[];
+  positionIds: string[];
+  candidateIds: string[];
+  templateId?: string; // 'standard' | 'career-day' if created from template
+  createdBy: string;
+  createdAt: Timestamp;
+  updatedAt?: Timestamp;
+}
+
+// ==========================================
 // Candidates
 // ==========================================
 
@@ -979,7 +1038,8 @@ export interface Candidate {
   checklist: CandidateChecklistItem[];
   // Files
   files: CandidateFile[];
-  // Linked job positions
+  // Linked positions and job profiles
+  positionIds: string[];
   jobProfileIds: string[];
   // Linked evaluations/tests
   evaluationIds: string[];
@@ -1000,6 +1060,7 @@ export interface CandidateInvite {
   orgId: string;
   orgName: string;
   candidateId: string;
+  positionIds: string[];
   jobProfileIds: string[];
   email: string;
   invitedBy: string;

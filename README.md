@@ -17,6 +17,8 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 - **Candidate Comparison** - Side-by-side radar chart comparison with benchmarks
 - **Evaluation History** - Searchable database with CSV/Excel export
 - **Profiles Page** - Dedicated browsable profile directory with sector/level filters
+- **Recruitment Process** - Position management, candidate tracking, and recruitment campaigns with wizard
+- **Recruitment Campaigns** - Step-by-step campaign wizard with built-in templates (Standard, Career Day) and insights
 - **Candidate Management** - Full candidate pipeline with status tracking, file uploads, checklists, scoring, and invitation system
 - **Candidate Portal** - Self-service profile editing for candidates with multi-org support
 - **Post-Hire Tools** - Employee management, probation tracking, 360/180 reviews, climate surveys
@@ -48,6 +50,7 @@ src/
     admin/                   # Admin panel (auth-protected)
       candidates/            # Candidate management & invitations
       climate/               # Climate surveys
+      recruitment/           # Recruitment process (positions & campaigns)
       comparison/            # Candidate comparison
       employees/             # Employee management
       history/               # Evaluation history
@@ -61,7 +64,7 @@ src/
     auth/                    # User login and registration
     candidate/               # Candidate self-service portal
     evaluation/[profileId]/  # Competency evaluation flow
-    instructions/            # Instructions for evaluators and candidates
+    features/                # Platform features and instructions
     profiles/                # Browsable profile directory
     results/[evaluationId]/  # Results display
     tests/                   # Test hub (cognitive, personality, DISC, aptitude)
