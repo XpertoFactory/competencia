@@ -597,17 +597,17 @@ export default function AdminUsersPage() {
                     value={assignRole}
                     onChange={(e) => setAssignRole(e.target.value as OrgRole)}
                     options={[
-                      { value: 'viewer', label: 'Viewer' },
-                      { value: 'member', label: 'Member' },
-                      { value: 'admin', label: 'Admin' },
-                      { value: 'owner', label: 'Owner' },
+                      { value: 'viewer', label: t('roleViewer') },
+                      { value: 'member', label: t('roleMember') },
+                      { value: 'admin', label: t('roleAdmin') },
+                      { value: 'owner', label: t('roleOwner') },
                     ]}
                   />
                 </div>
               </div>
               <div className="flex justify-end gap-3 p-4 border-t border-gray-200">
                 <Button variant="outline" onClick={() => setShowAssignModal(false)}>
-                  Cancel
+                  {t('cancel')}
                 </Button>
                 <Button onClick={handleAssign} disabled={!assignOrgId || assigning}>
                   {assigning ? <Loader2 className="w-4 h-4 animate-spin mr-2" /> : <UserPlus className="w-4 h-4 mr-2" />}
