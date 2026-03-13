@@ -23,7 +23,7 @@ import { firebaseAuth, xaidAuth } from './config';
 export interface AdminUser {
   uid: string;
   email: string;
-  role: 'admin' | 'viewer';
+  role: 'admin' | 'viewer' | 'org-admin';
 }
 
 export interface XaidSession {
@@ -256,7 +256,21 @@ export function hasRole(role: string): boolean {
 }
 
 export function isAdmin(): boolean {
-  return hasRole('admin') || hasRole('viewer');
+  return isPlatformAdmin() || isOrgAdmin();
+}
+
+/** Platform-level admin or viewer (individualRole) */
+export function isPlatformAdmin(): boolean {
+  const session = getSession();
+  if (!session) return false;
+  return session.individualRole === 'admin' || session.individualRole === 'viewer';
+}
+
+/** User is owner or admin of at least one organization */
+export function isOrgAdmin(): boolean {
+  const session = getSession();
+  if (!session) return false;
+  return session.orgRoles.some(o => o.role === 'owner' || o.role === 'admin');
 }
 
 export function getIndividualRole(): string | null {

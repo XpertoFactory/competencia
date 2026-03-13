@@ -34,7 +34,7 @@ export function AuthGuard({ children, requiredRole }: AuthGuardProps) {
     return null;
   }
 
-  if (requiredRole === 'admin' && admin.role !== 'admin') {
+  if (requiredRole === 'admin' && admin.role !== 'admin' && admin.role !== 'org-admin') {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-100">
         <div className="text-center">

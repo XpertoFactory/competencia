@@ -30,6 +30,12 @@
 - Pricing link added to Value dropdown in navigation (desktop + mobile)
 - Full trilingual support (ES/EN/FR)
 
+### Organization-Level Admin Access
+- Org owners and admins can now access the admin panel without being platform-level admins
+- New `org-admin` role in AuthProvider for users with org `owner` or `admin` role
+- Added `isPlatformAdmin()` and `isOrgAdmin()` helpers to auth module
+- AuthGuard updated to allow `org-admin` users through `requiredRole="admin"` checks
+
 ### Translation Updates
 - Added auth keys: `forgotPassword`, `forgotPasswordTitle`, `forgotPasswordSubtitle`, `resetPassword`, `resetPasswordSent`, `backToLogin`, `noAccess`, `noAccessMessage`
 - Added `legal-practice` sector label in all 3 languages

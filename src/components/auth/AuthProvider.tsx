@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { onAuthChange, signOut, getSession, type AdminUser, type StoredSession } from '@/lib/firebase/auth';
+import { onAuthChange, signOut, getSession, isPlatformAdmin, isOrgAdmin, type AdminUser, type StoredSession } from '@/lib/firebase/auth';
 
 interface AuthContextType {
   admin: AdminUser | null;
@@ -33,12 +33,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         setSession(storedSession);
 
         if (storedSession) {
-          const role = storedSession.individualRole;
-          if (role === 'admin' || role === 'viewer') {
+          const indRole = storedSession.individualRole;
+          if (indRole === 'admin' || indRole === 'viewer') {
+            // Platform-level admin
             setAdmin({
               uid: user.uid,
               email: storedSession.email || user.email || '',
-              role: role as 'admin' | 'viewer',
+              role: indRole as 'admin' | 'viewer',
+            });
+          } else if (isOrgAdmin()) {
+            // Org-level admin (owner or admin of at least one org)
+            setAdmin({
+              uid: user.uid,
+              email: storedSession.email || user.email || '',
+              role: 'org-admin',
             });
           } else {
             setAdmin(null);
