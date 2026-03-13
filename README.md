@@ -6,8 +6,8 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 
 ## Features
 
-- **49 Evaluation Profiles** - Across 16 sectors (insurance, education, healthcare, retail, finance, HR, technology, banking, hospitality, legal practice, etc.) and 5 levels (executive to operative)
-- **Competency Evaluations** - 960+ trilingual questions (5 types: multiple choice, scale, ranking, open text, scenario)
+- **57 Evaluation Profiles** - Across 16 sectors (insurance, education, healthcare, retail, finance, HR, technology, banking, hospitality, legal practice, etc.) and 5 levels (executive to operative)
+- **Competency Evaluations** - 1,020+ trilingual questions (5 types: multiple choice, scale, ranking, open text, scenario)
 - **Cognitive Tests** - Timed IQ-style assessments with percentile scoring
 - **Personality Tests** - Big Five (OCEAN) personality profiling via Likert scale
 - **DISC Assessments** - Forced-choice behavioral style profiling

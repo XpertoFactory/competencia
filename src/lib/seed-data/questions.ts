@@ -13,6 +13,7 @@ import { techSwdevProfessionalQuestions, techSwdevSoftSkillsQuestions, techSwdev
 import { bankBmProfessionalQuestions, bankBmSoftSkillsQuestions, bankBmReadinessQuestions, bankLoProfessionalQuestions, bankLoSoftSkillsQuestions, bankLoReadinessQuestions, bankIaProfessionalQuestions, bankIaSoftSkillsQuestions, bankIaReadinessQuestions, bankBtProfessionalQuestions, bankBtSoftSkillsQuestions, bankBtReadinessQuestions } from './banking-questions';
 import { hospHgmProfessionalQuestions, hospHgmSoftSkillsQuestions, hospHgmReadinessQuestions, hospRmProfessionalQuestions, hospRmSoftSkillsQuestions, hospRmReadinessQuestions, hospFdaProfessionalQuestions, hospFdaSoftSkillsQuestions, hospFdaReadinessQuestions, hospCkmProfessionalQuestions, hospCkmSoftSkillsQuestions, hospCkmReadinessQuestions } from './hospitality-questions';
 import { legalMpProfessionalQuestions, legalMpSoftSkillsQuestions, legalMpReadinessQuestions, legalPdProfessionalQuestions, legalPdSoftSkillsQuestions, legalPdReadinessQuestions, legalSaProfessionalQuestions, legalSaSoftSkillsQuestions, legalSaReadinessQuestions, legalCcProfessionalQuestions, legalCcSoftSkillsQuestions, legalCcReadinessQuestions, legalPlProfessionalQuestions, legalPlSoftSkillsQuestions, legalPlReadinessQuestions, legalLsProfessionalQuestions, legalLsSoftSkillsQuestions, legalLsReadinessQuestions } from './legal-questions';
+import { msDynProfessionalQuestions, msDynSoftSkillsQuestions, msDynReadinessQuestions, msOfficeProfessionalQuestions, msOfficeSoftSkillsQuestions, msOfficeReadinessQuestions, msSpProfessionalQuestions, msSpSoftSkillsQuestions, msSpReadinessQuestions } from './ms-questions';
 
 // ============================================================================
 // SHARED QUESTIONS (used by both profiles for soft-skills and readiness)
@@ -7244,4 +7245,19 @@ export const questions: Question[] = [
   ...legalLsProfessionalQuestions,
   ...legalLsSoftSkillsQuestions,
   ...legalLsReadinessQuestions,
+
+  // Microsoft — Dynamics Operator
+  ...msDynProfessionalQuestions,
+  ...msDynSoftSkillsQuestions,
+  ...msDynReadinessQuestions,
+
+  // Microsoft — Office/365 User
+  ...msOfficeProfessionalQuestions,
+  ...msOfficeSoftSkillsQuestions,
+  ...msOfficeReadinessQuestions,
+
+  // Microsoft — SharePoint User
+  ...msSpProfessionalQuestions,
+  ...msSpSoftSkillsQuestions,
+  ...msSpReadinessQuestions,
 ];

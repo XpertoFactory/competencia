@@ -30,6 +30,13 @@
 - Pricing link added to Value dropdown in navigation (desktop + mobile)
 - Full trilingual support (ES/EN/FR)
 
+### Microsoft Evaluation Profiles
+- New Microsoft Dynamics Operator profile (operative) — ERP/CRM data entry, transactions, reporting, module operations
+- New Microsoft Office/365 User profile (operative) — Word, Excel, PowerPoint, Outlook, OneNote, Planner, OneDrive
+- New Microsoft SharePoint User profile (operative) — site management, document libraries, lists, workflows, permissions
+- 9 competency categories and 54 trilingual questions across all 3 profiles
+- Total profiles: 57 across 16 sectors
+
 ### Organization-Level Admin Access
 - Org owners and admins can now access the admin panel without being platform-level admins
 - New `org-admin` role in AuthProvider for users with org `owner` or `admin` role

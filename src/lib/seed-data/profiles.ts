@@ -926,6 +926,58 @@ export const profiles: Profile[] = [
     competencyCategories: ['legal-ls-professional', 'legal-ls-soft-skills', 'legal-ls-readiness'],
     isActive: true,
   },
+  // --- Microsoft Technology Profiles ---
+  {
+    id: 'ms-dynamics-operator',
+    name: {
+      es: 'Operador de Microsoft Dynamics',
+      en: 'Microsoft Dynamics Operator',
+      fr: 'Opérateur Microsoft Dynamics',
+    },
+    description: {
+      es: 'Usuario operativo de Microsoft Dynamics 365 (ERP/CRM), responsable de la captura de datos, procesamiento de transacciones, generación de reportes, navegación de módulos y operaciones diarias del negocio dentro de la plataforma.',
+      en: 'Operational user of Microsoft Dynamics 365 (ERP/CRM), responsible for data entry, transaction processing, report generation, module navigation, and daily business operations within the platform.',
+      fr: 'Utilisateur opérationnel de Microsoft Dynamics 365 (ERP/CRM), responsable de la saisie de données, du traitement des transactions, de la génération de rapports, de la navigation dans les modules et des opérations quotidiennes de l\'entreprise au sein de la plateforme.',
+    },
+    sectors: ['technology-it'] as ProfileSector[],
+    level: 'operative' as ProfileLevel,
+    competencyCategories: ['ms-dyn-professional', 'ms-dyn-soft-skills', 'ms-dyn-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'ms-office-user',
+    name: {
+      es: 'Usuario de Microsoft Office/365',
+      en: 'Microsoft Office/365 User',
+      fr: 'Utilisateur Microsoft Office/365',
+    },
+    description: {
+      es: 'Usuario competente de la suite Microsoft 365 (Word, Excel, PowerPoint, Outlook, OneNote, Planner, OneDrive) para la creación de documentos, gestión de datos, presentaciones, comunicación, planificación de tareas y colaboración en la nube.',
+      en: 'Proficient user of Microsoft 365 suite (Word, Excel, PowerPoint, Outlook, OneNote, Planner, OneDrive) for document creation, data management, presentations, communication, task planning, and cloud collaboration.',
+      fr: 'Utilisateur compétent de la suite Microsoft 365 (Word, Excel, PowerPoint, Outlook, OneNote, Planner, OneDrive) pour la création de documents, la gestion de données, les présentations, la communication, la planification de tâches et la collaboration dans le cloud.',
+    },
+    sectors: ['technology-it'] as ProfileSector[],
+    level: 'operative' as ProfileLevel,
+    competencyCategories: ['ms-office-professional', 'ms-office-soft-skills', 'ms-office-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'ms-sharepoint-user',
+    name: {
+      es: 'Usuario de Microsoft SharePoint',
+      en: 'Microsoft SharePoint User',
+      fr: 'Utilisateur Microsoft SharePoint',
+    },
+    description: {
+      es: 'Usuario responsable de la gestión y colaboración en sitios de SharePoint, bibliotecas de documentos, listas, flujos de trabajo y contenido de intranet. Maneja permisos, metadatos, control de versiones y colaboración en equipo.',
+      en: 'User responsible for managing and collaborating on SharePoint sites, document libraries, lists, workflows, and intranet content. Handles permissions, metadata, version control, and team collaboration.',
+      fr: 'Utilisateur responsable de la gestion et de la collaboration sur les sites SharePoint, les bibliothèques de documents, les listes, les flux de travail et le contenu intranet. Gère les autorisations, les métadonnées, le contrôle de versions et la collaboration en équipe.',
+    },
+    sectors: ['technology-it'] as ProfileSector[],
+    level: 'operative' as ProfileLevel,
+    competencyCategories: ['ms-sp-professional', 'ms-sp-soft-skills', 'ms-sp-readiness'],
+    isActive: true,
+  },
 ];
 
 // ============================================================================
@@ -7654,6 +7706,120 @@ export const competencyCategories: CompetencyCategory[] = [
       { id: 'legal-digital-filing', name: { es: 'Archivo Digital y Sistemas en la Nube', en: 'Digital Filing & Cloud Systems', fr: 'Classement Numérique et Systèmes Cloud' }, description: { es: 'Disposición para migrar a sistemas de archivo digital, plataformas en la nube y gestión electrónica de documentos legales.', en: 'Willingness to migrate to digital filing systems, cloud platforms, and electronic management of legal documents.', fr: 'Volonté de migrer vers des systèmes de classement numérique, des plateformes cloud et la gestion électronique de documents juridiques.' }, weight: 0.35 },
       { id: 'legal-software-proficiency', name: { es: 'Dominio de Software Legal', en: 'Legal Software Proficiency', fr: 'Maîtrise des Logiciels Juridiques' }, description: { es: 'Apertura para aprender y dominar nuevos software de gestión legal, facturación, gestión de documentos y herramientas de productividad.', en: 'Openness to learning and mastering new legal management software, billing, document management, and productivity tools.', fr: 'Ouverture à l\'apprentissage et à la maîtrise de nouveaux logiciels de gestion juridique, de facturation, de gestion documentaire et d\'outils de productivité.' }, weight: 0.35 },
       { id: 'legal-remote-hybrid', name: { es: 'Adaptación al Trabajo Remoto e Híbrido', en: 'Remote & Hybrid Work Adaptation', fr: 'Adaptation au Travail à Distance et Hybride' }, description: { es: 'Disposición para adaptarse a modelos de trabajo remoto e híbrido, manteniendo la eficiencia y coordinación con el equipo legal.', en: 'Willingness to adapt to remote and hybrid work models, maintaining efficiency and coordination with the legal team.', fr: 'Volonté de s\'adapter aux modèles de travail à distance et hybride, en maintenant l\'efficacité et la coordination avec l\'équipe juridique.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // MICROSOFT DYNAMICS — Operator
+  // ============================================================================
+  {
+    id: 'ms-dyn-professional',
+    name: { es: 'Habilidades Profesionales del Operador de Dynamics', en: 'Dynamics Operator Professional Skills', fr: 'Compétences Professionnelles de l\'Opérateur Dynamics' },
+    description: { es: 'Conocimientos técnicos y habilidades operativas para el uso eficiente de Microsoft Dynamics 365.', en: 'Technical knowledge and operational skills for efficient use of Microsoft Dynamics 365.', fr: 'Connaissances techniques et compétences opérationnelles pour l\'utilisation efficace de Microsoft Dynamics 365.' },
+    competencies: [
+      { id: 'ms-dyn-navigation-data-entry', name: { es: 'Navegación y Captura de Datos en Dynamics', en: 'Dynamics Navigation & Data Entry', fr: 'Navigation et Saisie de Données dans Dynamics' }, description: { es: 'Capacidad para navegar eficientemente por los módulos de Dynamics 365, realizar captura de datos precisa y utilizar formularios, vistas y filtros del sistema.', en: 'Ability to efficiently navigate Dynamics 365 modules, perform accurate data entry, and use system forms, views, and filters.', fr: 'Capacité à naviguer efficacement dans les modules de Dynamics 365, effectuer une saisie de données précise et utiliser les formulaires, vues et filtres du système.' }, weight: 0.25 },
+      { id: 'ms-dyn-transaction-processing', name: { es: 'Procesamiento de Transacciones y Flujos de Trabajo', en: 'Transaction Processing & Workflows', fr: 'Traitement des Transactions et Flux de Travail' }, description: { es: 'Habilidad para ejecutar transacciones comerciales, procesar órdenes, gestionar flujos de trabajo automatizados y completar procesos de negocio dentro de Dynamics 365.', en: 'Skill in executing business transactions, processing orders, managing automated workflows, and completing business processes within Dynamics 365.', fr: 'Compétence pour exécuter des transactions commerciales, traiter des commandes, gérer des flux de travail automatisés et compléter des processus métier dans Dynamics 365.' }, weight: 0.25 },
+      { id: 'ms-dyn-reporting', name: { es: 'Reportes y Análisis de Datos', en: 'Reporting & Data Analysis', fr: 'Rapports et Analyse de Données' }, description: { es: 'Capacidad para generar reportes estándar y personalizados, analizar datos operativos y utilizar dashboards para monitorear indicadores clave de rendimiento.', en: 'Ability to generate standard and custom reports, analyze operational data, and use dashboards to monitor key performance indicators.', fr: 'Capacité à générer des rapports standards et personnalisés, analyser des données opérationnelles et utiliser des tableaux de bord pour surveiller les indicateurs clés de performance.' }, weight: 0.25 },
+      { id: 'ms-dyn-module-operations', name: { es: 'Operaciones por Módulo (Ventas/Finanzas/Cadena de Suministro)', en: 'Module-Specific Operations (Sales/Finance/Supply Chain)', fr: 'Opérations par Module (Ventes/Finances/Chaîne d\'Approvisionnement)' }, description: { es: 'Dominio de las operaciones específicas de los módulos de Dynamics 365, incluyendo ventas, finanzas, cadena de suministro, servicio al cliente y recursos humanos.', en: 'Mastery of module-specific operations in Dynamics 365, including sales, finance, supply chain, customer service, and human resources.', fr: 'Maîtrise des opérations spécifiques aux modules de Dynamics 365, incluant ventes, finances, chaîne d\'approvisionnement, service client et ressources humaines.' }, weight: 0.25 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'ms-dyn-soft-skills',
+    name: { es: 'Habilidades Blandas del Operador de Dynamics', en: 'Dynamics Operator Soft Skills', fr: 'Compétences Interpersonnelles de l\'Opérateur Dynamics' },
+    description: { es: 'Competencias interpersonales esenciales para la operación eficiente y precisa de Dynamics 365.', en: 'Essential interpersonal competencies for efficient and accurate Dynamics 365 operation.', fr: 'Compétences interpersonnelles essentielles pour une opération efficace et précise de Dynamics 365.' },
+    competencies: [
+      { id: 'ms-dyn-attention-detail', name: { es: 'Atención al Detalle y Precisión', en: 'Attention to Detail & Accuracy', fr: 'Attention aux Détails et Précision' }, description: { es: 'Capacidad para mantener altos niveles de precisión en la captura de datos, verificación de transacciones y revisión de registros dentro del sistema.', en: 'Ability to maintain high levels of accuracy in data entry, transaction verification, and record review within the system.', fr: 'Capacité à maintenir des niveaux élevés de précision dans la saisie de données, la vérification des transactions et la révision des enregistrements dans le système.' }, weight: 0.35 },
+      { id: 'ms-dyn-communication', name: { es: 'Comunicación y Documentación', en: 'Communication & Documentation', fr: 'Communication et Documentation' }, description: { es: 'Habilidad para documentar procesos, comunicar incidencias, reportar errores y colaborar con equipos técnicos y de negocio de manera clara y efectiva.', en: 'Skill in documenting processes, communicating incidents, reporting errors, and collaborating with technical and business teams clearly and effectively.', fr: 'Compétence pour documenter les processus, communiquer les incidents, signaler les erreurs et collaborer avec les équipes techniques et métier de manière claire et efficace.' }, weight: 0.35 },
+      { id: 'ms-dyn-problem-solving', name: { es: 'Resolución de Problemas y Diagnóstico', en: 'Problem-Solving & Troubleshooting', fr: 'Résolution de Problèmes et Diagnostic' }, description: { es: 'Capacidad para identificar y diagnosticar problemas operativos en el sistema, aplicar soluciones básicas y escalar incidentes cuando sea necesario.', en: 'Ability to identify and diagnose operational issues in the system, apply basic solutions, and escalate incidents when necessary.', fr: 'Capacité à identifier et diagnostiquer les problèmes opérationnels dans le système, appliquer des solutions de base et escalader les incidents si nécessaire.' }, weight: 0.3 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'ms-dyn-readiness',
+    name: { es: 'Disposición al Cambio del Operador de Dynamics', en: 'Dynamics Operator Readiness for Change', fr: 'Disposition au Changement de l\'Opérateur Dynamics' },
+    description: { es: 'Capacidad de adaptación ante actualizaciones de la plataforma y evolución de procesos operativos.', en: 'Adaptability to platform updates and evolution of operational processes.', fr: 'Adaptabilité aux mises à jour de la plateforme et à l\'évolution des processus opérationnels.' },
+    competencies: [
+      { id: 'ms-dyn-platform-updates', name: { es: 'Actualizaciones de Plataforma y Nuevas Funcionalidades', en: 'Platform Updates & New Features Adoption', fr: 'Mises à Jour de la Plateforme et Adoption de Nouvelles Fonctionnalités' }, description: { es: 'Disposición para adaptarse a actualizaciones periódicas de Dynamics 365, aprender nuevas funcionalidades y adoptar cambios en la interfaz y procesos.', en: 'Willingness to adapt to periodic Dynamics 365 updates, learn new features, and adopt changes in interface and processes.', fr: 'Volonté de s\'adapter aux mises à jour périodiques de Dynamics 365, d\'apprendre de nouvelles fonctionnalités et d\'adopter les changements d\'interface et de processus.' }, weight: 0.35 },
+      { id: 'ms-dyn-process-improvement', name: { es: 'Mejora de Procesos y Automatización', en: 'Process Improvement & Automation', fr: 'Amélioration des Processus et Automatisation' }, description: { es: 'Apertura para identificar oportunidades de mejora en procesos operativos, proponer automatizaciones y contribuir a la eficiencia del uso del sistema.', en: 'Openness to identifying improvement opportunities in operational processes, proposing automations, and contributing to system usage efficiency.', fr: 'Ouverture à l\'identification d\'opportunités d\'amélioration des processus opérationnels, à la proposition d\'automatisations et à la contribution à l\'efficacité d\'utilisation du système.' }, weight: 0.35 },
+      { id: 'ms-dyn-digital-literacy', name: { es: 'Alfabetización Digital y Herramientas en la Nube', en: 'Digital Literacy & Cloud Tools', fr: 'Littératie Numérique et Outils Cloud' }, description: { es: 'Disposición para desarrollar competencias digitales amplias, incluyendo herramientas complementarias en la nube, integraciones y ecosistema Microsoft.', en: 'Willingness to develop broad digital competencies, including complementary cloud tools, integrations, and the Microsoft ecosystem.', fr: 'Volonté de développer de larges compétences numériques, incluant les outils cloud complémentaires, les intégrations et l\'écosystème Microsoft.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // MICROSOFT OFFICE/365 — User
+  // ============================================================================
+  {
+    id: 'ms-office-professional',
+    name: { es: 'Habilidades Profesionales del Usuario de Office/365', en: 'Office/365 User Professional Skills', fr: 'Compétences Professionnelles de l\'Utilisateur Office/365' },
+    description: { es: 'Conocimientos técnicos para el uso eficiente de la suite Microsoft 365 en el entorno laboral.', en: 'Technical knowledge for efficient use of the Microsoft 365 suite in the workplace.', fr: 'Connaissances techniques pour l\'utilisation efficace de la suite Microsoft 365 en milieu professionnel.' },
+    competencies: [
+      { id: 'ms-office-word', name: { es: 'Word y Gestión de Documentos', en: 'Word & Document Management', fr: 'Word et Gestion de Documents' }, description: { es: 'Dominio de Microsoft Word para la creación, formato, edición y gestión de documentos profesionales, incluyendo plantillas, estilos, tablas de contenido y combinación de correspondencia.', en: 'Mastery of Microsoft Word for creating, formatting, editing, and managing professional documents, including templates, styles, tables of contents, and mail merge.', fr: 'Maîtrise de Microsoft Word pour la création, la mise en forme, l\'édition et la gestion de documents professionnels, incluant les modèles, styles, tables des matières et publipostage.' }, weight: 0.25 },
+      { id: 'ms-office-excel', name: { es: 'Excel y Análisis de Datos', en: 'Excel & Data Analysis', fr: 'Excel et Analyse de Données' }, description: { es: 'Habilidad para utilizar Excel en la gestión de datos, creación de fórmulas, tablas dinámicas, gráficos, análisis estadístico y automatización con macros básicas.', en: 'Skill in using Excel for data management, formula creation, pivot tables, charts, statistical analysis, and basic macro automation.', fr: 'Compétence pour utiliser Excel dans la gestion de données, la création de formules, les tableaux croisés dynamiques, les graphiques, l\'analyse statistique et l\'automatisation avec des macros de base.' }, weight: 0.25 },
+      { id: 'ms-office-powerpoint', name: { es: 'PowerPoint y Comunicación Visual', en: 'PowerPoint & Visual Communication', fr: 'PowerPoint et Communication Visuelle' }, description: { es: 'Capacidad para crear presentaciones impactantes y profesionales, utilizando diseño visual, animaciones, transiciones y elementos multimedia para comunicar ideas efectivamente.', en: 'Ability to create impactful and professional presentations, using visual design, animations, transitions, and multimedia elements to communicate ideas effectively.', fr: 'Capacité à créer des présentations percutantes et professionnelles, en utilisant le design visuel, les animations, les transitions et les éléments multimédias pour communiquer des idées efficacement.' }, weight: 0.25 },
+      { id: 'ms-office-productivity', name: { es: 'Outlook/OneNote/Planner/OneDrive Productividad', en: 'Outlook/OneNote/Planner/OneDrive Productivity', fr: 'Outlook/OneNote/Planner/OneDrive Productivité' }, description: { es: 'Dominio de herramientas de productividad de Microsoft 365: gestión de correo y calendario con Outlook, toma de notas con OneNote, planificación de tareas con Planner y almacenamiento en la nube con OneDrive.', en: 'Mastery of Microsoft 365 productivity tools: email and calendar management with Outlook, note-taking with OneNote, task planning with Planner, and cloud storage with OneDrive.', fr: 'Maîtrise des outils de productivité Microsoft 365 : gestion du courriel et du calendrier avec Outlook, prise de notes avec OneNote, planification de tâches avec Planner et stockage cloud avec OneDrive.' }, weight: 0.25 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'ms-office-soft-skills',
+    name: { es: 'Habilidades Blandas del Usuario de Office/365', en: 'Office/365 User Soft Skills', fr: 'Compétences Interpersonnelles de l\'Utilisateur Office/365' },
+    description: { es: 'Competencias interpersonales esenciales para el uso efectivo de herramientas de oficina en entornos colaborativos.', en: 'Essential interpersonal competencies for effective use of office tools in collaborative environments.', fr: 'Compétences interpersonnelles essentielles pour l\'utilisation efficace des outils bureautiques en environnements collaboratifs.' },
+    competencies: [
+      { id: 'ms-office-written-comm', name: { es: 'Comunicación Escrita y Formato', en: 'Written Communication & Formatting', fr: 'Communication Écrite et Mise en Forme' }, description: { es: 'Capacidad para redactar documentos claros y profesionales, aplicar formatos consistentes y comunicar información de manera efectiva a través de medios escritos.', en: 'Ability to write clear and professional documents, apply consistent formatting, and communicate information effectively through written media.', fr: 'Capacité à rédiger des documents clairs et professionnels, appliquer des formats cohérents et communiquer l\'information efficacement par écrit.' }, weight: 0.35 },
+      { id: 'ms-office-organization', name: { es: 'Organización y Gestión del Tiempo', en: 'Organization & Time Management', fr: 'Organisation et Gestion du Temps' }, description: { es: 'Habilidad para organizar archivos, gestionar calendarios, priorizar tareas y mantener un flujo de trabajo eficiente utilizando las herramientas de Microsoft 365.', en: 'Skill in organizing files, managing calendars, prioritizing tasks, and maintaining an efficient workflow using Microsoft 365 tools.', fr: 'Compétence pour organiser les fichiers, gérer les calendriers, prioriser les tâches et maintenir un flux de travail efficace en utilisant les outils Microsoft 365.' }, weight: 0.35 },
+      { id: 'ms-office-collaboration', name: { es: 'Colaboración y Trabajo en Equipo', en: 'Collaboration & Teamwork', fr: 'Collaboration et Travail en Équipe' }, description: { es: 'Capacidad para colaborar en documentos compartidos, coordinar proyectos a través de herramientas de equipo y contribuir efectivamente en entornos de trabajo colaborativo.', en: 'Ability to collaborate on shared documents, coordinate projects through team tools, and contribute effectively in collaborative work environments.', fr: 'Capacité à collaborer sur des documents partagés, coordonner des projets via les outils d\'équipe et contribuer efficacement dans des environnements de travail collaboratifs.' }, weight: 0.3 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'ms-office-readiness',
+    name: { es: 'Disposición al Cambio del Usuario de Office/365', en: 'Office/365 User Readiness for Change', fr: 'Disposition au Changement de l\'Utilisateur Office/365' },
+    description: { es: 'Capacidad de adaptación ante la evolución de las herramientas de productividad y colaboración en la nube.', en: 'Adaptability to the evolution of productivity and cloud collaboration tools.', fr: 'Adaptabilité à l\'évolution des outils de productivité et de collaboration dans le cloud.' },
+    competencies: [
+      { id: 'ms-office-cloud-adoption', name: { es: 'Adopción de Herramientas en la Nube y Colaboración', en: 'Cloud & Collaboration Tools Adoption', fr: 'Adoption des Outils Cloud et de Collaboration' }, description: { es: 'Disposición para migrar a flujos de trabajo basados en la nube, adoptar nuevas herramientas de colaboración y aprovechar las funcionalidades en línea de Microsoft 365.', en: 'Willingness to migrate to cloud-based workflows, adopt new collaboration tools, and leverage Microsoft 365 online capabilities.', fr: 'Volonté de migrer vers des flux de travail basés sur le cloud, d\'adopter de nouveaux outils de collaboration et de tirer parti des fonctionnalités en ligne de Microsoft 365.' }, weight: 0.35 },
+      { id: 'ms-office-ai-copilot', name: { es: 'Funcionalidades de IA (Copilot)', en: 'AI-Powered Features (Copilot)', fr: 'Fonctionnalités d\'IA (Copilot)' }, description: { es: 'Apertura para adoptar y utilizar funcionalidades de inteligencia artificial integradas en Microsoft 365, como Copilot, para mejorar la productividad y la calidad del trabajo.', en: 'Openness to adopting and using AI-powered features integrated in Microsoft 365, such as Copilot, to improve productivity and work quality.', fr: 'Ouverture à l\'adoption et à l\'utilisation des fonctionnalités d\'intelligence artificielle intégrées dans Microsoft 365, telles que Copilot, pour améliorer la productivité et la qualité du travail.' }, weight: 0.35 },
+      { id: 'ms-office-workflow-optimization', name: { es: 'Optimización de Flujos de Trabajo Digitales', en: 'Digital Workflow Optimization', fr: 'Optimisation des Flux de Travail Numériques' }, description: { es: 'Disposición para optimizar procesos de trabajo mediante la integración de herramientas, automatización de tareas repetitivas y adopción de mejores prácticas digitales.', en: 'Willingness to optimize work processes through tool integration, automation of repetitive tasks, and adoption of digital best practices.', fr: 'Volonté d\'optimiser les processus de travail par l\'intégration d\'outils, l\'automatisation des tâches répétitives et l\'adoption de meilleures pratiques numériques.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // MICROSOFT SHAREPOINT — User
+  // ============================================================================
+  {
+    id: 'ms-sp-professional',
+    name: { es: 'Habilidades Profesionales del Usuario de SharePoint', en: 'SharePoint User Professional Skills', fr: 'Compétences Professionnelles de l\'Utilisateur SharePoint' },
+    description: { es: 'Conocimientos técnicos para la gestión y colaboración eficiente en la plataforma Microsoft SharePoint.', en: 'Technical knowledge for efficient management and collaboration on the Microsoft SharePoint platform.', fr: 'Connaissances techniques pour la gestion et la collaboration efficaces sur la plateforme Microsoft SharePoint.' },
+    competencies: [
+      { id: 'ms-sp-site-library', name: { es: 'Gestión de Sitios y Bibliotecas', en: 'Site & Library Management', fr: 'Gestion de Sites et de Bibliothèques' }, description: { es: 'Capacidad para crear, configurar y administrar sitios de SharePoint, bibliotecas de documentos, páginas de contenido y navegación del sitio.', en: 'Ability to create, configure, and manage SharePoint sites, document libraries, content pages, and site navigation.', fr: 'Capacité à créer, configurer et administrer des sites SharePoint, des bibliothèques de documents, des pages de contenu et la navigation du site.' }, weight: 0.25 },
+      { id: 'ms-sp-document-management', name: { es: 'Gestión de Documentos y Control de Versiones', en: 'Document Management & Version Control', fr: 'Gestion de Documents et Contrôle de Versions' }, description: { es: 'Habilidad para gestionar documentos con control de versiones, metadatos, check-in/check-out, flujos de aprobación y políticas de retención de documentos.', en: 'Skill in managing documents with version control, metadata, check-in/check-out, approval workflows, and document retention policies.', fr: 'Compétence pour gérer les documents avec contrôle de versions, métadonnées, archivage/extraction, flux d\'approbation et politiques de conservation des documents.' }, weight: 0.25 },
+      { id: 'ms-sp-lists-workflows', name: { es: 'Listas, Flujos de Trabajo y Automatización (Power Automate)', en: 'Lists/Workflows & Automation (Power Automate)', fr: 'Listes, Flux de Travail et Automatisation (Power Automate)' }, description: { es: 'Capacidad para crear y gestionar listas de SharePoint, diseñar flujos de trabajo automatizados con Power Automate y optimizar procesos de negocio.', en: 'Ability to create and manage SharePoint lists, design automated workflows with Power Automate, and optimize business processes.', fr: 'Capacité à créer et gérer des listes SharePoint, concevoir des flux de travail automatisés avec Power Automate et optimiser les processus métier.' }, weight: 0.25 },
+      { id: 'ms-sp-permissions', name: { es: 'Gestión de Permisos y Seguridad', en: 'Permissions & Security Management', fr: 'Gestion des Autorisations et Sécurité' }, description: { es: 'Dominio de la configuración de permisos, grupos de seguridad, niveles de acceso, herencia de permisos y políticas de seguridad en SharePoint.', en: 'Mastery of permission configuration, security groups, access levels, permission inheritance, and security policies in SharePoint.', fr: 'Maîtrise de la configuration des autorisations, des groupes de sécurité, des niveaux d\'accès, de l\'héritage des autorisations et des politiques de sécurité dans SharePoint.' }, weight: 0.25 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'ms-sp-soft-skills',
+    name: { es: 'Habilidades Blandas del Usuario de SharePoint', en: 'SharePoint User Soft Skills', fr: 'Compétences Interpersonnelles de l\'Utilisateur SharePoint' },
+    description: { es: 'Competencias interpersonales esenciales para la gestión de contenido y colaboración en SharePoint.', en: 'Essential interpersonal competencies for content management and collaboration in SharePoint.', fr: 'Compétences interpersonnelles essentielles pour la gestion de contenu et la collaboration dans SharePoint.' },
+    competencies: [
+      { id: 'ms-sp-info-architecture', name: { es: 'Arquitectura de Información y Organización', en: 'Information Architecture & Organization', fr: 'Architecture de l\'Information et Organisation' }, description: { es: 'Capacidad para diseñar estructuras de información lógicas, taxonomías, metadatos y sistemas de navegación que faciliten el acceso y la búsqueda de contenido.', en: 'Ability to design logical information structures, taxonomies, metadata, and navigation systems that facilitate content access and search.', fr: 'Capacité à concevoir des structures d\'information logiques, des taxonomies, des métadonnées et des systèmes de navigation qui facilitent l\'accès et la recherche de contenu.' }, weight: 0.35 },
+      { id: 'ms-sp-training-support', name: { es: 'Capacitación y Soporte a Usuarios', en: 'Training & User Support', fr: 'Formation et Support aux Utilisateurs' }, description: { es: 'Habilidad para capacitar a otros usuarios en el uso de SharePoint, crear guías de uso, resolver dudas y promover la adopción de la plataforma.', en: 'Skill in training other users on SharePoint usage, creating user guides, resolving questions, and promoting platform adoption.', fr: 'Compétence pour former les autres utilisateurs à l\'utilisation de SharePoint, créer des guides d\'utilisation, résoudre les questions et promouvoir l\'adoption de la plateforme.' }, weight: 0.3 },
+      { id: 'ms-sp-cross-team', name: { es: 'Colaboración entre Equipos', en: 'Cross-Team Collaboration', fr: 'Collaboration Inter-Équipes' }, description: { es: 'Capacidad para facilitar la colaboración entre equipos y departamentos a través de SharePoint, coordinando proyectos compartidos y comunicación efectiva.', en: 'Ability to facilitate collaboration across teams and departments through SharePoint, coordinating shared projects and effective communication.', fr: 'Capacité à faciliter la collaboration entre équipes et départements via SharePoint, en coordonnant les projets partagés et la communication efficace.' }, weight: 0.35 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'ms-sp-readiness',
+    name: { es: 'Disposición al Cambio del Usuario de SharePoint', en: 'SharePoint User Readiness for Change', fr: 'Disposition au Changement de l\'Utilisateur SharePoint' },
+    description: { es: 'Capacidad de adaptación ante la evolución de SharePoint y las herramientas de colaboración empresarial.', en: 'Adaptability to the evolution of SharePoint and enterprise collaboration tools.', fr: 'Adaptabilité à l\'évolution de SharePoint et des outils de collaboration en entreprise.' },
+    competencies: [
+      { id: 'ms-sp-modern-experience', name: { es: 'SharePoint Online y Experiencia Moderna', en: 'SharePoint Online & Modern Experience', fr: 'SharePoint Online et Expérience Moderne' }, description: { es: 'Disposición para migrar a SharePoint Online, adoptar la experiencia moderna de sitios y aprovechar las capacidades de la nube de Microsoft 365.', en: 'Willingness to migrate to SharePoint Online, adopt the modern site experience, and leverage Microsoft 365 cloud capabilities.', fr: 'Volonté de migrer vers SharePoint Online, d\'adopter l\'expérience moderne des sites et de tirer parti des capacités cloud de Microsoft 365.' }, weight: 0.35 },
+      { id: 'ms-sp-power-platform', name: { es: 'Integración con Power Platform', en: 'Power Platform Integration', fr: 'Intégration avec Power Platform' }, description: { es: 'Apertura para integrar SharePoint con Power Apps, Power Automate y Power BI, ampliando las capacidades de automatización y análisis de datos.', en: 'Openness to integrating SharePoint with Power Apps, Power Automate, and Power BI, expanding automation and data analysis capabilities.', fr: 'Ouverture à l\'intégration de SharePoint avec Power Apps, Power Automate et Power BI, élargissant les capacités d\'automatisation et d\'analyse de données.' }, weight: 0.35 },
+      { id: 'ms-sp-ai-copilot', name: { es: 'IA y Copilot en SharePoint', en: 'AI & Copilot in SharePoint', fr: 'IA et Copilot dans SharePoint' }, description: { es: 'Disposición para adoptar funcionalidades de inteligencia artificial y Copilot en SharePoint para búsqueda inteligente, clasificación automática y generación de contenido.', en: 'Willingness to adopt AI and Copilot features in SharePoint for intelligent search, automatic classification, and content generation.', fr: 'Volonté d\'adopter les fonctionnalités d\'IA et de Copilot dans SharePoint pour la recherche intelligente, la classification automatique et la génération de contenu.' }, weight: 0.3 },
     ],
     order: 3,
   },
