@@ -5,9 +5,10 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
 import { Button, Card, CardContent, Input, Select, Badge } from '@/components/ui';
-import { AuthGuard } from '@/components/auth';
-import { getEvaluations, getProfiles, getResult } from '@/lib/firebase/firestore';
-import type { Evaluation, Profile, AnalysisResult } from '@/types';
+import { AuthGuard, useAuth } from '@/components/auth';
+import { useOrg } from '@/components/org';
+import { getEvaluations, getProfiles, getResult, getOrgMembers, getCandidates } from '@/lib/firebase/firestore';
+import type { Evaluation, Profile, AnalysisResult, OrgMember, Candidate } from '@/types';
 import {
   ArrowLeft,
   Search,
@@ -25,6 +26,9 @@ const PAGE_SIZE = 20;
 export default function HistoryPage() {
   const t = useTranslations('history');
   const locale = useLocale() as 'es' | 'en';
+  const { admin } = useAuth();
+  const { currentOrg } = useOrg();
+  const isOrgScoped = admin?.role === 'org-admin' && !!currentOrg;
 
   const [evaluations, setEvaluations] = useState<Evaluation[]>([]);
   const [profiles, setProfiles] = useState<Profile[]>([]);
@@ -44,10 +48,25 @@ export default function HistoryPage() {
     async function fetchData() {
       try {
         setLoading(true);
-        const [evalsData, profilesData] = await Promise.all([
+        const [allEvalsData, profilesData] = await Promise.all([
           getEvaluations(),
           getProfiles(false),
         ]);
+
+        // For org-admins, filter to org-related evaluations
+        let evalsData = allEvalsData;
+        if (isOrgScoped) {
+          const [orgMembers, orgCandidates] = await Promise.all([
+            getOrgMembers(currentOrg.id).catch(() => [] as OrgMember[]),
+            getCandidates(currentOrg.id).catch(() => [] as Candidate[]),
+          ]);
+          const orgEmails = new Set([
+            ...orgMembers.map(m => m.userEmail?.toLowerCase()),
+            ...orgCandidates.map(c => c.email?.toLowerCase()),
+          ].filter(Boolean));
+          evalsData = allEvalsData.filter(e => e.candidateEmail && orgEmails.has(e.candidateEmail.toLowerCase()));
+        }
+
         setEvaluations(evalsData);
         setProfiles(profilesData);
 
@@ -85,7 +104,7 @@ export default function HistoryPage() {
       }
     }
     fetchData();
-  }, []);
+  }, [isOrgScoped, currentOrg?.id]);
 
   // Helper: convert Timestamp to Date
   const toDate = (ts: Timestamp | undefined): Date | null => {

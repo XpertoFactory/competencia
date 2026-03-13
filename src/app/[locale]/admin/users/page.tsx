@@ -24,11 +24,13 @@ import {
   Clock,
   AlertCircle,
 } from 'lucide-react';
-import { AuthGuard } from '@/components/auth';
+import { AuthGuard, useAuth } from '@/components/auth';
+import { useOrg } from '@/components/org';
 import {
   getAllUserProfiles,
   getOrganizationsList,
   getUserMemberships,
+  getOrgMembers,
   addOrgMember,
   removeOrgMember,
   getEvaluations,
@@ -57,6 +59,9 @@ export default function AdminUsersPage() {
   const t = useTranslations('admin.users');
   const ta = useTranslations('admin');
   const locale = useLocale() as 'es' | 'en' | 'fr';
+  const { admin } = useAuth();
+  const { currentOrg } = useOrg();
+  const isOrgScoped = admin?.role === 'org-admin' && !!currentOrg;
   const [users, setUsers] = useState<UserWithOrgs[]>([]);
   const [organizations, setOrganizations] = useState<Organization[]>([]);
   const [loading, setLoading] = useState(true);
@@ -73,26 +78,42 @@ export default function AdminUsersPage() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [isOrgScoped, currentOrg?.id]);
 
   async function fetchData() {
     try {
       setLoading(true);
-      const [allUsers, allOrgs] = await Promise.all([
-        getAllUserProfiles(),
-        getOrganizationsList(),
-      ]);
 
-      // Fetch memberships for all users
-      const usersWithOrgs: UserWithOrgs[] = await Promise.all(
-        allUsers.map(async (user) => {
-          const memberships = await getUserMemberships(user.id).catch(() => []);
-          return { ...user, memberships };
-        })
-      );
-
-      setUsers(usersWithOrgs);
-      setOrganizations(allOrgs);
+      if (isOrgScoped) {
+        // Org-admin: show only org members
+        const [orgMembers, allOrgs] = await Promise.all([
+          getOrgMembers(currentOrg.id),
+          getOrganizationsList(),
+        ]);
+        const memberUserIds = new Set(orgMembers.map(m => m.userId));
+        const allUsers = await getAllUserProfiles();
+        const orgUsers = allUsers.filter(u => memberUserIds.has(u.id));
+        const usersWithOrgs: UserWithOrgs[] = orgUsers.map(user => {
+          const membership = orgMembers.find(m => m.userId === user.id);
+          return { ...user, memberships: membership ? [membership] : [] };
+        });
+        setUsers(usersWithOrgs);
+        setOrganizations(allOrgs.filter(o => o.id === currentOrg.id));
+      } else {
+        // Platform admin: show all users
+        const [allUsers, allOrgs] = await Promise.all([
+          getAllUserProfiles(),
+          getOrganizationsList(),
+        ]);
+        const usersWithOrgs: UserWithOrgs[] = await Promise.all(
+          allUsers.map(async (user) => {
+            const memberships = await getUserMemberships(user.id).catch(() => []);
+            return { ...user, memberships };
+          })
+        );
+        setUsers(usersWithOrgs);
+        setOrganizations(allOrgs);
+      }
     } catch (err) {
       console.error('Failed to fetch users:', err);
     } finally {

@@ -38,7 +38,7 @@ import {
   Mail,
 } from 'lucide-react';
 import { AuthGuard, useAuth } from '@/components/auth';
-import { OrgSwitcher } from '@/components/org';
+import { OrgSwitcher, useOrg } from '@/components/org';
 import {
   getEvaluations,
   getProfiles,
@@ -53,6 +53,8 @@ import {
   generateId,
   setDocument,
   getEmployees,
+  getOrgMembers,
+  getCandidates,
 } from '@/lib/firebase/firestore';
 import type {
   Evaluation,
@@ -67,6 +69,8 @@ import type {
   LocalizedString,
   AnalysisResult,
   Employee,
+  Candidate,
+  OrgMember,
 } from '@/types';
 
 interface DashboardStats {
@@ -248,6 +252,9 @@ export default function AdminPage() {
 }
 
 function DashboardContent({ t, locale }: { t: any; locale: string }) {
+  const { admin } = useAuth();
+  const { currentOrg } = useOrg();
+  const isOrgScoped = admin?.role === 'org-admin' && !!currentOrg;
   const [stats, setStats] = useState<DashboardStats>({
     totalEvaluations: 0,
     analyzedEvaluations: 0,
@@ -263,12 +270,29 @@ function DashboardContent({ t, locale }: { t: any; locale: string }) {
   useEffect(() => {
     async function fetchDashboardData() {
       try {
-        const [evaluations, profiles, employees, results] = await Promise.all([
+        const [allEvaluations, profiles, employees, allResults] = await Promise.all([
           getEvaluations(undefined, 200),
           getProfiles(true),
           getEmployees().catch(() => [] as Employee[]),
           getDocuments<AnalysisResult>(COLLECTIONS.RESULTS).catch(() => [] as AnalysisResult[]),
         ]);
+
+        // For org-admins, filter to org-related evaluations
+        let evaluations = allEvaluations;
+        let results = allResults;
+        if (isOrgScoped) {
+          const [orgMembers, orgCandidates] = await Promise.all([
+            getOrgMembers(currentOrg.id).catch(() => [] as OrgMember[]),
+            getCandidates(currentOrg.id).catch(() => [] as Candidate[]),
+          ]);
+          const orgEmails = new Set([
+            ...orgMembers.map(m => m.userEmail?.toLowerCase()),
+            ...orgCandidates.map(c => c.email?.toLowerCase()),
+          ].filter(Boolean));
+          evaluations = allEvaluations.filter(e => e.candidateEmail && orgEmails.has(e.candidateEmail.toLowerCase()));
+          const evalIds = new Set(evaluations.map(e => e.id));
+          results = allResults.filter(r => evalIds.has(r.evaluationId));
+        }
 
         const profileMap = new Map(profiles.map((p) => [p.id, p]));
 
@@ -330,7 +354,7 @@ function DashboardContent({ t, locale }: { t: any; locale: string }) {
       }
     }
     fetchDashboardData();
-  }, [locale]);
+  }, [locale, isOrgScoped, currentOrg?.id]);
 
   if (loading) {
     return (
@@ -1414,16 +1438,33 @@ function ResourcesContent({ t, tc }: { t: any; tc: any }) {
 }
 
 function EvaluationsContent({ t, locale }: { t: any; locale: string }) {
+  const { admin } = useAuth();
+  const { currentOrg } = useOrg();
+  const isOrgScoped = admin?.role === 'org-admin' && !!currentOrg;
   const [evaluations, setEvaluations] = useState<RecentEvaluation[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchEvaluations() {
       try {
-        const [evals, profiles] = await Promise.all([
+        const [allEvals, profiles] = await Promise.all([
           getEvaluations(undefined, 50),
           getProfiles(false),
         ]);
+
+        let evals = allEvals;
+        if (isOrgScoped) {
+          const [orgMembers, orgCandidates] = await Promise.all([
+            getOrgMembers(currentOrg.id).catch(() => [] as OrgMember[]),
+            getCandidates(currentOrg.id).catch(() => [] as Candidate[]),
+          ]);
+          const orgEmails = new Set([
+            ...orgMembers.map(m => m.userEmail?.toLowerCase()),
+            ...orgCandidates.map(c => c.email?.toLowerCase()),
+          ].filter(Boolean));
+          evals = allEvals.filter(e => e.candidateEmail && orgEmails.has(e.candidateEmail.toLowerCase()));
+        }
+
         const profileMap = new Map(profiles.map((p) => [p.id, p]));
 
         setEvaluations(
@@ -1456,7 +1497,7 @@ function EvaluationsContent({ t, locale }: { t: any; locale: string }) {
       }
     }
     fetchEvaluations();
-  }, [locale]);
+  }, [locale, isOrgScoped, currentOrg?.id]);
 
   if (loading) {
     return (
