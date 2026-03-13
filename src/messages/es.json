@@ -63,7 +63,8 @@
     "bestPractices": "Mejores Prácticas",
     "faqs": "Preguntas Frecuentes",
     "careerPlanning": "Planificación de Carrera",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "pricing": "Precios"
   },
   "instructions": {
     "title": "Funcionalidades y Capacidades",
@@ -966,7 +967,15 @@
     "goToLogin": "Iniciar Sesión",
     "adminLogin": "Acceso Admin",
     "passwordMismatch": "Las contraseñas no coinciden",
-    "passwordTooShort": "La contraseña debe tener al menos 6 caracteres"
+    "passwordTooShort": "La contraseña debe tener al menos 6 caracteres",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "forgotPasswordTitle": "Restablecer Contraseña",
+    "forgotPasswordSubtitle": "Ingresa tu correo para recibir un enlace de restablecimiento",
+    "resetPassword": "Enviar Enlace",
+    "resetPasswordSent": "Se ha enviado un enlace de restablecimiento a tu correo. Revisa tu bandeja de entrada.",
+    "backToLogin": "Volver al Inicio de Sesión",
+    "noAccess": "Sin Acceso",
+    "noAccessMessage": "No tienes acceso a esta aplicación. Contacta a tu administrador para solicitar acceso."
   },
   "comparison": {
     "title": "Comparación de Candidatos",
@@ -1336,7 +1345,8 @@
       "general-management": "Gerencia General",
       "technology-it": "Tecnología / TI",
       "banking": "Banca",
-      "hospitality-tourism": "Hotelería y Turismo"
+      "hospitality-tourism": "Hotelería y Turismo",
+      "legal-practice": "Práctica Legal"
     },
     "levels": {
       "executive": "Ejecutivo (C-Suite)",
@@ -1835,6 +1845,7 @@
       "technology-it": "Tecnología e IT",
       "banking": "Banca",
       "hospitality-tourism": "Hotelería y Turismo",
+      "legal-practice": "Práctica Legal",
       "general-management": "Gerencia General",
       "music-arts": "Música y Artes",
       "legal": "Legal"
@@ -1998,6 +2009,7 @@
       "technology-it": "Tecnología e IT",
       "banking": "Banca",
       "hospitality-tourism": "Hotelería y Turismo",
+      "legal-practice": "Práctica Legal",
       "general-management": "Gerencia General",
       "other": "Otro"
     }
@@ -2044,5 +2056,131 @@
     "faqHRExcerpt": "Preguntas comunes sobre prácticas modernas de gestión de RR.HH., integración de IA y planificación de la fuerza laboral.",
     "faqCareerTitle": "Preguntas Frecuentes sobre Planificación de Carrera",
     "faqCareerExcerpt": "Preguntas frecuentes sobre desarrollo profesional, construcción de competencias y navegación del mercado laboral en la era de la IA."
+  },
+  "pricing": {
+    "heroTagline": "Precios simples y transparentes",
+    "title": "Planes para Cada Necesidad",
+    "subtitle": "Desde profesionales individuales hasta organizaciones empresariales. Elige el plan que se adapte a tus objetivos de evaluación de talento.",
+    "individualTab": "Individual",
+    "corporateTab": "Corporativo",
+    "perMonth": "/mes",
+    "custom": "Personalizado",
+    "mostPopular": "Más Popular",
+    "ctaFree": "Comenzar Gratis",
+    "ctaStart": "Comenzar",
+    "ctaContact": "Contactar Ventas",
+    "free": { "name": "Gratis" },
+    "pro": { "name": "Pro" },
+    "premium": { "name": "Premium" },
+    "starter": { "name": "Starter" },
+    "business": { "name": "Business" },
+    "enterprise": { "name": "Enterprise" },
+    "individual": {
+      "freeDesc": "Explora la plataforma con evaluaciones básicas. Perfecto para comenzar.",
+      "free": {
+        "f1": "3 evaluaciones por mes",
+        "f2": "5 perfiles estándar",
+        "f3": "Resumen básico de resultados",
+        "f4": "Análisis con IA",
+        "f5": "Exportación PDF e informes detallados",
+        "f6": "Perfiles personalizados y descripciones de puesto"
+      },
+      "proDesc": "Acceso completo a evaluaciones y perfiles con análisis impulsado por IA.",
+      "pro": {
+        "f1": "Evaluaciones ilimitadas",
+        "f2": "Todos los 49+ perfiles de evaluación",
+        "f3": "Resultados detallados con exportación PDF",
+        "f4": "Análisis y recomendaciones básicas con IA",
+        "f5": "Perfiles personalizados y descripciones de puesto",
+        "f6": "IA avanzada y planificación de carrera"
+      },
+      "premiumDesc": "IA avanzada, perfiles personalizados y desarrollo de carrera personalizado.",
+      "premium": {
+        "f1": "Todo lo incluido en Pro",
+        "f2": "Análisis avanzado con IA (Claude, GPT, Gemini)",
+        "f3": "Perfiles de evaluación personalizados",
+        "f4": "Descripciones de puesto personalizadas y matching",
+        "f5": "Recomendaciones de trayectoria profesional con IA",
+        "f6": "Benchmarking y comparaciones del sector"
+      }
+    },
+    "corporate": {
+      "starterDesc": "Herramientas esenciales para equipos pequeños que inician con evaluaciones estructuradas.",
+      "starter": {
+        "f1": "Hasta 25 empleados",
+        "f2": "Todos los perfiles de evaluación",
+        "f3": "Gestión organizacional",
+        "f4": "Campañas de reclutamiento básicas",
+        "f5": "Análisis avanzado con IA",
+        "f6": "Agentes IA y Empleados IA",
+        "f7": "Acceso API e integraciones personalizadas"
+      },
+      "businessDesc": "Plataforma de evaluación avanzada para organizaciones en crecimiento con poder de IA.",
+      "business": {
+        "f1": "Hasta 100 empleados",
+        "f2": "Todo lo incluido en Starter",
+        "f3": "Análisis avanzado con IA (multi-modelo)",
+        "f4": "Perfiles personalizados y descripciones de puesto",
+        "f5": "Encuestas de clima y evaluaciones 360°",
+        "f6": "Agentes IA y Empleados IA",
+        "f7": "Acceso API e integraciones personalizadas"
+      },
+      "enterpriseDesc": "Plataforma completa con Agentes IA, Empleados IA y escala ilimitada.",
+      "enterprise": {
+        "f1": "Empleados ilimitados",
+        "f2": "Todo lo incluido en Business",
+        "f3": "Agentes IA para evaluaciones automatizadas",
+        "f4": "Empleados IA para operaciones de RR.HH.",
+        "f5": "Acceso API e integraciones personalizadas",
+        "f6": "Gerente de cuenta dedicado",
+        "f7": "SLA personalizado y onboarding"
+      }
+    },
+    "ai": {
+      "badge": "Impulsado por IA",
+      "title": "Agentes IA y Empleados IA",
+      "subtitle": "Potencia tus operaciones de RR.HH. con automatización inteligente. Disponible en planes Premium individual y Enterprise corporativo.",
+      "includedIn": "Incluido en planes Premium / Enterprise",
+      "agents": {
+        "title": "Agentes IA",
+        "tag": "Flujos Automatizados",
+        "desc": "Agentes de IA autónomos que gestionan flujos de evaluación de principio a fin, desde la programación hasta la calificación y el seguimiento.",
+        "f1": "Programación y recordatorios automáticos de evaluaciones",
+        "f2": "Calificación inteligente y detección de anomalías",
+        "f3": "Generación y distribución automática de informes",
+        "f4": "Alertas proactivas de brechas de habilidades y seguimiento"
+      },
+      "employees": {
+        "title": "Empleados IA",
+        "tag": "Personal Virtual de RR.HH.",
+        "desc": "Profesionales virtuales de RR.HH. que filtran candidatos, apoyan el onboarding y analizan continuamente el desarrollo del talento.",
+        "f1": "Filtrado y pre-calificación de candidatos",
+        "f2": "Evaluación y guía de onboarding",
+        "f3": "Análisis continuo de brechas de habilidades",
+        "f4": "Recomendaciones personalizadas de desarrollo"
+      }
+    },
+    "whyTitle": "¿Por qué skaills?",
+    "whySubtitle": "Diseñado para la evaluación moderna de talento con IA de vanguardia en cada plan.",
+    "highlights": {
+      "ai": {
+        "title": "IA Multi-Modelo",
+        "desc": "Claude, GPT y Gemini para un análisis integral e imparcial."
+      },
+      "profiles": {
+        "title": "49+ Perfiles",
+        "desc": "16 sectores, 5 niveles. Desde roles ejecutivos hasta operativos."
+      },
+      "analytics": {
+        "title": "Analítica Profunda",
+        "desc": "DISC, Big Five, cognitivo, aptitud y puntuación de ajuste al puesto."
+      },
+      "security": {
+        "title": "Seguridad Empresarial",
+        "desc": "Firebase Auth, reglas de Firestore y acceso centralizado vía xAId."
+      }
+    },
+    "ctaTitle": "¿Listo para Transformar tu Evaluación de Talento?",
+    "ctaSubtitle": "Comienza gratis y escala a medida que creces. No se requiere tarjeta de crédito."
   }
 }

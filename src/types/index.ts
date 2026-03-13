@@ -22,7 +22,8 @@ export type ProfileSector =
   | 'general-management'
   | 'technology-it'
   | 'banking'
-  | 'hospitality-tourism';
+  | 'hospitality-tourism'
+  | 'legal-practice';
 
 export type ProfileLevel =
   | 'executive'

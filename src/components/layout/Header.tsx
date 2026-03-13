@@ -8,7 +8,7 @@ import { Button } from '@/components/ui';
 import { Menu, X, Globe, LogIn, LogOut, User, Shield, ChevronDown, Compass } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { cn } from '@/lib/utils';
-import { onAuthChange, signOut, checkAdminStatus } from '@/lib/firebase/auth';
+import { onAuthChange, signOut, getSession, isAdmin as checkIsAdmin } from '@/lib/firebase/auth';
 import type { User as FirebaseUser } from 'firebase/auth';
 
 export function Header() {
@@ -54,16 +54,10 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    const unsubscribe = onAuthChange(async (firebaseUser) => {
+    const unsubscribe = onAuthChange((firebaseUser) => {
       setUser(firebaseUser);
       if (firebaseUser) {
-        try {
-          const adminUser = await checkAdminStatus(firebaseUser.uid);
-          setIsAdmin(!!adminUser);
-        } catch (err) {
-          console.error('Admin status check failed:', err);
-          setIsAdmin(false);
-        }
+        setIsAdmin(checkIsAdmin());
       } else {
         setIsAdmin(false);
       }
@@ -95,7 +89,7 @@ export function Header() {
     fr: 'Français',
   };
 
-  const isValueActive = pathname === `/${locale}/about` || pathname === `/${locale}/features` || pathname === `/${locale}/benefits` || pathname === `/${locale}/contact`;
+  const isValueActive = pathname === `/${locale}/about` || pathname === `/${locale}/features` || pathname === `/${locale}/benefits` || pathname === `/${locale}/contact` || pathname === `/${locale}/pricing`;
   const isResourcesActive = pathname.startsWith(`/${locale}/resources`);
   const isEvalActive = pathname.startsWith(`/${locale}/profiles`) || pathname.startsWith(`/${locale}/tests`);
 
@@ -185,13 +179,25 @@ export function Header() {
                     href={`/${locale}/contact`}
                     onClick={() => setIsValueOpen(false)}
                     className={cn(
-                      'block px-4 py-2 text-sm rounded-b-lg transition-colors',
+                      'block px-4 py-2 text-sm transition-colors',
                       pathname === `/${locale}/contact`
                         ? 'bg-primary-50 text-primary-600 font-medium'
                         : 'text-gray-700 hover:bg-gray-50'
                     )}
                   >
                     {t('contact')}
+                  </Link>
+                  <Link
+                    href={`/${locale}/pricing`}
+                    onClick={() => setIsValueOpen(false)}
+                    className={cn(
+                      'block px-4 py-2 text-sm rounded-b-lg transition-colors',
+                      pathname === `/${locale}/pricing`
+                        ? 'bg-primary-50 text-primary-600 font-medium'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    )}
+                  >
+                    {t('pricing')}
                   </Link>
                 </div>
               )}
@@ -487,6 +493,18 @@ export function Header() {
               onClick={() => setIsMenuOpen(false)}
             >
               {t('contact')}
+            </Link>
+            <Link
+              href={`/${locale}/pricing`}
+              className={cn(
+                'block px-3 py-2 pl-6 rounded-lg text-sm font-medium transition-colors',
+                pathname === `/${locale}/pricing`
+                  ? 'bg-primary-50 text-primary-600'
+                  : 'text-gray-600 hover:bg-gray-50'
+              )}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {t('pricing')}
             </Link>
 
             <Link

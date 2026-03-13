@@ -820,6 +820,112 @@ export const profiles: Profile[] = [
     competencyCategories: ['bank-bt-professional', 'bank-bt-soft-skills', 'bank-bt-readiness'],
     isActive: true,
   },
+
+  // ============================================================================
+  // LEGAL PRACTICE PROFILES
+  // ============================================================================
+  {
+    id: 'legal-managing-partner',
+    name: {
+      es: 'Socio Director / Managing Partner',
+      en: 'Managing Partner',
+      fr: 'Associé Directeur',
+    },
+    description: {
+      es: 'Líder senior de firma de abogados o departamento legal, responsable de la dirección estratégica, desarrollo de negocios, relaciones con clientes y gobernanza de la firma.',
+      en: 'Senior leader of law firm/legal department, responsible for strategic direction, business development, client relationships, and firm governance.',
+      fr: 'Dirigeant senior de cabinet d\'avocats ou département juridique, responsable de la direction stratégique, du développement commercial, des relations clients et de la gouvernance du cabinet.',
+    },
+    sectors: ['legal-practice'] as ProfileSector[],
+    level: 'executive' as ProfileLevel,
+    competencyCategories: ['legal-mp-professional', 'legal-mp-soft-skills', 'legal-mp-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'legal-practice-director',
+    name: {
+      es: 'Director de Área de Práctica',
+      en: 'Practice Area Director',
+      fr: 'Directeur de Département Juridique',
+    },
+    description: {
+      es: 'Gestiona equipos de abogados dentro de un área de práctica, supervisa la asignación de casos, relaciones con clientes, desarrollo del equipo y estándares de calidad.',
+      en: 'Manages attorney teams within a practice area, oversees case allocation, client relationships, team development, and quality standards.',
+      fr: 'Gère des équipes d\'avocats au sein d\'un département, supervise l\'attribution des dossiers, les relations clients, le développement de l\'équipe et les normes de qualité.',
+    },
+    sectors: ['legal-practice'] as ProfileSector[],
+    level: 'managerial' as ProfileLevel,
+    competencyCategories: ['legal-pd-professional', 'legal-pd-soft-skills', 'legal-pd-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'legal-senior-attorney',
+    name: {
+      es: 'Abogado Senior',
+      en: 'Senior Attorney',
+      fr: 'Avocat Senior',
+    },
+    description: {
+      es: 'Profesional jurídico principal que maneja litigios complejos, asesoría corporativa, negociación de contratos y consultoría legal. Requiere profunda experiencia legal, razonamiento analítico y juicio ético.',
+      en: 'Core legal practitioner handling complex litigation, corporate advisory, contract negotiation, and client counsel. Requires deep legal expertise, analytical reasoning, and ethical judgment.',
+      fr: 'Praticien juridique principal gérant des litiges complexes, le conseil aux entreprises, la négociation de contrats et le conseil aux clients. Nécessite une expertise juridique approfondie, un raisonnement analytique et un jugement éthique.',
+    },
+    sectors: ['legal-practice'] as ProfileSector[],
+    level: 'professional-specialist' as ProfileLevel,
+    competencyCategories: ['legal-sa-professional', 'legal-sa-soft-skills', 'legal-sa-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'legal-corporate-counsel',
+    name: {
+      es: 'Abogado Corporativo / Asesor Legal Interno',
+      en: 'Corporate Counsel',
+      fr: 'Conseiller Juridique d\'Entreprise',
+    },
+    description: {
+      es: 'Asesor legal interno que gestiona cumplimiento corporativo, revisión de contratos, mitigación de riesgos, asuntos regulatorios y soporte legal multifuncional.',
+      en: 'In-house legal advisor managing corporate compliance, contract review, risk mitigation, regulatory affairs, and cross-functional legal support.',
+      fr: 'Conseiller juridique interne gérant la conformité d\'entreprise, la révision de contrats, l\'atténuation des risques, les affaires réglementaires et le soutien juridique transversal.',
+    },
+    sectors: ['legal-practice'] as ProfileSector[],
+    level: 'professional-specialist' as ProfileLevel,
+    competencyCategories: ['legal-cc-professional', 'legal-cc-soft-skills', 'legal-cc-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'legal-paralegal',
+    name: {
+      es: 'Paralegal / Asistente Jurídico',
+      en: 'Paralegal',
+      fr: 'Parajuriste',
+    },
+    description: {
+      es: 'Profesional de soporte legal que maneja preparación de casos, investigación jurídica, gestión documental, presentaciones ante tribunales y coordinación con clientes bajo supervisión de abogados.',
+      en: 'Legal support professional handling case preparation, legal research, document management, court filings, and client coordination under attorney supervision.',
+      fr: 'Professionnel de soutien juridique gérant la préparation de dossiers, la recherche juridique, la gestion documentaire, les dépôts au tribunal et la coordination avec les clients sous la supervision d\'avocats.',
+    },
+    sectors: ['legal-practice'] as ProfileSector[],
+    level: 'administrative' as ProfileLevel,
+    competencyCategories: ['legal-pl-professional', 'legal-pl-soft-skills', 'legal-pl-readiness'],
+    isActive: true,
+  },
+  {
+    id: 'legal-secretary',
+    name: {
+      es: 'Secretario/a Legal',
+      en: 'Legal Secretary',
+      fr: 'Secrétaire Juridique',
+    },
+    description: {
+      es: 'Soporte operativo que maneja programación, archivo, presentaciones ante tribunales, formato de documentos, correspondencia y cumplimiento de procedimientos.',
+      en: 'Operational support handling scheduling, filing, court submissions, document formatting, correspondence, and procedural compliance.',
+      fr: 'Soutien opérationnel gérant la planification, le classement, les dépôts au tribunal, la mise en forme de documents, la correspondance et la conformité procédurale.',
+    },
+    sectors: ['legal-practice'] as ProfileSector[],
+    level: 'operative' as ProfileLevel,
+    competencyCategories: ['legal-ls-professional', 'legal-ls-soft-skills', 'legal-ls-readiness'],
+    isActive: true,
+  },
 ];
 
 // ============================================================================
@@ -7320,6 +7426,234 @@ export const competencyCategories: CompetencyCategory[] = [
       { id: 'remote-hybrid-teams', name: { es: 'Equipos Remotos e Híbridos', en: 'Remote & Hybrid Teams', fr: 'Équipes Distantes et Hybrides' }, description: { es: 'Disposición para liderar equipos distribuidos geográficamente con herramientas de colaboración asíncrona.', en: 'Willingness to lead geographically distributed teams with asynchronous collaboration tools.', fr: 'Volonté de diriger des équipes distribuées géographiquement avec des outils de collaboration asynchrone.' }, weight: 0.35 },
       { id: 'ai-augmented-pm', name: { es: 'PM Aumentada con IA', en: 'AI-Augmented PM', fr: 'PM Augmentée par l\'IA' }, description: { es: 'Apertura para adoptar herramientas de IA que automatizan la planificación, estimación y seguimiento de proyectos.', en: 'Openness to adopting AI tools that automate project planning, estimation, and tracking.', fr: 'Ouverture à l\'adoption d\'outils d\'IA qui automatisent la planification, l\'estimation et le suivi des projets.' }, weight: 0.35 },
       { id: 'continuous-delivery-culture', name: { es: 'Cultura de Entrega Continua', en: 'Continuous Delivery Culture', fr: 'Culture de Livraison Continue' }, description: { es: 'Disposición para evolucionar hacia modelos de entrega continua, DevOps integrado y experimentación rápida.', en: 'Willingness to evolve toward continuous delivery models, integrated DevOps, and rapid experimentation.', fr: 'Volonté d\'évoluer vers des modèles de livraison continue, DevOps intégré et expérimentation rapide.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // LEGAL PRACTICE — Managing Partner
+  // ============================================================================
+  {
+    id: 'legal-mp-professional',
+    name: { es: 'Habilidades Profesionales del Socio Director', en: 'Managing Partner Professional Skills', fr: 'Compétences Professionnelles de l\'Associé Directeur' },
+    description: { es: 'Conocimientos estratégicos y de gestión de firma para la dirección ejecutiva de una práctica legal.', en: 'Strategic and firm management knowledge for executive leadership of a legal practice.', fr: 'Connaissances stratégiques et de gestion de cabinet pour la direction exécutive d\'une pratique juridique.' },
+    competencies: [
+      { id: 'legal-strategic-leadership', name: { es: 'Liderazgo Estratégico y Gobernanza de Firma', en: 'Strategic Leadership & Firm Governance', fr: 'Leadership Stratégique et Gouvernance de Cabinet' }, description: { es: 'Capacidad para definir la visión, misión y dirección estratégica de la firma, gestionando comités de socios y estructuras de gobernanza.', en: 'Ability to define the firm\'s vision, mission, and strategic direction, managing partner committees and governance structures.', fr: 'Capacité à définir la vision, la mission et la direction stratégique du cabinet, en gérant les comités d\'associés et les structures de gouvernance.' }, weight: 0.3 },
+      { id: 'legal-business-development', name: { es: 'Desarrollo de Negocios y Captación de Clientes', en: 'Business Development & Client Acquisition', fr: 'Développement Commercial et Acquisition de Clients' }, description: { es: 'Habilidad para identificar oportunidades de mercado, desarrollar relaciones comerciales y expandir la cartera de clientes de la firma.', en: 'Skill in identifying market opportunities, developing business relationships, and expanding the firm\'s client portfolio.', fr: 'Compétence pour identifier les opportunités de marché, développer les relations commerciales et élargir le portefeuille clients du cabinet.' }, weight: 0.25 },
+      { id: 'legal-financial-management', name: { es: 'Gestión Financiera y Rentabilidad', en: 'Financial Management & Profitability', fr: 'Gestion Financière et Rentabilité' }, description: { es: 'Dominio de la gestión financiera de la firma, incluyendo presupuestos, facturación, distribución de utilidades y control de costos operativos.', en: 'Mastery of firm financial management, including budgets, billing, profit distribution, and operational cost control.', fr: 'Maîtrise de la gestion financière du cabinet, y compris les budgets, la facturation, la distribution des bénéfices et le contrôle des coûts opérationnels.' }, weight: 0.25 },
+      { id: 'legal-industry-knowledge', name: { es: 'Conocimiento de la Industria Legal y Posicionamiento de Mercado', en: 'Legal Industry Knowledge & Market Positioning', fr: 'Connaissance de l\'Industrie Juridique et Positionnement de Marché' }, description: { es: 'Comprensión profunda del mercado legal, tendencias del sector, competencia y posicionamiento estratégico de la firma.', en: 'Deep understanding of the legal market, industry trends, competition, and strategic positioning of the firm.', fr: 'Compréhension approfondie du marché juridique, des tendances du secteur, de la concurrence et du positionnement stratégique du cabinet.' }, weight: 0.2 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'legal-mp-soft-skills',
+    name: { es: 'Habilidades Blandas del Socio Director', en: 'Managing Partner Soft Skills', fr: 'Compétences Interpersonnelles de l\'Associé Directeur' },
+    description: { es: 'Competencias interpersonales esenciales para liderar una firma legal y gestionar relaciones de alto nivel.', en: 'Essential interpersonal competencies for leading a law firm and managing high-level relationships.', fr: 'Compétences interpersonnelles essentielles pour diriger un cabinet d\'avocats et gérer les relations de haut niveau.' },
+    competencies: [
+      { id: 'legal-executive-communication', name: { es: 'Comunicación Ejecutiva e Influencia', en: 'Executive Communication & Influence', fr: 'Communication Exécutive et Influence' }, description: { es: 'Capacidad para comunicarse con autoridad y persuasión ante clientes, socios, medios y actores del sector legal.', en: 'Ability to communicate with authority and persuasion before clients, partners, media, and legal sector stakeholders.', fr: 'Capacité à communiquer avec autorité et persuasion auprès des clients, associés, médias et acteurs du secteur juridique.' }, weight: 0.35 },
+      { id: 'legal-partner-relations', name: { es: 'Relaciones entre Socios y Construcción de Consenso', en: 'Partner Relations & Consensus Building', fr: 'Relations entre Associés et Construction du Consensus' }, description: { es: 'Habilidad para facilitar acuerdos entre socios, gestionar conflictos internos y construir consenso en decisiones estratégicas.', en: 'Skill in facilitating agreements among partners, managing internal conflicts, and building consensus on strategic decisions.', fr: 'Compétence pour faciliter les accords entre associés, gérer les conflits internes et construire le consensus sur les décisions stratégiques.' }, weight: 0.35 },
+      { id: 'legal-talent-development', name: { es: 'Desarrollo de Talento y Mentoría', en: 'Talent Development & Mentoring', fr: 'Développement des Talents et Mentorat' }, description: { es: 'Compromiso con el desarrollo profesional de los abogados de la firma, mentoría de socios junior y retención del talento.', en: 'Commitment to the professional development of firm attorneys, mentoring junior partners, and talent retention.', fr: 'Engagement envers le développement professionnel des avocats du cabinet, le mentorat des associés juniors et la rétention des talents.' }, weight: 0.3 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'legal-mp-readiness',
+    name: { es: 'Disposición al Cambio del Socio Director', en: 'Managing Partner Readiness for Change', fr: 'Disposition au Changement de l\'Associé Directeur' },
+    description: { es: 'Capacidad de adaptación ante la transformación del sector legal y nuevos modelos de negocio jurídico.', en: 'Adaptability to the transformation of the legal sector and new legal business models.', fr: 'Adaptabilité à la transformation du secteur juridique et aux nouveaux modèles d\'affaires juridiques.' },
+    competencies: [
+      { id: 'legal-tech-ai-transformation', name: { es: 'Transformación de LegalTech e IA', en: 'Legal Tech & AI Transformation', fr: 'Transformation LegalTech et IA' }, description: { es: 'Disposición para adoptar tecnologías legales, inteligencia artificial y automatización que transforman la práctica jurídica.', en: 'Willingness to adopt legal technologies, artificial intelligence, and automation transforming legal practice.', fr: 'Volonté d\'adopter les technologies juridiques, l\'intelligence artificielle et l\'automatisation qui transforment la pratique juridique.' }, weight: 0.35 },
+      { id: 'legal-alternative-fees', name: { es: 'Modelos de Honorarios Alternativos e Innovación Legal', en: 'Alternative Fee Models & Legal Innovation', fr: 'Modèles d\'Honoraires Alternatifs et Innovation Juridique' }, description: { es: 'Apertura para implementar modelos de honorarios basados en valor, suscripciones y esquemas innovadores más allá de la facturación por hora.', en: 'Openness to implementing value-based fee models, subscriptions, and innovative arrangements beyond hourly billing.', fr: 'Ouverture à la mise en place de modèles d\'honoraires basés sur la valeur, d\'abonnements et de dispositifs innovants au-delà de la facturation horaire.' }, weight: 0.35 },
+      { id: 'legal-esg-ethics', name: { es: 'ESG y Evolución de la Ética Legal', en: 'ESG & Legal Ethics Evolution', fr: 'ESG et Évolution de l\'Éthique Juridique' }, description: { es: 'Disposición para integrar criterios ambientales, sociales y de gobernanza en la práctica legal y adaptarse a la evolución de los estándares éticos.', en: 'Willingness to integrate environmental, social, and governance criteria into legal practice and adapt to evolving ethical standards.', fr: 'Volonté d\'intégrer les critères environnementaux, sociaux et de gouvernance dans la pratique juridique et de s\'adapter à l\'évolution des normes éthiques.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // LEGAL PRACTICE — Practice Area Director
+  // ============================================================================
+  {
+    id: 'legal-pd-professional',
+    name: { es: 'Habilidades Profesionales del Director de Área de Práctica', en: 'Practice Area Director Professional Skills', fr: 'Compétences Professionnelles du Directeur de Département Juridique' },
+    description: { es: 'Conocimientos técnicos y de gestión para dirigir un área de práctica legal y supervisar equipos de abogados.', en: 'Technical and management knowledge for leading a legal practice area and supervising attorney teams.', fr: 'Connaissances techniques et de gestion pour diriger un département juridique et superviser des équipes d\'avocats.' },
+    competencies: [
+      { id: 'legal-case-portfolio', name: { es: 'Gestión de Cartera de Casos', en: 'Case Portfolio Management', fr: 'Gestion du Portefeuille de Dossiers' }, description: { es: 'Capacidad para supervisar y optimizar la distribución de casos, prioridades y carga de trabajo del área de práctica.', en: 'Ability to oversee and optimize case distribution, priorities, and workload within the practice area.', fr: 'Capacité à superviser et optimiser la répartition des dossiers, les priorités et la charge de travail au sein du département.' }, weight: 0.3 },
+      { id: 'legal-quality-standards', name: { es: 'Aseguramiento de Calidad y Estándares Legales', en: 'Quality Assurance & Legal Standards', fr: 'Assurance Qualité et Normes Juridiques' }, description: { es: 'Habilidad para establecer y mantener estándares de calidad en la producción legal, revisión de documentos y entregables al cliente.', en: 'Skill in establishing and maintaining quality standards in legal work product, document review, and client deliverables.', fr: 'Compétence pour établir et maintenir des normes de qualité dans la production juridique, la révision de documents et les livrables aux clients.' }, weight: 0.25 },
+      { id: 'legal-team-performance', name: { es: 'Desempeño del Equipo y Asignación de Recursos', en: 'Team Performance & Resource Allocation', fr: 'Performance de l\'Équipe et Allocation des Ressources' }, description: { es: 'Capacidad para evaluar el desempeño de los abogados, asignar recursos eficientemente y gestionar la productividad del equipo.', en: 'Ability to evaluate attorney performance, allocate resources efficiently, and manage team productivity.', fr: 'Capacité à évaluer la performance des avocats, allouer les ressources efficacement et gérer la productivité de l\'équipe.' }, weight: 0.25 },
+      { id: 'legal-client-relationship', name: { es: 'Gestión de Relaciones con Clientes', en: 'Client Relationship Management', fr: 'Gestion des Relations Clients' }, description: { es: 'Habilidad para cultivar y mantener relaciones sólidas con clientes, asegurando satisfacción y fidelización.', en: 'Skill in cultivating and maintaining strong client relationships, ensuring satisfaction and loyalty.', fr: 'Compétence pour cultiver et maintenir des relations solides avec les clients, en assurant leur satisfaction et leur fidélisation.' }, weight: 0.2 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'legal-pd-soft-skills',
+    name: { es: 'Habilidades Blandas del Director de Área de Práctica', en: 'Practice Area Director Soft Skills', fr: 'Compétences Interpersonnelles du Directeur de Département Juridique' },
+    description: { es: 'Competencias interpersonales para liderar equipos de abogados y gestionar dinámicas de práctica legal.', en: 'Interpersonal competencies for leading attorney teams and managing legal practice dynamics.', fr: 'Compétences interpersonnelles pour diriger des équipes d\'avocats et gérer les dynamiques de la pratique juridique.' },
+    competencies: [
+      { id: 'legal-team-leadership', name: { es: 'Liderazgo de Equipo y Desarrollo de Abogados', en: 'Team Leadership & Attorney Development', fr: 'Leadership d\'Équipe et Développement des Avocats' }, description: { es: 'Capacidad para inspirar, guiar y desarrollar profesionalmente a los abogados del área, fomentando su crecimiento y retención.', en: 'Ability to inspire, guide, and professionally develop attorneys in the area, fostering their growth and retention.', fr: 'Capacité à inspirer, guider et développer professionnellement les avocats du département, en favorisant leur croissance et leur rétention.' }, weight: 0.35 },
+      { id: 'legal-cross-practice', name: { es: 'Colaboración entre Áreas de Práctica', en: 'Cross-Practice Collaboration', fr: 'Collaboration Interdépartementale' }, description: { es: 'Habilidad para coordinar con otros directores de área, compartir recursos y desarrollar estrategias multidisciplinarias.', en: 'Skill in coordinating with other area directors, sharing resources, and developing multidisciplinary strategies.', fr: 'Compétence pour coordonner avec les autres directeurs de département, partager les ressources et développer des stratégies multidisciplinaires.' }, weight: 0.3 },
+      { id: 'legal-conflict-mediation', name: { es: 'Resolución de Conflictos y Mediación', en: 'Conflict Resolution & Mediation', fr: 'Résolution de Conflits et Médiation' }, description: { es: 'Capacidad para mediar conflictos entre abogados, gestionar desacuerdos en estrategia de casos y mantener un ambiente profesional.', en: 'Ability to mediate conflicts among attorneys, manage disagreements in case strategy, and maintain a professional environment.', fr: 'Capacité à résoudre les conflits entre avocats, gérer les désaccords sur la stratégie des dossiers et maintenir un environnement professionnel.' }, weight: 0.35 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'legal-pd-readiness',
+    name: { es: 'Disposición al Cambio del Director de Área de Práctica', en: 'Practice Area Director Readiness for Change', fr: 'Disposition au Changement du Directeur de Département Juridique' },
+    description: { es: 'Capacidad de adaptación ante la evolución de la gestión de práctica legal y nuevas herramientas.', en: 'Adaptability to the evolution of legal practice management and new tools.', fr: 'Adaptabilité à l\'évolution de la gestion de la pratique juridique et des nouveaux outils.' },
+    competencies: [
+      { id: 'legal-project-management', name: { es: 'Evolución de la Gestión de Proyectos Legales', en: 'Legal Project Management Evolution', fr: 'Évolution de la Gestion de Projets Juridiques' }, description: { es: 'Disposición para adoptar metodologías de gestión de proyectos legales, métricas de rendimiento y herramientas de seguimiento.', en: 'Willingness to adopt legal project management methodologies, performance metrics, and tracking tools.', fr: 'Volonté d\'adopter des méthodologies de gestion de projets juridiques, des métriques de performance et des outils de suivi.' }, weight: 0.35 },
+      { id: 'legal-knowledge-management', name: { es: 'Gestión del Conocimiento y Herramientas de IA', en: 'Knowledge Management & AI Tools', fr: 'Gestion des Connaissances et Outils d\'IA' }, description: { es: 'Apertura para implementar sistemas de gestión del conocimiento legal, bases de datos de precedentes y herramientas de IA para investigación.', en: 'Openness to implementing legal knowledge management systems, precedent databases, and AI tools for research.', fr: 'Ouverture à la mise en place de systèmes de gestion des connaissances juridiques, de bases de données de précédents et d\'outils d\'IA pour la recherche.' }, weight: 0.35 },
+      { id: 'legal-diversity-inclusion', name: { es: 'Diversidad e Inclusión en Equipos Legales', en: 'Diversity & Inclusion in Legal Teams', fr: 'Diversité et Inclusion dans les Équipes Juridiques' }, description: { es: 'Compromiso con la promoción de diversidad, equidad e inclusión en la composición y cultura de los equipos legales.', en: 'Commitment to promoting diversity, equity, and inclusion in the composition and culture of legal teams.', fr: 'Engagement envers la promotion de la diversité, de l\'équité et de l\'inclusion dans la composition et la culture des équipes juridiques.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // LEGAL PRACTICE — Senior Attorney
+  // ============================================================================
+  {
+    id: 'legal-sa-professional',
+    name: { es: 'Habilidades Profesionales del Abogado Senior', en: 'Senior Attorney Professional Skills', fr: 'Compétences Professionnelles de l\'Avocat Senior' },
+    description: { es: 'Conocimientos técnicos y habilidades jurídicas esenciales para la práctica legal avanzada.', en: 'Technical knowledge and legal skills essential for advanced legal practice.', fr: 'Connaissances techniques et compétences juridiques essentielles pour la pratique juridique avancée.' },
+    competencies: [
+      { id: 'legal-analysis-strategy', name: { es: 'Análisis Legal y Estrategia de Caso', en: 'Legal Analysis & Case Strategy', fr: 'Analyse Juridique et Stratégie de Dossier' }, description: { es: 'Capacidad para analizar situaciones jurídicas complejas, identificar riesgos y desarrollar estrategias efectivas de litigio o negociación.', en: 'Ability to analyze complex legal situations, identify risks, and develop effective litigation or negotiation strategies.', fr: 'Capacité à analyser des situations juridiques complexes, identifier les risques et développer des stratégies efficaces de contentieux ou de négociation.' }, weight: 0.3 },
+      { id: 'legal-litigation-advocacy', name: { es: 'Litigio y Habilidades de Defensa', en: 'Litigation & Advocacy Skills', fr: 'Contentieux et Compétences de Plaidoirie' }, description: { es: 'Dominio de técnicas de litigio, argumentación oral, presentación de pruebas y representación efectiva en tribunales.', en: 'Mastery of litigation techniques, oral argumentation, evidence presentation, and effective court representation.', fr: 'Maîtrise des techniques de contentieux, de l\'argumentation orale, de la présentation de preuves et de la représentation efficace devant les tribunaux.' }, weight: 0.25 },
+      { id: 'legal-contract-negotiation', name: { es: 'Redacción de Contratos y Negociación', en: 'Contract Drafting & Negotiation', fr: 'Rédaction de Contrats et Négociation' }, description: { es: 'Habilidad para redactar contratos precisos, negociar términos favorables y proteger los intereses del cliente en acuerdos comerciales.', en: 'Skill in drafting precise contracts, negotiating favorable terms, and protecting client interests in commercial agreements.', fr: 'Compétence pour rédiger des contrats précis, négocier des conditions favorables et protéger les intérêts du client dans les accords commerciaux.' }, weight: 0.25 },
+      { id: 'legal-research-precedent', name: { es: 'Investigación Legal y Aplicación de Precedentes', en: 'Legal Research & Precedent Application', fr: 'Recherche Juridique et Application des Précédents' }, description: { es: 'Capacidad para realizar investigación jurídica exhaustiva, analizar jurisprudencia y aplicar precedentes relevantes a casos actuales.', en: 'Ability to conduct thorough legal research, analyze case law, and apply relevant precedents to current cases.', fr: 'Capacité à mener une recherche juridique approfondie, analyser la jurisprudence et appliquer les précédents pertinents aux dossiers actuels.' }, weight: 0.2 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'legal-sa-soft-skills',
+    name: { es: 'Habilidades Blandas del Abogado Senior', en: 'Senior Attorney Soft Skills', fr: 'Compétences Interpersonnelles de l\'Avocat Senior' },
+    description: { es: 'Competencias interpersonales esenciales para la práctica legal y la relación con clientes.', en: 'Essential interpersonal competencies for legal practice and client relations.', fr: 'Compétences interpersonnelles essentielles pour la pratique juridique et les relations avec les clients.' },
+    competencies: [
+      { id: 'legal-client-counseling', name: { es: 'Asesoría al Cliente y Comunicación', en: 'Client Counseling & Communication', fr: 'Conseil au Client et Communication' }, description: { es: 'Capacidad para comunicar opciones legales complejas de manera clara, gestionar expectativas y construir relaciones de confianza con los clientes.', en: 'Ability to communicate complex legal options clearly, manage expectations, and build trust relationships with clients.', fr: 'Capacité à communiquer des options juridiques complexes de manière claire, gérer les attentes et construire des relations de confiance avec les clients.' }, weight: 0.35 },
+      { id: 'legal-ethical-judgment', name: { es: 'Juicio Ético e Integridad Profesional', en: 'Ethical Judgment & Professional Integrity', fr: 'Jugement Éthique et Intégrité Professionnelle' }, description: { es: 'Compromiso inquebrantable con la ética profesional, confidencialidad del cliente y cumplimiento de los códigos deontológicos.', en: 'Unwavering commitment to professional ethics, client confidentiality, and compliance with codes of conduct.', fr: 'Engagement indéfectible envers l\'éthique professionnelle, la confidentialité du client et le respect des codes de déontologie.' }, weight: 0.35 },
+      { id: 'legal-persuasion-argumentation', name: { es: 'Persuasión y Argumentación', en: 'Persuasion & Argumentation', fr: 'Persuasion et Argumentation' }, description: { es: 'Habilidad para construir argumentos convincentes, persuadir a jueces, contrapartes y clientes mediante lógica y evidencia.', en: 'Skill in building compelling arguments, persuading judges, counterparts, and clients through logic and evidence.', fr: 'Compétence pour construire des arguments convaincants, persuader les juges, les parties adverses et les clients par la logique et les preuves.' }, weight: 0.3 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'legal-sa-readiness',
+    name: { es: 'Disposición al Cambio del Abogado Senior', en: 'Senior Attorney Readiness for Change', fr: 'Disposition au Changement de l\'Avocat Senior' },
+    description: { es: 'Capacidad de adaptación ante la evolución de la práctica legal y nuevas áreas del derecho.', en: 'Adaptability to the evolution of legal practice and new areas of law.', fr: 'Adaptabilité à l\'évolution de la pratique juridique et des nouveaux domaines du droit.' },
+    competencies: [
+      { id: 'legal-ai-technology', name: { es: 'IA Legal y Adopción Tecnológica', en: 'Legal AI & Technology Adoption', fr: 'IA Juridique et Adoption Technologique' }, description: { es: 'Disposición para integrar herramientas de inteligencia artificial en la investigación, análisis de documentos y predicción de resultados legales.', en: 'Willingness to integrate artificial intelligence tools in research, document analysis, and legal outcome prediction.', fr: 'Volonté d\'intégrer des outils d\'intelligence artificielle dans la recherche, l\'analyse de documents et la prédiction de résultats juridiques.' }, weight: 0.35 },
+      { id: 'legal-cross-border', name: { es: 'Derecho Transfronterizo e Internacional', en: 'Cross-Border & International Law', fr: 'Droit Transfrontalier et International' }, description: { es: 'Apertura para expandir competencias hacia el derecho internacional, transacciones transfronterizas y marcos regulatorios globales.', en: 'Openness to expanding competencies toward international law, cross-border transactions, and global regulatory frameworks.', fr: 'Ouverture à l\'élargissement des compétences vers le droit international, les transactions transfrontalières et les cadres réglementaires mondiaux.' }, weight: 0.35 },
+      { id: 'legal-adr', name: { es: 'Resolución Alternativa de Disputas', en: 'Alternative Dispute Resolution', fr: 'Résolution Alternative des Litiges' }, description: { es: 'Disposición para dominar mecanismos alternativos como arbitraje, mediación y conciliación como complemento al litigio tradicional.', en: 'Willingness to master alternative mechanisms such as arbitration, mediation, and conciliation as complements to traditional litigation.', fr: 'Volonté de maîtriser les mécanismes alternatifs tels que l\'arbitrage, la médiation et la conciliation comme compléments au contentieux traditionnel.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // LEGAL PRACTICE — Corporate Counsel
+  // ============================================================================
+  {
+    id: 'legal-cc-professional',
+    name: { es: 'Habilidades Profesionales del Abogado Corporativo', en: 'Corporate Counsel Professional Skills', fr: 'Compétences Professionnelles du Conseiller Juridique d\'Entreprise' },
+    description: { es: 'Conocimientos técnicos para la asesoría legal interna, cumplimiento corporativo y gestión de riesgos empresariales.', en: 'Technical knowledge for in-house legal advisory, corporate compliance, and enterprise risk management.', fr: 'Connaissances techniques pour le conseil juridique interne, la conformité d\'entreprise et la gestion des risques de l\'entreprise.' },
+    competencies: [
+      { id: 'legal-corporate-compliance', name: { es: 'Cumplimiento Corporativo y Gobernanza', en: 'Corporate Compliance & Governance', fr: 'Conformité d\'Entreprise et Gouvernance' }, description: { es: 'Capacidad para diseñar y supervisar programas de cumplimiento, políticas corporativas y estructuras de gobierno corporativo.', en: 'Ability to design and oversee compliance programs, corporate policies, and corporate governance structures.', fr: 'Capacité à concevoir et superviser des programmes de conformité, des politiques d\'entreprise et des structures de gouvernance d\'entreprise.' }, weight: 0.3 },
+      { id: 'legal-contract-management', name: { es: 'Gestión y Revisión de Contratos', en: 'Contract Management & Review', fr: 'Gestion et Révision de Contrats' }, description: { es: 'Habilidad para revisar, negociar y gestionar el ciclo de vida de contratos comerciales, acuerdos de confidencialidad y términos de servicio.', en: 'Skill in reviewing, negotiating, and managing the lifecycle of commercial contracts, NDAs, and terms of service.', fr: 'Compétence pour réviser, négocier et gérer le cycle de vie des contrats commerciaux, accords de confidentialité et conditions de service.' }, weight: 0.25 },
+      { id: 'legal-risk-assessment', name: { es: 'Evaluación y Mitigación de Riesgos', en: 'Risk Assessment & Mitigation', fr: 'Évaluation et Atténuation des Risques' }, description: { es: 'Capacidad para identificar riesgos legales empresariales, cuantificar exposición y diseñar estrategias de mitigación efectivas.', en: 'Ability to identify enterprise legal risks, quantify exposure, and design effective mitigation strategies.', fr: 'Capacité à identifier les risques juridiques de l\'entreprise, quantifier l\'exposition et concevoir des stratégies d\'atténuation efficaces.' }, weight: 0.25 },
+      { id: 'legal-regulatory-affairs', name: { es: 'Asuntos Regulatorios y Regulaciones del Sector', en: 'Regulatory Affairs & Industry Regulations', fr: 'Affaires Réglementaires et Réglementations Sectorielles' }, description: { es: 'Conocimiento de marcos regulatorios aplicables al sector, relaciones con autoridades y gestión de licencias y permisos.', en: 'Knowledge of applicable regulatory frameworks, relationships with authorities, and management of licenses and permits.', fr: 'Connaissance des cadres réglementaires applicables au secteur, relations avec les autorités et gestion des licences et permis.' }, weight: 0.2 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'legal-cc-soft-skills',
+    name: { es: 'Habilidades Blandas del Abogado Corporativo', en: 'Corporate Counsel Soft Skills', fr: 'Compétences Interpersonnelles du Conseiller Juridique d\'Entreprise' },
+    description: { es: 'Competencias interpersonales para la asesoría legal interna y la gestión de relaciones con áreas de negocio.', en: 'Interpersonal competencies for in-house legal advisory and managing relationships with business areas.', fr: 'Compétences interpersonnelles pour le conseil juridique interne et la gestion des relations avec les secteurs d\'activité.' },
+    competencies: [
+      { id: 'legal-business-acumen', name: { es: 'Visión de Negocios y Comunicación Multifuncional', en: 'Business Acumen & Cross-Functional Communication', fr: 'Vision des Affaires et Communication Transversale' }, description: { es: 'Capacidad para comprender objetivos de negocio, traducir riesgos legales en términos comerciales y comunicarse efectivamente con todas las áreas.', en: 'Ability to understand business objectives, translate legal risks into commercial terms, and communicate effectively with all departments.', fr: 'Capacité à comprendre les objectifs commerciaux, traduire les risques juridiques en termes commerciaux et communiquer efficacement avec tous les départements.' }, weight: 0.35 },
+      { id: 'legal-stakeholder-management', name: { es: 'Gestión de Stakeholders', en: 'Stakeholder Management', fr: 'Gestion des Parties Prenantes' }, description: { es: 'Habilidad para gestionar expectativas de la alta dirección, junta directiva y líderes funcionales en temas legales.', en: 'Skill in managing expectations of senior management, board of directors, and functional leaders on legal matters.', fr: 'Compétence pour gérer les attentes de la direction, du conseil d\'administration et des responsables fonctionnels sur les questions juridiques.' }, weight: 0.3 },
+      { id: 'legal-negotiation-influence', name: { es: 'Negociación e Influencia', en: 'Negotiation & Influence', fr: 'Négociation et Influence' }, description: { es: 'Capacidad para negociar acuerdos complejos con contrapartes externas e influir en decisiones internas para proteger los intereses de la empresa.', en: 'Ability to negotiate complex agreements with external counterparts and influence internal decisions to protect corporate interests.', fr: 'Capacité à négocier des accords complexes avec des contreparties externes et influencer les décisions internes pour protéger les intérêts de l\'entreprise.' }, weight: 0.35 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'legal-cc-readiness',
+    name: { es: 'Disposición al Cambio del Abogado Corporativo', en: 'Corporate Counsel Readiness for Change', fr: 'Disposition au Changement du Conseiller Juridique d\'Entreprise' },
+    description: { es: 'Capacidad de adaptación ante nuevas regulaciones, tecnologías y modelos de operación legal corporativa.', en: 'Adaptability to new regulations, technologies, and corporate legal operations models.', fr: 'Adaptabilité aux nouvelles réglementations, technologies et modèles d\'opérations juridiques d\'entreprise.' },
+    competencies: [
+      { id: 'legal-data-privacy', name: { es: 'Privacidad de Datos y Derecho de Ciberseguridad', en: 'Data Privacy & Cybersecurity Law', fr: 'Protection des Données et Droit de la Cybersécurité' }, description: { es: 'Disposición para dominar regulaciones de privacidad de datos (GDPR, LGPD), ciberseguridad y protección de información corporativa.', en: 'Willingness to master data privacy regulations (GDPR, LGPD), cybersecurity, and corporate information protection.', fr: 'Volonté de maîtriser les réglementations sur la protection des données (RGPD, LGPD), la cybersécurité et la protection de l\'information d\'entreprise.' }, weight: 0.35 },
+      { id: 'legal-esg-sustainability', name: { es: 'Cumplimiento ESG y Regulaciones de Sostenibilidad', en: 'ESG Compliance & Sustainability Regulations', fr: 'Conformité ESG et Réglementations de Durabilité' }, description: { es: 'Apertura para integrar criterios ESG en la estrategia legal corporativa y cumplir con regulaciones ambientales y de sostenibilidad emergentes.', en: 'Openness to integrating ESG criteria into corporate legal strategy and complying with emerging environmental and sustainability regulations.', fr: 'Ouverture à l\'intégration des critères ESG dans la stratégie juridique d\'entreprise et au respect des réglementations environnementales et de durabilité émergentes.' }, weight: 0.35 },
+      { id: 'legal-operations-automation', name: { es: 'Operaciones Legales y Automatización de Procesos', en: 'Legal Operations & Process Automation', fr: 'Opérations Juridiques et Automatisation des Processus' }, description: { es: 'Disposición para implementar herramientas de automatización de procesos legales, gestión de contratos digitales y operaciones legales eficientes.', en: 'Willingness to implement legal process automation tools, digital contract management, and efficient legal operations.', fr: 'Volonté de mettre en œuvre des outils d\'automatisation des processus juridiques, de gestion numérique des contrats et d\'opérations juridiques efficaces.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // LEGAL PRACTICE — Paralegal
+  // ============================================================================
+  {
+    id: 'legal-pl-professional',
+    name: { es: 'Habilidades Profesionales del Paralegal', en: 'Paralegal Professional Skills', fr: 'Compétences Professionnelles du Parajuriste' },
+    description: { es: 'Conocimientos técnicos y habilidades de soporte legal para la preparación de casos e investigación jurídica.', en: 'Technical knowledge and legal support skills for case preparation and legal research.', fr: 'Connaissances techniques et compétences de soutien juridique pour la préparation de dossiers et la recherche juridique.' },
+    competencies: [
+      { id: 'legal-research-preparation', name: { es: 'Investigación Legal y Preparación de Casos', en: 'Legal Research & Case Preparation', fr: 'Recherche Juridique et Préparation de Dossiers' }, description: { es: 'Capacidad para realizar investigación jurídica, compilar evidencia, preparar resúmenes de casos y organizar materiales para audiencias.', en: 'Ability to conduct legal research, compile evidence, prepare case summaries, and organize materials for hearings.', fr: 'Capacité à mener des recherches juridiques, compiler des preuves, préparer des résumés de dossiers et organiser les matériaux pour les audiences.' }, weight: 0.3 },
+      { id: 'legal-document-management', name: { es: 'Gestión Documental y Sistemas de Archivo', en: 'Document Management & Filing Systems', fr: 'Gestion Documentaire et Systèmes de Classement' }, description: { es: 'Habilidad para organizar, indexar y mantener archivos legales físicos y digitales con precisión y cumplimiento de normas de retención.', en: 'Skill in organizing, indexing, and maintaining physical and digital legal files with accuracy and compliance with retention standards.', fr: 'Compétence pour organiser, indexer et maintenir les dossiers juridiques physiques et numériques avec précision et conformité aux normes de conservation.' }, weight: 0.25 },
+      { id: 'legal-court-procedures', name: { es: 'Procedimientos Judiciales y Cumplimiento', en: 'Court Procedures & Compliance', fr: 'Procédures Judiciaires et Conformité' }, description: { es: 'Conocimiento de procedimientos judiciales, plazos procesales, requisitos de presentación y normativas aplicables a cada jurisdicción.', en: 'Knowledge of court procedures, filing deadlines, submission requirements, and regulations applicable to each jurisdiction.', fr: 'Connaissance des procédures judiciaires, des délais de dépôt, des exigences de présentation et des réglementations applicables à chaque juridiction.' }, weight: 0.25 },
+      { id: 'legal-client-coordination', name: { es: 'Coordinación con Clientes y Seguimiento de Casos', en: 'Client Coordination & Case Tracking', fr: 'Coordination avec les Clients et Suivi des Dossiers' }, description: { es: 'Capacidad para coordinar con clientes, recopilar información necesaria y mantener un seguimiento preciso del estado de cada caso.', en: 'Ability to coordinate with clients, gather necessary information, and maintain accurate tracking of each case status.', fr: 'Capacité à coordonner avec les clients, recueillir les informations nécessaires et maintenir un suivi précis de l\'état de chaque dossier.' }, weight: 0.2 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'legal-pl-soft-skills',
+    name: { es: 'Habilidades Blandas del Paralegal', en: 'Paralegal Soft Skills', fr: 'Compétences Interpersonnelles du Parajuriste' },
+    description: { es: 'Competencias interpersonales esenciales para el soporte legal eficiente y preciso.', en: 'Essential interpersonal competencies for efficient and accurate legal support.', fr: 'Compétences interpersonnelles essentielles pour un soutien juridique efficace et précis.' },
+    competencies: [
+      { id: 'legal-attention-detail', name: { es: 'Atención al Detalle y Precisión', en: 'Attention to Detail & Accuracy', fr: 'Attention aux Détails et Précision' }, description: { es: 'Capacidad para revisar documentos, datos y procedimientos con alto nivel de precisión, detectando errores e inconsistencias.', en: 'Ability to review documents, data, and procedures with a high level of accuracy, detecting errors and inconsistencies.', fr: 'Capacité à réviser des documents, des données et des procédures avec un haut niveau de précision, en détectant les erreurs et les incohérences.' }, weight: 0.35 },
+      { id: 'legal-organization-time', name: { es: 'Organización y Gestión del Tiempo', en: 'Organization & Time Management', fr: 'Organisation et Gestion du Temps' }, description: { es: 'Habilidad para gestionar múltiples casos simultáneamente, priorizar tareas y cumplir plazos procesales estrictos.', en: 'Skill in managing multiple cases simultaneously, prioritizing tasks, and meeting strict procedural deadlines.', fr: 'Compétence pour gérer plusieurs dossiers simultanément, prioriser les tâches et respecter des délais procéduraux stricts.' }, weight: 0.35 },
+      { id: 'legal-written-communication', name: { es: 'Comunicación Escrita', en: 'Written Communication', fr: 'Communication Écrite' }, description: { es: 'Capacidad para redactar memorandos, correspondencia legal y resúmenes de manera clara, precisa y profesional.', en: 'Ability to draft memoranda, legal correspondence, and summaries in a clear, accurate, and professional manner.', fr: 'Capacité à rédiger des mémorandums, de la correspondance juridique et des résumés de manière claire, précise et professionnelle.' }, weight: 0.3 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'legal-pl-readiness',
+    name: { es: 'Disposición al Cambio del Paralegal', en: 'Paralegal Readiness for Change', fr: 'Disposition au Changement du Parajuriste' },
+    description: { es: 'Capacidad de adaptación ante la evolución de herramientas tecnológicas y el rol del paralegal.', en: 'Adaptability to the evolution of technological tools and the paralegal role.', fr: 'Adaptabilité à l\'évolution des outils technologiques et du rôle de parajuriste.' },
+    competencies: [
+      { id: 'legal-tech-tools', name: { es: 'Herramientas de Tecnología Legal', en: 'Legal Technology Tools', fr: 'Outils de Technologie Juridique' }, description: { es: 'Disposición para aprender y dominar software de gestión de casos, bases de datos legales y herramientas de productividad jurídica.', en: 'Willingness to learn and master case management software, legal databases, and legal productivity tools.', fr: 'Volonté d\'apprendre et de maîtriser les logiciels de gestion de dossiers, les bases de données juridiques et les outils de productivité juridique.' }, weight: 0.35 },
+      { id: 'legal-e-discovery', name: { es: 'E-Discovery y Evidencia Digital', en: 'E-Discovery & Digital Evidence', fr: 'E-Discovery et Preuves Numériques' }, description: { es: 'Apertura para dominar procesos de descubrimiento electrónico, preservación de evidencia digital y análisis de datos en litigios.', en: 'Openness to mastering electronic discovery processes, digital evidence preservation, and data analysis in litigation.', fr: 'Ouverture à la maîtrise des processus de découverte électronique, de la préservation des preuves numériques et de l\'analyse de données dans les litiges.' }, weight: 0.35 },
+      { id: 'legal-evolving-responsibilities', name: { es: 'Evolución de las Responsabilidades del Paralegal', en: 'Evolving Paralegal Responsibilities', fr: 'Évolution des Responsabilités du Parajuriste' }, description: { es: 'Disposición para asumir responsabilidades expandidas a medida que el rol del paralegal evoluciona con la tecnología y las necesidades del mercado.', en: 'Willingness to take on expanded responsibilities as the paralegal role evolves with technology and market needs.', fr: 'Volonté d\'assumer des responsabilités élargies à mesure que le rôle de parajuriste évolue avec la technologie et les besoins du marché.' }, weight: 0.3 },
+    ],
+    order: 3,
+  },
+
+  // ============================================================================
+  // LEGAL PRACTICE — Legal Secretary
+  // ============================================================================
+  {
+    id: 'legal-ls-professional',
+    name: { es: 'Habilidades Profesionales del Secretario/a Legal', en: 'Legal Secretary Professional Skills', fr: 'Compétences Professionnelles du Secrétaire Juridique' },
+    description: { es: 'Conocimientos técnicos y habilidades operativas para el soporte administrativo en entornos legales.', en: 'Technical knowledge and operational skills for administrative support in legal environments.', fr: 'Connaissances techniques et compétences opérationnelles pour le soutien administratif en environnement juridique.' },
+    competencies: [
+      { id: 'legal-document-formatting', name: { es: 'Formato de Documentos y Correspondencia Legal', en: 'Document Formatting & Legal Correspondence', fr: 'Mise en Forme de Documents et Correspondance Juridique' }, description: { es: 'Dominio de formatos legales estándar, redacción de correspondencia profesional y preparación de documentos según normas procesales.', en: 'Mastery of standard legal formats, professional correspondence drafting, and document preparation according to procedural standards.', fr: 'Maîtrise des formats juridiques standards, rédaction de correspondance professionnelle et préparation de documents selon les normes procédurales.' }, weight: 0.3 },
+      { id: 'legal-court-filing', name: { es: 'Presentaciones Judiciales y Gestión de Plazos', en: 'Court Filing & Deadline Management', fr: 'Dépôts Judiciaires et Gestion des Délais' }, description: { es: 'Habilidad para preparar y presentar documentos ante tribunales, controlar plazos procesales y asegurar cumplimiento de requisitos formales.', en: 'Skill in preparing and filing court documents, tracking procedural deadlines, and ensuring compliance with formal requirements.', fr: 'Compétence pour préparer et déposer des documents au tribunal, suivre les délais procéduraux et assurer la conformité aux exigences formelles.' }, weight: 0.3 },
+      { id: 'legal-scheduling', name: { es: 'Programación y Gestión de Agenda', en: 'Scheduling & Calendar Management', fr: 'Planification et Gestion de l\'Agenda' }, description: { es: 'Capacidad para gestionar agendas de abogados, coordinar audiencias, reuniones con clientes y plazos críticos de manera eficiente.', en: 'Ability to manage attorney calendars, coordinate hearings, client meetings, and critical deadlines efficiently.', fr: 'Capacité à gérer les agendas des avocats, coordonner les audiences, les réunions avec les clients et les délais critiques de manière efficace.' }, weight: 0.2 },
+      { id: 'legal-record-keeping', name: { es: 'Mantenimiento de Registros y Confidencialidad', en: 'Record Keeping & Confidentiality', fr: 'Tenue de Registres et Confidentialité' }, description: { es: 'Habilidad para mantener registros organizados, proteger información confidencial y cumplir con protocolos de seguridad de datos.', en: 'Skill in maintaining organized records, protecting confidential information, and complying with data security protocols.', fr: 'Compétence pour maintenir des registres organisés, protéger les informations confidentielles et respecter les protocoles de sécurité des données.' }, weight: 0.2 },
+    ],
+    order: 1,
+  },
+  {
+    id: 'legal-ls-soft-skills',
+    name: { es: 'Habilidades Blandas del Secretario/a Legal', en: 'Legal Secretary Soft Skills', fr: 'Compétences Interpersonnelles du Secrétaire Juridique' },
+    description: { es: 'Competencias interpersonales para el soporte administrativo eficiente en entornos legales de alta demanda.', en: 'Interpersonal competencies for efficient administrative support in high-demand legal environments.', fr: 'Compétences interpersonnelles pour un soutien administratif efficace dans des environnements juridiques exigeants.' },
+    competencies: [
+      { id: 'legal-precision', name: { es: 'Atención al Detalle y Precisión', en: 'Attention to Detail & Precision', fr: 'Attention aux Détails et Précision' }, description: { es: 'Capacidad para producir documentos sin errores, verificar datos y asegurar la exactitud en todas las comunicaciones y presentaciones.', en: 'Ability to produce error-free documents, verify data, and ensure accuracy in all communications and filings.', fr: 'Capacité à produire des documents sans erreurs, vérifier les données et assurer l\'exactitude dans toutes les communications et dépôts.' }, weight: 0.35 },
+      { id: 'legal-professional-communication', name: { es: 'Comunicación Profesional', en: 'Professional Communication', fr: 'Communication Professionnelle' }, description: { es: 'Habilidad para comunicarse de manera clara, cortés y profesional con clientes, tribunales, abogados y personal de la firma.', en: 'Skill in communicating clearly, courteously, and professionally with clients, courts, attorneys, and firm staff.', fr: 'Compétence pour communiquer de manière claire, courtoise et professionnelle avec les clients, les tribunaux, les avocats et le personnel du cabinet.' }, weight: 0.35 },
+      { id: 'legal-multitasking', name: { es: 'Multitarea y Priorización', en: 'Multitasking & Prioritization', fr: 'Multitâche et Priorisation' }, description: { es: 'Capacidad para manejar múltiples tareas simultáneamente, establecer prioridades y mantener la eficiencia bajo presión de plazos.', en: 'Ability to handle multiple tasks simultaneously, establish priorities, and maintain efficiency under deadline pressure.', fr: 'Capacité à gérer plusieurs tâches simultanément, établir les priorités et maintenir l\'efficacité sous la pression des délais.' }, weight: 0.3 },
+    ],
+    order: 2,
+  },
+  {
+    id: 'legal-ls-readiness',
+    name: { es: 'Disposición al Cambio del Secretario/a Legal', en: 'Legal Secretary Readiness for Change', fr: 'Disposition au Changement du Secrétaire Juridique' },
+    description: { es: 'Capacidad de adaptación ante la digitalización y evolución de los procesos administrativos legales.', en: 'Adaptability to digitalization and evolution of legal administrative processes.', fr: 'Adaptabilité à la numérisation et à l\'évolution des processus administratifs juridiques.' },
+    competencies: [
+      { id: 'legal-digital-filing', name: { es: 'Archivo Digital y Sistemas en la Nube', en: 'Digital Filing & Cloud Systems', fr: 'Classement Numérique et Systèmes Cloud' }, description: { es: 'Disposición para migrar a sistemas de archivo digital, plataformas en la nube y gestión electrónica de documentos legales.', en: 'Willingness to migrate to digital filing systems, cloud platforms, and electronic management of legal documents.', fr: 'Volonté de migrer vers des systèmes de classement numérique, des plateformes cloud et la gestion électronique de documents juridiques.' }, weight: 0.35 },
+      { id: 'legal-software-proficiency', name: { es: 'Dominio de Software Legal', en: 'Legal Software Proficiency', fr: 'Maîtrise des Logiciels Juridiques' }, description: { es: 'Apertura para aprender y dominar nuevos software de gestión legal, facturación, gestión de documentos y herramientas de productividad.', en: 'Openness to learning and mastering new legal management software, billing, document management, and productivity tools.', fr: 'Ouverture à l\'apprentissage et à la maîtrise de nouveaux logiciels de gestion juridique, de facturation, de gestion documentaire et d\'outils de productivité.' }, weight: 0.35 },
+      { id: 'legal-remote-hybrid', name: { es: 'Adaptación al Trabajo Remoto e Híbrido', en: 'Remote & Hybrid Work Adaptation', fr: 'Adaptation au Travail à Distance et Hybride' }, description: { es: 'Disposición para adaptarse a modelos de trabajo remoto e híbrido, manteniendo la eficiencia y coordinación con el equipo legal.', en: 'Willingness to adapt to remote and hybrid work models, maintaining efficiency and coordination with the legal team.', fr: 'Volonté de s\'adapter aux modèles de travail à distance et hybride, en maintenant l\'efficacité et la coordination avec l\'équipe juridique.' }, weight: 0.3 },
     ],
     order: 3,
   },

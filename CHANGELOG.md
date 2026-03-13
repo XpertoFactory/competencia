@@ -1,5 +1,40 @@
 # Changelog
 
+## [0.9.3] - 2026-03-13
+
+### xAId Authentication Integration
+- Migrated authentication to xAId (Xperto Authentication Intelligence) centralized auth platform using Token Bridge pattern
+- Dual Firebase app architecture: `xperto-candidates-hub` for data, `xperto-aid` for authentication
+- New Token Bridge Cloud Function (`functions/src/tokenBridge.ts`) — verifies xAId tokens, mints local custom tokens, syncs `admins` and `orgMembers` collections
+- Complete auth module rewrite (`src/lib/firebase/auth.ts`) with session-based auth (4-hour TTL in localStorage)
+- Updated AuthProvider to use xAId sessions for role detection
+- Updated Header admin check to use session-based `isAdmin()`
+- All login/register pages rewritten to use xAId auth functions
+- New Forgot Password page (`/auth/forgot-password`)
+- New No Access page (`/auth/no-access`) for users without skaills app access
+- Linked 10 organizations between skaills Firestore and xAId via `xaidOrgId` field
+
+### Legal Practice Sector
+- New `legal-practice` sector added to ProfileSector type
+- 6 new evaluation profiles: Managing Partner (executive), Practice Area Director (managerial), Senior Attorney (professional-specialist), Corporate Counsel (professional-specialist), Paralegal (administrative), Legal Secretary (operative)
+- 18 competency categories with trilingual names and descriptions
+- 108 new trilingual questions (ES/EN/FR) — 3 multiple-choice, 1 scale, 1 scenario, 1 open-text per category
+- Total profiles: 49 across 16 sectors
+
+### Plans & Pricing Page
+- New `/pricing` page with Individual and Corporate plan tiers
+- Individual: Free, Pro ($29/mo), Premium ($79/mo)
+- Corporate: Starter ($199/mo), Business ($499/mo), Enterprise (custom)
+- AI Agents & AI Employees showcase section
+- Feature highlights and CTA sections
+- Pricing link added to Value dropdown in navigation (desktop + mobile)
+- Full trilingual support (ES/EN/FR)
+
+### Translation Updates
+- Added auth keys: `forgotPassword`, `forgotPasswordTitle`, `forgotPasswordSubtitle`, `resetPassword`, `resetPasswordSent`, `backToLogin`, `noAccess`, `noAccessMessage`
+- Added `legal-practice` sector label in all 3 languages
+- Added `pricing` navigation key and 80+ pricing translation keys per language
+
 ## [0.9.2] - 2026-03-11
 
 ### Best Practices

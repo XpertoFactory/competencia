@@ -6,7 +6,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
 import { Button, Card, CardContent, Input } from '@/components/ui';
-import { signInUser, signInWithGoogle } from '@/lib/firebase/auth';
+import { xaidLoginWithEmail, xaidLoginWithGoogle } from '@/lib/firebase/auth';
 import { LogIn, AlertCircle } from 'lucide-react';
 
 export default function UserLoginPage() {
@@ -26,16 +26,22 @@ export default function UserLoginPage() {
     setLoading(true);
 
     try {
-      await signInUser(email, password);
-      router.push(`/${locale}`);
-    } catch (err: any) {
-      if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
-        setError(t('auth.invalidCredentials'));
-      } else if (err.code === 'auth/invalid-login-credentials') {
-        setError(t('auth.invalidCredentials'));
-      } else {
-        setError(t('errors.loginFailed'));
+      const result = await xaidLoginWithEmail(email, password);
+      if (result.noAccess) {
+        router.push(`/${locale}/auth/no-access`);
+        return;
       }
+      if (!result.success) {
+        if (result.error === 'auth/invalid-credential' || result.error === 'auth/wrong-password' || result.error === 'auth/user-not-found' || result.error === 'auth/invalid-login-credentials') {
+          setError(t('auth.invalidCredentials'));
+        } else {
+          setError(t('errors.loginFailed'));
+        }
+        return;
+      }
+      router.push(`/${locale}`);
+    } catch {
+      setError(t('errors.loginFailed'));
     } finally {
       setLoading(false);
     }
@@ -46,9 +52,17 @@ export default function UserLoginPage() {
     setGoogleLoading(true);
 
     try {
-      await signInWithGoogle();
+      const result = await xaidLoginWithGoogle();
+      if (result.noAccess) {
+        router.push(`/${locale}/auth/no-access`);
+        return;
+      }
+      if (!result.success) {
+        setError(t('errors.googleLoginFailed'));
+        return;
+      }
       router.push(`/${locale}`);
-    } catch (err: any) {
+    } catch {
       setError(t('errors.googleLoginFailed'));
     } finally {
       setGoogleLoading(false);
@@ -108,6 +122,15 @@ export default function UserLoginPage() {
                 {t('auth.loginButton')}
               </Button>
             </form>
+
+            <div className="mt-3 text-right">
+              <Link
+                href={`/${locale}/auth/forgot-password`}
+                className="text-sm text-primary-600 hover:text-primary-700"
+              >
+                {t('auth.forgotPassword')}
+              </Link>
+            </div>
 
             <div className="relative my-6">
               <div className="absolute inset-0 flex items-center">

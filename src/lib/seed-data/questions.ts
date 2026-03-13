@@ -12,6 +12,7 @@ import { insCroProfessionalQuestions, insCroSoftSkillsQuestions, insCroReadiness
 import { techSwdevProfessionalQuestions, techSwdevSoftSkillsQuestions, techSwdevReadinessQuestions, techItmgrProfessionalQuestions, techItmgrSoftSkillsQuestions, techItmgrReadinessQuestions, techDataProfessionalQuestions, techDataSoftSkillsQuestions, techDataReadinessQuestions, techCyberProfessionalQuestions, techCyberSoftSkillsQuestions, techCyberReadinessQuestions, techApmProfessionalQuestions, techApmSoftSkillsQuestions, techApmReadinessQuestions } from './tech-questions';
 import { bankBmProfessionalQuestions, bankBmSoftSkillsQuestions, bankBmReadinessQuestions, bankLoProfessionalQuestions, bankLoSoftSkillsQuestions, bankLoReadinessQuestions, bankIaProfessionalQuestions, bankIaSoftSkillsQuestions, bankIaReadinessQuestions, bankBtProfessionalQuestions, bankBtSoftSkillsQuestions, bankBtReadinessQuestions } from './banking-questions';
 import { hospHgmProfessionalQuestions, hospHgmSoftSkillsQuestions, hospHgmReadinessQuestions, hospRmProfessionalQuestions, hospRmSoftSkillsQuestions, hospRmReadinessQuestions, hospFdaProfessionalQuestions, hospFdaSoftSkillsQuestions, hospFdaReadinessQuestions, hospCkmProfessionalQuestions, hospCkmSoftSkillsQuestions, hospCkmReadinessQuestions } from './hospitality-questions';
+import { legalMpProfessionalQuestions, legalMpSoftSkillsQuestions, legalMpReadinessQuestions, legalPdProfessionalQuestions, legalPdSoftSkillsQuestions, legalPdReadinessQuestions, legalSaProfessionalQuestions, legalSaSoftSkillsQuestions, legalSaReadinessQuestions, legalCcProfessionalQuestions, legalCcSoftSkillsQuestions, legalCcReadinessQuestions, legalPlProfessionalQuestions, legalPlSoftSkillsQuestions, legalPlReadinessQuestions, legalLsProfessionalQuestions, legalLsSoftSkillsQuestions, legalLsReadinessQuestions } from './legal-questions';
 
 // ============================================================================
 // SHARED QUESTIONS (used by both profiles for soft-skills and readiness)
@@ -7213,4 +7214,34 @@ export const questions: Question[] = [
   ...spProfessionalQuestions,
   ...spSoftSkillsQuestions,
   ...spReadinessQuestions,
+
+  // Legal Practice — Managing Partner
+  ...legalMpProfessionalQuestions,
+  ...legalMpSoftSkillsQuestions,
+  ...legalMpReadinessQuestions,
+
+  // Legal Practice — Practice Area Director
+  ...legalPdProfessionalQuestions,
+  ...legalPdSoftSkillsQuestions,
+  ...legalPdReadinessQuestions,
+
+  // Legal Practice — Senior Attorney
+  ...legalSaProfessionalQuestions,
+  ...legalSaSoftSkillsQuestions,
+  ...legalSaReadinessQuestions,
+
+  // Legal Practice — Corporate Counsel
+  ...legalCcProfessionalQuestions,
+  ...legalCcSoftSkillsQuestions,
+  ...legalCcReadinessQuestions,
+
+  // Legal Practice — Paralegal
+  ...legalPlProfessionalQuestions,
+  ...legalPlSoftSkillsQuestions,
+  ...legalPlReadinessQuestions,
+
+  // Legal Practice — Legal Secretary
+  ...legalLsProfessionalQuestions,
+  ...legalLsSoftSkillsQuestions,
+  ...legalLsReadinessQuestions,
 ];

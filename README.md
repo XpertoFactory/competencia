@@ -6,8 +6,8 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 
 ## Features
 
-- **43 Evaluation Profiles** - Across 15 sectors (insurance, education, healthcare, retail, finance, HR, technology, banking, hospitality, etc.) and 5 levels (executive to operative)
-- **Competency Evaluations** - 700+ trilingual questions (5 types: multiple choice, scale, ranking, open text, scenario)
+- **49 Evaluation Profiles** - Across 16 sectors (insurance, education, healthcare, retail, finance, HR, technology, banking, hospitality, legal practice, etc.) and 5 levels (executive to operative)
+- **Competency Evaluations** - 960+ trilingual questions (5 types: multiple choice, scale, ranking, open text, scenario)
 - **Cognitive Tests** - Timed IQ-style assessments with percentile scoring
 - **Personality Tests** - Big Five (OCEAN) personality profiling via Likert scale
 - **DISC Assessments** - Forced-choice behavioral style profiling
@@ -35,7 +35,8 @@ A comprehensive competency evaluation platform that uses AI-powered analysis to 
 - **Career Planning Wizard** - Interactive 4-step career growth tool with personalized plans and external AI readiness links
 - **Trilingual** - Full Spanish, English, and French support via next-intl
 - **Organizations** - Multi-tenant org management with roles (owner/admin/member/viewer) and email invitations
-- **User Authentication** - Email/password and Google sign-in for regular users and admins
+- **Plans & Pricing** - Individual and corporate pricing tiers with AI Agents & AI Employees showcase
+- **User Authentication** - Centralized via xAId (Xperto Authentication Intelligence) with Token Bridge pattern, email/password and Google sign-in
 - **Admin Panel** - Protected dashboard with role-based access (admin link in user dropdown)
 - **API Key Management** - Configure AI provider keys from the admin settings UI
 - **Branded Assets** - Custom favicon (logomark) and OpenGraph share image
@@ -71,12 +72,13 @@ src/
       users/                 # User management for super admins
     about/                   # About page (mission, suite overview)
     ai-staff/                # AI Staff service page
-    auth/                    # User login and registration
+    auth/                    # User login, registration, forgot-password, no-access
     benefits/                # Value proposition and ROI page
     candidate/               # Candidate self-service portal
     contact/                 # Contact form page
     evaluation/[profileId]/  # Competency evaluation flow
     features/                # Platform features and instructions
+    pricing/                 # Plans & pricing page
     profiles/                # Browsable profile directory
     resources/               # Expert articles, best practices, FAQs, career planning
     results/[evaluationId]/  # Results display

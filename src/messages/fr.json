@@ -63,7 +63,8 @@
     "bestPractices": "Meilleures Pratiques",
     "faqs": "FAQ",
     "careerPlanning": "Planification de Carrière",
-    "contact": "Contact"
+    "contact": "Contact",
+    "pricing": "Tarifs"
   },
   "instructions": {
     "title": "Fonctionnalités et Capacités",
@@ -966,7 +967,15 @@
     "goToLogin": "Se connecter",
     "adminLogin": "Connexion Administrateur",
     "passwordMismatch": "Les mots de passe ne correspondent pas",
-    "passwordTooShort": "Le mot de passe doit comporter au moins 6 caractères"
+    "passwordTooShort": "Le mot de passe doit comporter au moins 6 caractères",
+    "forgotPassword": "Mot de passe oublié ?",
+    "forgotPasswordTitle": "Réinitialiser le mot de passe",
+    "forgotPasswordSubtitle": "Entrez votre e-mail pour recevoir un lien de réinitialisation",
+    "resetPassword": "Envoyer le lien",
+    "resetPasswordSent": "Un lien de réinitialisation a été envoyé à votre adresse e-mail. Vérifiez votre boîte de réception.",
+    "backToLogin": "Retour à la connexion",
+    "noAccess": "Accès refusé",
+    "noAccessMessage": "Vous n'avez pas accès à cette application. Contactez votre administrateur pour demander l'accès."
   },
   "comparison": {
     "title": "Comparaison des Candidats",
@@ -1336,7 +1345,8 @@
       "general-management": "Direction Générale",
       "technology-it": "Technologie / TI",
       "banking": "Banque",
-      "hospitality-tourism": "Hôtellerie et Tourisme"
+      "hospitality-tourism": "Hôtellerie et Tourisme",
+      "legal-practice": "Pratique Juridique"
     },
     "levels": {
       "executive": "Cadre Dirigeant (C-Suite)",
@@ -1835,6 +1845,7 @@
       "technology-it": "Technologie et IT",
       "banking": "Banque",
       "hospitality-tourism": "Hôtellerie et Tourisme",
+      "legal-practice": "Pratique Juridique",
       "general-management": "Direction Générale",
       "music-arts": "Musique et Arts",
       "legal": "Juridique"
@@ -1944,6 +1955,132 @@
     "ctaEvaluate": "Commencer une Évaluation",
     "ctaRestart": "Recommencer"
   },
+  "pricing": {
+    "heroTagline": "Des tarifs simples et transparents",
+    "title": "Des Plans pour Chaque Besoin",
+    "subtitle": "Des professionnels individuels aux organisations d'entreprise. Choisissez le plan adapté à vos objectifs d'évaluation des talents.",
+    "individualTab": "Individuel",
+    "corporateTab": "Entreprise",
+    "perMonth": "/mois",
+    "custom": "Sur mesure",
+    "mostPopular": "Le Plus Populaire",
+    "ctaFree": "Commencer Gratuitement",
+    "ctaStart": "Commencer",
+    "ctaContact": "Contacter les Ventes",
+    "free": { "name": "Gratuit" },
+    "pro": { "name": "Pro" },
+    "premium": { "name": "Premium" },
+    "starter": { "name": "Starter" },
+    "business": { "name": "Business" },
+    "enterprise": { "name": "Enterprise" },
+    "individual": {
+      "freeDesc": "Explorez la plateforme avec des évaluations de base. Parfait pour débuter.",
+      "free": {
+        "f1": "3 évaluations par mois",
+        "f2": "5 profils standards",
+        "f3": "Résumé basique des résultats",
+        "f4": "Analyse alimentée par l'IA",
+        "f5": "Export PDF et rapports détaillés",
+        "f6": "Profils personnalisés et fiches de poste"
+      },
+      "proDesc": "Accès complet aux évaluations et profils avec analyses alimentées par l'IA.",
+      "pro": {
+        "f1": "Évaluations illimitées",
+        "f2": "Tous les 49+ profils d'évaluation",
+        "f3": "Résultats détaillés avec export PDF",
+        "f4": "Analyse et recommandations basiques par IA",
+        "f5": "Profils personnalisés et fiches de poste",
+        "f6": "IA avancée et planification de carrière"
+      },
+      "premiumDesc": "IA avancée, profils personnalisés et développement de carrière personnalisé.",
+      "premium": {
+        "f1": "Tout ce qui est dans Pro",
+        "f2": "Analyse avancée par IA (Claude, GPT, Gemini)",
+        "f3": "Profils d'évaluation personnalisés",
+        "f4": "Fiches de poste personnalisées et matching",
+        "f5": "Recommandations de parcours professionnel par IA",
+        "f6": "Benchmarking et comparaisons sectorielles"
+      }
+    },
+    "corporate": {
+      "starterDesc": "Outils essentiels pour les petites équipes débutant avec des évaluations structurées.",
+      "starter": {
+        "f1": "Jusqu'à 25 employés",
+        "f2": "Tous les profils d'évaluation",
+        "f3": "Gestion organisationnelle",
+        "f4": "Campagnes de recrutement basiques",
+        "f5": "Analyse avancée par IA",
+        "f6": "Agents IA et Employés IA",
+        "f7": "Accès API et intégrations personnalisées"
+      },
+      "businessDesc": "Plateforme d'évaluation avancée pour les organisations en croissance avec la puissance de l'IA.",
+      "business": {
+        "f1": "Jusqu'à 100 employés",
+        "f2": "Tout ce qui est dans Starter",
+        "f3": "Analyse avancée par IA (multi-modèle)",
+        "f4": "Profils personnalisés et fiches de poste",
+        "f5": "Enquêtes de climat et évaluations 360°",
+        "f6": "Agents IA et Employés IA",
+        "f7": "Accès API et intégrations personnalisées"
+      },
+      "enterpriseDesc": "Plateforme complète avec Agents IA, Employés IA et échelle illimitée.",
+      "enterprise": {
+        "f1": "Employés illimités",
+        "f2": "Tout ce qui est dans Business",
+        "f3": "Agents IA pour les évaluations automatisées",
+        "f4": "Employés IA pour les opérations RH",
+        "f5": "Accès API et intégrations personnalisées",
+        "f6": "Responsable de compte dédié",
+        "f7": "SLA personnalisé et onboarding"
+      }
+    },
+    "ai": {
+      "badge": "Propulsé par l'IA",
+      "title": "Agents IA et Employés IA",
+      "subtitle": "Boostez vos opérations RH avec une automatisation intelligente. Disponible dans les plans Premium individuel et Enterprise entreprise.",
+      "includedIn": "Inclus dans les plans Premium / Enterprise",
+      "agents": {
+        "title": "Agents IA",
+        "tag": "Flux Automatisés",
+        "desc": "Agents d'IA autonomes qui gèrent les flux d'évaluation de bout en bout, de la planification à la notation et au suivi.",
+        "f1": "Planification et rappels automatiques d'évaluations",
+        "f2": "Notation intelligente et détection d'anomalies",
+        "f3": "Génération et distribution automatiques de rapports",
+        "f4": "Alertes proactives de lacunes en compétences et suivi"
+      },
+      "employees": {
+        "title": "Employés IA",
+        "tag": "Personnel RH Virtuel",
+        "desc": "Professionnels RH virtuels qui filtrent les candidats, accompagnent l'intégration et analysent en continu le développement des talents.",
+        "f1": "Filtrage et pré-qualification des candidats",
+        "f2": "Évaluation et accompagnement d'intégration",
+        "f3": "Analyse continue des lacunes en compétences",
+        "f4": "Recommandations de développement personnalisées"
+      }
+    },
+    "whyTitle": "Pourquoi skaills ?",
+    "whySubtitle": "Conçu pour l'évaluation moderne des talents avec une IA de pointe dans chaque plan.",
+    "highlights": {
+      "ai": {
+        "title": "IA Multi-Modèle",
+        "desc": "Claude, GPT et Gemini pour une analyse complète et impartiale."
+      },
+      "profiles": {
+        "title": "49+ Profils",
+        "desc": "16 secteurs, 5 niveaux. Des postes de direction aux postes opérationnels."
+      },
+      "analytics": {
+        "title": "Analytique Approfondie",
+        "desc": "DISC, Big Five, cognitif, aptitude et scoring d'adéquation au poste."
+      },
+      "security": {
+        "title": "Sécurité Entreprise",
+        "desc": "Firebase Auth, règles Firestore et accès centralisé via xAId."
+      }
+    },
+    "ctaTitle": "Prêt à Transformer Votre Évaluation des Talents ?",
+    "ctaSubtitle": "Commencez gratuitement et évoluez selon vos besoins. Aucune carte de crédit requise."
+  },
   "contact": {
     "tagline": "Contactez-nous",
     "pageTitle": "Contact",
@@ -1998,6 +2135,7 @@
       "technology-it": "Technologie et IT",
       "banking": "Banque",
       "hospitality-tourism": "Hôtellerie et Tourisme",
+      "legal-practice": "Pratique Juridique",
       "general-management": "Direction Générale",
       "other": "Autre"
     }

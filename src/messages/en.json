@@ -63,7 +63,8 @@
     "bestPractices": "Best Practices",
     "faqs": "FAQs",
     "careerPlanning": "Career Planning",
-    "contact": "Contact Us"
+    "contact": "Contact Us",
+    "pricing": "Pricing"
   },
   "instructions": {
     "title": "Features & Capabilities",
@@ -966,7 +967,129 @@
     "goToLogin": "Sign In",
     "adminLogin": "Admin Login",
     "passwordMismatch": "Passwords do not match",
-    "passwordTooShort": "Password must be at least 6 characters"
+    "passwordTooShort": "Password must be at least 6 characters",
+    "forgotPassword": "Forgot your password?",
+    "forgotPasswordTitle": "Reset Password",
+    "forgotPasswordSubtitle": "Enter your email to receive a reset link",
+    "resetPassword": "Send Reset Link",
+    "resetPasswordSent": "A password reset link has been sent to your email. Check your inbox.",
+    "backToLogin": "Back to Login",
+    "noAccess": "No Access",
+    "noAccessMessage": "You don't have access to this application. Contact your administrator to request access."
+  },
+  "pricing": {
+    "heroTagline": "Simple, transparent pricing",
+    "title": "Plans for Every Need",
+    "subtitle": "From individual professionals to enterprise organizations. Choose the plan that fits your talent evaluation goals.",
+    "individualTab": "Individual",
+    "corporateTab": "Corporate",
+    "perMonth": "/month",
+    "custom": "Custom",
+    "mostPopular": "Most Popular",
+    "ctaFree": "Get Started Free",
+    "ctaStart": "Get Started",
+    "ctaContact": "Contact Sales",
+    "free": { "name": "Free" },
+    "pro": { "name": "Pro" },
+    "premium": { "name": "Premium" },
+    "starter": { "name": "Starter" },
+    "business": { "name": "Business" },
+    "enterprise": { "name": "Enterprise" },
+    "individual": {
+      "freeDesc": "Explore the platform with basic evaluations. Perfect for getting started.",
+      "free": {
+        "f1": "3 evaluations per month",
+        "f2": "5 standard profiles",
+        "f3": "Basic results summary",
+        "f4": "AI-powered analysis",
+        "f5": "PDF export & detailed reports",
+        "f6": "Custom profiles & job descriptions"
+      },
+      "proDesc": "Full access to evaluations and profiles with AI-powered insights.",
+      "pro": {
+        "f1": "Unlimited evaluations",
+        "f2": "All 49+ evaluation profiles",
+        "f3": "Detailed results with PDF export",
+        "f4": "Basic AI analysis & recommendations",
+        "f5": "Custom profiles & job descriptions",
+        "f6": "Advanced AI & career pathing"
+      },
+      "premiumDesc": "Advanced AI, custom profiles, and personalized career development.",
+      "premium": {
+        "f1": "Everything in Pro",
+        "f2": "Advanced AI analysis (Claude, GPT, Gemini)",
+        "f3": "Custom evaluation profiles",
+        "f4": "Custom job descriptions & matching",
+        "f5": "AI-powered career path recommendations",
+        "f6": "Benchmarking & industry comparisons"
+      }
+    },
+    "corporate": {
+      "starterDesc": "Essential tools for small teams starting with structured evaluations.",
+      "starter": {
+        "f1": "Up to 25 employees",
+        "f2": "All evaluation profiles",
+        "f3": "Organization management",
+        "f4": "Basic recruitment campaigns",
+        "f5": "Advanced AI analysis",
+        "f6": "AI Agents & AI Employees",
+        "f7": "API access & custom integrations"
+      },
+      "businessDesc": "Advanced evaluation platform for growing organizations with AI power.",
+      "business": {
+        "f1": "Up to 100 employees",
+        "f2": "Everything in Starter",
+        "f3": "Advanced AI analysis (multi-model)",
+        "f4": "Custom profiles & job descriptions",
+        "f5": "Climate surveys & 360° reviews",
+        "f6": "AI Agents & AI Employees",
+        "f7": "API access & custom integrations"
+      },
+      "enterpriseDesc": "Full platform with AI Agents, AI Employees, and unlimited scale.",
+      "enterprise": {
+        "f1": "Unlimited employees",
+        "f2": "Everything in Business",
+        "f3": "AI Agents for automated evaluations",
+        "f4": "AI Employees for HR operations",
+        "f5": "API access & custom integrations",
+        "f6": "Dedicated account manager",
+        "f7": "Custom SLA & onboarding"
+      }
+    },
+    "ai": {
+      "badge": "AI-Powered",
+      "title": "AI Agents & AI Employees",
+      "subtitle": "Supercharge your HR operations with intelligent automation. Available in Premium individual and Enterprise corporate plans.",
+      "includedIn": "Included in Premium / Enterprise plans",
+      "agents": {
+        "title": "AI Agents",
+        "tag": "Automated Workflows",
+        "desc": "Autonomous AI agents that handle evaluation workflows end-to-end, from scheduling to scoring to follow-up.",
+        "f1": "Automated evaluation scheduling & reminders",
+        "f2": "Intelligent scoring & anomaly detection",
+        "f3": "Automated report generation & distribution",
+        "f4": "Proactive skill gap alerts & follow-up"
+      },
+      "employees": {
+        "title": "AI Employees",
+        "tag": "Virtual HR Staff",
+        "desc": "Virtual HR professionals that screen candidates, support onboarding, and continuously analyze talent development.",
+        "f1": "Candidate screening & pre-qualification",
+        "f2": "Onboarding assessment & guidance",
+        "f3": "Continuous skill gap analysis",
+        "f4": "Personalized development recommendations"
+      }
+    },
+    "whyTitle": "Why skaills?",
+    "whySubtitle": "Built for modern talent evaluation with cutting-edge AI across every plan.",
+    "highlights": {
+      "ai": { "title": "Multi-Model AI", "desc": "Claude, GPT, and Gemini for comprehensive, unbiased analysis." },
+      "profiles": { "title": "49+ Profiles", "desc": "16 sectors, 5 levels. From executive to operative roles." },
+      "analytics": { "title": "Deep Analytics", "desc": "DISC, Big Five, cognitive, aptitude, and job-fit scoring." },
+      "security": { "title": "Enterprise Security", "desc": "Firebase Auth, Firestore rules, and centralized access via xAId." }
+    },
+    "ctaTitle": "Ready to Transform Your Talent Evaluation?",
+    "ctaSubtitle": "Start free and upgrade as you grow. No credit card required."
   },
   "comparison": {
     "title": "Candidate Comparison",
@@ -1336,7 +1459,8 @@
       "general-management": "General Management",
       "technology-it": "Technology / IT",
       "banking": "Banking",
-      "hospitality-tourism": "Hospitality & Tourism"
+      "hospitality-tourism": "Hospitality & Tourism",
+      "legal-practice": "Legal Practice"
     },
     "levels": {
       "executive": "Executive (C-Suite)",
@@ -1835,6 +1959,7 @@
       "technology-it": "Technology & IT",
       "banking": "Banking",
       "hospitality-tourism": "Hospitality & Tourism",
+      "legal-practice": "Legal Practice",
       "general-management": "General Management",
       "music-arts": "Music & Arts",
       "legal": "Legal"
@@ -1998,6 +2123,7 @@
       "technology-it": "Technology & IT",
       "banking": "Banking",
       "hospitality-tourism": "Hospitality & Tourism",
+      "legal-practice": "Legal Practice",
       "general-management": "General Management",
       "other": "Other"
     }

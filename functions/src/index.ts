@@ -9,6 +9,9 @@ initializeApp();
 // Re-export callable functions
 export { generateRecommendations } from './recommendations/generate';
 
+// Token Bridge — xAId centralized auth
+export { tokenBridge } from './tokenBridge';
+
 // Trigger analysis when evaluation is completed
 export const onEvaluationComplete = onDocumentUpdated(
   'evaluations/{evaluationId}',

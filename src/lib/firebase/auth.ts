@@ -1,15 +1,24 @@
+/**
+ * Auth service — xAId Token Bridge pattern.
+ *
+ * Login via xAId (xperto-aid) → Token Bridge → sign into local project.
+ * Session data (individual role, org roles) stored in localStorage.
+ */
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signInWithPopup,
+  signInWithCustomToken,
   GoogleAuthProvider,
   signOut as firebaseSignOut,
+  sendPasswordResetEmail,
   onAuthStateChanged,
-  User,
   updateProfile,
+  User,
 } from 'firebase/auth';
-import { doc, getDoc, setDoc, getDocs, collection, query, where } from 'firebase/firestore';
-import { firebaseAuth, firestore } from './config';
+import { firebaseAuth, xaidAuth } from './config';
+
+// ─── Types ────────────────────────────────────────────────────────────────────
 
 export interface AdminUser {
   uid: string;
@@ -17,147 +26,253 @@ export interface AdminUser {
   role: 'admin' | 'viewer';
 }
 
-/**
- * Check if user is admin. If no admin doc exists with this UID but one exists
- * with matching email, auto-fix by creating a doc with the correct UID.
- * If no admins exist at all, make this user the first admin.
- */
-async function resolveAdminStatus(user: User): Promise<AdminUser | null> {
-  const adminDocRef = doc(firestore, 'admins', user.uid);
-  const adminDoc = await getDoc(adminDocRef);
+export interface XaidSession {
+  user: {
+    id: string;
+    email: string;
+    name?: string;
+    displayName?: string;
+    globalLevel?: string;
+  };
+  appAccess?: {
+    appId: string;
+    individualRole: string;
+    source: string;
+  };
+  organizations?: Array<{
+    organization: { id: string; name: string };
+    apps?: Array<{ role?: { roleId: string } }>;
+  }>;
+}
 
-  if (adminDoc.exists()) {
-    const data = adminDoc.data();
-    return {
-      uid: user.uid,
-      email: user.email || data.email || '',
-      role: data.role || 'viewer',
-    };
-  }
+export interface OrgRole {
+  orgId: string;
+  orgName: string;
+  role: string;
+}
 
-  // No doc with this UID — check if any admin doc has this email
-  const userEmail = user.email?.toLowerCase();
-  if (userEmail) {
-    const adminsQuery = query(
-      collection(firestore, 'admins'),
-      where('email', '==', userEmail)
-    );
-    const snapshot = await getDocs(adminsQuery);
-    if (!snapshot.empty) {
-      // Found an admin doc with matching email but wrong doc ID — auto-fix
-      const existingData = snapshot.docs[0].data();
-      await setDoc(adminDocRef, {
-        email: userEmail,
-        role: existingData.role || 'admin',
-        uid: user.uid,
-        createdAt: existingData.createdAt || new Date(),
-      });
-      return {
-        uid: user.uid,
-        email: userEmail,
-        role: existingData.role || 'admin',
-      };
-    }
-  }
+export interface StoredSession {
+  uid: string;
+  email: string;
+  displayName: string | null;
+  method: 'xaid-email' | 'xaid-google';
+  individualRole: string;
+  orgRoles: OrgRole[];
+  expiresAt: number;
+}
 
-  // Check if admins collection is completely empty — first user becomes admin
-  const allAdmins = await getDocs(collection(firestore, 'admins'));
-  if (allAdmins.empty) {
-    await setDoc(adminDocRef, {
-      email: user.email || '',
-      role: 'admin',
-      uid: user.uid,
-      createdAt: new Date(),
+// ─── Constants ────────────────────────────────────────────────────────────────
+
+const SESSION_KEY = 'skaills_xaid_session';
+const SESSION_DURATION_MS = 4 * 60 * 60 * 1000; // 4 hours
+const TOKEN_BRIDGE_URL = process.env.NEXT_PUBLIC_TOKEN_BRIDGE_URL ||
+  'https://us-central1-xperto-candidates-hub.cloudfunctions.net/tokenBridge';
+const XAID_APP_ID = 'skaills';
+
+// ─── Internal state ──────────────────────────────────────────────────────────
+
+let currentSession: StoredSession | null = null;
+
+// ─── Token Bridge ─────────────────────────────────────────────────────────────
+
+async function callTokenBridge(xaidIdToken: string): Promise<{
+  success: boolean;
+  session?: XaidSession;
+  error?: string;
+}> {
+  try {
+    const response = await fetch(TOKEN_BRIDGE_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ token: xaidIdToken, appId: XAID_APP_ID }),
     });
-    return {
-      uid: user.uid,
-      email: user.email || '',
-      role: 'admin',
-    };
-  }
 
-  return null;
+    const data = await response.json();
+
+    if (!data.success || !data.customToken) {
+      return { success: false, error: data.error || 'Token bridge failed' };
+    }
+
+    // Sign into local Firebase project with the custom token
+    await signInWithCustomToken(firebaseAuth, data.customToken);
+
+    return { success: true, session: data.session };
+  } catch (error) {
+    console.error('[Token Bridge] Error:', error);
+    return { success: false, error: 'Error connecting to authentication service' };
+  }
 }
 
-// Admin sign-in: checks admin status after authentication
-export async function signInAdmin(email: string, password: string): Promise<AdminUser> {
-  const credential = await signInWithEmailAndPassword(firebaseAuth, email, password);
-  const adminUser = await resolveAdminStatus(credential.user);
+function extractOrgRoles(session: XaidSession): OrgRole[] {
+  return (session.organizations || [])
+    .map(o => ({
+      orgId: o.organization?.id ?? '',
+      orgName: o.organization?.name ?? '',
+      role: o.apps?.[0]?.role?.roleId ?? '',
+    }))
+    .filter(o => o.orgId && o.role);
+}
 
-  if (!adminUser) {
+async function completeXaidLogin(method: 'xaid-email' | 'xaid-google'): Promise<{
+  success: boolean;
+  error?: string;
+  noAccess?: boolean;
+}> {
+  const xaidUser = xaidAuth.currentUser;
+  if (!xaidUser) return { success: false, error: 'No xAId user' };
+
+  const idToken = await xaidUser.getIdToken();
+  const bridgeResult = await callTokenBridge(idToken);
+
+  if (!bridgeResult.success) {
+    await xaidAuth.signOut();
+    return { success: false, error: bridgeResult.error };
+  }
+
+  const session = bridgeResult.session!;
+  const individualRole = session.appAccess?.individualRole || '';
+
+  // Check if user has app access
+  if (!session.appAccess) {
     await firebaseSignOut(firebaseAuth);
-    throw new Error('unauthorized');
+    await xaidAuth.signOut();
+    return { success: false, noAccess: true, error: 'no-access' };
   }
 
-  return adminUser;
+  const orgRoles = extractOrgRoles(session);
+
+  currentSession = {
+    uid: xaidUser.uid,
+    email: xaidUser.email || session.user.email || '',
+    displayName: session.user.displayName || session.user.name || xaidUser.displayName || null,
+    method,
+    individualRole,
+    orgRoles,
+    expiresAt: Date.now() + SESSION_DURATION_MS,
+  };
+  localStorage.setItem(SESSION_KEY, JSON.stringify(currentSession));
+
+  return { success: true };
 }
 
-// Admin sign-in with Google: checks admin status after authentication
-export async function signInAdminWithGoogle(): Promise<AdminUser> {
+// ─── xAId Login Methods ──────────────────────────────────────────────────────
+
+export async function xaidLoginWithEmail(email: string, password: string): Promise<{
+  success: boolean;
+  error?: string;
+  noAccess?: boolean;
+}> {
+  try {
+    await signInWithEmailAndPassword(xaidAuth, email, password);
+    return await completeXaidLogin('xaid-email');
+  } catch (err: any) {
+    console.error('[xAId Auth] Email login failed:', err.code);
+    return { success: false, error: err.code || 'auth-error' };
+  }
+}
+
+export async function xaidLoginWithGoogle(): Promise<{
+  success: boolean;
+  error?: string;
+  noAccess?: boolean;
+}> {
   const provider = new GoogleAuthProvider();
+  provider.addScope('email');
+  provider.addScope('profile');
   provider.setCustomParameters({ prompt: 'select_account' });
-  const credential = await signInWithPopup(firebaseAuth, provider);
-  const adminUser = await resolveAdminStatus(credential.user);
 
-  if (!adminUser) {
-    await firebaseSignOut(firebaseAuth);
-    throw new Error('unauthorized');
+  try {
+    await signInWithPopup(xaidAuth, provider);
+    return await completeXaidLogin('xaid-google');
+  } catch (err: any) {
+    console.error('[xAId Auth] Google login failed:', err.code);
+    return { success: false, error: err.code || 'auth-error' };
   }
-
-  return adminUser;
 }
 
-// Regular user sign-in (no admin check)
-export async function signInUser(email: string, password: string): Promise<User> {
-  const credential = await signInWithEmailAndPassword(firebaseAuth, email, password);
-  return credential.user;
-}
-
-// Register a new user with email and password
-export async function registerWithEmail(email: string, password: string, displayName?: string): Promise<User> {
-  const credential = await createUserWithEmailAndPassword(firebaseAuth, email, password);
-  if (displayName) {
-    await updateProfile(credential.user, { displayName });
+export async function xaidSignUp(email: string, password: string, displayName: string): Promise<{
+  success: boolean;
+  error?: string;
+  noAccess?: boolean;
+}> {
+  try {
+    const cred = await createUserWithEmailAndPassword(xaidAuth, email, password);
+    await updateProfile(cred.user, { displayName });
+    return await completeXaidLogin('xaid-email');
+  } catch (err: any) {
+    console.error('[xAId Auth] Sign up failed:', err.code);
+    return { success: false, error: err.code || 'auth-error' };
   }
-  return credential.user;
 }
 
-// Sign in with Google (regular user)
-export async function signInWithGoogle(): Promise<User> {
-  const provider = new GoogleAuthProvider();
-  provider.setCustomParameters({ prompt: 'select_account' });
-  const credential = await signInWithPopup(firebaseAuth, provider);
-  return credential.user;
+export async function xaidResetPassword(email: string): Promise<{
+  success: boolean;
+  error?: string;
+}> {
+  try {
+    await sendPasswordResetEmail(xaidAuth, email);
+    return { success: true };
+  } catch (err: any) {
+    console.error('[xAId Auth] Password reset failed:', err.code);
+    return { success: false, error: err.code || 'auth-error' };
+  }
 }
 
-// Get the current authenticated user
-export function getCurrentUser(): User | null {
-  return firebaseAuth.currentUser;
-}
+// ─── Logout ──────────────────────────────────────────────────────────────────
 
 export async function signOut(): Promise<void> {
-  await firebaseSignOut(firebaseAuth);
+  try { await firebaseSignOut(xaidAuth); } catch { /* ignore */ }
+  try { await firebaseSignOut(firebaseAuth); } catch { /* ignore */ }
+  currentSession = null;
+  localStorage.removeItem(SESSION_KEY);
 }
+
+// ─── Session & Role Checks ───────────────────────────────────────────────────
+
+export function getSession(): StoredSession | null {
+  if (currentSession && Date.now() < currentSession.expiresAt) {
+    return currentSession;
+  }
+  try {
+    const raw = localStorage.getItem(SESSION_KEY);
+    if (!raw) return null;
+    const session: StoredSession = JSON.parse(raw);
+    if (Date.now() > session.expiresAt) {
+      localStorage.removeItem(SESSION_KEY);
+      return null;
+    }
+    currentSession = session;
+    return session;
+  } catch {
+    return null;
+  }
+}
+
+export function hasRole(role: string): boolean {
+  const session = getSession();
+  if (!session) return false;
+  if (session.individualRole === role) return true;
+  return session.orgRoles.some(o => o.role === role);
+}
+
+export function isAdmin(): boolean {
+  return hasRole('admin') || hasRole('viewer');
+}
+
+export function getIndividualRole(): string | null {
+  return getSession()?.individualRole || null;
+}
+
+export function getOrgRoles(): OrgRole[] {
+  return getSession()?.orgRoles || [];
+}
+
+// ─── Auth state observer ─────────────────────────────────────────────────────
 
 export function onAuthChange(callback: (user: User | null) => void): () => void {
   return onAuthStateChanged(firebaseAuth, callback);
 }
 
-export async function checkAdminStatus(uid: string): Promise<AdminUser | null> {
-  // For AuthProvider context — also uses resolveAdminStatus for auto-fix
-  const user = firebaseAuth.currentUser;
-  if (user && user.uid === uid) {
-    return resolveAdminStatus(user);
-  }
-
-  // Fallback to simple doc lookup
-  const adminDoc = await getDoc(doc(firestore, 'admins', uid));
-  if (!adminDoc.exists()) return null;
-
-  const data = adminDoc.data();
-  return {
-    uid,
-    email: data.email || '',
-    role: data.role || 'viewer',
-  };
+export function getCurrentUser(): User | null {
+  return firebaseAuth.currentUser;
 }

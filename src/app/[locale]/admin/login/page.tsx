@@ -3,9 +3,10 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useTranslations, useLocale } from 'next-intl';
+import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
 import { Button, Card, CardContent, Input } from '@/components/ui';
-import { signInAdmin, signInAdminWithGoogle } from '@/lib/firebase/auth';
+import { xaidLoginWithEmail, xaidLoginWithGoogle } from '@/lib/firebase/auth';
 import { LogIn, AlertCircle } from 'lucide-react';
 
 export default function AdminLoginPage() {
@@ -25,16 +26,22 @@ export default function AdminLoginPage() {
     setLoading(true);
 
     try {
-      await signInAdmin(email, password);
-      router.push(`/${locale}/admin`);
-    } catch (err: any) {
-      if (err.message === 'unauthorized') {
-        setError(t('errors.unauthorized'));
-      } else if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password' || err.code === 'auth/user-not-found') {
-        setError(t('auth.invalidCredentials'));
-      } else {
-        setError(t('errors.generic'));
+      const result = await xaidLoginWithEmail(email, password);
+      if (result.noAccess) {
+        router.push(`/${locale}/auth/no-access`);
+        return;
       }
+      if (!result.success) {
+        if (result.error === 'auth/invalid-credential' || result.error === 'auth/wrong-password' || result.error === 'auth/user-not-found') {
+          setError(t('auth.invalidCredentials'));
+        } else {
+          setError(t('errors.generic'));
+        }
+        return;
+      }
+      router.push(`/${locale}/admin`);
+    } catch {
+      setError(t('errors.generic'));
     } finally {
       setLoading(false);
     }
@@ -45,14 +52,18 @@ export default function AdminLoginPage() {
     setGoogleLoading(true);
 
     try {
-      await signInAdminWithGoogle();
-      router.push(`/${locale}/admin`);
-    } catch (err: any) {
-      if (err.message === 'unauthorized') {
-        setError(t('errors.unauthorized'));
-      } else {
-        setError(t('errors.googleLoginFailed'));
+      const result = await xaidLoginWithGoogle();
+      if (result.noAccess) {
+        router.push(`/${locale}/auth/no-access`);
+        return;
       }
+      if (!result.success) {
+        setError(t('errors.googleLoginFailed'));
+        return;
+      }
+      router.push(`/${locale}/admin`);
+    } catch {
+      setError(t('errors.googleLoginFailed'));
     } finally {
       setGoogleLoading(false);
     }
@@ -111,6 +122,15 @@ export default function AdminLoginPage() {
                 {t('auth.loginButton')}
               </Button>
             </form>
+
+            <div className="mt-3 text-right">
+              <Link
+                href={`/${locale}/auth/forgot-password`}
+                className="text-sm text-primary-600 hover:text-primary-700"
+              >
+                {t('auth.forgotPassword')}
+              </Link>
+            </div>
 
             <div className="relative my-6">
               <div className="absolute inset-0 flex items-center">

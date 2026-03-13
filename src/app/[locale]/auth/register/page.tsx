@@ -6,7 +6,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Link from 'next/link';
 import { Header, Footer } from '@/components/layout';
 import { Button, Card, CardContent, Input } from '@/components/ui';
-import { registerWithEmail, signInWithGoogle } from '@/lib/firebase/auth';
+import { xaidSignUp, xaidLoginWithGoogle } from '@/lib/firebase/auth';
 import { UserPlus, AlertCircle } from 'lucide-react';
 
 export default function UserRegisterPage() {
@@ -26,7 +26,6 @@ export default function UserRegisterPage() {
     e.preventDefault();
     setError('');
 
-    // Validation
     if (password.length < 6) {
       setError(t('auth.passwordTooShort'));
       return;
@@ -40,18 +39,26 @@ export default function UserRegisterPage() {
     setLoading(true);
 
     try {
-      await registerWithEmail(email, password, name);
-      router.push(`/${locale}`);
-    } catch (err: any) {
-      if (err.code === 'auth/email-already-in-use') {
-        setError(t('errors.emailInUse'));
-      } else if (err.code === 'auth/weak-password') {
-        setError(t('errors.weakPassword'));
-      } else if (err.code === 'auth/invalid-email') {
-        setError(t('errors.invalidEmail'));
-      } else {
-        setError(t('errors.registrationFailed'));
+      const result = await xaidSignUp(email, password, name);
+      if (result.noAccess) {
+        router.push(`/${locale}/auth/no-access`);
+        return;
       }
+      if (!result.success) {
+        if (result.error === 'auth/email-already-in-use') {
+          setError(t('errors.emailInUse'));
+        } else if (result.error === 'auth/weak-password') {
+          setError(t('errors.weakPassword'));
+        } else if (result.error === 'auth/invalid-email') {
+          setError(t('errors.invalidEmail'));
+        } else {
+          setError(t('errors.registrationFailed'));
+        }
+        return;
+      }
+      router.push(`/${locale}`);
+    } catch {
+      setError(t('errors.registrationFailed'));
     } finally {
       setLoading(false);
     }
@@ -62,9 +69,17 @@ export default function UserRegisterPage() {
     setGoogleLoading(true);
 
     try {
-      await signInWithGoogle();
+      const result = await xaidLoginWithGoogle();
+      if (result.noAccess) {
+        router.push(`/${locale}/auth/no-access`);
+        return;
+      }
+      if (!result.success) {
+        setError(t('errors.googleLoginFailed'));
+        return;
+      }
       router.push(`/${locale}`);
-    } catch (err: any) {
+    } catch {
       setError(t('errors.googleLoginFailed'));
     } finally {
       setGoogleLoading(false);
