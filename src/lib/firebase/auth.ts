@@ -94,7 +94,14 @@ async function callTokenBridge(xaidIdToken: string): Promise<{
     }
 
     // Sign into local Firebase project with the custom token
-    await signInWithCustomToken(firebaseAuth, data.customToken);
+    const localCred = await signInWithCustomToken(firebaseAuth, data.customToken);
+
+    // Sync display name from xAId to local user profile
+    const xaidUser = xaidAuth.currentUser;
+    const displayName = data.session?.user?.displayName || data.session?.user?.name || xaidUser?.displayName;
+    if (displayName && localCred.user.displayName !== displayName) {
+      await updateProfile(localCred.user, { displayName });
+    }
 
     return { success: true, session: data.session };
   } catch (error) {
